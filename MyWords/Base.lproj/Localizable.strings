@@ -1,0 +1,144 @@
+/*
+ Localizable.strings
+ MyWords
+ 
+ Created by Oliver Brehm on 02/03/14.
+ Copyright (c) 2014 Oliver Brehm. All rights reserved.
+ */
+
+// help pages
+"Getting startedPageTitle" = "Getting started";
+"Quiz algorithmPageTitle" = "Quiz algorithm";
+"TestPageTitle" = "Test";
+
+"OKOptionText" = "OK";
+"CancelOptionText" = "Cancel";
+"ResetOptionText" = "Reset";
+"DoneOptionText" = "Done";
+"EditOptionText" = "Edit";
+"YesOptionText" = "Yes";
+"NoOptionText" = "No";
+"CreateOptionText" = "Create";
+
+"ScoreText" = "Score";
+"NameText" = "Name";
+"WordText" = "Word";
+"wordsPlural" = "words";
+"wordsSigular" = "word";
+"SetText" = "Set";
+"WrongText" = "wrong";
+"RightText" = "right";
+"NewestText" = "Newest";
+"ErrorText" = "Error";
+"DueText" = "due";
+"FinishedText" = "Finished";
+
+"AllWordsButtonTitle" = "All words";
+"AllSetsButtonTitle" = "All sets";
+"NavigationLabel" = "Navigation";
+"FavouritesLabel" = "Favourites";
+"RecentWordsLabel" = "Newest Words";
+"AllWordsVCTitle" = "All words";
+"EmptyLanguageMessageTitel" = "Language missing";
+"EmptyLanguageMessage" = "Please eneter your language";
+"RemoveFromFavouritesText" = "Unfavorite";
+"AddToFavouritesText" = "Favourite";
+"EmptyNameMessageTitle" = "Empty name";
+"EmptyNameMessage" = "Please enter a name for the set";
+"LearnActionText" = "Learn";
+"RemoveSetWarning" = "Really remove set? This set and ALL words it contains will be removed permanently!";
+"ResetStatisticsWarning" = "Really reset statistics? Your score and number of guesses will be reset!";
+"ResetDatabaseOption" = "Reset database";
+"ResetDatabaseWarning" = "Really reseat database? ALL vocabulary data will be erased by this!";
+"ShowAnswerButtonText" = "Show answer";
+"EmptyWordOrTranslationMessageTitle" = "New Word";
+"EmptyWordOrTranslationMessage" = "Please enter a word and a translation";
+"WordAddedText" = "Word added";
+"ErrorOpeningTextFileForImporting" = "Error opening the import file. Please make sure you uploaded a file called \"import.txt\" via iTunes file sharing.";
+
+"SetAlreadyExistsMessage" = "A set with the same name already exists. Do you want to create it anyway?";
+"SetAlreadyExistsMessageTitle" = "Set already exists";
+
+"NewSetCreatedMessage_1" = "New set";
+"NewSetCreatedMessage_2" = "has been created";
+
+"WordAlreadyExistsMessage" = "A word with the same name already exists. Do you want to create it anyway?";
+"WordAlreadyExistsMessageTitle" = "Word already exists";
+
+"NotAvailableTitle" = "Not available";
+"iCloudNotAvailableText" = "iCloud is only available in Vocab Book PREMIUM. You can buy PREMIUM now, but you can also test the app as long as you need to, without PREMIUM, with a limited number of words and without iCloud support.";
+"iCloudNotAvailablePlainText" = "iCloud is only available in Vocab Book PREMIUM";
+"GetPremiumText" = "Get PREMIUM";
+
+"UsingPremiumText" = "Using premium";
+
+"ImportSuccessfullTitle" = "Import successfull";
+"NumWordsSuccessfullyAdded" = "words successfully added.";
+"NumWordsAlreadyExisted" = "words already existed.";
+"NumWordsSuccessfullyExported" = "words successfully exported.";
+"ExportSuccessfullTitle" = "Export successfull";
+"UseiCloudInfoText" = "Use iCloud to share your words across your iPhone, iPod touch or iPad";
+
+"FileSharingInfoText" = "Import or export the database to a text file. The exported files will be available in iTunes File Sharing (iTunes -> iOS device -> Apps -> File Sharing).";
+
+"ResetDatabaseInfoText" = "Use this option only if you want to delete your whole words database from all your devices. It will remove all data  so you can start a fresh vocab book. If you are using iCloud, your local storage will not be erased. Also if you are using local storage, your iCloud data stays.";
+"MergeDatabaseToLocalText" = "Do you want to mere iCloud data to your local device Store? If you select yes, all iCloud words that don't exist on the device will be copied to local storage. In any case iCloud data will be the same if you turn it back on.";
+"MergeDatabaseToiCloudText" = "Do you want to merge your local data to iCloud? If you select yes, all words on your device that don't exist in iCloud will be copied to iCloud. In any case your local data will be the same if you turn iCloud off again.";
+
+"BuyPremiumText" = "Buy Premium";
+"RestorePremiumText" = "Restore purchase";
+
+"NoFavouriteSetsText" = "No favourite sets. Choose \"+\" in the upper left corner to create a new set. To make a set a favourite, choose a set, then choose \"Info\" and activate the \"In favourites\" switch.";
+"NoRecentWordsText" = "No recent words. Select a set and choose \"Add words\"";
+
+"InfoText" = "Info";
+"LanguageText" = "Language";
+
+"EnterLanguageTitle" = "Enter language";
+"EnterLanguageText" = "Please enter a language";
+
+"NumWordsDueText" = "words due";
+"OneWordDueText" = "word due";
+"NoDueWordsText" = "No due words, next quiz";
+"LastTestText" = "Last test";
+"TestNotTakenText" = "not taken";
+
+"NoWordsDueMessageTitle" = "No due words";
+"NoWordsDueMessage" = "There are currently no due words. You are now learning all the words of this set. Note that in this mode, right answers will not get the word to the next level.";
+"FinishedLearningMessage" = "You have learned all words neccessary for now. Do you still want to continue?";
+"KeepLearningOption" = "Keep learning";
+
+"wordMissingMessageTitle" = "Word missing";
+"wordMissingMessage" = "Please enter a word";
+"CheckText" = "Check";
+"RightAnswerText" = "Right answer!";
+"WrongAnswerText" = "Wrong (answer:";
+"NextText" = "Next";
+"ContinueOptionText" = "Continue";
+"stopTextMessageTitle" = "Stop test";
+"stopTextMessage" = "Really stop test? Words remaining";
+"cancelTestMessageTitle" = "Cancel test";
+"cancelTestMessage" = "Really cancel test? You must at least answer half the set's words so the test is valid. (remaining";
+"resultsText" = "Result";
+"testFinishedText" = "Test finished";
+"RemoveOptionText" = "Remove";
+
+"EnterWordText" = "Enter word";
+"LookupText" = "Look up";
+
+"resetWordMessageTitle" = "Really reset progress on this word?";
+"removeWordMessageTitle" = "Really remove word?";
+
+"badURLMessage" = "Could not open url. <br> Try selecting a different page by tapping \"Settings\".";
+
+"LevelText" = "Level";
+
+"ImportInfoText" = "No files to import, exported files will show up here. You can also import a previously exported file if you move it to iTunes File Sharing (iTunes -> iOS devie -> Apps -> File Sharing).";
+
+"UpToDateText" = "Up-to-date";
+
+"iCloudNotAvailableTitle" = "iCloud not available";
+"iCloudNotAvailableMessage" = "iCloud is currently not available. Turn on iCloud in Settings->iCloud.";
+
+"iCloudAvailabilityChangedTitle" = "iCloud no longer available";
+"iCloudAvailabilityChangedMessage" = "iCloud is no longer available. Do you want to merge your cloud data to local storage? (If you choose no, data created in the cloud will no longer be accessible on this device!)";

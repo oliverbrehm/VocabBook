@@ -1,0 +1,183 @@
+
+/* Class = "IBUINavigationItem"; title = "My Words"; ObjectID = "02K-WQ-SZf"; */
+"02K-WQ-SZf.title" = "Vocab Book";
+
+/* Class = "IBUITextField"; text = "English"; ObjectID = "1J2-FQ-4RA"; */
+"1J2-FQ-4RA.text" = "English";
+
+/* Class = "IBUITabBarItem"; title = "Words"; ObjectID = "2Hr-on-O4d"; */
+"2Hr-on-O4d.title" = "Vokabeln";
+
+/* Class = "IBUIBarButtonItem"; title = "Add"; ObjectID = "2W1-aV-KLv"; */
+"2W1-aV-KLv.title" = "Hinzufügen";
+
+/* Class = "IBUITextView"; text = "Welcome to myWords app!\nBefore you can start adding and learning words, we need some basic information from you."; ObjectID = "3Zj-Xy-OLZ"; */
+"3Zj-Xy-OLZ.text" = "Willkommen zu myWords!\nBevor du damit anfangen kannst, Wörter hinzuzufügen und zu lernen, musst du noch ein Paar Informationen angeben.";
+
+/* Class = "IBUILabel"; text = "Description:"; ObjectID = "3ts-EO-JxO"; */
+"3ts-EO-JxO.text" = "Beschreibung:";
+
+/* Class = "IBUIButton"; normalTitle = "Remove set"; ObjectID = "5ft-bw-EHM"; */
+"5ft-bw-EHM.normalTitle" = "Set löschen";
+
+/* Class = "IBUILabel"; text = "Info"; ObjectID = "71l-pM-OoR"; */
+"71l-pM-OoR.text" = "Info";
+
+/* Class = "IBUIButton"; normalTitle = "All sets"; ObjectID = "86A-iu-70Z"; */
+"86A-iu-70Z.normalTitle" = "Alle sets";
+
+/* Class = "IBUILabel"; text = "Add words"; ObjectID = "AaR-uY-6iQ"; */
+"AaR-uY-6iQ.text" = "Wörter hinzufügen";
+
+/* Class = "IBUINavigationItem"; title = "set"; ObjectID = "B0a-Ha-Q8M"; */
+"B0a-Ha-Q8M.title" = "set";
+
+/* Class = "IBUIButton"; normalTitle = "Reset database"; ObjectID = "BK8-OA-Amm"; */
+"BK8-OA-Amm.normalTitle" = "Datenbank zurücksetzen";
+
+/* Class = "IBUILabel"; text = "Word:"; ObjectID = "CO7-hd-WMh"; */
+"CO7-hd-WMh.text" = "Wort:";
+
+/* Class = "IBUIButton"; normalTitle = "Look Up"; ObjectID = "ClZ-1O-gRR"; */
+"ClZ-1O-gRR.normalTitle" = "Nachschlagen";
+
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "DXx-Xg-Rmp"; */
+"DXx-Xg-Rmp.text" = "Label";
+
+/* Class = "IBUILabel"; text = "Your language:"; ObjectID = "Dr4-sm-G3y"; */
+"Dr4-sm-G3y.text" = "Deine Sprache:";
+
+/* Class = "IBUILabel"; text = "5 wrong"; ObjectID = "G9S-kC-Ucz"; */
+"G9S-kC-Ucz.text" = "5 falsch";
+
+/* Class = "IBUILabel"; text = "Language:"; ObjectID = "GGT-w8-C3o"; */
+"GGT-w8-C3o.text" = "Beschreibung:";
+
+/* Class = "IBUILabel"; text = "View statistics"; ObjectID = "GNf-GX-Vvh"; */
+"GNf-GX-Vvh.text" = "Statistiken";
+
+/* Class = "IBUINavigationItem"; title = "word"; ObjectID = "GdZ-6a-C9t"; */
+"GdZ-6a-C9t.title" = "word";
+
+/* Class = "IBUIButton"; normalTitle = "All words"; ObjectID = "HoU-Wb-0Eg"; */
+"HoU-Wb-0Eg.normalTitle" = "Alle Wörter";
+
+/* Class = "IBUINavigationItem"; title = "New Set"; ObjectID = "Id4-L3-YGV"; */
+"Id4-L3-YGV.title" = "Neues set";
+
+/* Class = "IBUIButton"; normalTitle = "Reset"; ObjectID = "Ie5-vN-OPd"; */
+"Ie5-vN-OPd.normalTitle" = "Zurücksetzen";
+
+/* Class = "IBUILabel"; text = "Set: "; ObjectID = "ImE-qY-kVv"; */
+"ImE-qY-kVv.text" = "Set: ";
+
+/* Class = "IBUINavigationItem"; title = "dict.cc"; ObjectID = "J3H-Tf-mxV"; */
+"J3H-Tf-mxV.title" = "Nachschlagen";
+
+/* Class = "IBUIBarButtonItem"; title = "Create"; ObjectID = "KPH-Iq-DZC"; */
+"KPH-Iq-DZC.title" = "Hinzufügen";
+
+/* Class = "IBUITextView"; text = "Your words are organized in sets which are like categories such as \"Summer holiday\" or \"Cooking\".\nStart by creating a new set on the next page."; ObjectID = "L4o-AO-zey"; */
+"L4o-AO-zey.text" = "Your words are organized in sets which are like categories such as \"Summer holiday\" or \"Cooking\".\nStart by creating a new set on the next page.";
+
+/* Class = "IBUIButton"; normalTitle = "Reset statistics"; ObjectID = "MiN-hN-sKP"; */
+"MiN-hN-sKP.normalTitle" = "Statistiken zurücksetzen";
+
+/* Class = "IBUIButton"; normalTitle = "Continue"; ObjectID = "Ndl-lr-JiU"; */
+"Ndl-lr-JiU.normalTitle" = "Weiter";
+
+/* Class = "IBUITableViewSection"; headerTitle = "Optional"; ObjectID = "OKl-ln-yal"; */
+"OKl-ln-yal.headerTitle" = "Sprache";
+
+/* Class = "IBUINavigationItem"; title = "set"; ObjectID = "PJ4-VS-Kjn"; */
+"PJ4-VS-Kjn.title" = "set";
+
+/* Class = "IBUITextView"; text = "tranlations"; ObjectID = "QUh-Hr-XDB"; */
+"QUh-Hr-XDB.text" = "Übersetzungen";
+
+/* Class = "IBUILabel"; text = "Translations:"; ObjectID = "RDx-8a-cFp"; */
+"RDx-8a-cFp.text" = "Übersetzungen:";
+
+/* Class = "IBUIButton"; normalTitle = "Right"; ObjectID = "WCR-VR-lnz"; */
+"WCR-VR-lnz.normalTitle" = "Richtig";
+
+/* Class = "IBUILabel"; text = "Learn (setlang -> userlang)"; ObjectID = "Wey-Pe-qpI"; */
+"Wey-Pe-qpI.text" = "Lernen";
+
+/* Class = "IBUINavigationItem"; title = "set"; ObjectID = "WmH-XK-dvZ"; */
+"WmH-XK-dvZ.title" = "set";
+
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "Ze6-St-CHb"; */
+"Ze6-St-CHb.text" = "Label";
+
+/* Class = "IBUITableViewSection"; headerTitle = "Info"; ObjectID = "dq9-yF-aae"; */
+"dq9-yF-aae.headerTitle" = "Info";
+
+/* Class = "IBUINavigationItem"; title = "Welcome to myWords"; ObjectID = "eFQ-64-dgd"; */
+"eFQ-64-dgd.title" = "Willkommen zu myWords";
+
+/* Class = "IBUILabel"; text = "Word"; ObjectID = "fei-9x-578"; */
+"fei-9x-578.text" = "Wort";
+
+/* Class = "IBUILabel"; text = "5 right"; ObjectID = "gHF-YS-k4a"; */
+"gHF-YS-k4a.text" = "5 richtig";
+
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "hH3-Tp-9GL"; */
+"hH3-Tp-9GL.text" = "Label";
+
+/* Class = "IBUINavigationItem"; title = "Word sets"; ObjectID = "iHc-57-oUI"; */
+"iHc-57-oUI.title" = "Sets";
+
+/* Class = "IBUINavigationItem"; title = "set"; ObjectID = "lgk-Bj-kgc"; */
+"lgk-Bj-kgc.title" = "set";
+
+/* Class = "IBUILabel"; text = "Translations:"; ObjectID = "lhM-S8-QVN"; */
+"lhM-S8-QVN.text" = "Übersetzungen:";
+
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "n42-0q-1lN"; */
+"n42-0q-1lN.text" = "Label";
+
+/* Class = "IBUILabel"; text = "Browse"; ObjectID = "ndF-vl-9C2"; */
+"ndF-vl-9C2.text" = "Durchsuchen";
+
+/* Class = "IBUILabel"; text = "Learn (userlang -> setlang)"; ObjectID = "pJL-Sn-wm3"; */
+"pJL-Sn-wm3.text" = "Abfragen";
+
+/* Class = "IBUINavigationItem"; title = "New Word"; ObjectID = "qvw-xV-jGa"; */
+"qvw-xV-jGa.title" = "Neues Wort";
+
+/* Class = "IBUILabel"; text = "Name:"; ObjectID = "rCl-Eo-HOW"; */
+"rCl-Eo-HOW.text" = "Name:";
+
+/* Class = "IBUIBarButtonItem"; title = "Settings"; ObjectID = "sJo-2z-HtY"; */
+"sJo-2z-HtY.title" = "Einstellungen";
+
+/* Class = "IBUILabel"; text = "Word:"; ObjectID = "sit-CA-89G"; */
+"sit-CA-89G.text" = "Wort:";
+
+/* Class = "IBUIButton"; normalTitle = "Wrong"; ObjectID = "skf-lb-dkI"; */
+"skf-lb-dkI.normalTitle" = "Falsch";
+
+/* Class = "IBUILabel"; text = "iColoud support:"; ObjectID = "u1t-n1-hzQ"; */
+"u1t-n1-hzQ.text" = "iColoud unterstützung:";
+
+/* Class = "IBUINavigationItem"; title = "Settings"; ObjectID = "uOE-x2-AoB"; */
+"uOE-x2-AoB.title" = "Einstellungen";
+
+/* Class = "IBUILabel"; text = "Your language:"; ObjectID = "wAR-gp-80z"; */
+"wAR-gp-80z.text" = "Your language:";
+
+/* Class = "IBUIButton"; normalTitle = "Edit"; ObjectID = "x2e-cx-qq1"; */
+"x2e-cx-qq1.normalTitle" = "Bearbeiten";
+
+/* Class = "IBUILabel"; text = "score"; ObjectID = "y9Z-be-YOv"; */
+"y9Z-be-YOv.text" = "score";
+
+/* Class = "IBUILabel"; text = "word"; ObjectID = "yw9-Nm-kZO"; */
+"yw9-Nm-kZO.text" = "word";
+
+/* Class = "IBUITextView"; text = "You can use iCloud to synchronize you data between all your iOS devices such as you iPhone, your iPad or you iPod touch. If you don't want this feature, just disable iCloud here."; ObjectID = "zHe-NJ-aI6"; */
+"zHe-NJ-aI6.text" = "You can use iCloud to synchronize you data between all your iOS devices such as you iPhone, your iPad or you iPod touch. If you don't want this feature, just disable iCloud here.";
+
+/* Class = "IBUILabel"; text = "Score:"; ObjectID = "zcS-y8-pdD"; */
+"zcS-y8-pdD.text" = "Fortschritt:";
