@@ -30,7 +30,7 @@
 {
     [super viewDidLoad];
     
-    self.helpPageNames = @[@"Getting started", @"Quiz algorithm", @"Test"];
+    self.helpPageNames = @[@"Getting started", @"Quiz algorithm", @"Word lookup"];
 }
 
 - (void)didReceiveMemoryWarning

@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UITextView *translationsTextView;
 @property (weak, nonatomic) IBOutlet UILabel *infoLabel;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *barButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *lowerBarButton;
 @property (weak, nonatomic) IBOutlet UIImageView *languageImageView;
 
 @property (strong, nonatomic) UIAlertView *showResultAlertView;
@@ -27,7 +28,6 @@
 @property (nonatomic) NSUInteger numWordsGuessed;
 @property (nonatomic) NSUInteger numWordsRight;
 @property (nonatomic) NSUInteger numWordsTotal;
-
 
 @end
 
@@ -111,6 +111,7 @@
         [self newWordUI];
         self.mustGetNewWord = NO;
         self.barButton.title = NSLocalizedString(@"CheckText", @"Check");
+        self.lowerBarButton.title = NSLocalizedString(@"CheckText", @"Check");
     } else {
         // check answer
         if([self input: self.wordTextField.text isCorrectAnswerFor:self.currentWord.name]) {
@@ -135,6 +136,7 @@
         self.wordSet.lastUsedDate = [NSDate date];
         
         self.barButton.title = NSLocalizedString(@"NextText", @"Next");
+        self.lowerBarButton.title = NSLocalizedString(@"NextText", @"Next");
         self.mustGetNewWord = YES;
         
         self.numWordsGuessed++;
@@ -180,15 +182,26 @@
 - (IBAction)doneButtonTouched:(id)sender {
     CGFloat completeness = (CGFloat) self.numWordsGuessed / self.numWordsTotal;
 
-    if(completeness >= 0.5) {
+    if((self.numWordsGuessed >= 5 && completeness >= 0.5) || self.numWordsGuessed >= 20) {
         NSString *stopTextMessageTitle = NSLocalizedString(@"stopTextMessageTitle", @"Stop test");
         NSString *stopTextMessage = NSLocalizedString(@"stopTextMessage", @"Really stop test? Words remaining");
-        NSString *msg = [NSString stringWithFormat:@"%@: %u", stopTextMessage, self.numWordsTotal - self.numWordsGuessed];
+        NSString *msg = [NSString stringWithFormat:@"%@: %lu", stopTextMessage, (unsigned long) (self.numWordsTotal - self.numWordsGuessed)];
         self.cancelTestAlertView = [[UIAlertView alloc] initWithTitle:stopTextMessageTitle message:msg delegate:self cancelButtonTitle: NSLocalizedString(@"DoneOptionText", @"Done") otherButtonTitles: NSLocalizedString(@"ContinueOptionText", @"Continue"), nil];
     } else {
+        NSUInteger numWordsRemaining;
+        if(self.numWordsTotal <= 5) {
+            numWordsRemaining = self.numWordsTotal - self.numWordsGuessed;
+        } else if(self.numWordsTotal <= 10) {
+            numWordsRemaining = 5 - self.numWordsGuessed;
+        } else if(self.numWordsTotal >= 40){
+            numWordsRemaining = 20 - self.numWordsGuessed;
+        } else {
+            numWordsRemaining = [self roundUp: self.numWordsTotal/2.0] - self.numWordsGuessed;
+        }
+        
         NSString *cancelTestMessageTitle = NSLocalizedString(@"cancelTestMessageTitle", @"Cancel test");
-        NSString *cancelTestMessage = NSLocalizedString(@"cancelTestMessage", @"Really cancel test? You must at least answer half the set's words so the test is valid. (remaining");
-        NSString *msg = [NSString stringWithFormat:@"%@: %u)", cancelTestMessage, [self roundUp: self.numWordsTotal/2.0] - self.numWordsGuessed];
+        NSString *cancelTestMessage = NSLocalizedString(@"cancelTestMessage", @"Really cancel test? You must answere more of the set's words so the test is valid. (remaining");
+        NSString *msg = [NSString stringWithFormat:@"%@: %lu)", cancelTestMessage, (unsigned long)numWordsRemaining];
         self.cancelTestAlertView = [[UIAlertView alloc] initWithTitle:cancelTestMessageTitle message:msg delegate:self cancelButtonTitle:NSLocalizedString(@"CancelOptionText", @"Cancel")otherButtonTitles: NSLocalizedString(@"ContinueOptionText", @"Continue"), nil];
     }
     
@@ -233,11 +246,10 @@
     self.wordSet.changesSinceLastTest = [NSNumber numberWithInteger:0];
     
     NSString *resultsText = NSLocalizedString(@"resultsText", @"Result");
-    NSString *scoreText = NSLocalizedString(@"ScoreText", @"Score");
     NSString *finishedText = NSLocalizedString(@"FinishedText", @"Finished");
     NSString *testFinishedText = NSLocalizedString(@"testFinishedText", @"Test finished");
     
-    NSString *msg = [NSString stringWithFormat:@"%@\n\n%@: %lu/%lu\n%@: %lu %%", testFinishedText, resultsText, (unsigned long)self.numWordsRight, (unsigned long)self.numWordsGuessed, scoreText, (unsigned long)score];
+    NSString *msg = [NSString stringWithFormat:@"%@\n\n%@: %lu/%lu (%lu %%)", testFinishedText, resultsText, (unsigned long)self.numWordsRight, (unsigned long)self.numWordsGuessed, (unsigned long)score];
     self.showResultAlertView = [[UIAlertView alloc] initWithTitle:finishedText message: msg delegate:self cancelButtonTitle: NSLocalizedString(@"OKOptionText", @"OK") otherButtonTitles: nil];
     [self.showResultAlertView show];
 }

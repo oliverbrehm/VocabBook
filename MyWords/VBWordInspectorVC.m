@@ -24,6 +24,9 @@
 @property (strong, nonatomic) UIButton *levelResetButton;
 @property (strong, nonatomic) UIButton *removeWordButton;
 
+@property (weak, nonatomic) IBOutlet UIButton *upButton;
+@property (weak, nonatomic) IBOutlet UIButton *rightButton;
+
 @property (weak, nonatomic) IBOutlet UILabel *translationsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *wordLabel;
 @property (weak, nonatomic) IBOutlet UILabel *setLabel;
@@ -156,6 +159,9 @@
         self.setLabel.hidden = YES;
         self.levelLabel.hidden = YES;
     }
+    
+    self.upButton.hidden = YES;
+    self.rightButton.hidden = YES;
 }
 
 
@@ -274,6 +280,17 @@
 
 #pragma mark User actions
 
+-(IBAction) upButtonTouched:(id)sender
+{
+    [self.translationsTextView resignFirstResponder];
+    [self.wordTextField becomeFirstResponder];
+}
+
+-(IBAction) rightButtonTouched:(id)sender
+{
+    [self lookupButtonTouched:sender];
+}
+
 -(void) levelResetButtonTouched:(id)sender {
     NSString *resetWordMessageTitle = NSLocalizedString(@"resetWordMessageTitle", @"Really reset progress on this word?");
     self.resetLevelActionSheet = [[UIActionSheet alloc] initWithTitle: resetWordMessageTitle delegate:self cancelButtonTitle:NSLocalizedString(@"CancelOptionText", @"Cancel") destructiveButtonTitle: NSLocalizedString(@"ResetOptionText", @"Reset") otherButtonTitles: nil];
@@ -282,7 +299,7 @@
 
 -(void) removeWordButtonTouched: (id) sender {
     NSString *removeWordMessageTitle = NSLocalizedString(@"removeWordMessageTitle", @"Really remove word?");
-    self.removeWordActionSheet = [[UIActionSheet alloc] initWithTitle: removeWordMessageTitle delegate:self cancelButtonTitle: NSLocalizedString(@"CancelOptionTitle", @"Cancel") destructiveButtonTitle: NSLocalizedString(@"RemoveOptionText", @"Remove") otherButtonTitles: nil];
+    self.removeWordActionSheet = [[UIActionSheet alloc] initWithTitle: removeWordMessageTitle delegate:self cancelButtonTitle: NSLocalizedString(@"CancelOptionText", @"Cancel") destructiveButtonTitle: NSLocalizedString(@"RemoveOptionText", @"Remove") otherButtonTitles: nil];
     [self.removeWordActionSheet showInView:self.view];
 }
 
@@ -320,6 +337,8 @@
     }
 }
 
+#define INFO_VIEW_Y 100.0
+
 -(void) createWordInDocument: (UIManagedDocument*) document
 {
     Word *word = [NSEntityDescription insertNewObjectForEntityForName:@"Word" inManagedObjectContext:document.managedObjectContext];
@@ -339,16 +358,50 @@
         return;
     }
     
+    // increase app icon batch number
+    NSInteger oldNumber = [UIApplication sharedApplication].applicationIconBadgeNumber;
+    [UIApplication sharedApplication].applicationIconBadgeNumber = oldNumber + 1;
     
-    NSString *msg = [NSString stringWithFormat:@"%@: %@\n%@: %@", NSLocalizedString(@"WordText", @"Word"), self.wordTextField.text, NSLocalizedString(@"SetText", @"Set"),  self.wordSet.name];
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"WordAddedText", @"Word added") message:msg delegate:self cancelButtonTitle: NSLocalizedString(@"OKOptionText", @"OK") otherButtonTitles: nil];
-    [alert show];
+    [self showInfoView];
     
     [self.wordTextField becomeFirstResponder];
     
     // clear input
     self.wordTextField.text = @"";
     self.translationsTextView.text = @"";
+}
+
+#define INFO_VIEW_INSET 5.0
+-(void) showInfoView
+{
+    NSString *msg = [NSString stringWithFormat:@"%@:\n%@", NSLocalizedString(@"WordAddedText", @"Word added"), self.wordTextField.text];
+    
+    UITextView *infoTextView = [[UITextView alloc] initWithFrame: CGRectZero];
+    // make room for 2 lines of text
+    infoTextView.text = msg;
+    infoTextView.font = self.wordLabel.font;
+    infoTextView.textAlignment = NSTextAlignmentCenter;
+    [infoTextView sizeToFit];
+    infoTextView.frame = CGRectMake(INFO_VIEW_INSET, INFO_VIEW_INSET, infoTextView.bounds.size.width, infoTextView.bounds.size.height);
+
+    UIView *infoView = [[UIView alloc] initWithFrame: CGRectMake(self.view.bounds.size.width / 2.0 - infoTextView.bounds.size.width / 2.0 - INFO_VIEW_INSET, INFO_VIEW_Y - INFO_VIEW_INSET,
+                                                                 infoTextView.bounds.size.width + 2 * INFO_VIEW_INSET, infoTextView.bounds.size.height + 2 * INFO_VIEW_INSET)];
+
+    infoView.backgroundColor = [UIColor whiteColor];
+    infoView.alpha = 1.0;
+    infoView.layer.cornerRadius = 5.0;
+    infoView.layer.borderColor = [[VBHelper globalButtonColor] CGColor];
+    infoView.layer.borderWidth = 1.0;
+    [self.view addSubview: infoView];
+    [infoView addSubview: infoTextView];
+    
+    [UIView animateWithDuration:0.6 delay:0.8 options: UIViewAnimationOptionCurveEaseOut animations:^{
+        infoView.alpha = 0.0;
+
+    } completion:^(BOOL finished) {
+        [infoView removeFromSuperview];
+
+    }];
 }
 
 -(void) setButtonTouched: (id) sender
@@ -399,8 +452,12 @@
     if(self.word) {
         self.word.translations = textView.text;
     }
-    
-    self.view.bounds = CGRectMake(0.0, 0.0, self.view.bounds.size.width, self.view.bounds.size.height);
+
+    [UIView animateWithDuration:0.2 animations:^{
+        self.view.bounds = CGRectMake(0.0, 0.0, self.view.bounds.size.width, self.view.bounds.size.height);
+        self.upButton.hidden = YES;
+        self.rightButton.hidden = YES;
+    }];
 
     return YES;
 }
@@ -460,7 +517,12 @@
     CGFloat navigationBarHeight = self.navigationController.navigationBar.bounds.size.height;
     
     CGFloat newYOrigin = self.translationsTextView.frame.origin.y - statusBarHeight - navigationBarHeight - 4.0;
-    self.view.bounds = CGRectMake(0.0, newYOrigin, self.view.bounds.size.width, self.view.bounds.size.height);
+    
+    [UIView animateWithDuration:0.2 animations:^{
+        self.view.bounds = CGRectMake(0.0, newYOrigin, self.view.bounds.size.width, self.view.bounds.size.height);
+        self.upButton.hidden = NO;
+        self.rightButton.hidden = NO;
+    }];
 }
 
 @end

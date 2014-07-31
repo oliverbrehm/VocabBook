@@ -27,7 +27,7 @@
 
 #define EMPTYCELL_HEIGHT 96.0
 
-@interface VBMenuCVC () <UICollectionViewDelegateFlowLayout, UIGestureRecognizerDelegate>
+@interface VBMenuCVC () <UICollectionViewDelegateFlowLayout, UIGestureRecognizerDelegate, UIAlertViewDelegate>
 
 @property (strong, nonatomic) NSArray *wordSets;
 @property (strong, nonatomic) NSArray *recentWords;
@@ -88,6 +88,49 @@
             return;
         }
     }
+    
+    [self promtForAppRating];
+}
+
+#define NEXT_DATE_FOR_APP_RATING_PROMT_KEY @"nextDateForAppRatingPromt"
+
+-(void) promtForAppRating
+{
+    NSDate *nextDateForAppRatingPromt = [[NSUserDefaults standardUserDefaults] objectForKey: NEXT_DATE_FOR_APP_RATING_PROMT_KEY];
+    if(!nextDateForAppRatingPromt) {
+        NSTimeInterval oneWeek = 60 * 60 * 24 * 7; // seconds for one week
+        nextDateForAppRatingPromt = [NSDate dateWithTimeIntervalSinceNow: oneWeek];
+        [[NSUserDefaults standardUserDefaults] setObject:nextDateForAppRatingPromt forKey:NEXT_DATE_FOR_APP_RATING_PROMT_KEY];
+        return;
+    }
+    
+    if([nextDateForAppRatingPromt compare:[NSDate date]] < 0) {
+        // promt for app rating
+        NSString *rateAppTitle = NSLocalizedString(@"Rate Vocab Book", @"Rate app promt title");
+        NSString *rateAppMessage = NSLocalizedString(@"Would you like to rate Vocab Book on the app store? Ratings are very important for other customers who would like to purchase the app and as feedback for developers.", @"Rate app promt message");
+        NSString *rateAppOptionNow = NSLocalizedString(@"Rate now", @"Rate app option now");
+        NSString *rateAppOptionLater = NSLocalizedString(@"Remind me later", @"Rate app option later");
+        NSString *rateAppOptionNever = NSLocalizedString(@"Don't ask again", @"Rate app option don't ask again");
+        
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle: rateAppTitle message: rateAppMessage delegate:self cancelButtonTitle: rateAppOptionNow otherButtonTitles: rateAppOptionLater, rateAppOptionNever, nil];
+        [alertView show];
+    }
+}
+
+-(void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if(buttonIndex == 0) { // "Rate now"
+        [VBHelper linkToRateApp];
+        NSTimeInterval sixWeeks = 60 * 60 * 24 * 7 * 6; // seconds for six weeks
+        NSDate *nextDateForAppRatingPromt = [NSDate dateWithTimeIntervalSinceNow: sixWeeks];
+        [[NSUserDefaults standardUserDefaults] setObject: nextDateForAppRatingPromt forKey:NEXT_DATE_FOR_APP_RATING_PROMT_KEY];
+    } else if(buttonIndex == 1) { // "Remind me later"
+        NSTimeInterval oneWeek = 60 * 60 * 24 * 7; // seconds for one week
+        NSDate *nextDateForAppRatingPromt = [NSDate dateWithTimeIntervalSinceNow: oneWeek];
+        [[NSUserDefaults standardUserDefaults] setObject:nextDateForAppRatingPromt forKey:NEXT_DATE_FOR_APP_RATING_PROMT_KEY];
+    } else if(buttonIndex == 2) { // "Don't ask again"
+        [[NSUserDefaults standardUserDefaults] setObject:[NSDate distantFuture] forKey:NEXT_DATE_FOR_APP_RATING_PROMT_KEY];
+    }
 }
  
 #pragma mark User actions
@@ -128,7 +171,8 @@
 
 -(void) queryData
 {
-    //dispatch_async (dispatch_get_global_queue (DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void) {
+    NSLog(@"VBMenuCVC querying data...");
+    
     VBAppDelegate *appDelegate = (VBAppDelegate*) [UIApplication sharedApplication].delegate;
     UIManagedDocument *document = appDelegate.managedDocument;
     
@@ -156,6 +200,9 @@
     
     //[self refreshLayout];
     [self.collectionView reloadData];
+    
+    // determine number of due words for application icon badge number
+    [UIApplication sharedApplication].applicationIconBadgeNumber = [VBHelper numberOfDueWords];
 }
 
 -(NSInteger) numberOfSectionsInCollectionView:(UICollectionView *)collectionView
@@ -235,7 +282,7 @@
          cell.textLabel.text = set.name;
          cell.infoLabel.text = [NSString stringWithFormat:@"%lu %@", (unsigned long)[set.words count],
                                 ([set.words count] != 1) ? NSLocalizedString(@"wordsPlural", @"words") :
-                                NSLocalizedString(@"wordsSigular", @"word")];
+                                NSLocalizedString(@"wordsSingular", @"word")];
          
          
          cell.languageLabel.text = set.language;
@@ -336,9 +383,13 @@
             [self performSegueWithIdentifier:@"allSets" sender:self];
         }
     } else if(indexPath.section == 1) {
-        [self performSegueWithIdentifier:@"setMenu" sender:[collectionView cellForItemAtIndexPath:indexPath]];
+        if(self.wordSets && [self.wordSets count] > 0) {
+            [self performSegueWithIdentifier:@"setMenu" sender:[collectionView cellForItemAtIndexPath:indexPath]];
+        }
     } else if(indexPath.section == 2) {
-        [self performSegueWithIdentifier:@"wordInspector" sender:[collectionView cellForItemAtIndexPath:indexPath]];
+        if(self.recentWords && [self.recentWords count] > 0) {
+            [self performSegueWithIdentifier:@"wordInspector" sender:[collectionView cellForItemAtIndexPath:indexPath]];
+        }
     }
     
 }
@@ -434,37 +485,5 @@
         [self queryData];
     });
 }
-
-
-
-
-
-
-
-
-
-
-
-/*
-#warning debug remove
-- (void) imageFromView:(UIView *)view toPath: (NSString*) path {
-    
-    if([[NSFileManager defaultManager] fileExistsAtPath:path]) {
-        return;
-    }
-    
-    UIGraphicsBeginImageContext(view.frame.size);
-    CGContextRef currentContext = UIGraphicsGetCurrentContext();
-    //CGContextTranslateCTM(currentContext, 0, view.frame.size.height);
-    // passing negative values to flip the image
-    //CGContextScaleCTM(currentContext, 1.0, -1.0);
-    [view.layer renderInContext:currentContext];
-    UIImage *screenshot = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    NSLog(@"Writing image to path: %@", path);
-    
-    [UIImagePNGRepresentation(screenshot) writeToFile:path atomically:YES];
-}*/
 
 @end

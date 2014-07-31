@@ -40,7 +40,7 @@
      CGFloat dashes[] = {1.0, 1.0};
      CGContextSetLineDash(context, 0.0, dashes, 2.0);
      
-     [self drawHorizontalLine:self.translationsTextView.frame.origin.y - 20.0 inContext:context];
+     [self drawHorizontalLine:self.translationsTextView.frame.origin.y - 5.0 inContext:context];
      [self drawHorizontalLine: self.translationsTextView.frame.origin.y + self.translationsTextView.frame.size.height + 4.0 inContext:context];
  }
  

@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UITextView *answerTextView;
 @property (weak, nonatomic) IBOutlet UIButton *wrongButton;
 @property (weak, nonatomic) IBOutlet UIButton *rightButton;
+@property (weak, nonatomic) IBOutlet UIButton *wordInfoButton;
 
 @property (strong,nonatomic) UIAlertView *continueLearningAlertView;
 
@@ -86,6 +87,7 @@
     [self.wrongButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
     self.rightButton.enabled = NO;
     [self.rightButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+    self.wordInfoButton.hidden = YES;
     
     // add language image
     VBAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
@@ -128,12 +130,12 @@
 -(void) updateUI
 {
     if(self.toUserlanguage) {
-        CGFloat y = self.wordLabel.frame.origin.y + self.wordLabel.bounds.size.height + 20.0;
+        CGFloat y = self.wordLabel.frame.origin.y + self.wordLabel.bounds.size.height + 35.0;
         CGFloat height = self.view.frame.size.height - y;
         self.showAnswerButton.frame = CGRectMake(0.0, y, self.view.bounds.size.width, height);
     } else {
         CGFloat y = self.navigationController.navigationBar.bounds.size.height;
-        CGFloat height = self.wordLabel.frame.origin.y + self.wordLabel.bounds.size.height + 20.0 - self.navigationController.navigationBar.bounds.size.height;
+        CGFloat height = self.wordLabel.frame.origin.y + self.wordLabel.bounds.size.height + 35.0 - self.navigationController.navigationBar.bounds.size.height;
         self.showAnswerButton.frame = CGRectMake(0.0, y, self.view.bounds.size.width, height);
     }
 }
@@ -149,6 +151,7 @@
     [self.wrongButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     self.rightButton.enabled = YES;
     [self.rightButton setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
+    self.wordInfoButton.hidden = NO;
 }
 
 - (IBAction)wrongButtonTouched:(id)sender {
@@ -170,9 +173,14 @@
 }
 
 - (IBAction)rightButtonTouched:(id)sender {
-    if([self.currentWord isDue] && [self.currentWord.level intValue] < 7) {
-        self.currentWord.level = [NSNumber numberWithInt: [self.currentWord.level intValue] + 1];
+    if([self.currentWord isDue]) {
+        if([self.currentWord.level intValue] < 7) {
+            self.currentWord.level = [NSNumber numberWithInt: [self.currentWord.level intValue] + 1];
+        }
         self.currentWord.lastQuizzedDate = [NSDate date];
+        // decrease app icon batch number
+        NSInteger oldNumber = [UIApplication sharedApplication].applicationIconBadgeNumber;
+        [UIApplication sharedApplication].applicationIconBadgeNumber = oldNumber - 1;
     }
     
     self.wordSet.lastUsedDate = [NSDate date];
@@ -183,7 +191,9 @@
     self.currentWord = [self getNewWord];
     if (self.currentWord) {
         [self newWordUI];
-    }}
+    }
+}
+
 - (IBAction)doneButtonTouched:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }

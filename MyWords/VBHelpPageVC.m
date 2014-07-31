@@ -32,10 +32,7 @@
 
 -(void) viewWillAppear:(BOOL)animated
 {
-    NSString *userLanguage = [[NSLocale preferredLanguages] objectAtIndex:0];
-    NSString *resourceName = [NSString stringWithFormat:@"%@_%@", self.pageName, userLanguage];
-
-    NSString *urlPath = [[NSBundle mainBundle] pathForResource: resourceName ofType:@"html"];
+    NSString *urlPath = [[NSBundle mainBundle] pathForResource: self.pageName ofType:@"html"];
     if(!urlPath) {
         [self loadErrorPage];
         return;

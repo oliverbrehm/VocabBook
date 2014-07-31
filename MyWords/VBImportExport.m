@@ -11,6 +11,7 @@
 #import "Word.h"
 #import "WordSet+DocumentOperations.h"
 #import "VBHelper.h"
+#import "VBPremiumTVC.h"
 
 @implementation VBImportExport
 
@@ -20,7 +21,7 @@
     if(!dbImport) {
         NSLog(@"Error importing text file");
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"ErrorText", @"Error") message:
-                                  NSLocalizedString(@"ErrorOpeningTextFileForImporting", @"Error opening the import file. Please make sure you uploaded a file called \"import.txt\" via iTunes file sharing.") delegate:nil cancelButtonTitle:NSLocalizedString(@"OKOptionText", @"OK") otherButtonTitles:nil];
+                                  NSLocalizedString(@"ErrorOpeningTextFileForImporting", @"Error opening the import file.") delegate:nil cancelButtonTitle:NSLocalizedString(@"OKOptionText", @"OK") otherButtonTitles:nil];
         [alertView show];
         return;
     }
@@ -32,8 +33,25 @@
     int numAdded = 0;
     int numExisted = 0;
     
+    BOOL usingPremium = [[NSUserDefaults standardUserDefaults] boolForKey:PREMIUM_IDENTIFIER];
+    NSUInteger numberOfWords = [VBHelper countAllWords];
+
     NSArray *words = [dbImport componentsSeparatedByString:@"\n"];
     for(NSString *word in words) {
+        // check if WORD_LIMIT is reached
+        if(!usingPremium && numberOfWords >= WORD_LIMIT) {
+            NSString *importSuccessfullTitle = NSLocalizedString(@"ImportSuccessfullTitle", @"Import successfull");
+            NSString *numWordsSuccessfullyAdded = NSLocalizedString(@"NumWordsSuccessfullyAdded", @"words successfully added.");
+            NSString *numWordsAlreadyExisted = NSLocalizedString(@"NumWordsAlreadyExisted", @"words already existed.");
+            NSString *wordsNotImportedBecauseNoPremium = NSLocalizedString(@"wordsNotImportedBecauseNoPremium", @"Some words were not imported because you can only have 60 words at a time without using PREMIUM. Please consider buying PREMIUM for a unlimited number of words and more features.");
+            
+            NSString *msg = [NSString stringWithFormat:@"%d %@ %d %@ %@", numAdded,numWordsSuccessfullyAdded, numExisted, numWordsAlreadyExisted, wordsNotImportedBecauseNoPremium];
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle: importSuccessfullTitle message:msg delegate:nil cancelButtonTitle:NSLocalizedString(@"OKOptionText", @"OK") otherButtonTitles:nil];
+            [alertView show];
+
+            return;
+        }
+        
         NSArray *components = [word componentsSeparatedByString:@","];
         
         if([components count] < 4) {
@@ -99,6 +117,7 @@
         
         word.translations = translations;
         numAdded++;
+        numberOfWords++;
     }
     
     NSString *importSuccessfullTitle = NSLocalizedString(@"ImportSuccessfullTitle", @"Import successfull");

@@ -9,7 +9,7 @@
 // help pages
 "Getting startedPageTitle" = "Einführung";
 "Quiz algorithmPageTitle" = "Der Abfragealgorithmus";
-"TestPageTitle" = "Vocabeltest";
+"Word lookupPageTitle" = "Wörter nachschlagen";
 
 "OKOptionText" = "OK";
 "CancelOptionText" = "Abbrechen";
@@ -24,7 +24,7 @@
 "NameText" = "Name";
 "WordText" = "Wort";
 "wordsPlural" = "Wörter";
-"wordsSigular" = "Wort";
+"wordsSingular" = "Wort";
 "SetText" = "Set";
 "WrongText" = "falsch";
 "RightText" = "richtig";
@@ -40,7 +40,7 @@
 "RecentWordsLabel" = "Neuste Wörter";
 "AllWordsVCTitle" = "Alle Wörter";
 "EmptyLanguageMessageTitel" = "Fehlende Angabe";
-"EmptyLanguageMessage" = "Bitte gib Deine Sprache ein";
+"EmptyLanguageMessage" = "Bitte gib deine Sprache ein";
 "RemoveFromFavouritesText" = "- Favouriten";
 "AddToFavouritesText" = "+ Favouriten";
 "EmptyNameMessageTitle" = "Fehlende Angabe";
@@ -54,7 +54,7 @@
 "EmptyWordOrTranslationMessageTitle" = "Fehlende Angabe";
 "EmptyWordOrTranslationMessage" = "Bitte gib ein Wort und eine Übersetzung ein";
 "WordAddedText" = "Wort hinzugefügt";
-"ErrorOpeningTextFileForImporting" = "Fehler beim Öffnen der zu importierenden Datei. Bitte lade eine Datei mit dem Namen \"import.txt\" via iTunes file sharing hoch.";
+"ErrorOpeningTextFileForImporting" = "Fehler beim Öffnen der zu importierenden Datei.";
 
 "SetAlreadyExistsMessage" = "Ein Set mit dem gleichen Namen existiert bereits. Möchtest du es trotzdem erstellen?";
 "SetAlreadyExistsMessageTitle" = "Set existiert bereits";
@@ -88,8 +88,8 @@
 "BuyPremiumText" = "Premium kaufen";
 "RestorePremiumText" = "Wiederherstellen";
 
-"NoFavouriteSetsText" = "Keine Favouriten vorhanden. Wähle \"+\" in der linken oberen Ecke um ein Set zu erstellen. Um ein Set zu den Favouriten hinzuzufügen, wähle ein Set aus, gehe dann zu \"Info\" und aktiviere den Schalter \"In favourites\".";
-"NoRecentWordsText" = "No recent words. Select a set and choose \"Add words\"";
+"NoFavouriteSetsText" = "Keine Favouriten vorhanden. Wähle \"+\" in der linken oberen Ecke um ein Set zu erstellen. Um ein Set zu den Favouriten hinzuzufügen, wähle ein Set aus, gehe dann zu \"Info\" und aktiviere den Schalter \"In Favouriten\".";
+"NoRecentWordsText" = "Keine Wörter. Wähle ein Set aus und tippe auf \"Wörter hinzufügen\"";
 
 "InfoText" = "Info";
 "LanguageText" = "Sprache";
@@ -119,7 +119,7 @@
 "stopTextMessageTitle" = "Test beenden";
 "stopTextMessage" = "Test wirklich beenden? Verbleibende Wörter";
 "cancelTestMessageTitle" = "Test abbrechen";
-"cancelTestMessage" = "Test wirklich abbrechen? Du musst mindesends die Hälfte der Wörter des Sets lernen, damit der Test gültig ist. (Verbleibende Wörter";
+"cancelTestMessage" = "Test wirklich abbrechen? Du musst noch ein paar Wörter des Sets lernen, damit der Test gültig ist. (Verbleibende Wörter";
 "resultsText" = "Ergebnis";
 "testFinishedText" = "Test beendet";
 "RemoveOptionText" = "Entfernen";
@@ -143,3 +143,19 @@
 
 "iCloudAvailabilityChangedTitle" = "iCloud nicht mehr verfügbar";
 "iCloudAvailabilityChangedMessage" = "iCloud ist nicht mehr verfügbar. Möchtest du deine Cloud Daten auf den lokalen Speicher übernehmen? (Wenn du nein wählst, werden Daten, die du in der Cloud erstellt hast, auf diesem Gerät nicht mehr verfügbar sein!)";
+
+"lernDirectionText" = "Lernrichtung wählen";
+"coverSetLanguageText" = "Fremdsprache verdecken";
+"coverMyLanguageText" = "Meine Sprache verdecken";
+
+"wordsNotImportedBecauseNoPremium" = "Einige Wörter wurden nicht importiert, da du ohne PREMIUM nur 60 Wörter hinzufügen kannst. Bitte kaufe PREMIUM, um unbegrenzt viele Wörter hinzuzufügen.";
+
+"UnlockPremiumInfoText" = "Kaufe Premium, um alle Features freizuschalten!";
+
+"Premium transaction failed" = "Transaktion fehlgeschlagen";
+
+"Rate Vocab Book" = "Vocab Book bewerten";
+"Would you like to rate Vocab Book on the app store? Ratings are very important for other customers who would like to purchase the app and as feedback for developers." = "Möchtest du Vocab Book im App Store bewerten? Bewertungen sind für andere Nutzer sehr hilfreich und dienen als Feedback für die Entwickler.";
+"Rate now" = "Jetzt bewerten";
+"Remind me later" = "Später erinnern";
+"Don't ask again" = "Nicht mehr erinnern";

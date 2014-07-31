@@ -11,6 +11,7 @@
 #import "VBDocumentManager.h"
 #import "VBLookupURLHelper.h"
 #import "VBMenuCVC.h"
+#import "VBHelper.h"
 
 @interface VBAppDelegate () <UIAlertViewDelegate>
 
@@ -27,6 +28,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    srand((unsigned)time(NULL));
+
     self.documentManager = [[VBDocumentManager alloc] init];
     
     [self prepareiCloud];
@@ -36,7 +39,7 @@
     } else {
         [self.documentManager openLocalDocument];
        }
-        
+    
     // check if user has purchased premium
     if([[NSUserDefaults standardUserDefaults]boolForKey:PREMIUM_IDENTIFIER]) {
         NSLog(@"PREMIUM purchased");
@@ -51,12 +54,25 @@
     self.languages = [VBAppDelegate createLanguages];
     [self loadLanguageImages];
     
-    srand((unsigned)time(NULL));
-
+    [[UIApplication sharedApplication] setMinimumBackgroundFetchInterval: 60 * 60 /* 1 hour */];
+    NSLog(@"minimum: %f", UIApplicationBackgroundFetchIntervalMinimum);
+    
     return YES;
 }
 
-
+- (void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
+{
+    NSLog(@"Updating application icon batch number in background fetch...");
+    NSInteger oldBadgeNumber = [UIApplication sharedApplication].applicationIconBadgeNumber;
+    NSInteger newBadgeNumber = [VBHelper numberOfDueWords];
+    if(newBadgeNumber > oldBadgeNumber) {
+        NSLog(@"New batch number: %d -> %d", oldBadgeNumber, newBadgeNumber);
+        [UIApplication sharedApplication].applicationIconBadgeNumber = newBadgeNumber;
+        completionHandler(UIBackgroundFetchResultNewData);
+    } else {
+        completionHandler(UIBackgroundFetchResultNoData);
+    }
+}
 
 -(void) prepareiCloud
 {
@@ -123,11 +139,11 @@
     id currentiCloudToken = [[NSFileManager defaultManager] ubiquityIdentityToken];
     if(currentiCloudToken) {
         NSData *tokenData = [NSKeyedArchiver archivedDataWithRootObject: currentiCloudToken];
-        [[NSUserDefaults standardUserDefaults] setObject:tokenData forKey:@"com.apple.VocabBook.UbiquityIdentityToken"];
+        [[NSUserDefaults standardUserDefaults] setObject:tokenData forKey:@"com.vocab-book.vocabbook.UbiquityIdentityToken"];
         NSLog(@"getting iCloudToken successfull: %@", [currentiCloudToken description]);
     } else {
         NSLog(@"iCloud is not available");
-        [[NSUserDefaults standardUserDefaults] removeObjectForKey: @"com.apple.VocabBook.UbiquityIdentityToken"];
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey: @"com.vocab-book.vocabbook.UbiquityIdentityToken"];
         
         [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"usingiCloud"];
         [[NSUserDefaults standardUserDefaults] synchronize];
@@ -137,7 +153,7 @@
 
 -(BOOL) iCloudAvailable
 {
-    return [[NSUserDefaults standardUserDefaults] objectForKey:@"com.apple.VocabBook.UbiquityIdentityToken"] != nil;
+    return [[NSUserDefaults standardUserDefaults] objectForKey:@"com.vocab-book.vocabbook.UbiquityIdentityToken"] != nil;
 }
 
 -(void) storeDidChange: (NSNotification*) notification
@@ -165,6 +181,13 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+
+    // refresh main CVC if it is on screen
+    UINavigationController *navigationVC = (UINavigationController*) self.window.rootViewController;
+    VBMenuCVC *menuCVC = (VBMenuCVC*) navigationVC.viewControllers[0];
+    if(menuCVC && menuCVC.view.window) {
+        [menuCVC queryData];
+    }
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
@@ -215,18 +238,18 @@
              @"Deutsch",
              
              // west european
-             @"Dutch",
-             @"Irish",
+             @"Nederlands", // Niederländisch
+             @"Gaeilge", // Irisch
              
              //north european
-             @"Danish",
-             @"Finnish",
-             @"Swedish",
-             @"Norwegian",
+             @"Dansk", // Dänisch
+             @"Suomi", // Finnisch
+             @"Svenska", // Schwedisch
+             @"Norsk", // Norwegisch
              
              // south european
              @"Italiano",
-             @"Greek",
+             @"Greek", // not translated, too many dialects
              @"Türkçe",
 
              // asiatic
@@ -245,16 +268,16 @@
 
              // east european
              @"Polski",
-             @"Albanian",
-             @"Croatian",
-             @"Bulgarian",
-             @"Hungarian",
+             @"Shqip", // Albanisch
+             @"Hrvatski", // Kroatisch
+             @"Bălgarski esik", // Bulgarisch
+             @"Magyar", // Ungarisch
              @"Kazakh",
-             @"Romanian",
-             @"Serbian",
-             @"Slovene",
-             @"Ukrainian",
-             @"Czech"
+             @"Limba română", // Romänisch
+             @"Srpski jezik", // Serbisch
+             @"Slovenščina", // Slovenisch
+             @"Ukrayins'ka mova", // Ukrainisch
+             @"čeština" // Tschechisch
              
              ];
 }

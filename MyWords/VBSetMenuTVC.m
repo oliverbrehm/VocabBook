@@ -29,6 +29,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *lastTestScoreLabel;
 @property (weak, nonatomic) IBOutlet UILabel *testLabel;
 @property (weak, nonatomic) IBOutlet UILabel *quizLabel;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *starButton;
 
 @property (strong, nonatomic) UIActionSheet *resetStatisticsActionSheet;
 @property (strong, nonatomic) UIActionSheet *removeSetActionSheet;
@@ -128,11 +129,24 @@
     
     if (self.wordSet) {
         self.title = self.wordSet.name;
+        self.starButton.image = [self.wordSet.isFavourite boolValue] ? [UIImage imageNamed:@"star"] : [UIImage imageNamed:@"star_empty"];
     } else {
         self.title = NSLocalizedString(@"AllWordsButtonTitle", @"All words");
     }
     
     [self.tableView reloadData];
+}
+- (IBAction)starButtonTouched:(id)sender {
+    if (self.wordSet) {
+        BOOL wasFavorite = [self.wordSet.isFavourite boolValue];
+        if(wasFavorite) {
+            self.wordSet.isFavourite = [NSNumber numberWithBool: NO];
+            self.starButton.image = [UIImage imageNamed: @"star_empty"];
+        } else {
+            self.wordSet.isFavourite = [NSNumber numberWithBool: YES];
+            self.starButton.image = [UIImage imageNamed: @"star"];
+        }
+    }
 }
 
 -(UIColor*) redGreenColorFromScore: (NSUInteger) score
@@ -145,7 +159,11 @@
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if(indexPath.section == 0 && indexPath.row == 1) { // "Learn"
-        self.chooseLearnDirectionActionSheet = [[UIActionSheet alloc] initWithTitle:@"Choose learn direction" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"cover set language" otherButtonTitles:@"cover my language", nil];
+        NSString *lernDirectionText = NSLocalizedString(@"lernDirectionText", @"Choose learn direction");
+        NSString *coverSetLanguageText = NSLocalizedString(@"coverSetLanguageText", @"Cover set language");
+        NSString *coverMyLanguageText = NSLocalizedString(@"coverMyLanguageText", @"Cover my language");
+        
+        self.chooseLearnDirectionActionSheet = [[UIActionSheet alloc] initWithTitle: lernDirectionText delegate:self cancelButtonTitle: NSLocalizedString(@"CancelOptionText", @"Cancel") destructiveButtonTitle: coverSetLanguageText otherButtonTitles: coverMyLanguageText, nil];
         [self.chooseLearnDirectionActionSheet showInView:self.tableView];
         
         // "normalize" button colors
@@ -271,7 +289,7 @@
 
 - (void)removeSet {
     if(self.wordSet) {
-        self.removeSetActionSheet = [[UIActionSheet alloc] initWithTitle:NSLocalizedString(@"RemoveSetWarning", @"Really remove set? This set and ALL words it contains will be removed permanently!") delegate:self cancelButtonTitle:NSLocalizedString(@"CancelOptionText", @"Cancel") destructiveButtonTitle:@"Remove" otherButtonTitles:nil];
+        self.removeSetActionSheet = [[UIActionSheet alloc] initWithTitle:NSLocalizedString(@"RemoveSetWarning", @"Really remove set? This set and ALL words it contains will be removed permanently!") delegate:self cancelButtonTitle:NSLocalizedString(@"CancelOptionText", @"Cancel") destructiveButtonTitle: NSLocalizedString(@"RemoveOptionText", @"Remove") otherButtonTitles:nil];
         [self.removeSetActionSheet showInView:self.tableView];
     }
 }

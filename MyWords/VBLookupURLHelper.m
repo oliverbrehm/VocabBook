@@ -234,29 +234,42 @@
 {
     NSArray *items = @[];
     
-    NSString *userLanguage = [[NSLocale preferredLanguages] objectAtIndex:0];
+    NSString *userLanguage = [[NSLocale preferredLanguages] objectAtIndex:0]; // e.g. "de", "en"
 
+    // special for german
     if([userLanguage isEqualToString:@"de"]) {
         items = @[
-                  @{@"Description": @"dict.cc Deutsch - Français", @"URL": @"http://defr.touch.dict.cc"},
-                  @{@"Description": @"leo.org Deutsch - Français", @"URL": @"http://pda.leo.org/frde"},
+                  @{@"Description": @"dict.cc (Français)", @"URL": @"http://defr.touch.dict.cc"},
+                  @{@"Description": @"leo.org (Français)", @"URL": @"http://pda.leo.org/frde"},
+                  @{@"Description": @"dict.cc (Espagñol)", @"URL": @"http://defr.touch.dict.cc"},
+                  @{@"Description": @"leo.org (Espagñol)", @"URL": @"http://pda.leo.org/frde"}
                   ];
     }
+
+    // special for english
+    if([userLanguage isEqualToString:@"en"]) {
+        return @[
+                 @{@"Description": @"dict.cc (Français)", @"URL": @"http://enfr.touch.dict.cc"},
+                 @{@"Description": @"dict.cc (Espagñol)", @"URL": @"http://enes.touch.dict.cc"},
+                 @{@"Description": @"Google", @"URL": @"http://www.google.com"},
+                 @{@"Description": @"Wikipedia", @"URL": @"http://en.m.wikipedia.org"},
+                 @{@"Description": @"Wolframalpha", @"URL": @"http://m.wolframalpha.com"}
+                 ]; // don't add default items here
+    }
     
-    // default items for all languages
+    // default items for all languages except english
     NSString *userToEnglish = [NSString stringWithFormat:@"en%@", userLanguage]; // e.g. ruen
     NSString *dictCCEnglish = [NSString stringWithFormat:@"http://%@.touch.dict.cc", userToEnglish];
     NSString *leoEnglish = [NSString stringWithFormat:@"http://pda.leo.org/%@", userToEnglish];
     NSString *google = [NSString stringWithFormat:@"http://www.google.%@", userLanguage];
     NSString *wikipedia = [NSString stringWithFormat:@"http://%@.m.wikipedia.org", userLanguage];
     NSArray *defaultItems = @[
-              @{@"Description": @"dict.cc (English)" , @"URL": dictCCEnglish},
-              @{@"Description": @"leo.org (English)", @"URL": leoEnglish},
-              @{@"Description": @"Google", @"URL": google},
-              @{@"Description": @"Wikipedia", @"URL": wikipedia},
-              @{@"Description": @"Wolframalpha", @"URL": @"http://m.wolframalpha.com"}
-              ];
-
+                              @{@"Description": @"dict.cc (English)" , @"URL": dictCCEnglish},
+                              @{@"Description": @"leo.org (English)", @"URL": leoEnglish},
+                              @{@"Description": @"Google", @"URL": google},
+                              @{@"Description": @"Wikipedia", @"URL": wikipedia},
+                              @{@"Description": @"Wolframalpha", @"URL": @"http://m.wolframalpha.com"}
+                              ];
     
     return [items arrayByAddingObjectsFromArray: defaultItems];
 }

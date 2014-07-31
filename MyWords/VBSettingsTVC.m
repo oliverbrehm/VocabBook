@@ -152,7 +152,7 @@
 {
     switch (section) {
         case 0:
-            return ([[NSUserDefaults standardUserDefaults] boolForKey:PREMIUM_IDENTIFIER]) ? @"" : @"Buy premium and unlock all features forever!";
+            return ([[NSUserDefaults standardUserDefaults] boolForKey:PREMIUM_IDENTIFIER]) ? @"" : NSLocalizedString(@"UnlockPremiumInfoText", @"Buy premium and unlock all features forever!");
         case 1:
             return NSLocalizedString(@"UseiCloudInfoText", @"Use iCloud to share your words across your iPhone, iPod touch or iPad");
         case 2:
@@ -166,7 +166,7 @@
 - (IBAction)iCloudSwitchChanged:(UISwitch*)sender {
     if (sender.on && ![[NSUserDefaults standardUserDefaults] boolForKey:PREMIUM_IDENTIFIER]) {
         // feature not available without premium
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"NotAvailableTitles", @"Not available") message:NSLocalizedString(@"iCloudNotAvailablePlainText", @"iCloud is only available in Vocab Book PREMIUM") delegate:self cancelButtonTitle: NSLocalizedString(@"OKOptionText", @"OK") otherButtonTitles: nil];
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"NotAvailableTitle", @"Not available") message:NSLocalizedString(@"iCloudNotAvailablePlainText", @"iCloud is only available in Vocab Book PREMIUM") delegate:self cancelButtonTitle: NSLocalizedString(@"OKOptionText", @"OK") otherButtonTitles: nil];
         [alertView show];
         sender.on = NO;
         return;
@@ -198,6 +198,12 @@
     [self performSegueWithIdentifier:@"showPremium" sender:self];
 }
 
+-(void) linkToSupportPage
+{
+    NSString *supportURLString = @"http://vocab-book.com";
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:supportURLString]];
+}
+
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if(indexPath.section == 0) {
@@ -208,21 +214,31 @@
         if(indexPath.row == 1) {
             [VBImportExport exportDatabase];
         }
+    } else if(indexPath.section == 3) {
+        if(indexPath.row == 1) {
+            [VBHelper linkToRateApp];
+        } else if(indexPath.row == 2) {
+            [self linkToSupportPage];
+        }
     } else if(indexPath.section == 4) {
         if (indexPath.row == 0) {
             [self resetDatabase];
         }
     }
     
+    // debug
+    /*
     else if (indexPath.section == 5) {
         if(indexPath.row == 0) {
             [self stressTest];
         } else if(indexPath.row == 1) {
             [self createAllLanguages];
         }
-    }
+    }*/
 }
 
+// debug
+/*
 #define STRESSTEST_SETS 1000
 #define STRESSTEST_WORDS 10
 
@@ -262,6 +278,6 @@
     for(NSString *language in appDelegate.languages) {
         [WordSet createWithName:@"" andLanguage:language andDescription:@"" andFavourite:YES];
     }
-}
+}*/
 
 @end

@@ -14,12 +14,16 @@
 
 @implementation VBHelper
 
-+(NSArray*) getAllWords
++(NSArray*) getAllWordsWithSortDescriptor: (NSSortDescriptor*) sortDescriptor
 {
     VBAppDelegate *appDelegate = (VBAppDelegate*) [UIApplication sharedApplication].delegate;
     UIManagedDocument *document = appDelegate.managedDocument;
     
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Word"];
+    
+    if(sortDescriptor) {
+        request.sortDescriptors = @[sortDescriptor];
+    }
     
     NSArray* result = [document.managedObjectContext executeFetchRequest:request error:NULL];
     if(!result) {
@@ -86,7 +90,7 @@
 {
     NSMutableArray *dueWords = [[NSMutableArray alloc] init];
     
-    NSArray *words = [VBHelper getAllWords];
+    NSArray *words = [VBHelper getAllWordsWithSortDescriptor:nil];
     
     for(Word *word in words) {
         if([word isDue]) {
@@ -130,7 +134,12 @@
 +(NSMutableArray*) getAvailableLevelsForWordSet: (WordSet*) wordSet
 {
     NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"level" ascending:YES];
-    NSArray *words = [wordSet getWordsWithSortDescriptor:sortDescriptor];
+    NSArray *words;
+    if (wordSet) {
+        words    = [wordSet getWordsWithSortDescriptor:sortDescriptor];
+    } else {
+        words = [VBHelper getAllWordsWithSortDescriptor:sortDescriptor];
+    }
     
     // determine all available levels
     NSMutableArray *levels = [[NSMutableArray alloc] init]; // of NSNumber*
@@ -146,7 +155,12 @@
 +(NSMutableArray*) getAvailableLettersForWordSet: (WordSet*) wordSet
 {
     NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)];
-    NSArray *words = [wordSet getWordsWithSortDescriptor:sortDescriptor];
+    NSArray *words;
+    if (wordSet) {
+        words    = [wordSet getWordsWithSortDescriptor:sortDescriptor];
+    } else {
+        words = [VBHelper getAllWordsWithSortDescriptor:sortDescriptor];
+    }
     
     // determine all available start letters
     NSMutableArray *letters = [[NSMutableArray alloc] init]; // of NSString
@@ -163,7 +177,12 @@
 +(NSMutableArray*) getAvailableMonthsForWordSet: (WordSet*) wordSet
 {
     NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"creationDate" ascending:NO];
-    NSArray *words = [wordSet getWordsWithSortDescriptor:sortDescriptor];
+    NSArray *words;
+    if (wordSet) {
+        words    = [wordSet getWordsWithSortDescriptor:sortDescriptor];
+    } else {
+        words = [VBHelper getAllWordsWithSortDescriptor:sortDescriptor];
+    }
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setTimeStyle:NSDateFormatterNoStyle];
@@ -204,6 +223,12 @@
 {
     double r = ((rand() * 1.0) / RAND_MAX) * max;
     return (NSUInteger) r;
+}
+
++(void) linkToRateApp
+{
+    NSString *reviewURLString = @"itms-apps://itunes.apple.com/app/id837610347";
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:reviewURLString]];
 }
 
 @end

@@ -106,7 +106,7 @@
     self.activityIndicator.hidden = YES;
     self.loadingRequest = NO;
     
-    if(!self.didLoadWebView) {
+    if(!self.didLoadWebView) { 
         if (![self.wordName isEqualToString:@""]) {
             [self pasteWordAction];
         } else {
@@ -138,7 +138,7 @@
     if([segue.destinationViewController isKindOfClass:[VBLookupSettings class]]) {
         VBLookupSettings *vc = (VBLookupSettings*) segue.destinationViewController;
         vc.wordSet = self.wordSet;
-        self.didLoadWebView = NO;
+        vc.wordLookupVC = self;
     }
 }
 

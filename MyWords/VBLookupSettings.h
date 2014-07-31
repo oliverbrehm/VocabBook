@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@class WordSet;
+@class WordSet, VBWordLookupVC;
 
 @interface VBLookupSettings : UITableViewController
 
 @property (strong, nonatomic) WordSet *wordSet;
+@property (weak, nonatomic) VBWordLookupVC *wordLookupVC;
 
 @end

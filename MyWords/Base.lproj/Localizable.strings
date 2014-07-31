@@ -9,7 +9,7 @@
 // help pages
 "Getting startedPageTitle" = "Getting started";
 "Quiz algorithmPageTitle" = "Quiz algorithm";
-"TestPageTitle" = "Test";
+"Word lookupPageTitle" = "Word lookup";
 
 "OKOptionText" = "OK";
 "CancelOptionText" = "Cancel";
@@ -20,11 +20,11 @@
 "NoOptionText" = "No";
 "CreateOptionText" = "Create";
 
-"ScoreText" = "Score";
+"ScoreText" = "Progress";
 "NameText" = "Name";
 "WordText" = "Word";
 "wordsPlural" = "words";
-"wordsSigular" = "word";
+"wordsSingular" = "word";
 "SetText" = "Set";
 "WrongText" = "wrong";
 "RightText" = "right";
@@ -41,20 +41,20 @@
 "AllWordsVCTitle" = "All words";
 "EmptyLanguageMessageTitel" = "Language missing";
 "EmptyLanguageMessage" = "Please eneter your language";
-"RemoveFromFavouritesText" = "Unfavorite";
+"RemoveFromFavouritesText" = "Unfavourite";
 "AddToFavouritesText" = "Favourite";
 "EmptyNameMessageTitle" = "Empty name";
 "EmptyNameMessage" = "Please enter a name for the set";
 "LearnActionText" = "Learn";
 "RemoveSetWarning" = "Really remove set? This set and ALL words it contains will be removed permanently!";
-"ResetStatisticsWarning" = "Really reset statistics? Your score and number of guesses will be reset!";
+"ResetStatisticsWarning" = "Really reset statistics? Your progress and number of guesses will be reset!";
 "ResetDatabaseOption" = "Reset database";
 "ResetDatabaseWarning" = "Really reseat database? ALL vocabulary data will be erased by this!";
 "ShowAnswerButtonText" = "Show answer";
 "EmptyWordOrTranslationMessageTitle" = "New Word";
 "EmptyWordOrTranslationMessage" = "Please enter a word and a translation";
 "WordAddedText" = "Word added";
-"ErrorOpeningTextFileForImporting" = "Error opening the import file. Please make sure you uploaded a file called \"import.txt\" via iTunes file sharing.";
+"ErrorOpeningTextFileForImporting" = "Error opening the import file.";
 
 "SetAlreadyExistsMessage" = "A set with the same name already exists. Do you want to create it anyway?";
 "SetAlreadyExistsMessageTitle" = "Set already exists";
@@ -81,8 +81,8 @@
 
 "FileSharingInfoText" = "Import or export the database to a text file. The exported files will be available in iTunes File Sharing (iTunes -> iOS device -> Apps -> File Sharing).";
 
-"ResetDatabaseInfoText" = "Use this option only if you want to delete your whole words database from all your devices. It will remove all data  so you can start a fresh vocab book. If you are using iCloud, your local storage will not be erased. Also if you are using local storage, your iCloud data stays.";
-"MergeDatabaseToLocalText" = "Do you want to mere iCloud data to your local device Store? If you select yes, all iCloud words that don't exist on the device will be copied to local storage. In any case iCloud data will be the same if you turn it back on.";
+"ResetDatabaseInfoText" = "Use this option only if you want to delete your whole words database from all your devices. It will remove all data so you can start a fresh vocab book. If you are using iCloud, your local storage will not be erased. Also if you are using local storage, your iCloud data stays untouched.";
+"MergeDatabaseToLocalText" = "Do you want to mere iCloud data to your local device store? If you select yes, all iCloud words that don't exist on the device will be copied to local storage. In any case iCloud data will be the same if you turn it back on.";
 "MergeDatabaseToiCloudText" = "Do you want to merge your local data to iCloud? If you select yes, all words on your device that don't exist in iCloud will be copied to iCloud. In any case your local data will be the same if you turn iCloud off again.";
 
 "BuyPremiumText" = "Buy Premium";
@@ -118,7 +118,7 @@
 "stopTextMessageTitle" = "Stop test";
 "stopTextMessage" = "Really stop test? Words remaining";
 "cancelTestMessageTitle" = "Cancel test";
-"cancelTestMessage" = "Really cancel test? You must at least answer half the set's words so the test is valid. (remaining";
+"cancelTestMessage" = "Really cancel test? You must answer more of the set's words so the test is valid. (remaining";
 "resultsText" = "Result";
 "testFinishedText" = "Test finished";
 "RemoveOptionText" = "Remove";
@@ -142,3 +142,19 @@
 
 "iCloudAvailabilityChangedTitle" = "iCloud no longer available";
 "iCloudAvailabilityChangedMessage" = "iCloud is no longer available. Do you want to merge your cloud data to local storage? (If you choose no, data created in the cloud will no longer be accessible on this device!)";
+
+"lernDirectionText" = "Choose learn direction";
+"coverSetLanguageText" = "Cover set language";
+"coverMyLanguageText" = "Cover my language";
+
+"wordsNotImportedBecauseNoPremium" = "Some words were not imported because you can only have 60 words at a time without using PREMIUM. Please consider buying PREMIUM for a unlimited number of words and more features.";
+
+"UnlockPremiumInfoText" = "Buy premium and unlock all features!";
+
+"Transaction failed" = "Transaction failed";
+
+"Rate Vocab Book" = "Rate Vocab Book";
+"Would you like to rate Vocab Book on the app store? Ratings are very important for other customers who would like to purchase the app and as feedback for developers." = "Would you like to rate Vocab Book on the app store? Ratings are very important for other customers who would like to purchase the app and as feedback for developers.";
+"Rate now" = "Rate now";
+"Remind me later" = "Remind me later";
+"Don't ask again" = "Don't ask again";

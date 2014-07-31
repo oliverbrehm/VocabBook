@@ -92,8 +92,10 @@
             if (!success) {
                 NSLog(@"Error opening the user document at %@, state: %u", self.document.fileURL, (unsigned) self.document.documentState);
                 self.document = document;
+                
                 return;
             }
+
             NSLog(@"Opening existing document %@ successfull, options: %@", self.document.fileURL, [self.document.persistentStoreOptions description]);
             if(document) {
                 [self insertObjectsFroomDocument: document];
@@ -218,5 +220,29 @@
         newWord.translations = word.translations;        
     }
 }
+
+
+/*
+#warning debug insert some words
+-(void) insertSomeWordsForEachSet
+{
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"WordSet"];
+    NSArray *sets = [self.document.managedObjectContext executeFetchRequest:request error:NULL];
+
+    for (WordSet *set in sets) {
+        
+        int n = 10 + (int)(((rand() * 1.0) * 30) / RAND_MAX);
+        NSLog(@"n = %d", n);
+
+        for(int i = 0; i < n; i++) {
+            Word *word = [NSEntityDescription insertNewObjectForEntityForName:@"Word" inManagedObjectContext:self.document.managedObjectContext];
+            word.wordSet = set;
+            word.name = @"tmpName";
+            word.translations = @"tmpTranslation";
+        }
+ 
+    }
+}
+ */
 
 @end

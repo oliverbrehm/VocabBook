@@ -90,7 +90,7 @@
     if(wordSet) {
         words = [wordSet.words allObjects];
     } else {
-        words = [VBHelper getAllWords];
+        words = [VBHelper getAllWordsWithSortDescriptor:nil];
     }
     
     for(Word *word in words) {
@@ -125,7 +125,7 @@
     if(wordSet) {
         words = [wordSet.words allObjects];
     } else {
-        words = [VBHelper getAllWords];
+        words = [VBHelper getAllWordsWithSortDescriptor:nil];
     }
     
     for(Word* word in words) {

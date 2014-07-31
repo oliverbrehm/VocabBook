@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#define WORD_LIMIT 56
+#define WORD_LIMIT 60
 
 @class WordSet, Word;
 
@@ -25,6 +25,7 @@
 +(NSArray*) shuffledArray: (NSArray*) source;
 +(BOOL) emptyDatabase;
 +(NSUInteger) numberOfDueWords;
-+(NSArray*) getAllWords;
++(NSArray*) getAllWordsWithSortDescriptor: (NSSortDescriptor*) sortDescriptor;
++(void) linkToRateApp;
 
 @end

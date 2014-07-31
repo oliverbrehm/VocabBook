@@ -10,6 +10,7 @@
 #import "VBLookupAddURLVC.h"
 #import "WordSet.h"
 #import "VBLookupURLHelper.h"
+#import "VBWordLookupVC.h"
 
 @interface VBLookupSettings ()
 
@@ -70,6 +71,7 @@
     
     [VBLookupURLHelper setDefaultURL:cell.detailTextLabel.text];
     
+    self.wordLookupVC.didLoadWebView = NO;
     [self.navigationController popViewControllerAnimated:YES];
 }
 

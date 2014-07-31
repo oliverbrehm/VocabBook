@@ -18,7 +18,6 @@
 @interface VBCreateSetTVC () <UITextFieldDelegate, UITextViewDelegate, UIAlertViewDelegate>
 @property (weak, nonatomic) UITextField *createSetTextField;
 @property (weak, nonatomic) UITextView *descriptionTextView;
-@property (weak, nonatomic) UISwitch *favouriteSwitch;
 
 @property (nonatomic) NSInteger selectedRow;
 @property (strong, nonatomic) NSMutableArray *languages;
@@ -49,15 +48,10 @@
     self.languages = [appDelegate.languages mutableCopy];
     [self.tableView reloadData];
     
-    if(!self.wordSet && [self.createSetTextField.text isEqualToString:@""]) {
-        [self.createSetTextField becomeFirstResponder];
-    }
-    
     if(self.wordSet) {
         [self selectLanguage: self.wordSet.language];
         self.createSetTextField.text = self.wordSet.name;
         self.descriptionTextView.text = self.wordSet.descriptionText;
-        self.favouriteSwitch.on = [self.wordSet.isFavourite boolValue];
         self.navigationItem.rightBarButtonItem = nil;
     } else if(self.customLanguage) {
         [self selectLanguage: self.customLanguage];
@@ -69,6 +63,9 @@
 -(void) viewDidAppear:(BOOL)animated
 {
     [self.tableView scrollToRowAtIndexPath: [NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+    if(!self.wordSet) {
+        [self.createSetTextField becomeFirstResponder];
+    }
 }
 
 -(void) selectLanguage: (NSString*) language
@@ -127,7 +124,7 @@
 -(void) createSetInDocument
 {
     UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[self.tableView indexPathForSelectedRow]];
-    WordSet *wordSet = [WordSet createWithName:self.createSetTextField.text andLanguage:cell.textLabel.text andDescription:self.descriptionTextView.text andFavourite: self.favouriteSwitch.on];
+    WordSet *wordSet = [WordSet createWithName:self.createSetTextField.text andLanguage:cell.textLabel.text andDescription:self.descriptionTextView.text andFavourite: YES];
     
     NSString *msg = [NSString stringWithFormat: @"%@ %@ %@", NSLocalizedString(@"NewSetCreatedMessage_1", @"New set"), wordSet.name, NSLocalizedString(@"NewSetCreatedMessage_2", @"has been created")];
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"", @"Set created") message:msg delegate: self cancelButtonTitle:NSLocalizedString(@"OKOptionText", @"OK") otherButtonTitles: nil];
@@ -153,11 +150,6 @@
     }
     
     return YES;
-}
-- (IBAction)favouritesSwitchChanged:(UISwitch*)sender {
-    if (self.wordSet) {
-        self.wordSet.isFavourite = [NSNumber numberWithBool: sender.on];
-    }
 }
 
 -(void) scrollViewWillBeginDragging:(UIScrollView *)scrollView
@@ -199,7 +191,7 @@
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (section == 0) {
-        return 3;
+        return 2;
     } else
     {
         return [self.languages count] + (self.customLanguage ? 2 : 1);
@@ -224,7 +216,7 @@
             return ROW_HEIGHT * 1.5;
         }
         if(indexPath.row == 1) {
-            return ROW_HEIGHT * 3;
+            return ROW_HEIGHT * 4;
         }
     }
     
@@ -243,10 +235,6 @@
         } else if(indexPath.row == 1) {
             cell = [tableView dequeueReusableCellWithIdentifier:@"setDescriptionCell" forIndexPath:indexPath];
             self.descriptionTextView = ((VBCreateSetDescriptionCell*) cell).descriptionTextView;
-        } else if(indexPath.row == 2) {
-            cell = [tableView dequeueReusableCellWithIdentifier:@"setFavouriteCell" forIndexPath:indexPath];
-            self.favouriteSwitch = ((VBCreateSetFavouritesCell*) cell).favouriteSwitch;
-            [self.favouriteSwitch addTarget:self action:@selector(favouritesSwitchChanged:) forControlEvents:UIControlEventValueChanged];
         }
     } else if(indexPath.section == 1) {
         if(indexPath.row == [tableView numberOfRowsInSection:1] - 1) {
