@@ -346,3 +346,9 @@
 
 /* Class = "IBUILabel"; text = "Export to file"; ObjectID = "zlu-Yo-Igg"; */
 "zlu-Yo-Igg.text" = "Nach Datei exportieren";
+
+/* text = "Review app" */
+"mAX-6N-GJv.text" = "Im Appstore bewerten";
+
+/* text = "Support" */
+"Ltj-M4-e4p.text" = "Support";

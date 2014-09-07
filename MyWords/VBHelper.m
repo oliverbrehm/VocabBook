@@ -11,6 +11,7 @@
 #import "VBAppDelegate.h"
 #import "Word+DocumentOperations.h"
 #import "VBLookupURLHelper.h"
+#import "VBMenuCVC.h"
 
 @implementation VBHelper
 
@@ -165,13 +166,13 @@
     // determine all available start letters
     NSMutableArray *letters = [[NSMutableArray alloc] init]; // of NSString
     for(Word *word in words) {
-        NSString *firstLetter = [[word.name substringToIndex:1] capitalizedString];
+        NSString *firstLetter = [word firstLetter];
         if (![letters containsObject:firstLetter]) {
             [letters addObject:firstLetter];
         }
     }
     
-    return letters;
+    return [[letters sortedArrayUsingSelector: @selector(localizedCaseInsensitiveCompare:)] mutableCopy];
 }
 
 +(NSMutableArray*) getAvailableMonthsForWordSet: (WordSet*) wordSet
@@ -229,6 +230,19 @@
 {
     NSString *reviewURLString = @"itms-apps://itunes.apple.com/app/id837610347";
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:reviewURLString]];
+}
+
++(VBMenuCVC*) getMenuCVC
+{
+    UINavigationController *rootVC = (UINavigationController*) ((UIWindow*) [UIApplication sharedApplication].windows[0]).rootViewController;
+
+    for(UIViewController *vc in rootVC.viewControllers) {
+        if([vc class] == [VBMenuCVC class]) {
+            return (VBMenuCVC*) vc;
+        }
+    }
+
+    return nil;
 }
 
 @end

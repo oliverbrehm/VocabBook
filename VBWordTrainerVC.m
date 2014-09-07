@@ -70,7 +70,7 @@
         if((self.wordSet && [self.wordSet numberOfDueWords] <= 0) || [VBHelper numberOfDueWords] <= 0) {
             NSString *noWordsDueMessageTitle = NSLocalizedString(@"NoWordsDueMessageTitle", @"No due words");
             NSString *noWordsDueMessage = NSLocalizedString(@"NoWordsDueMessage", @"There are currently no due words. You are now learning all the words of this set. Note that in this mode, right answers will not get the word to the next level.");
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:noWordsDueMessageTitle message:noWordsDueMessage delegate:self cancelButtonTitle: NSLocalizedString(@"DoneOptionText", @"Done") otherButtonTitles: nil];
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:noWordsDueMessageTitle message:noWordsDueMessage delegate:self cancelButtonTitle: NSLocalizedString(@"OKOptionText", @"OK") otherButtonTitles: nil];
             [alertView show];
         }
     }

@@ -13,6 +13,7 @@
 #import "VBWordInspectorVC.h"
 #import "VBHelper.h"
 #import "WordsStatistcsCell.h"
+#import "VBMenuCVC.h"
 
 @interface VBWordBrowserTVC () <UISearchBarDelegate>
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *barButton;
@@ -141,6 +142,7 @@
     return wordsMutable;
 }
 
+/*
 -(NSMutableArray *) queryDataOrderByFirstLetter: (NSManagedObjectContext*) context
 {
     NSMutableArray *wordsMutable = [[NSMutableArray alloc] init]; // sections
@@ -177,6 +179,69 @@
             [wordsMutable addObject:[results mutableCopy]];
             [sectionTitles addObject: letter];
         }
+    }
+    
+    self.sectionTitles = sectionTitles;
+    
+    return wordsMutable;
+}
+ */
+
+-(NSMutableArray *) queryDataOrderByFirstLetter: (NSManagedObjectContext*) context
+{
+    NSMutableArray *wordsMutable = [[NSMutableArray alloc] init]; // sections
+    
+    NSArray *availableLetters = [VBHelper getAvailableLettersForWordSet:self.wordSet];
+    NSMutableArray *sectionTitles = [[NSMutableArray alloc] init];
+    
+    // get all words first
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Word"];
+    
+    if (self.searchBar.text && ![self.searchBar.text isEqualToString:@""]) {
+        if(self.wordSet) {
+            request.predicate = [NSPredicate predicateWithFormat:@"wordSet = %@ AND name contains %@", self.wordSet, self.searchBar.text];
+        } else {
+            request.predicate = [NSPredicate predicateWithFormat:@"name contains %@", self.searchBar.text];
+        }
+    } else {
+        if(self.wordSet) {
+            request.predicate = [NSPredicate predicateWithFormat:@"wordSet = %@", self.wordSet];
+        }
+    }
+    
+    NSArray *results = [context executeFetchRequest:request error:NULL];
+    if(!results) {
+        NSLog(@"Error getting words for set %@", self.wordSet);
+        return nil;
+    }
+    
+    if(results && [results count] > 0) {
+        NSMutableArray *remainingWords = [results mutableCopy];
+        
+        for(NSString *letter in availableLetters) {
+            NSMutableArray *wordsStartingWithLetter = [[NSMutableArray alloc] init];
+            NSMutableArray *wordsToRemove = [[NSMutableArray alloc] init];
+            
+            for (Word *word in remainingWords) {
+                if([word startsWithLetter: [letter characterAtIndex:0]]) {
+                    [wordsStartingWithLetter addObject: word];
+                    [wordsToRemove addObject: word];
+                }
+            }
+            
+            for (Word *word in wordsToRemove) {
+                [remainingWords removeObject: word];
+            }
+            
+            wordsStartingWithLetter = [[wordsStartingWithLetter sortedArrayUsingComparator:^NSComparisonResult(Word *obj1, Word *obj2) {
+                return  [[obj1 articleFreeName] compare:[obj2 articleFreeName]];
+            }] mutableCopy];
+            
+            [wordsMutable addObject: wordsStartingWithLetter];
+            [sectionTitles addObject: letter];
+        }
+        
+        assert([remainingWords count] == 0);
     }
     
     self.sectionTitles = sectionTitles;
@@ -332,6 +397,23 @@
 -(NSInteger) tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index
 {
     return index;
+}
+
+-(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // make root VC segue on iPad (because browser is a popover)
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        VBMenuCVC *menuCVC = [VBHelper getMenuCVC];
+        VBWordInspectorVC *wordVC = [self.storyboard instantiateViewControllerWithIdentifier:@"VBWordInspectorVC"];
+        Word *word = self.words[indexPath.section][indexPath.row];
+        wordVC.title = word.name;
+        wordVC.word = word;
+        wordVC.wordSet = word.wordSet;
+        [menuCVC.currentPopoverController dismissPopoverAnimated:YES];
+        [menuCVC.navigationController pushViewController: wordVC animated: YES];
+    } else {
+        [self performSegueWithIdentifier:@"addWords" sender:self];
+    }
 }
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

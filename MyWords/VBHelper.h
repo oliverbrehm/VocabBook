@@ -8,9 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-#define WORD_LIMIT 60
+#define WORD_LIMIT 15
 
-@class WordSet, Word;
+@class WordSet, Word, VBMenuCVC;
 
 @interface VBHelper : NSObject
 
@@ -27,5 +27,6 @@
 +(NSUInteger) numberOfDueWords;
 +(NSArray*) getAllWordsWithSortDescriptor: (NSSortDescriptor*) sortDescriptor;
 +(void) linkToRateApp;
++(VBMenuCVC*) getMenuCVC;
 
 @end

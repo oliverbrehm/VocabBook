@@ -17,16 +17,18 @@
 #import "VBHelper.h"
 #import "VBPremiumTVC.h"
 #import "VBWordQuizVC.h"
+#import "VBMenuCVC.h"
 
 @interface VBSetMenuTVC () <UIActionSheetDelegate, UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableViewCell *addWordsCell;
 @property (weak, nonatomic) IBOutlet UITableViewCell *learnCell;
-@property (weak, nonatomic) IBOutlet UITableViewCell *quizCell;
 @property (weak, nonatomic) IBOutlet UITableViewCell *browseCell;
-
 @property (weak, nonatomic) IBOutlet UILabel *numWordsDueLabel;
 @property (weak, nonatomic) IBOutlet UILabel *lastTestInfoLabel;
 @property (weak, nonatomic) IBOutlet UILabel *lastTestScoreLabel;
+@property (weak, nonatomic) IBOutlet UILabel *resetStatisticsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *browseWordsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *removeSetLabel;
 @property (weak, nonatomic) IBOutlet UILabel *testLabel;
 @property (weak, nonatomic) IBOutlet UILabel *quizLabel;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *starButton;
@@ -60,6 +62,9 @@
     self.testLabel.hidden = NO;
     self.lastTestInfoLabel.hidden = NO;
     self.lastTestScoreLabel.hidden = NO;
+    self.browseWordsLabel.hidden = NO;
+    self.resetStatisticsLabel.hidden = NO;
+    self.removeSetLabel.hidden = NO;
 }
 
 -(void) viewWillAppear:(BOOL)animated
@@ -72,6 +77,7 @@
         numWordsDue = [self.wordSet numberOfDueWords];
     } else {
         numWordsDue = [VBHelper numberOfDueWords];
+        self.navigationItem.rightBarButtonItem = nil;
     }
     
     if(numWordsDue > 0) {
@@ -158,36 +164,88 @@
 
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if(indexPath.section == 0 && indexPath.row == 1) { // "Learn"
-        NSString *lernDirectionText = NSLocalizedString(@"lernDirectionText", @"Choose learn direction");
-        NSString *coverSetLanguageText = NSLocalizedString(@"coverSetLanguageText", @"Cover set language");
-        NSString *coverMyLanguageText = NSLocalizedString(@"coverMyLanguageText", @"Cover my language");
-        
-        self.chooseLearnDirectionActionSheet = [[UIActionSheet alloc] initWithTitle: lernDirectionText delegate:self cancelButtonTitle: NSLocalizedString(@"CancelOptionText", @"Cancel") destructiveButtonTitle: coverSetLanguageText otherButtonTitles: coverMyLanguageText, nil];
-        [self.chooseLearnDirectionActionSheet showInView:self.tableView];
-        
-        // "normalize" button colors
-        for(UIView *view in self.chooseLearnDirectionActionSheet.subviews) {
-            if([view isKindOfClass:[UIButton class]]) {
-                UIButton *button = (UIButton*) view;
-                [button setTitleColor:[VBHelper globalButtonColor] forState:UIControlStateNormal];
+    if(indexPath.section == 0) {
+        if (indexPath.row == 0) {
+            NSUInteger numWords = [VBHelper countAllWords];
+            if(![[NSUserDefaults standardUserDefaults] boolForKey:PREMIUM_IDENTIFIER] && numWords >= WORD_LIMIT) {
+                NSString *msg = [NSString stringWithFormat: @"Without PREMIUM, you cannot create more than %ld words", (unsigned long) WORD_LIMIT];
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Not available" message:msg delegate:self cancelButtonTitle:NSLocalizedString(@"OKOptionText", @"OK") otherButtonTitles: nil];
+                [alertView show];
+            } else {
+                [self performAddWordsSegue];
             }
+        } else if(indexPath.row == 1) {
+            NSString *lernDirectionText = NSLocalizedString(@"lernDirectionText", @"Choose learn direction");
+            NSString *coverSetLanguageText = NSLocalizedString(@"coverSetLanguageText", @"Cover set language");
+            NSString *coverMyLanguageText = NSLocalizedString(@"coverMyLanguageText", @"Cover my language");
+            
+            self.chooseLearnDirectionActionSheet = [[UIActionSheet alloc] initWithTitle: lernDirectionText delegate:self cancelButtonTitle: NSLocalizedString(@"CancelOptionText", @"Cancel") destructiveButtonTitle: coverSetLanguageText otherButtonTitles: coverMyLanguageText, nil];
+            [self.chooseLearnDirectionActionSheet showInView:self.tableView];
+            
+            // "normalize" button colors
+            for(UIView *view in self.chooseLearnDirectionActionSheet.subviews) {
+                if([view isKindOfClass:[UIButton class]]) {
+                    UIButton *button = (UIButton*) view;
+                    [button setTitleColor:[VBHelper globalButtonColor] forState:UIControlStateNormal];
+                }
+            }
+        } else if(indexPath.row == 2) {
+            [self performTestSetSegue];
         }
-    } else if(indexPath.section == 0 && indexPath.row == 0) { // "Add words"
-        NSUInteger numWords = [VBHelper countAllWords];
-        if(![[NSUserDefaults standardUserDefaults] boolForKey:PREMIUM_IDENTIFIER] && numWords >= WORD_LIMIT) {
-            NSString *msg = [NSString stringWithFormat: @"Without PREMIUM, you cannot create more than %ld words", (unsigned long) WORD_LIMIT];
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Not available" message:msg delegate:self cancelButtonTitle:NSLocalizedString(@"OKOptionText", @"OK") otherButtonTitles: nil];
-            [alertView show];
-        } else {
-            [self performSegueWithIdentifier:@"addWords" sender:self];
-        }
-    } else if(indexPath.section == 1) {
+    }
+    else if(indexPath.section == 1) {
         if (indexPath.row == 1) {
             [self resetStatistics];
         } else if(indexPath.row == 2) {
             [self removeSet];
         }
+    }
+}
+
+-(void) performAddWordsSegue
+{
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        VBMenuCVC *menuCVC = [VBHelper getMenuCVC];
+        VBWordInspectorVC *addWordsVC = [self.storyboard instantiateViewControllerWithIdentifier:@"VBWordInspectorVC"];
+        addWordsVC.wordSet = self.wordSet;
+        [menuCVC.currentPopoverController dismissPopoverAnimated:YES];
+        [menuCVC.navigationController pushViewController: addWordsVC animated: YES];
+    } else {
+        [self performSegueWithIdentifier:@"addWords" sender:self];
+    }
+}
+
+-(void) performLearnWordsSegue
+{
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        VBMenuCVC *menuCVC = [VBHelper getMenuCVC];
+        VBWordTrainerVC *wordTrainerVC = [self.storyboard instantiateViewControllerWithIdentifier:@"VBWordTrainerVC"];
+        wordTrainerVC.title = self.title;
+        wordTrainerVC.wordSet = self.wordSet;
+        // determine language direction
+        if(self.toUserLanguage) {
+            // setlang -> userlang
+            wordTrainerVC.toUserlanguage = YES;
+        } else {
+            wordTrainerVC.toUserlanguage = NO;
+        }
+
+        [menuCVC.currentPopoverController dismissPopoverAnimated:YES];
+        [menuCVC.navigationController pushViewController: wordTrainerVC animated: YES];
+    } else {
+        [self performSegueWithIdentifier:@"learn" sender:self];
+    }
+}
+
+-(void) performTestSetSegue
+{
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        VBMenuCVC *menuCVC = [VBHelper getMenuCVC];
+        VBWordQuizVC *wordQuizVC = [self.storyboard instantiateViewControllerWithIdentifier:@"VBWordQuizVC"];
+        wordQuizVC.title = self.title;
+        wordQuizVC.wordSet = self.wordSet;
+        [menuCVC.currentPopoverController dismissPopoverAnimated:YES];
+        [menuCVC.navigationController pushViewController: wordQuizVC animated: YES];
     }
 }
 
@@ -217,10 +275,12 @@
             self.lastTestInfoLabel.hidden = YES;
             self.lastTestScoreLabel.hidden = YES;
             self.testLabel.hidden = YES;
+        } else if(indexPath.section == 0 && indexPath.row == 2) { // browser words
+            self.browseWordsLabel.hidden = YES;
         } else if(indexPath.section == 1 && indexPath.row == 1) { // reset statistics
-            //self.resetStatisticsButton.hidden = YES;
+            self.resetStatisticsLabel.hidden = YES;
         } else if(indexPath.section == 1 && indexPath.row == 2) { // remove set
-            //self.removeSetButton.hidden = YES;
+            self.removeSetLabel.hidden = YES;
         }
         
         return 0;
@@ -336,6 +396,7 @@
         [document.managedObjectContext deleteObject:self.wordSet];
         
         [self.navigationController popViewControllerAnimated:YES];
+        [[VBHelper getMenuCVC] dismissPopover];
     } else if(actionSheet == self.chooseLearnDirectionActionSheet) {
         if (buttonIndex == 0) { // cover
             self.toUserLanguage = NO;
@@ -344,7 +405,8 @@
         } else {
             return;
         }
-        [self performSegueWithIdentifier:@"learn" sender:self];
+        
+        [self performLearnWordsSegue];
     }
 }
 - (void) resetStatistics {

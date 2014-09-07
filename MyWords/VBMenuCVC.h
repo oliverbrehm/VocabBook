@@ -10,7 +10,10 @@
 
 @interface VBMenuCVC : UICollectionViewController
 
+@property (strong, nonatomic) UIPopoverController *currentPopoverController;
+
 -(void) resetFilter;
 -(void) queryData;
+-(void) dismissPopover;
 
 @end

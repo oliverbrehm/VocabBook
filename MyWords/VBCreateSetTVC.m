@@ -14,6 +14,7 @@
 #import "VBCreateSetAddLanguageVC.h"
 #import "VBHelper.h"
 #import "WordSet+DocumentOperations.h"
+#import "VBMenuCVC.h"
 
 @interface VBCreateSetTVC () <UITextFieldDelegate, UITextViewDelegate, UIAlertViewDelegate>
 @property (weak, nonatomic) UITextField *createSetTextField;
@@ -129,7 +130,6 @@
     NSString *msg = [NSString stringWithFormat: @"%@ %@ %@", NSLocalizedString(@"NewSetCreatedMessage_1", @"New set"), wordSet.name, NSLocalizedString(@"NewSetCreatedMessage_2", @"has been created")];
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"", @"Set created") message:msg delegate: self cancelButtonTitle:NSLocalizedString(@"OKOptionText", @"OK") otherButtonTitles: nil];
     [alert show];
-
 }
 
 -(BOOL) textFieldShouldReturn:(UITextField *)textField
@@ -286,6 +286,7 @@
         }
     } else {
         [self.navigationController popViewControllerAnimated:YES];
+        [[VBHelper getMenuCVC] dismissPopover];
     }
 }
 

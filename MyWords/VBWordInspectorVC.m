@@ -61,7 +61,6 @@
 {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor colorWithRed:1.0 green:0.98 blue:0.95 alpha:1.0];
-    //self.view.backgroundColor = [UIColor redColor];
     [self.wordTextField becomeFirstResponder];
 }
 
@@ -369,6 +368,14 @@
     // clear input
     self.wordTextField.text = @"";
     self.translationsTextView.text = @"";
+    
+    if(![[NSUserDefaults standardUserDefaults] boolForKey:PREMIUM_IDENTIFIER]) {
+        // check if WORD_LIMIT is reached
+        NSUInteger numWords = [VBHelper countAllWords];
+        if(numWords >= WORD_LIMIT) {
+            [self.navigationController popViewControllerAnimated:YES];
+        }
+    }
 }
 
 #define INFO_VIEW_INSET 5.0
@@ -381,9 +388,9 @@
     infoTextView.text = msg;
     infoTextView.font = self.wordLabel.font;
     infoTextView.textAlignment = NSTextAlignmentCenter;
-    [infoTextView sizeToFit];
-    infoTextView.frame = CGRectMake(INFO_VIEW_INSET, INFO_VIEW_INSET, infoTextView.bounds.size.width, infoTextView.bounds.size.height);
-
+    //[infoTextView sizeToFit];
+    infoTextView.frame = CGRectMake(0.0, 0.0, self.view.bounds.size.width/2.0, (infoTextView.font.lineHeight + 3.5 /* line spacing gap */) * 2);
+    //CGRectMake(INFO_VIEW_INSET, INFO_VIEW_INSET, infoTextView.bounds.size.width, infoTextView.bounds.size.height);
     UIView *infoView = [[UIView alloc] initWithFrame: CGRectMake(self.view.bounds.size.width / 2.0 - infoTextView.bounds.size.width / 2.0 - INFO_VIEW_INSET, INFO_VIEW_Y - INFO_VIEW_INSET,
                                                                  infoTextView.bounds.size.width + 2 * INFO_VIEW_INSET, infoTextView.bounds.size.height + 2 * INFO_VIEW_INSET)];
 
@@ -417,14 +424,6 @@
         VBAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
         UIManagedDocument *document = appDelegate.managedDocument;
         [self createWordInDocument:document];
-    } else {
-        if(![[NSUserDefaults standardUserDefaults] boolForKey:PREMIUM_IDENTIFIER]) {
-            // check if WORD_LIMIT is reached
-            NSUInteger numWords = [VBHelper countAllWords];
-            if(numWords >= WORD_LIMIT) {
-                [self.navigationController popViewControllerAnimated:YES];
-            }
-        }
     }
 }
 

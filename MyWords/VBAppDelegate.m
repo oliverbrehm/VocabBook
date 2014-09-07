@@ -120,18 +120,12 @@
     
     UINavigationController *rootVC = (UINavigationController*) self.window.rootViewController;
     [rootVC popToRootViewControllerAnimated:YES];
-    // refresh root vc
-    for(UIViewController *vc in rootVC.viewControllers) {
-        if([vc class] == [VBMenuCVC class]) {
-            // let the document's context refresh the view (as soon as document has finished loading)
-            __block VBMenuCVC *menuCVC = (VBMenuCVC*) vc;
-            [self.documentManager.document.managedObjectContext performBlock:^{
-                [menuCVC queryData];
-            }];
-            break;
-        }
-    }
     
+    // refresh root vc
+    __block VBMenuCVC *menuCVC = [VBHelper getMenuCVC];
+    [self.documentManager.document.managedObjectContext performBlock:^{
+        [menuCVC queryData];
+    }];
 }
 
 -(void) getUbiquityToken

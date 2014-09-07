@@ -12,5 +12,8 @@
 
 -(BOOL) isDue;
 -(NSDate*) dueDate;
+-(BOOL) startsWithLetter: (unichar) letter;
+-(NSString*) firstLetter;
+-(NSString*) articleFreeName;
 
 @end

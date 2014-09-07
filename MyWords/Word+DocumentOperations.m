@@ -61,5 +61,72 @@
     }
 }
 
+-(BOOL) startsWithLetter:(unichar)letter
+{
+    NSArray *components = [self.name componentsSeparatedByString:@" "];
+    for (NSString *component in components) {
+        if ([Word componentIsArticle: component]) {
+            continue;
+        } else {
+            return [[component capitalizedString] characterAtIndex:0] == letter;
+        }
+    }
+    
+    return [[components[0] capitalizedString] characterAtIndex:0] == letter;
+}
+
+-(NSString*) firstLetter
+{
+    NSArray *components = [self.name componentsSeparatedByString:@" "];
+    for (NSString *component in components) {
+        if ([Word componentIsArticle: component]) {
+            continue;
+        } else {
+            return [[component substringToIndex:1] capitalizedString];
+        }
+    }
+    
+    return [[components[0] substringToIndex:1] capitalizedString];
+}
+
+-(NSString*) articleFreeName
+{
+    NSString *ret = [self.name copy];
+    NSArray *components = [self.name componentsSeparatedByString:@" "];
+    for (NSString *component in components) {
+        if ([Word componentIsArticle: component]) {
+            NSInteger index = [component length] + 1;
+            if(index >= [ret length]) {
+                ret = @"";
+            } else {
+                ret = [ret substringFromIndex: index];
+            }
+        } else {
+            break;
+        }
+    }
+    
+    if([ret isEqualToString:@""]) {
+        return self.name;
+    }
+    
+    return ret;
+}
+
++(BOOL) componentIsArticle: (NSString *) component
+{
+    if ([[component capitalizedString] isEqualToString: [@"the" capitalizedString]] ||
+        [[component capitalizedString] isEqualToString: [@"to" capitalizedString]] ||
+        [[component capitalizedString] isEqualToString: [@"la" capitalizedString]] ||
+        [[component capitalizedString] isEqualToString: [@"le" capitalizedString]] ||
+        [[component capitalizedString] isEqualToString: [@"les" capitalizedString]] ||
+        [[component capitalizedString] isEqualToString: [@"il" capitalizedString]] ||
+        [[component capitalizedString] isEqualToString: [@"el" capitalizedString]]) {
+        return YES;
+    }
+    
+    return NO;
+}
+
 
 @end

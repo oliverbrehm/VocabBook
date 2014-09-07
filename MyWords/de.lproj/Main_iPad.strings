@@ -331,3 +331,9 @@
 
 /* Class = "IBUILabel"; text = "Translations:"; ObjectID = "zqo-0a-Kk9"; */
 "zqo-0a-Kk9.text" = "Übersetzungen:";
+
+/* text = "Review app" */
+"ksV-tB-w5P.text" = "Im Appstore bewerten";
+
+/* text = "Support" */
+"b9p-nW-MmX.text" = "Support";

@@ -27,7 +27,7 @@
 
 #define EMPTYCELL_HEIGHT 96.0
 
-@interface VBMenuCVC () <UICollectionViewDelegateFlowLayout, UIGestureRecognizerDelegate, UIAlertViewDelegate>
+@interface VBMenuCVC () <UICollectionViewDelegateFlowLayout, UIGestureRecognizerDelegate, UIAlertViewDelegate, UIPopoverControllerDelegate>
 
 @property (strong, nonatomic) NSArray *wordSets;
 @property (strong, nonatomic) NSArray *recentWords;
@@ -39,6 +39,9 @@
 @property (strong, nonatomic) WordSet *selectedWordSet;
 
 @property (nonatomic) NSInteger selectedWordSetIndex;
+
+@property (nonatomic) NSInteger currentPopoverSetIndex;
+@property (nonatomic) NSString *popoverAnchorName;
 @end
 
 @implementation VBMenuCVC
@@ -90,6 +93,41 @@
     }
     
     [self promtForAppRating];
+    
+    [self restorePopover];
+}
+
+-(void) restorePopover
+{
+    if(self.currentPopoverController) {
+        UIView *popoverAnchor = nil;
+        if(self.currentPopoverSetIndex >= 0) {
+            popoverAnchor = [self.collectionView cellForItemAtIndexPath: [NSIndexPath indexPathForItem: self.currentPopoverSetIndex inSection:0]];
+        } else {
+            NSInteger popoverIndex = 0;
+            for(WordSet *wordSet in self.wordSets) {
+                if ([wordSet.name isEqualToString: self.popoverAnchorName]) {
+                    popoverIndex = [self.wordSets indexOfObject: wordSet];
+                }
+            }
+            popoverAnchor = [self.collectionView cellForItemAtIndexPath: [NSIndexPath indexPathForItem: popoverIndex inSection: 1]];
+        }
+        
+        [self.currentPopoverController presentPopoverFromRect: popoverAnchor.bounds inView: popoverAnchor permittedArrowDirections:UIPopoverArrowDirectionAny animated: NO];
+    }
+}
+
+-(void) dismissPopover
+{
+    [self.currentPopoverController dismissPopoverAnimated:YES];
+    [self queryData];
+    self.currentPopoverController = nil;
+}
+
+-(void) popoverControllerDidDismissPopover:(UIPopoverController *)popoverController
+{
+    self.currentPopoverController = nil;
+    [self queryData];
 }
 
 #define NEXT_DATE_FOR_APP_RATING_PROMT_KEY @"nextDateForAppRatingPromt"
@@ -376,15 +414,53 @@
 
 -(void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    BOOL usingIPad = [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad;
+    UIView *selectedItem = [collectionView cellForItemAtIndexPath:indexPath];
+    
     if(indexPath.section == 0) {
         if (indexPath.item == 0) { // all words
-            [self performSegueWithIdentifier:@"setMenu" sender:self];
+            if(usingIPad) {
+                self.currentPopoverSetIndex = indexPath.row;
+
+                VBSetMenuTVC *setMenuTVC = [self.storyboard instantiateViewControllerWithIdentifier:@"VBSetMenuTVC"];
+                UINavigationController *setMenuNVC = [[UINavigationController alloc] initWithRootViewController:setMenuTVC];
+                
+                self.currentPopoverController = [[UIPopoverController alloc] initWithContentViewController: setMenuNVC];
+                self.currentPopoverController.delegate = self;
+                [self.currentPopoverController presentPopoverFromRect:selectedItem.bounds inView:selectedItem permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+            } else {
+                [self performSegueWithIdentifier:@"setMenu" sender:self];
+            }
         } else if(indexPath.row == 1) { // all sets
-            [self performSegueWithIdentifier:@"allSets" sender:self];
+            if(usingIPad) {
+                VBSetMenuTVC *setBrowserTVC = [self.storyboard instantiateViewControllerWithIdentifier:@"VBSetBrowserTVC"];
+                UINavigationController *setBroserNVC = [[UINavigationController alloc] initWithRootViewController:setBrowserTVC];
+
+                self.currentPopoverController = [[UIPopoverController alloc] initWithContentViewController: setBroserNVC];
+                self.currentPopoverController.delegate = self;
+                [self.currentPopoverController presentPopoverFromRect:selectedItem.bounds inView:selectedItem permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+            } else {
+                [self performSegueWithIdentifier:@"allSets" sender:self];
+            }
         }
     } else if(indexPath.section == 1) {
         if(self.wordSets && [self.wordSets count] > 0) {
-            [self performSegueWithIdentifier:@"setMenu" sender:[collectionView cellForItemAtIndexPath:indexPath]];
+            if(usingIPad) {
+                self.popoverAnchorName = [((WordSet*) self.wordSets[indexPath.row]).name copy];
+                self.currentPopoverSetIndex = -1;
+                
+                VBSetMenuTVC *setMenuTVC = [self.storyboard instantiateViewControllerWithIdentifier:@"VBSetMenuTVC"];
+                UINavigationController *setMenuNVC = [[UINavigationController alloc] initWithRootViewController:setMenuTVC];
+
+                setMenuTVC.wordSet = self.wordSets[indexPath.row];
+                setMenuTVC.title = setMenuTVC.wordSet.name;
+                
+                self.currentPopoverController = [[UIPopoverController alloc] initWithContentViewController: setMenuNVC];
+                self.currentPopoverController.delegate = self;
+                [self.currentPopoverController presentPopoverFromRect:selectedItem.bounds inView:selectedItem permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+            } else {
+                [self performSegueWithIdentifier:@"setMenu" sender:[collectionView cellForItemAtIndexPath:indexPath]];
+            }
         }
     } else if(indexPath.section == 2) {
         if(self.recentWords && [self.recentWords count] > 0) {
@@ -437,6 +513,11 @@
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    if([segue isKindOfClass: [UIStoryboardPopoverSegue class]]) {
+        self.currentPopoverController = ((UIStoryboardPopoverSegue*) segue).popoverController;
+        self.currentPopoverController.delegate = self;
+    }
+    
     if([segue.destinationViewController isKindOfClass:[VBSetMenuTVC class]]) {
         if([sender isKindOfClass:[VBMenuWordSetCell class]]) {
             VBSetMenuTVC *vc = (VBSetMenuTVC*) segue.destinationViewController;
