@@ -17,11 +17,11 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>1.1</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1.0</string>
+	<string>1.1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UIBackgroundModes</key>
@@ -30,6 +30,8 @@
 	</array>
 	<key>UIFileSharingEnabled</key>
 	<true/>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen.storyboard</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main_iPhone</string>
 	<key>UIMainStoryboardFile~ipad</key>

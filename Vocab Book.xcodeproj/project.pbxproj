@@ -10,22 +10,6 @@
 		541E984D192F417F000020E6 /* VBHelpTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 541E984C192F417F000020E6 /* VBHelpTVC.m */; };
 		541E9850192F419E000020E6 /* VBHelpPageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 541E984F192F419E000020E6 /* VBHelpPageVC.m */; };
 		5420DC7318C39F3D006CE82F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5420DC7518C39F3D006CE82F /* Localizable.strings */; };
-		5422F73A1930C628006B9C76 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5468EB3618B8AEB600716507 /* Foundation.framework */; };
-		5422F73B1930C628006B9C76 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5468EB3818B8AEB600716507 /* CoreGraphics.framework */; };
-		5422F73C1930C628006B9C76 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5468EB3A18B8AEB600716507 /* UIKit.framework */; };
-		5422F7421930C628006B9C76 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5422F7401930C628006B9C76 /* InfoPlist.strings */; };
-		5422F7441930C628006B9C76 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5422F7431930C628006B9C76 /* main.m */; };
-		5422F7481930C628006B9C76 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5422F7471930C628006B9C76 /* AppDelegate.m */; };
-		5422F74B1930C628006B9C76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5422F7491930C628006B9C76 /* Main.storyboard */; };
-		5422F74E1930C628006B9C76 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5422F74D1930C628006B9C76 /* ViewController.m */; };
-		5422F7501930C628006B9C76 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5422F74F1930C628006B9C76 /* Images.xcassets */; };
-		5422F7561930C629006B9C76 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5468EB5B18B8AEB700716507 /* XCTest.framework */; };
-		5422F7571930C629006B9C76 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5468EB3618B8AEB600716507 /* Foundation.framework */; };
-		5422F7581930C629006B9C76 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5468EB3A18B8AEB600716507 /* UIKit.framework */; };
-		5422F7601930C629006B9C76 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5422F75E1930C629006B9C76 /* InfoPlist.strings */; };
-		5422F7621930C629006B9C76 /* pdfTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5422F7611930C629006B9C76 /* pdfTestTests.m */; };
-		5422F76E1930C6CF006B9C76 /* PrintView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5422F76D1930C6CF006B9C76 /* PrintView.m */; };
-		5422F7701930CB48006B9C76 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5422F76F1930CB48006B9C76 /* CoreText.framework */; };
 		5424172218DAF19300DB913A /* VBLookupSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 5424172118DAF19300DB913A /* VBLookupSettings.m */; };
 		5424172518DAF43F00DB913A /* VBLookupAddURLVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5424172418DAF43F00DB913A /* VBLookupAddURLVC.m */; };
 		5425CEFC18B907A300FCA274 /* VBMenuCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5425CEFB18B907A300FCA274 /* VBMenuCVC.m */; };
@@ -88,29 +72,10 @@
 		5465112218EE9F29009CB416 /* VBWordTrainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5465112118EE9F29009CB416 /* VBWordTrainerView.m */; };
 		5465112918EEA45B009CB416 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 5465112718EEA45B009CB416 /* star.png */; };
 		5465112A18EEA45B009CB416 /* star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5465112818EEA45B009CB416 /* star@2x.png */; };
-		5466116D1945B954007526D0 /* Getting started.html in Resources */ = {isa = PBXBuildFile; fileRef = 5466116F1945B954007526D0 /* Getting started.html */; };
-		546611711945B9C2007526D0 /* Quiz algorithm.html in Resources */ = {isa = PBXBuildFile; fileRef = 546611731945B9C2007526D0 /* Quiz algorithm.html */; };
-		546611751945B9E0007526D0 /* Word lookup.html in Resources */ = {isa = PBXBuildFile; fileRef = 546611771945B9E0007526D0 /* Word lookup.html */; };
-		546611791945BB55007526D0 /* 1-new word.png in Resources */ = {isa = PBXBuildFile; fileRef = 5466117B1945BB55007526D0 /* 1-new word.png */; };
-		5466117D1945BB6E007526D0 /* 2-lookup.png in Resources */ = {isa = PBXBuildFile; fileRef = 5466117F1945BB6E007526D0 /* 2-lookup.png */; };
-		546611801945BB74007526D0 /* 3-url selection.png in Resources */ = {isa = PBXBuildFile; fileRef = 546611821945BB74007526D0 /* 3-url selection.png */; };
-		546611831945BB78007526D0 /* 4-dict lookup.png in Resources */ = {isa = PBXBuildFile; fileRef = 546611851945BB78007526D0 /* 4-dict lookup.png */; };
-		546611861945BB7C007526D0 /* 5-add url.png in Resources */ = {isa = PBXBuildFile; fileRef = 546611881945BB7C007526D0 /* 5-add url.png */; };
-		546611891945BB80007526D0 /* 6-new url.png in Resources */ = {isa = PBXBuildFile; fileRef = 5466118B1945BB80007526D0 /* 6-new url.png */; };
-		5466118C1945BB86007526D0 /* 1-set menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 5466118E1945BB86007526D0 /* 1-set menu.png */; };
-		5466118F1945BB8B007526D0 /* 2-show answer.png in Resources */ = {isa = PBXBuildFile; fileRef = 546611911945BB8B007526D0 /* 2-show answer.png */; };
-		546611921945BB8F007526D0 /* 3-right wrong.png in Resources */ = {isa = PBXBuildFile; fileRef = 546611941945BB8F007526D0 /* 3-right wrong.png */; };
-		546611951945BB93007526D0 /* 4-browse words.png in Resources */ = {isa = PBXBuildFile; fileRef = 546611971945BB93007526D0 /* 4-browse words.png */; };
-		546611981945BB9C007526D0 /* 1-homescreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 5466119A1945BB9C007526D0 /* 1-homescreen.png */; };
-		5466119B1945BBA0007526D0 /* 2-add words.png in Resources */ = {isa = PBXBuildFile; fileRef = 5466119D1945BBA0007526D0 /* 2-add words.png */; };
-		5466119E1945BBA4007526D0 /* 3-recent words.png in Resources */ = {isa = PBXBuildFile; fileRef = 546611A01945BBA4007526D0 /* 3-recent words.png */; };
-		546611A11945BBA8007526D0 /* 4-filter words.png in Resources */ = {isa = PBXBuildFile; fileRef = 546611A31945BBA8007526D0 /* 4-filter words.png */; };
-		546611A41945BBAE007526D0 /* 5-set actions.png in Resources */ = {isa = PBXBuildFile; fileRef = 546611A61945BBAE007526D0 /* 5-set actions.png */; };
 		5468EB3718B8AEB600716507 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5468EB3618B8AEB600716507 /* Foundation.framework */; };
 		5468EB3918B8AEB600716507 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5468EB3818B8AEB600716507 /* CoreGraphics.framework */; };
 		5468EB3B18B8AEB600716507 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5468EB3A18B8AEB600716507 /* UIKit.framework */; };
 		5468EB4118B8AEB600716507 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5468EB3F18B8AEB600716507 /* InfoPlist.strings */; };
-		5468EB4318B8AEB600716507 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5468EB4218B8AEB600716507 /* main.m */; };
 		5468EB4718B8AEB600716507 /* VBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5468EB4618B8AEB600716507 /* VBAppDelegate.m */; };
 		5468EB4A18B8AEB600716507 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5468EB4818B8AEB600716507 /* Main_iPhone.storyboard */; };
 		5468EB4D18B8AEB700716507 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5468EB4B18B8AEB700716507 /* Main_iPad.storyboard */; };
@@ -119,8 +84,6 @@
 		5468EB5C18B8AEB700716507 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5468EB5B18B8AEB700716507 /* XCTest.framework */; };
 		5468EB5D18B8AEB700716507 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5468EB3618B8AEB600716507 /* Foundation.framework */; };
 		5468EB5E18B8AEB700716507 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5468EB3A18B8AEB600716507 /* UIKit.framework */; };
-		5468EB6618B8AEB700716507 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5468EB6418B8AEB700716507 /* InfoPlist.strings */; };
-		5468EB6818B8AEB700716507 /* VocabBookTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5468EB6718B8AEB700716507 /* VocabBookTest.m */; };
 		5468EB7618B8BB6900716507 /* WordsModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5468EB7418B8BB6900716507 /* WordsModel.xcdatamodeld */; };
 		546FA3AA18E2E38B00F0CBAC /* VBPremiumTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 546FA3A918E2E38B00F0CBAC /* VBPremiumTVC.m */; };
 		5471593F192DE904002C9E24 /* Word+DocumentOperations.m in Sources */ = {isa = PBXBuildFile; fileRef = 5471593E192DE904002C9E24 /* Word+DocumentOperations.m */; };
@@ -149,19 +112,15 @@
 		54E8759E18DB55C000CED41A /* VBWordQuizVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E8759D18DB55C000CED41A /* VBWordQuizVC.m */; };
 		54E875A118DB67DB00CED41A /* VBMenuEmptyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E875A018DB67DB00CED41A /* VBMenuEmptyCell.m */; };
 		54E875A418DB773200CED41A /* VBCreateSetAddLanguageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E875A318DB773200CED41A /* VBCreateSetAddLanguageVC.m */; };
-		54ED8C9318EB119A00A7D040 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5468EB3618B8AEB600716507 /* Foundation.framework */; };
-		54ED8C9618EB119A00A7D040 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 54ED8C9518EB119A00A7D040 /* main.m */; };
-		54ED8C9A18EB119A00A7D040 /* VocabbookTestclient.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 54ED8C9918EB119A00A7D040 /* VocabbookTestclient.1 */; };
+		BB44FE4A2AC0113C00510833 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB44FE492AC0113C00510833 /* LaunchScreen.storyboard */; };
+		BB44FE4E2AC011D300510833 /* VocabBookApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB44FE4D2AC011D300510833 /* VocabBookApp.swift */; };
+		BB44FE522AC0192700510833 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB44FE512AC0192700510833 /* MainView.swift */; };
+		BB44FE562AC019A400510833 /* VocabSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB44FE552AC019A400510833 /* VocabSet.swift */; };
+		BB44FE582AC022DF00510833 /* VocabSetEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB44FE572AC022DF00510833 /* VocabSetEditView.swift */; };
+		BB44FE5A2AC022F400510833 /* VocabSetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB44FE592AC022F400510833 /* VocabSetView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		5422F7591930C629006B9C76 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5468EB2B18B8AEB600716507 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5422F7381930C628006B9C76;
-			remoteInfo = pdfTest;
-		};
 		5468EB5F18B8AEB700716507 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5468EB2B18B8AEB600716507 /* Project object */;
@@ -171,19 +130,6 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		54ED8C9018EB119A00A7D040 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
-			files = (
-				54ED8C9A18EB119A00A7D040 /* VocabbookTestclient.1 in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		540D278D19473E34003B3BAA /* de */ = {isa = PBXFileReference; lastKnownFileType = text; name = de; path = de.lproj/appdescription.txt; sourceTree = "<group>"; };
 		540D278F19473E39003B3BAA /* en */ = {isa = PBXFileReference; lastKnownFileType = text; name = en; path = en.lproj/appdescription.txt; sourceTree = "<group>"; };
@@ -192,23 +138,6 @@
 		541E984E192F419E000020E6 /* VBHelpPageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBHelpPageVC.h; sourceTree = "<group>"; };
 		541E984F192F419E000020E6 /* VBHelpPageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBHelpPageVC.m; sourceTree = "<group>"; };
 		5420DC7418C39F3D006CE82F /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
-		5422F7391930C628006B9C76 /* pdfTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pdfTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		5422F73F1930C628006B9C76 /* pdfTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "pdfTest-Info.plist"; sourceTree = "<group>"; };
-		5422F7411930C628006B9C76 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		5422F7431930C628006B9C76 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		5422F7451930C628006B9C76 /* pdfTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "pdfTest-Prefix.pch"; sourceTree = "<group>"; };
-		5422F7461930C628006B9C76 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		5422F7471930C628006B9C76 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		5422F74A1930C628006B9C76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		5422F74C1930C628006B9C76 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		5422F74D1930C628006B9C76 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		5422F74F1930C628006B9C76 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		5422F7551930C629006B9C76 /* pdfTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pdfTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5422F75D1930C629006B9C76 /* pdfTestTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "pdfTestTests-Info.plist"; sourceTree = "<group>"; };
-		5422F75F1930C629006B9C76 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		5422F7611930C629006B9C76 /* pdfTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = pdfTestTests.m; sourceTree = "<group>"; };
-		5422F76C1930C6CF006B9C76 /* PrintView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrintView.h; sourceTree = "<group>"; };
-		5422F76D1930C6CF006B9C76 /* PrintView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrintView.m; sourceTree = "<group>"; };
 		5422F76F1930CB48006B9C76 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		5424172018DAF19300DB913A /* VBLookupSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBLookupSettings.h; sourceTree = "<group>"; };
 		5424172118DAF19300DB913A /* VBLookupSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBLookupSettings.m; sourceTree = "<group>"; };
@@ -301,47 +230,7 @@
 		5465112118EE9F29009CB416 /* VBWordTrainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBWordTrainerView.m; sourceTree = "<group>"; };
 		5465112718EEA45B009CB416 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
 		5465112818EEA45B009CB416 /* star@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star@2x.png"; sourceTree = "<group>"; };
-		5466116E1945B954007526D0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = en; path = "en.lproj/Getting started.html"; sourceTree = "<group>"; };
-		546611701945B992007526D0 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = de; path = "de.lproj/Getting started.html"; sourceTree = "<group>"; };
-		546611721945B9C2007526D0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = en; path = "en.lproj/Quiz algorithm.html"; sourceTree = "<group>"; };
-		546611741945B9C7007526D0 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = de; path = "de.lproj/Quiz algorithm.html"; sourceTree = "<group>"; };
-		546611761945B9E0007526D0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = en; path = "en.lproj/Word lookup.html"; sourceTree = "<group>"; };
-		546611781945B9E6007526D0 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = de; path = "de.lproj/Word lookup.html"; sourceTree = "<group>"; };
-		5466117A1945BB55007526D0 /* de */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = de; path = "de.lproj/1-new word.png"; sourceTree = "<group>"; };
-		5466117C1945BB5B007526D0 /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = "en.lproj/1-new word.png"; sourceTree = "<group>"; };
-		5466117E1945BB6E007526D0 /* de */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = de; path = "de.lproj/2-lookup.png"; sourceTree = "<group>"; };
-		546611811945BB74007526D0 /* de */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = de; path = "de.lproj/3-url selection.png"; sourceTree = "<group>"; };
-		546611841945BB78007526D0 /* de */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = de; path = "de.lproj/4-dict lookup.png"; sourceTree = "<group>"; };
-		546611871945BB7C007526D0 /* de */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = de; path = "de.lproj/5-add url.png"; sourceTree = "<group>"; };
-		5466118A1945BB80007526D0 /* de */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = de; path = "de.lproj/6-new url.png"; sourceTree = "<group>"; };
-		5466118D1945BB86007526D0 /* de */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = de; path = "de.lproj/1-set menu.png"; sourceTree = "<group>"; };
-		546611901945BB8B007526D0 /* de */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = de; path = "de.lproj/2-show answer.png"; sourceTree = "<group>"; };
-		546611931945BB8F007526D0 /* de */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = de; path = "de.lproj/3-right wrong.png"; sourceTree = "<group>"; };
-		546611961945BB93007526D0 /* de */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = de; path = "de.lproj/4-browse words.png"; sourceTree = "<group>"; };
-		546611991945BB9C007526D0 /* de */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = de; path = "de.lproj/1-homescreen.png"; sourceTree = "<group>"; };
-		5466119C1945BBA0007526D0 /* de */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = de; path = "de.lproj/2-add words.png"; sourceTree = "<group>"; };
-		5466119F1945BBA4007526D0 /* de */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = de; path = "de.lproj/3-recent words.png"; sourceTree = "<group>"; };
-		546611A21945BBA8007526D0 /* de */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = de; path = "de.lproj/4-filter words.png"; sourceTree = "<group>"; };
-		546611A51945BBAE007526D0 /* de */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = de; path = "de.lproj/5-set actions.png"; sourceTree = "<group>"; };
-		546611A71945BBB9007526D0 /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = "en.lproj/2-lookup.png"; sourceTree = "<group>"; };
-		546611A81945BBBC007526D0 /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = "en.lproj/3-url selection.png"; sourceTree = "<group>"; };
-		546611A91945BBBE007526D0 /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = "en.lproj/4-dict lookup.png"; sourceTree = "<group>"; };
-		546611AA1945BBC6007526D0 /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = "en.lproj/5-add url.png"; sourceTree = "<group>"; };
-		546611AB1945BBC9007526D0 /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = "en.lproj/6-new url.png"; sourceTree = "<group>"; };
-		546611AC1945BBCE007526D0 /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = "en.lproj/1-set menu.png"; sourceTree = "<group>"; };
-		546611AD1945BBD0007526D0 /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = "en.lproj/2-show answer.png"; sourceTree = "<group>"; };
-		546611AE1945BBD3007526D0 /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = "en.lproj/3-right wrong.png"; sourceTree = "<group>"; };
-		546611AF1945BBD6007526D0 /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = "en.lproj/4-browse words.png"; sourceTree = "<group>"; };
-		546611B01945BBD9007526D0 /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = "en.lproj/1-homescreen.png"; sourceTree = "<group>"; };
-		546611B11945BBDB007526D0 /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = "en.lproj/2-add words.png"; sourceTree = "<group>"; };
-		546611B21945BBDF007526D0 /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = "en.lproj/3-recent words.png"; sourceTree = "<group>"; };
-		546611B31945BBEC007526D0 /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = "en.lproj/4-filter words.png"; sourceTree = "<group>"; };
-		546611B41945BBEF007526D0 /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = "en.lproj/5-set actions.png"; sourceTree = "<group>"; };
-		546795D4193E1BDB003FB111 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main_iPhone.strings; sourceTree = "<group>"; };
 		546795D5193E1BDB003FB111 /* de */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main_iPad.strings; sourceTree = "<group>"; };
-		546795D6193E1BE5003FB111 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
-		546795D7193E1BE5003FB111 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		546795D8193E1BE5003FB111 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		546795D9193E1C24003FB111 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5468EB3318B8AEB600716507 /* Vocab Book.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vocab Book.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5468EB3618B8AEB600716507 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -349,7 +238,6 @@
 		5468EB3A18B8AEB600716507 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5468EB3E18B8AEB600716507 /* Vocab Book-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Vocab Book-Info.plist"; sourceTree = "<group>"; };
 		5468EB4018B8AEB600716507 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		5468EB4218B8AEB600716507 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5468EB4418B8AEB600716507 /* Vocab Book-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Vocab Book-Prefix.pch"; sourceTree = "<group>"; };
 		5468EB4518B8AEB600716507 /* VBAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VBAppDelegate.h; sourceTree = "<group>"; };
 		5468EB4618B8AEB600716507 /* VBAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VBAppDelegate.m; sourceTree = "<group>"; };
@@ -360,9 +248,6 @@
 		5468EB5418B8AEB700716507 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5468EB5A18B8AEB700716507 /* Vocab BookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Vocab BookTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5468EB5B18B8AEB700716507 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		5468EB6318B8AEB700716507 /* Vocab BookTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Vocab BookTests-Info.plist"; sourceTree = "<group>"; };
-		5468EB6518B8AEB700716507 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		5468EB6718B8AEB700716507 /* VocabBookTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VocabBookTest.m; sourceTree = "<group>"; };
 		5468EB7518B8BB6900716507 /* WordsModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WordsModel.xcdatamodel; sourceTree = "<group>"; };
 		546FA3A818E2E38B00F0CBAC /* VBPremiumTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBPremiumTVC.h; sourceTree = "<group>"; };
 		546FA3A918E2E38B00F0CBAC /* VBPremiumTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBPremiumTVC.m; sourceTree = "<group>"; };
@@ -406,34 +291,16 @@
 		54E875A018DB67DB00CED41A /* VBMenuEmptyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBMenuEmptyCell.m; sourceTree = "<group>"; };
 		54E875A218DB773200CED41A /* VBCreateSetAddLanguageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBCreateSetAddLanguageVC.h; sourceTree = "<group>"; };
 		54E875A318DB773200CED41A /* VBCreateSetAddLanguageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBCreateSetAddLanguageVC.m; sourceTree = "<group>"; };
-		54ED8C9218EB119A00A7D040 /* VocabbookTestclient */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = VocabbookTestclient; sourceTree = BUILT_PRODUCTS_DIR; };
-		54ED8C9518EB119A00A7D040 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		54ED8C9818EB119A00A7D040 /* VocabbookTestclient-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VocabbookTestclient-Prefix.pch"; sourceTree = "<group>"; };
-		54ED8C9918EB119A00A7D040 /* VocabbookTestclient.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = VocabbookTestclient.1; sourceTree = "<group>"; };
+		BB44FE492AC0113C00510833 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BB44FE4C2AC011D300510833 /* Vocab Book-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Vocab Book-Bridging-Header.h"; sourceTree = "<group>"; };
+		BB44FE4D2AC011D300510833 /* VocabBookApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabBookApp.swift; sourceTree = "<group>"; };
+		BB44FE512AC0192700510833 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		BB44FE552AC019A400510833 /* VocabSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabSet.swift; sourceTree = "<group>"; };
+		BB44FE572AC022DF00510833 /* VocabSetEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabSetEditView.swift; sourceTree = "<group>"; };
+		BB44FE592AC022F400510833 /* VocabSetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabSetView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		5422F7361930C628006B9C76 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5422F7701930CB48006B9C76 /* CoreText.framework in Frameworks */,
-				5422F73B1930C628006B9C76 /* CoreGraphics.framework in Frameworks */,
-				5422F73C1930C628006B9C76 /* UIKit.framework in Frameworks */,
-				5422F73A1930C628006B9C76 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5422F7521930C629006B9C76 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5422F7561930C629006B9C76 /* XCTest.framework in Frameworks */,
-				5422F7581930C629006B9C76 /* UIKit.framework in Frameworks */,
-				5422F7571930C629006B9C76 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		5468EB3018B8AEB600716507 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -455,14 +322,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		54ED8C8F18EB119A00A7D040 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				54ED8C9318EB119A00A7D040 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -475,64 +334,6 @@
 				541E984F192F419E000020E6 /* VBHelpPageVC.m */,
 			);
 			name = Help;
-			sourceTree = "<group>";
-		};
-		541E9858192F4959000020E6 /* Help Pages */ = {
-			isa = PBXGroup;
-			children = (
-				546611601945B405007526D0 /* word_lookup_png_de */,
-				546611571945A8C1007526D0 /* quiz_algorithm_png_de */,
-				548F8B871944963A00BCADBC /* getting_started_png_de */,
-				5466116F1945B954007526D0 /* Getting started.html */,
-				546611731945B9C2007526D0 /* Quiz algorithm.html */,
-				546611771945B9E0007526D0 /* Word lookup.html */,
-			);
-			name = "Help Pages";
-			sourceTree = "<group>";
-		};
-		5422F73D1930C628006B9C76 /* pdfTest */ = {
-			isa = PBXGroup;
-			children = (
-				5422F76C1930C6CF006B9C76 /* PrintView.h */,
-				5422F76D1930C6CF006B9C76 /* PrintView.m */,
-				5422F7461930C628006B9C76 /* AppDelegate.h */,
-				5422F7471930C628006B9C76 /* AppDelegate.m */,
-				5422F7491930C628006B9C76 /* Main.storyboard */,
-				5422F74C1930C628006B9C76 /* ViewController.h */,
-				5422F74D1930C628006B9C76 /* ViewController.m */,
-				5422F74F1930C628006B9C76 /* Images.xcassets */,
-				5422F73E1930C628006B9C76 /* Supporting Files */,
-			);
-			path = pdfTest;
-			sourceTree = "<group>";
-		};
-		5422F73E1930C628006B9C76 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				5422F73F1930C628006B9C76 /* pdfTest-Info.plist */,
-				5422F7401930C628006B9C76 /* InfoPlist.strings */,
-				5422F7431930C628006B9C76 /* main.m */,
-				5422F7451930C628006B9C76 /* pdfTest-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		5422F75B1930C629006B9C76 /* pdfTestTests */ = {
-			isa = PBXGroup;
-			children = (
-				5422F7611930C629006B9C76 /* pdfTestTests.m */,
-				5422F75C1930C629006B9C76 /* Supporting Files */,
-			);
-			path = pdfTestTests;
-			sourceTree = "<group>";
-		};
-		5422F75C1930C629006B9C76 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				5422F75D1930C629006B9C76 /* pdfTestTests-Info.plist */,
-				5422F75E1930C629006B9C76 /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		5425CEEA18B8EFBA00FCA274 /* Data */ = {
@@ -698,44 +499,14 @@
 			name = Classes;
 			sourceTree = "<group>";
 		};
-		546611571945A8C1007526D0 /* quiz_algorithm_png_de */ = {
-			isa = PBXGroup;
-			children = (
-				5466118E1945BB86007526D0 /* 1-set menu.png */,
-				546611911945BB8B007526D0 /* 2-show answer.png */,
-				546611941945BB8F007526D0 /* 3-right wrong.png */,
-				546611971945BB93007526D0 /* 4-browse words.png */,
-			);
-			name = quiz_algorithm_png_de;
-			path = helppages/quiz_algorithm_png_de;
-			sourceTree = SOURCE_ROOT;
-		};
-		546611601945B405007526D0 /* word_lookup_png_de */ = {
-			isa = PBXGroup;
-			children = (
-				5466117B1945BB55007526D0 /* 1-new word.png */,
-				5466117F1945BB6E007526D0 /* 2-lookup.png */,
-				546611821945BB74007526D0 /* 3-url selection.png */,
-				546611851945BB78007526D0 /* 4-dict lookup.png */,
-				546611881945BB7C007526D0 /* 5-add url.png */,
-				5466118B1945BB80007526D0 /* 6-new url.png */,
-			);
-			name = word_lookup_png_de;
-			path = helppages/word_lookup_png_de;
-			sourceTree = SOURCE_ROOT;
-		};
 		5468EB2A18B8AEB600716507 = {
 			isa = PBXGroup;
 			children = (
 				54B19D61194A0796003B0888 /* Vocab Book.entitlements */,
 				5468EB3C18B8AEB600716507 /* VocabBook */,
 				54A73E1918EB03AF00A5D136 /* html */,
-				54ED8C9418EB119A00A7D040 /* VocabbookTestclient */,
-				5422F73D1930C628006B9C76 /* pdfTest */,
-				5422F75B1930C629006B9C76 /* pdfTestTests */,
 				5468EB3518B8AEB600716507 /* Frameworks */,
 				5468EB3418B8AEB600716507 /* Products */,
-				5468EB6118B8AEB700716507 /* MyWordsTests */,
 			);
 			sourceTree = "<group>";
 		};
@@ -744,9 +515,6 @@
 			children = (
 				5468EB3318B8AEB600716507 /* Vocab Book.app */,
 				5468EB5A18B8AEB700716507 /* Vocab BookTests.xctest */,
-				54ED8C9218EB119A00A7D040 /* VocabbookTestclient */,
-				5422F7391930C628006B9C76 /* pdfTest.app */,
-				5422F7551930C629006B9C76 /* pdfTestTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -767,46 +535,12 @@
 		5468EB3C18B8AEB600716507 /* VocabBook */ = {
 			isa = PBXGroup;
 			children = (
-				545D36FF18E48EE800A8A94B /* Classes */,
-				5496FE4A18CC800D00E58378 /* Resources */,
-				5496FE4B18CC802800E58378 /* View Controllers */,
-				5425CEEA18B8EFBA00FCA274 /* Data */,
-				5468EB3D18B8AEB600716507 /* Supporting Files */,
+				BB44FE4B2AC011BE00510833 /* Core */,
+				BB44FE502AC0191A00510833 /* Main */,
+				BB44FE4F2AC0187D00510833 /* Legacy */,
 			);
 			name = VocabBook;
 			path = MyWords;
-			sourceTree = "<group>";
-		};
-		5468EB3D18B8AEB600716507 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				540D278E19473E34003B3BAA /* appdescription.txt */,
-				5468EB5418B8AEB700716507 /* Images.xcassets */,
-				5468EB3E18B8AEB600716507 /* Vocab Book-Info.plist */,
-				5468EB3F18B8AEB600716507 /* InfoPlist.strings */,
-				5468EB4218B8AEB600716507 /* main.m */,
-				5468EB4418B8AEB600716507 /* Vocab Book-Prefix.pch */,
-				5420DC7518C39F3D006CE82F /* Localizable.strings */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		5468EB6118B8AEB700716507 /* MyWordsTests */ = {
-			isa = PBXGroup;
-			children = (
-				5468EB6718B8AEB700716507 /* VocabBookTest.m */,
-				5468EB6218B8AEB700716507 /* Supporting Files */,
-			);
-			path = MyWordsTests;
-			sourceTree = "<group>";
-		};
-		5468EB6218B8AEB700716507 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				5468EB6318B8AEB700716507 /* Vocab BookTests-Info.plist */,
-				5468EB6418B8AEB700716507 /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		5475310718E0DA3B007042CA /* Images */ = {
@@ -877,24 +611,9 @@
 			name = Settings;
 			sourceTree = "<group>";
 		};
-		548F8B871944963A00BCADBC /* getting_started_png_de */ = {
-			isa = PBXGroup;
-			children = (
-				5466119A1945BB9C007526D0 /* 1-homescreen.png */,
-				5466119D1945BBA0007526D0 /* 2-add words.png */,
-				546611A01945BBA4007526D0 /* 3-recent words.png */,
-				546611A31945BBA8007526D0 /* 4-filter words.png */,
-				546611A61945BBAE007526D0 /* 5-set actions.png */,
-			);
-			name = getting_started_png_de;
-			path = helppages/getting_started_png_de;
-			sourceTree = SOURCE_ROOT;
-		};
 		5496FE4A18CC800D00E58378 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				5433850D18BE2D2F0084C143 /* VocabBook.entitlements */,
-				541E9858192F4959000020E6 /* Help Pages */,
 				5482E0D21949A3F4000F3645 /* Storyboard */,
 				5475310718E0DA3B007042CA /* Images */,
 			);
@@ -934,62 +653,48 @@
 			name = "support page";
 			sourceTree = "<group>";
 		};
-		54ED8C9418EB119A00A7D040 /* VocabbookTestclient */ = {
+		BB44FE4B2AC011BE00510833 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				54ED8C9518EB119A00A7D040 /* main.m */,
-				54ED8C9918EB119A00A7D040 /* VocabbookTestclient.1 */,
-				54ED8C9718EB119A00A7D040 /* Supporting Files */,
+				BB44FE4D2AC011D300510833 /* VocabBookApp.swift */,
+				5468EB3E18B8AEB600716507 /* Vocab Book-Info.plist */,
+				5433850D18BE2D2F0084C143 /* VocabBook.entitlements */,
+				BB44FE4C2AC011D300510833 /* Vocab Book-Bridging-Header.h */,
+				BB44FE492AC0113C00510833 /* LaunchScreen.storyboard */,
+				5468EB5418B8AEB700716507 /* Images.xcassets */,
+				5468EB3F18B8AEB600716507 /* InfoPlist.strings */,
+				5420DC7518C39F3D006CE82F /* Localizable.strings */,
+				540D278E19473E34003B3BAA /* appdescription.txt */,
 			);
-			path = VocabbookTestclient;
+			name = Core;
 			sourceTree = "<group>";
 		};
-		54ED8C9718EB119A00A7D040 /* Supporting Files */ = {
+		BB44FE4F2AC0187D00510833 /* Legacy */ = {
 			isa = PBXGroup;
 			children = (
-				54ED8C9818EB119A00A7D040 /* VocabbookTestclient-Prefix.pch */,
+				5468EB4418B8AEB600716507 /* Vocab Book-Prefix.pch */,
+				545D36FF18E48EE800A8A94B /* Classes */,
+				5496FE4A18CC800D00E58378 /* Resources */,
+				5496FE4B18CC802800E58378 /* View Controllers */,
+				5425CEEA18B8EFBA00FCA274 /* Data */,
 			);
-			name = "Supporting Files";
+			name = Legacy;
+			sourceTree = "<group>";
+		};
+		BB44FE502AC0191A00510833 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				BB44FE512AC0192700510833 /* MainView.swift */,
+				BB44FE552AC019A400510833 /* VocabSet.swift */,
+				BB44FE572AC022DF00510833 /* VocabSetEditView.swift */,
+				BB44FE592AC022F400510833 /* VocabSetView.swift */,
+			);
+			name = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5422F7381930C628006B9C76 /* pdfTest */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5422F7671930C629006B9C76 /* Build configuration list for PBXNativeTarget "pdfTest" */;
-			buildPhases = (
-				5422F7351930C628006B9C76 /* Sources */,
-				5422F7361930C628006B9C76 /* Frameworks */,
-				5422F7371930C628006B9C76 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = pdfTest;
-			productName = pdfTest;
-			productReference = 5422F7391930C628006B9C76 /* pdfTest.app */;
-			productType = "com.apple.product-type.application";
-		};
-		5422F7541930C629006B9C76 /* pdfTestTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5422F7681930C629006B9C76 /* Build configuration list for PBXNativeTarget "pdfTestTests" */;
-			buildPhases = (
-				5422F7511930C629006B9C76 /* Sources */,
-				5422F7521930C629006B9C76 /* Frameworks */,
-				5422F7531930C629006B9C76 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				5422F75A1930C629006B9C76 /* PBXTargetDependency */,
-			);
-			name = pdfTestTests;
-			productName = pdfTestTests;
-			productReference = 5422F7551930C629006B9C76 /* pdfTestTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		5468EB3218B8AEB600716507 /* Vocab Book */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5468EB6B18B8AEB700716507 /* Build configuration list for PBXNativeTarget "Vocab Book" */;
@@ -1025,23 +730,6 @@
 			productReference = 5468EB5A18B8AEB700716507 /* Vocab BookTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		54ED8C9118EB119A00A7D040 /* VocabbookTestclient */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 54ED8C9B18EB119A00A7D040 /* Build configuration list for PBXNativeTarget "VocabbookTestclient" */;
-			buildPhases = (
-				54ED8C8E18EB119A00A7D040 /* Sources */,
-				54ED8C8F18EB119A00A7D040 /* Frameworks */,
-				54ED8C9018EB119A00A7D040 /* CopyFiles */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = VocabbookTestclient;
-			productName = VocabbookTestclient;
-			productReference = 54ED8C9218EB119A00A7D040 /* VocabbookTestclient */;
-			productType = "com.apple.product-type.tool";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -1052,11 +740,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Oliver Brehm";
 				TargetAttributes = {
-					5422F7541930C629006B9C76 = {
-						TestTargetID = 5468EB3218B8AEB600716507;
-					};
 					5468EB3218B8AEB600716507 = {
 						DevelopmentTeam = CR6FRMMTU7;
+						LastSwiftMigration = 1500;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -1079,6 +765,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 				de,
@@ -1090,32 +777,11 @@
 			targets = (
 				5468EB3218B8AEB600716507 /* Vocab Book */,
 				5468EB5918B8AEB700716507 /* Vocab BookTests */,
-				54ED8C9118EB119A00A7D040 /* VocabbookTestclient */,
-				5422F7381930C628006B9C76 /* pdfTest */,
-				5422F7541930C629006B9C76 /* pdfTestTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		5422F7371930C628006B9C76 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5422F7501930C628006B9C76 /* Images.xcassets in Resources */,
-				5422F7421930C628006B9C76 /* InfoPlist.strings in Resources */,
-				5422F74B1930C628006B9C76 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5422F7531930C629006B9C76 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5422F7601930C629006B9C76 /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		5468EB3118B8AEB600716507 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1123,47 +789,34 @@
 				5474EF5B198A3BC600555A48 /* rightButton.png in Resources */,
 				543A79021927786100AF73C1 /* flag_nederlands.png in Resources */,
 				543A79161927786100AF73C1 /* flag_south corean.png in Resources */,
-				546611791945BB55007526D0 /* 1-new word.png in Resources */,
 				543A79191927786100AF73C1 /* flag_türkçe.png in Resources */,
-				546611A41945BBAE007526D0 /* 5-set actions.png in Resources */,
 				543A791A1927786100AF73C1 /* flag_ukrayins'ka mova.png in Resources */,
 				5475310D18E0DC9D007042CA /* icon-settings-ipad.png in Resources */,
+				BB44FE4A2AC0113C00510833 /* LaunchScreen.storyboard in Resources */,
 				543A79031927786100AF73C1 /* flag_english.png in Resources */,
 				5474EF5C198A3BC600555A48 /* rightButton@2x.png in Resources */,
-				546611891945BB80007526D0 /* 6-new url.png in Resources */,
 				543A79091927786100AF73C1 /* flag_magyar.png in Resources */,
 				543A79041927786100AF73C1 /* flag_español.png in Resources */,
 				5465112918EEA45B009CB416 /* star.png in Resources */,
 				54715944192E049E002C9E24 /* unknown_language.png in Resources */,
 				5475310E18E0DC9D007042CA /* icon-settings.png in Resources */,
-				5466119B1945BBA0007526D0 /* 2-add words.png in Resources */,
 				543A78FE1927786100AF73C1 /* flag_hrvatski.png in Resources */,
-				5466118F1945BB8B007526D0 /* 2-show answer.png in Resources */,
 				543A790A1927786100AF73C1 /* flag_gaeilge.png in Resources */,
-				546611711945B9C2007526D0 /* Quiz algorithm.html in Resources */,
 				543A79071927786100AF73C1 /* flag_greek.png in Resources */,
 				5420DC7318C39F3D006CE82F /* Localizable.strings in Resources */,
 				5468EB4D18B8AEB700716507 /* Main_iPad.storyboard in Resources */,
-				546611A11945BBA8007526D0 /* 4-filter words.png in Resources */,
-				546611801945BB74007526D0 /* 3-url selection.png in Resources */,
 				5465112A18EEA45B009CB416 /* star@2x.png in Resources */,
-				5466117D1945BB6E007526D0 /* 2-lookup.png in Resources */,
 				543A79011927786100AF73C1 /* flag_deutsch.png in Resources */,
 				543A78FC1927786100AF73C1 /* flag_bălgarski esik.png in Resources */,
 				5468EB5518B8AEB700716507 /* Images.xcassets in Resources */,
 				543A78F91927786100AF73C1 /* flag_shqip.png in Resources */,
 				5474EF5D198A3BC600555A48 /* upButton.png in Resources */,
-				5466118C1945BB86007526D0 /* 1-set menu.png in Resources */,
-				5466119E1945BBA4007526D0 /* 3-recent words.png in Resources */,
-				546611751945B9E0007526D0 /* Word lookup.html in Resources */,
 				54C8818219479406007597D2 /* index.html in Resources */,
 				543A790C1927786100AF73C1 /* flag_japanese.png in Resources */,
 				543A790E1927786100AF73C1 /* flag_norsk.png in Resources */,
 				5475310518E0DA35007042CA /* icon.png in Resources */,
 				5475310C18E0DC9D007042CA /* icon-ipad.png in Resources */,
 				543A79141927786100AF73C1 /* flag_srpski jezik.png in Resources */,
-				546611831945BB78007526D0 /* 4-dict lookup.png in Resources */,
-				546611981945BB9C007526D0 /* 1-homescreen.png in Resources */,
 				543A78FB1927786100AF73C1 /* flag_bengali.png in Resources */,
 				543A79101927786100AF73C1 /* flag_português.png in Resources */,
 				543A79051927786100AF73C1 /* flag_suomi.png in Resources */,
@@ -1177,7 +830,6 @@
 				5474EF55198A2F0200555A48 /* star_empty.png in Resources */,
 				5474EF56198A2F0200555A48 /* star_empty@2x.png in Resources */,
 				5475310F18E0DC9D007042CA /* icon-settings@2x.png in Resources */,
-				546611921945BB8F007526D0 /* 3-right wrong.png in Resources */,
 				543A79081927786100AF73C1 /* flag_hindi.png in Resources */,
 				543A79111927786100AF73C1 /* flag_punjabi.png in Resources */,
 				543A78FA1927786100AF73C1 /* flag_arabic.png in Resources */,
@@ -1188,10 +840,7 @@
 				5474EF5E198A3BC600555A48 /* upButton@2x.png in Resources */,
 				543A79151927786100AF73C1 /* flag_slovenščina.png in Resources */,
 				543A791B1927786100AF73C1 /* flag_vietnamese.png in Resources */,
-				5466116D1945B954007526D0 /* Getting started.html in Resources */,
-				546611861945BB7C007526D0 /* 5-add url.png in Resources */,
 				543A790F1927786100AF73C1 /* flag_polski.png in Resources */,
-				546611951945BB93007526D0 /* 4-browse words.png in Resources */,
 				543A790B1927786100AF73C1 /* flag_italiano.png in Resources */,
 				543A78FF1927786100AF73C1 /* flag_čeština.png in Resources */,
 			);
@@ -1201,32 +850,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5468EB6618B8AEB700716507 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		5422F7351930C628006B9C76 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5422F74E1930C628006B9C76 /* ViewController.m in Sources */,
-				5422F7481930C628006B9C76 /* AppDelegate.m in Sources */,
-				5422F76E1930C6CF006B9C76 /* PrintView.m in Sources */,
-				5422F7441930C628006B9C76 /* main.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5422F7511930C629006B9C76 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5422F7621930C629006B9C76 /* pdfTestTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		5468EB2F18B8AEB600716507 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1241,12 +870,15 @@
 				5450D95818CF1E43001B4BCB /* VBHelper.m in Sources */,
 				541E9850192F419E000020E6 /* VBHelpPageVC.m in Sources */,
 				5425CF0518B919B900FCA274 /* VBMenuWordSetCell.m in Sources */,
+				BB44FE4E2AC011D300510833 /* VocabBookApp.swift in Sources */,
+				BB44FE5A2AC022F400510833 /* VocabSetView.swift in Sources */,
 				54715942192DE912002C9E24 /* WordSet+DocumentOperations.m in Sources */,
 				5468EB5318B8AEB700716507 /* VBWordInspectorVC.m in Sources */,
 				5468EB7618B8BB6900716507 /* WordsModel.xcdatamodeld in Sources */,
 				5465111F18EE9829009CB416 /* VBWordQuizView.m in Sources */,
 				5468EB4718B8AEB600716507 /* VBAppDelegate.m in Sources */,
 				5440FD3218E1CF12002B688F /* VBCreateSetDescriptionCell.m in Sources */,
+				BB44FE562AC019A400510833 /* VocabSet.swift in Sources */,
 				54589681190A47100092937F /* VBImportExport.m in Sources */,
 				545D370218E48F8200A8A94B /* VBSetBrowserBase.m in Sources */,
 				54DDF9EE18BA8CB80024633F /* VBCreateSetTVC.m in Sources */,
@@ -1258,7 +890,9 @@
 				5425CEFF18B907EE00FCA274 /* VBWordBrowserTVC.m in Sources */,
 				5433851F18BE58EE0084C143 /* WordsStatistcsCell.m in Sources */,
 				545624C118BA08510017A257 /* VBWordLookupVC.m in Sources */,
+				BB44FE582AC022DF00510833 /* VocabSetEditView.swift in Sources */,
 				54AE86CF18E34E3F00A3860F /* VBDocumentManager.m in Sources */,
+				BB44FE522AC0192700510833 /* MainView.swift in Sources */,
 				546FA3AA18E2E38B00F0CBAC /* VBPremiumTVC.m in Sources */,
 				5471593F192DE904002C9E24 /* Word+DocumentOperations.m in Sources */,
 				5424172218DAF19300DB913A /* VBLookupSettings.m in Sources */,
@@ -1272,7 +906,6 @@
 				5465112218EE9F29009CB416 /* VBWordTrainerView.m in Sources */,
 				544441B418BB581B00992026 /* VBSetBrowserTVC.m in Sources */,
 				54E875A118DB67DB00CED41A /* VBMenuEmptyCell.m in Sources */,
-				5468EB4318B8AEB600716507 /* main.m in Sources */,
 				5425CEFC18B907A300FCA274 /* VBMenuCVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1281,26 +914,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5468EB6818B8AEB700716507 /* VocabBookTest.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		54ED8C8E18EB119A00A7D040 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				54ED8C9618EB119A00A7D040 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		5422F75A1930C629006B9C76 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 5422F7381930C628006B9C76 /* pdfTest */;
-			targetProxy = 5422F7591930C629006B9C76 /* PBXContainerItemProxy */;
-		};
 		5468EB6018B8AEB700716507 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 5468EB3218B8AEB600716507 /* Vocab Book */;
@@ -1328,198 +947,6 @@
 			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
-		5422F7401930C628006B9C76 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5422F7411930C628006B9C76 /* en */,
-				546795D7193E1BE5003FB111 /* de */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		5422F7491930C628006B9C76 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5422F74A1930C628006B9C76 /* Base */,
-				546795D6193E1BE5003FB111 /* de */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		5422F75E1930C629006B9C76 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5422F75F1930C629006B9C76 /* en */,
-				546795D8193E1BE5003FB111 /* de */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		5466116F1945B954007526D0 /* Getting started.html */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5466116E1945B954007526D0 /* en */,
-				546611701945B992007526D0 /* de */,
-			);
-			name = "Getting started.html";
-			path = helppages;
-			sourceTree = SOURCE_ROOT;
-		};
-		546611731945B9C2007526D0 /* Quiz algorithm.html */ = {
-			isa = PBXVariantGroup;
-			children = (
-				546611721945B9C2007526D0 /* en */,
-				546611741945B9C7007526D0 /* de */,
-			);
-			name = "Quiz algorithm.html";
-			path = helppages;
-			sourceTree = SOURCE_ROOT;
-		};
-		546611771945B9E0007526D0 /* Word lookup.html */ = {
-			isa = PBXVariantGroup;
-			children = (
-				546611761945B9E0007526D0 /* en */,
-				546611781945B9E6007526D0 /* de */,
-			);
-			name = "Word lookup.html";
-			path = helppages;
-			sourceTree = SOURCE_ROOT;
-		};
-		5466117B1945BB55007526D0 /* 1-new word.png */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5466117A1945BB55007526D0 /* de */,
-				5466117C1945BB5B007526D0 /* en */,
-			);
-			name = "1-new word.png";
-			sourceTree = "<group>";
-		};
-		5466117F1945BB6E007526D0 /* 2-lookup.png */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5466117E1945BB6E007526D0 /* de */,
-				546611A71945BBB9007526D0 /* en */,
-			);
-			name = "2-lookup.png";
-			sourceTree = "<group>";
-		};
-		546611821945BB74007526D0 /* 3-url selection.png */ = {
-			isa = PBXVariantGroup;
-			children = (
-				546611811945BB74007526D0 /* de */,
-				546611A81945BBBC007526D0 /* en */,
-			);
-			name = "3-url selection.png";
-			sourceTree = "<group>";
-		};
-		546611851945BB78007526D0 /* 4-dict lookup.png */ = {
-			isa = PBXVariantGroup;
-			children = (
-				546611841945BB78007526D0 /* de */,
-				546611A91945BBBE007526D0 /* en */,
-			);
-			name = "4-dict lookup.png";
-			sourceTree = "<group>";
-		};
-		546611881945BB7C007526D0 /* 5-add url.png */ = {
-			isa = PBXVariantGroup;
-			children = (
-				546611871945BB7C007526D0 /* de */,
-				546611AA1945BBC6007526D0 /* en */,
-			);
-			name = "5-add url.png";
-			sourceTree = "<group>";
-		};
-		5466118B1945BB80007526D0 /* 6-new url.png */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5466118A1945BB80007526D0 /* de */,
-				546611AB1945BBC9007526D0 /* en */,
-			);
-			name = "6-new url.png";
-			sourceTree = "<group>";
-		};
-		5466118E1945BB86007526D0 /* 1-set menu.png */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5466118D1945BB86007526D0 /* de */,
-				546611AC1945BBCE007526D0 /* en */,
-			);
-			name = "1-set menu.png";
-			sourceTree = "<group>";
-		};
-		546611911945BB8B007526D0 /* 2-show answer.png */ = {
-			isa = PBXVariantGroup;
-			children = (
-				546611901945BB8B007526D0 /* de */,
-				546611AD1945BBD0007526D0 /* en */,
-			);
-			name = "2-show answer.png";
-			sourceTree = "<group>";
-		};
-		546611941945BB8F007526D0 /* 3-right wrong.png */ = {
-			isa = PBXVariantGroup;
-			children = (
-				546611931945BB8F007526D0 /* de */,
-				546611AE1945BBD3007526D0 /* en */,
-			);
-			name = "3-right wrong.png";
-			sourceTree = "<group>";
-		};
-		546611971945BB93007526D0 /* 4-browse words.png */ = {
-			isa = PBXVariantGroup;
-			children = (
-				546611961945BB93007526D0 /* de */,
-				546611AF1945BBD6007526D0 /* en */,
-			);
-			name = "4-browse words.png";
-			sourceTree = "<group>";
-		};
-		5466119A1945BB9C007526D0 /* 1-homescreen.png */ = {
-			isa = PBXVariantGroup;
-			children = (
-				546611991945BB9C007526D0 /* de */,
-				546611B01945BBD9007526D0 /* en */,
-			);
-			name = "1-homescreen.png";
-			sourceTree = "<group>";
-		};
-		5466119D1945BBA0007526D0 /* 2-add words.png */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5466119C1945BBA0007526D0 /* de */,
-				546611B11945BBDB007526D0 /* en */,
-			);
-			name = "2-add words.png";
-			sourceTree = "<group>";
-		};
-		546611A01945BBA4007526D0 /* 3-recent words.png */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5466119F1945BBA4007526D0 /* de */,
-				546611B21945BBDF007526D0 /* en */,
-			);
-			name = "3-recent words.png";
-			sourceTree = "<group>";
-		};
-		546611A31945BBA8007526D0 /* 4-filter words.png */ = {
-			isa = PBXVariantGroup;
-			children = (
-				546611A21945BBA8007526D0 /* de */,
-				546611B31945BBEC007526D0 /* en */,
-			);
-			name = "4-filter words.png";
-			sourceTree = "<group>";
-		};
-		546611A61945BBAE007526D0 /* 5-set actions.png */ = {
-			isa = PBXVariantGroup;
-			children = (
-				546611A51945BBAE007526D0 /* de */,
-				546611B41945BBEF007526D0 /* en */,
-			);
-			name = "5-set actions.png";
-			sourceTree = "<group>";
-		};
 		5468EB3F18B8AEB600716507 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1532,7 +959,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				5468EB4918B8AEB600716507 /* Base */,
-				546795D4193E1BDB003FB111 /* de */,
 			);
 			name = Main_iPhone.storyboard;
 			sourceTree = "<group>";
@@ -1546,95 +972,9 @@
 			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
 		};
-		5468EB6418B8AEB700716507 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5468EB6518B8AEB700716507 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		5422F7631930C629006B9C76 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "pdfTest/pdfTest-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				INFOPLIST_FILE = "pdfTest/pdfTest-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = app;
-			};
-			name = Debug;
-		};
-		5422F7641930C629006B9C76 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "pdfTest/pdfTest-Prefix.pch";
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				INFOPLIST_FILE = "pdfTest/pdfTest-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		5422F7651930C629006B9C76 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Vocab Book.app/Vocab Book";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "pdfTest/pdfTest-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				INFOPLIST_FILE = "pdfTestTests/pdfTestTests-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		5422F7661930C629006B9C76 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Vocab Book.app/Vocab Book";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "pdfTest/pdfTest-Prefix.pch";
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				INFOPLIST_FILE = "pdfTestTests/pdfTestTests-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
 		5468EB6918B8AEB700716507 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1712,15 +1052,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Vocab Book.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MyWords/Vocab Book-Prefix.pch";
 				INFOPLIST_FILE = "MyWords/Vocab Book-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				PRODUCT_NAME = "Vocab Book";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "MyWords/Vocab Book-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1730,15 +1074,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Vocab Book.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MyWords/Vocab Book-Prefix.pch";
 				INFOPLIST_FILE = "MyWords/Vocab Book-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				PRODUCT_NAME = "Vocab Book";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "MyWords/Vocab Book-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -1746,6 +1093,7 @@
 		5468EB6F18B8AEB700716507 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Vocab Book.app/Vocab Book";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -1768,6 +1116,7 @@
 		5468EB7018B8AEB700716507 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Vocab Book.app/Vocab Book";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -1783,58 +1132,9 @@
 			};
 			name = Release;
 		};
-		54ED8C9C18EB119A00A7D040 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "VocabbookTestclient/VocabbookTestclient-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-			};
-			name = Debug;
-		};
-		54ED8C9D18EB119A00A7D040 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "VocabbookTestclient/VocabbookTestclient-Prefix.pch";
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5422F7671930C629006B9C76 /* Build configuration list for PBXNativeTarget "pdfTest" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5422F7631930C629006B9C76 /* Debug */,
-				5422F7641930C629006B9C76 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		5422F7681930C629006B9C76 /* Build configuration list for PBXNativeTarget "pdfTestTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5422F7651930C629006B9C76 /* Debug */,
-				5422F7661930C629006B9C76 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		5468EB2E18B8AEB600716507 /* Build configuration list for PBXProject "Vocab Book" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1858,15 +1158,6 @@
 			buildConfigurations = (
 				5468EB6F18B8AEB700716507 /* Debug */,
 				5468EB7018B8AEB700716507 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		54ED8C9B18EB119A00A7D040 /* Build configuration list for PBXNativeTarget "VocabbookTestclient" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				54ED8C9C18EB119A00A7D040 /* Debug */,
-				54ED8C9D18EB119A00A7D040 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

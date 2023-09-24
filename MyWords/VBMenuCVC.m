@@ -158,16 +158,19 @@
 -(void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if(buttonIndex == 0) { // "Rate now"
-        [VBHelper linkToRateApp];
         NSTimeInterval sixWeeks = 60 * 60 * 24 * 7 * 6; // seconds for six weeks
         NSDate *nextDateForAppRatingPromt = [NSDate dateWithTimeIntervalSinceNow: sixWeeks];
         [[NSUserDefaults standardUserDefaults] setObject: nextDateForAppRatingPromt forKey:NEXT_DATE_FOR_APP_RATING_PROMT_KEY];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        [VBHelper linkToRateApp];
     } else if(buttonIndex == 1) { // "Remind me later"
-        NSTimeInterval oneWeek = 60 * 60 * 24 * 7; // seconds for one week
-        NSDate *nextDateForAppRatingPromt = [NSDate dateWithTimeIntervalSinceNow: oneWeek];
+        NSTimeInterval fourDays = 60 * 60 * 24 * 4; // seconds for one week
+        NSDate *nextDateForAppRatingPromt = [NSDate dateWithTimeIntervalSinceNow: fourDays];
         [[NSUserDefaults standardUserDefaults] setObject:nextDateForAppRatingPromt forKey:NEXT_DATE_FOR_APP_RATING_PROMT_KEY];
+        [[NSUserDefaults standardUserDefaults] synchronize];
     } else if(buttonIndex == 2) { // "Don't ask again"
         [[NSUserDefaults standardUserDefaults] setObject:[NSDate distantFuture] forKey:NEXT_DATE_FOR_APP_RATING_PROMT_KEY];
+        [[NSUserDefaults standardUserDefaults] synchronize];
     }
 }
  

@@ -42,7 +42,11 @@
 -(void) openiCloudDocumentMigrating: (UIManagedDocument*) document
 {
     // create UIManagedDocument
+    
+//#warning reset to .coredata_library_icloud ! this cannot change or users will lose their data!
     NSString *documentName = @".coredata_library_icloud";
+    //SString *documentName = @".coredata_library_icloud_TEST";
+
     [self createDocument:documentName];
     
     [self setPersistentStoreOptionsiCloud];
@@ -162,8 +166,13 @@
     
 -(NSDictionary*) persistentStoreOptionsiCloud
 {
+//#warning RESET TO vocab_book_iCloud_store ! this cannot change or users will lose their data!
     return [NSDictionary dictionaryWithObjectsAndKeys:@"vocab_book_iCloud_store",
-            NSPersistentStoreUbiquitousContentNameKey, /*ubiquityContentURL, NSPersistentStoreUbiquitousContentURLKey,*/ [NSNumber numberWithBool:YES], NSMigratePersistentStoresAutomaticallyOption, [NSNumber numberWithBool:YES], NSInferMappingModelAutomaticallyOption,nil];
+            NSPersistentStoreUbiquitousContentNameKey,[NSNumber numberWithBool:YES], NSMigratePersistentStoresAutomaticallyOption, [NSNumber numberWithBool:YES], NSInferMappingModelAutomaticallyOption,nil];
+    
+    /*return [NSDictionary dictionaryWithObjectsAndKeys:@"vocab_book_iCloud_store_TEST",
+            NSPersistentStoreUbiquitousContentNameKey, [NSNumber numberWithBool:YES], NSMigratePersistentStoresAutomaticallyOption, [NSNumber numberWithBool:YES], NSInferMappingModelAutomaticallyOption,nil];*/
+
 }
 
 -(NSDictionary*) persistentStoreOptionLocal

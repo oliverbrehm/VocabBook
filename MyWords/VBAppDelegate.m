@@ -30,6 +30,7 @@
 {
     srand((unsigned)time(NULL));
 
+    
     self.documentManager = [[VBDocumentManager alloc] init];
     
     [self prepareiCloud];
@@ -39,6 +40,13 @@
     } else {
         [self.documentManager openLocalDocument];
        }
+    
+    /*
+#warning REMOVE
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:PREMIUM_IDENTIFIER];
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"usingiCloud"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    */
     
     // check if user has purchased premium
     if([[NSUserDefaults standardUserDefaults]boolForKey:PREMIUM_IDENTIFIER]) {
