@@ -11,11 +11,10 @@ import SwiftUI
 struct VocabSetEditView: View {
     // MARK: - Environment
     @Environment(\.modelContext) private var modelContext
+    @Environment(\.dismiss) private var dismiss
 
     // MARK: - State
-    @State private var name = ""
-
-    // MARK: - Properties
+    @Bindable var vocabSet: VocabSet
 
     // MARK: - Functions
 
@@ -32,16 +31,17 @@ extension VocabSetEditView {
 // MARK: - UI
 extension VocabSetEditView {
     var body: some View {
-        Form {
-            Section("Name") {
-                TextField(text: $name, label: { Text("Name") })
+        VStack {
+            Form {
+                Section("Name") {
+                    TextField(text: $vocabSet.name, label: { Text("Name") })
+                }
+
+                Section("Description") {
+                    TextField(text: $vocabSet.descriptionText, axis: .vertical, label: { Text("Description") })
+                }
             }
-        }
-        .navigationTitle("Set")
-        .onDisappear {
-            if !name.isEmpty {
-                modelContext.insert(VocabSet(name: name))
-            }
+            .navigationTitle("Edit Set")
         }
     }
 }
@@ -49,7 +49,8 @@ extension VocabSetEditView {
 // MARK: - Preview
 struct VocabSetEditView_Previews: PreviewProvider {
     static var previews: some View {
-        VocabSetEditView()
-            .modelContainer(for: [VocabSet.self, VocabCard.self], inMemory: true)
+        let previewContainer = PreviewContainer()
+        VocabSetEditView(vocabSet: previewContainer.vocabSet)
+            .modelContainer(previewContainer.modelContainer)
     }
 }

@@ -9,23 +9,17 @@
 import SwiftData
 
 @Model
-class VocabSet {
+class VocabSet: Identifiable {
+    let id = UUID()
+
     var name: String
+    var descriptionText: String
+
+    var isFavorite: Bool = false
     var cards: [VocabCard] = []
 
-    init(name: String) {
+    init(name: String, descriptionText: String) {
         self.name = name
-    }
-}
-
-
-@Model
-class VocabCard {
-    var front: String
-    var back: String
-
-    init(front: String, back: String) {
-        self.front = front
-        self.back = back
+        self.descriptionText = descriptionText
     }
 }
