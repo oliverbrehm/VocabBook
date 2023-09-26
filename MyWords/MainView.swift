@@ -69,7 +69,7 @@ extension MainView {
                 }
             }
         }
-        .sheet(isPresented: $showAddSetView, content: {
+        .fullScreenCover(isPresented: $showAddSetView, content: {
             VocabSetAddView()
         })
     }

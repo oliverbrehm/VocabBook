@@ -11,20 +11,34 @@ import SwiftData
 
 struct VocabSetView: View {
     // MARK: - Environment
+    @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var modelContext
 
     // MARK: - State
     @State var editingCard: VocabCard?
     @Bindable var vocabSet: VocabSet
     @State var showLearnView = false
+    @State var showConfirmDelete = false
 
     // MARK: - Properties
 
     // MARK: - Functions
 
     // MARK: - Private properties
+    private var dueCards: [VocabCard] {
+        vocabSet.cards.filter { $0.isDue }
+    }
+
+    private var cardsToLearn: [VocabCard] {
+        dueCards.isEmpty ? vocabSet.cards : dueCards
+    }
 
     // MARK: - Private functions
+    private func cardsForLevel(_ level: CardLevel) -> [VocabCard] {
+        vocabSet.cards
+            .filter { $0.level == level }
+    }
+
 }
 
 // MARK: - Actions
@@ -61,35 +75,60 @@ extension VocabSetView {
             }
 
             Section {
-                Button("Learn cards") {
-                    showLearnView = true
+                VStack(alignment: .leading) {
+                    Button("Learn cards") {
+                        showLearnView = true
+                    }
+
+                    Text("\(dueCards.count) cards due")
+                        .font(.footnote)
                 }
             }
 
-            Section("Cards") {
-                ForEach($vocabSet.cards, id: \.front, editActions: .delete) { $card in
-                    Button(action: {
-                        editingCard = card
-                    }, label: {
-                        HStack {
-                            VStack(alignment: .leading) {
-                                Text(card.front).bold()
-                                Text(card.back)
-                            }
+            ForEach(CardLevel.allCases, id: \.self) { level in
+                let cards = cardsForLevel(level)
+                if !cards.isEmpty {
+                    Section("Level \(level.rawValue)") {
+                        ForEach(cards, id: \.front) { card in
+                            Button(action: {
+                                editingCard = card
+                            }, label: {
+                                HStack {
+                                    VStack(alignment: .leading) {
+                                        Text(card.front).bold()
+                                        Text(card.back)
+                                    }
 
-                            Spacer()
+                                    Spacer()
 
-                            Text("Level \(card.level.rawValue)")
+                                    if card.isDue {
+                                        Text("DUE")
+                                            .font(.system(size: 10))
+                                            .bold()
+                                            .foregroundStyle(.white)
+                                            .padding(4)
+                                            .background(.orange)
+                                            .clipShape(RoundedRectangle(cornerRadius: 8))
+                                    }
+                                }
+                            })
+                            .buttonStyle(.plain)
                         }
-                    })
-                    .buttonStyle(.plain)
+                    }
                 }
+            }
+
+            Section("Delete") {
+                Button("Delete") {
+                    showConfirmDelete = true
+                }
+                .foregroundStyle(.red)
             }
         }
         .fullScreenCover(isPresented: $showLearnView, content: {
-            VocabLearnView(cards: vocabSet.cards)
+            VocabLearnView(cards: cardsToLearn)
         })
-        .sheet(isPresented: Binding(get: {
+        .fullScreenCover(isPresented: Binding(get: {
             editingCard != nil
         }, set: {
             if !$0 {
@@ -97,9 +136,20 @@ extension VocabSetView {
             }
         }), content: {
             if let editingCard {
-                CardEditView(vocabCard: editingCard)
+                CardEditView(vocabCard: editingCard, deleteAction: {
+                    vocabSet.cards.removeAll { $0.id == editingCard.id }
+                    modelContext.delete(editingCard)
+                })
             }
         })
+        .alert("Do you really want to remove the set and all cards?", isPresented: $showConfirmDelete) {
+            Button("No") {}
+
+            Button("YES") {
+                modelContext.delete(vocabSet)
+                dismiss()
+            }
+        }
     }
 }
 

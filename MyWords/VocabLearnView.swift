@@ -18,6 +18,7 @@ struct VocabLearnView: View {
     // MARK: - Properties
     @State private var remainingCards: [VocabCard] = []
     @State private var currentCard: VocabCard? = nil
+    @State private var nTotal = 0
     @State private var nRight = 0
     @State private var nWrong = 0
     @State private var isCovered = true
@@ -31,6 +32,7 @@ struct VocabLearnView: View {
 
     // MARK: - Private functions
     private func setup() {
+        nTotal = cards.count
         remainingCards = cards
         nextCard()
     }
@@ -84,13 +86,18 @@ extension VocabLearnView {
     }
 
     private var stateView: some View {
-        HStack {
+        HStack(spacing: 12) {
             Text("Right: \(nRight)")
             Text("Wrong: \(nWrong)")
 
             Spacer()
 
             Text("Cards left: \(nRemaining)")
+
+            Button("", systemImage: "x.circle") {
+                dismiss()
+            }
+            .buttonStyle(.automatic)
         }
     }
 
@@ -104,7 +111,7 @@ extension VocabLearnView {
 
             Spacer()
                 .frame(maxWidth: .infinity)
-                .frame(height: 2)
+                .frame(height: 1)
                 .background(.black)
 
             if isCovered {
@@ -150,7 +157,7 @@ extension VocabLearnView {
             Text("Learning complete")
                 .bold()
 
-            Text("You knew \(nRight) of \(cards.count) words.")
+            Text("You knew \(nRight) of \(nTotal) words.")
             Button("Finish") {
                 dismiss()
             }

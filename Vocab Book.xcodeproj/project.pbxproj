@@ -545,8 +545,12 @@
 		5468EB3C18B8AEB600716507 /* VocabBook */ = {
 			isa = PBXGroup;
 			children = (
+				BBD60A562AC2C4C5006F396A /* Resources */,
 				BB44FE4B2AC011BE00510833 /* Core */,
+				BB5289D22AC16FC3008968F8 /* Model */,
 				BB44FE502AC0191A00510833 /* Main */,
+				BBD60A542AC2C451006F396A /* VocabSet */,
+				BBD60A552AC2C456006F396A /* VocabCard */,
 				BB44FE4F2AC0187D00510833 /* Legacy */,
 			);
 			name = VocabBook;
@@ -671,10 +675,7 @@
 				5433850D18BE2D2F0084C143 /* VocabBook.entitlements */,
 				BB44FE4C2AC011D300510833 /* Vocab Book-Bridging-Header.h */,
 				BB44FE492AC0113C00510833 /* LaunchScreen.storyboard */,
-				5468EB5418B8AEB700716507 /* Images.xcassets */,
 				5468EB3F18B8AEB600716507 /* InfoPlist.strings */,
-				5420DC7518C39F3D006CE82F /* Localizable.strings */,
-				540D278E19473E34003B3BAA /* appdescription.txt */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -694,8 +695,7 @@
 		BB44FE502AC0191A00510833 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				BB5289D32AC16FCD008968F8 /* View */,
-				BB5289D22AC16FC3008968F8 /* Model */,
+				BB44FE512AC0192700510833 /* MainView.swift */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -710,17 +710,33 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
-		BB5289D32AC16FCD008968F8 /* View */ = {
+		BBD60A542AC2C451006F396A /* VocabSet */ = {
 			isa = PBXGroup;
 			children = (
-				BB44FE512AC0192700510833 /* MainView.swift */,
-				BB44FE572AC022DF00510833 /* VocabSetEditView.swift */,
-				BBD60A502AC1877C006F396A /* VocabSetAddView.swift */,
 				BB44FE592AC022F400510833 /* VocabSetView.swift */,
-				BB5289D02AC16A4A008968F8 /* CardEditView.swift */,
+				BBD60A502AC1877C006F396A /* VocabSetAddView.swift */,
+				BB44FE572AC022DF00510833 /* VocabSetEditView.swift */,
 				BBD60A522AC18DC9006F396A /* VocabLearnView.swift */,
 			);
-			name = View;
+			name = VocabSet;
+			sourceTree = "<group>";
+		};
+		BBD60A552AC2C456006F396A /* VocabCard */ = {
+			isa = PBXGroup;
+			children = (
+				BB5289D02AC16A4A008968F8 /* CardEditView.swift */,
+			);
+			name = VocabCard;
+			sourceTree = "<group>";
+		};
+		BBD60A562AC2C4C5006F396A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5420DC7518C39F3D006CE82F /* Localizable.strings */,
+				5468EB5418B8AEB700716507 /* Images.xcassets */,
+				540D278E19473E34003B3BAA /* appdescription.txt */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1092,6 +1108,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Vocab Book.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = CR6FRMMTU7;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MyWords/Vocab Book-Prefix.pch";
 				INFOPLIST_FILE = "MyWords/Vocab Book-Info.plist";
@@ -1114,6 +1131,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Vocab Book.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = CR6FRMMTU7;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MyWords/Vocab Book-Prefix.pch";
 				INFOPLIST_FILE = "MyWords/Vocab Book-Info.plist";

@@ -9,7 +9,8 @@
 import SwiftData
 
 @Model
-class VocabCard: Identifiable {
+class VocabCard: Identifiable, Equatable {
+    // MARK: - Properties
     let id = UUID()
 
     var front: String
@@ -17,16 +18,30 @@ class VocabCard: Identifiable {
 
     var level = CardLevel.level0
 
+    // MARK: - Computed properties
+    var isDue: Bool {
+        Date() >= lastLearnedDate.advanced(by: level.timeIntervalUntilDue)
+    }
+
+    // MARK: - Private properties
+    private var lastLearnedDate = Date()
+
+    // MARK: - Initializers
     init(front: String, back: String) {
         self.front = front
         self.back = back
     }
 
+    // MARK: - Functions
     func increaseLevel() {
+        guard isDue else { return }
+
+        lastLearnedDate = Date()
         level = level.nextLevel
     }
 
     func resetLevel() {
+        lastLearnedDate = Date()
         level = .level0
     }
 }
