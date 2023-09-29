@@ -39,6 +39,12 @@ struct VocabSetView: View {
             .filter { $0.level == level }
     }
 
+    private func addCard() {
+        let card = VocabCard(front: "", back: "")
+        modelContext.insert(card)
+        vocabSet.cards.append(card)
+        editingCard = card
+    }
 }
 
 // MARK: - Actions
@@ -67,11 +73,7 @@ extension VocabSetView {
             }
 
             Section {
-                Button("Add card") {
-                    let card = VocabCard(front: "Test \(Int.random(in: 0 ..< 100))", back: "Back")
-                    modelContext.insert(card)
-                    vocabSet.cards.append(card)
-                }
+                Button("Add card", action: addCard)
             }
 
             Section {
@@ -90,29 +92,7 @@ extension VocabSetView {
                 if !cards.isEmpty {
                     Section("Level \(level.rawValue)") {
                         ForEach(cards, id: \.front) { card in
-                            Button(action: {
-                                editingCard = card
-                            }, label: {
-                                HStack {
-                                    VStack(alignment: .leading) {
-                                        Text(card.front).bold()
-                                        Text(card.back)
-                                    }
-
-                                    Spacer()
-
-                                    if card.isDue {
-                                        Text("DUE")
-                                            .font(.system(size: 10))
-                                            .bold()
-                                            .foregroundStyle(.white)
-                                            .padding(4)
-                                            .background(.orange)
-                                            .clipShape(RoundedRectangle(cornerRadius: 8))
-                                    }
-                                }
-                            })
-                            .buttonStyle(.plain)
+                            cardView(card)
                         }
                     }
                 }
@@ -136,10 +116,14 @@ extension VocabSetView {
             }
         }), content: {
             if let editingCard {
-                CardEditView(vocabCard: editingCard, deleteAction: {
-                    vocabSet.cards.removeAll { $0.id == editingCard.id }
-                    modelContext.delete(editingCard)
-                })
+                CardEditView(
+                    translator: LibreTranslator(),
+                    vocabCard: editingCard,
+                    deleteAction: {
+                        vocabSet.cards.removeAll { $0.id == editingCard.id }
+                        modelContext.delete(editingCard)
+                    }
+                )
             }
         })
         .alert("Do you really want to remove the set and all cards?", isPresented: $showConfirmDelete) {
@@ -150,6 +134,35 @@ extension VocabSetView {
                 dismiss()
             }
         }
+    }
+
+    private func cardView(_ card: VocabCard) -> some View {
+        Button(action: {
+            editingCard = card
+        }, label: {
+            HStack {
+                VStack(alignment: .leading) {
+                    Text(card.front)
+                        .lineLimit(1)
+                        .bold()
+                    Text(card.back)
+                        .lineLimit(1)
+                }
+
+                Spacer()
+
+                if card.isDue {
+                    Text("DUE")
+                        .font(.system(size: 10))
+                        .bold()
+                        .foregroundStyle(.white)
+                        .padding(4)
+                        .background(.orange)
+                        .clipShape(RoundedRectangle(cornerRadius: 8))
+                }
+            }
+        })
+        .buttonStyle(.plain)
     }
 }
 

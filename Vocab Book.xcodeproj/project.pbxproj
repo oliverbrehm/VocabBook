@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -120,6 +120,11 @@
 		BB44FE5A2AC022F400510833 /* VocabSetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB44FE592AC022F400510833 /* VocabSetView.swift */; };
 		BB5289CF2AC169DB008968F8 /* VocabCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5289CE2AC169DB008968F8 /* VocabCard.swift */; };
 		BB5289D12AC16A4A008968F8 /* CardEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5289D02AC16A4A008968F8 /* CardEditView.swift */; };
+		BB70BCC12AC7338D007D732B /* LibreTranslate in Frameworks */ = {isa = PBXBuildFile; productRef = BB70BCC02AC7338D007D732B /* LibreTranslate */; };
+		BB70BCC42AC7359C007D732B /* ITranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB70BCC32AC7359C007D732B /* ITranslator.swift */; };
+		BB70BCC62AC735E5007D732B /* LibreTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB70BCC52AC735E5007D732B /* LibreTranslator.swift */; };
+		BB70BCC82AC735EB007D732B /* MockTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB70BCC72AC735EB007D732B /* MockTranslator.swift */; };
+		BB70BCCA2AC745FD007D732B /* PreviewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB70BCC92AC745FD007D732B /* PreviewContainer.swift */; };
 		BBD60A4F2AC17472006F396A /* CardLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD60A4E2AC17472006F396A /* CardLevel.swift */; };
 		BBD60A512AC1877C006F396A /* VocabSetAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD60A502AC1877C006F396A /* VocabSetAddView.swift */; };
 		BBD60A532AC18DC9006F396A /* VocabLearnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD60A522AC18DC9006F396A /* VocabLearnView.swift */; };
@@ -305,6 +310,10 @@
 		BB44FE592AC022F400510833 /* VocabSetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabSetView.swift; sourceTree = "<group>"; };
 		BB5289CE2AC169DB008968F8 /* VocabCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabCard.swift; sourceTree = "<group>"; };
 		BB5289D02AC16A4A008968F8 /* CardEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardEditView.swift; sourceTree = "<group>"; };
+		BB70BCC32AC7359C007D732B /* ITranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITranslator.swift; sourceTree = "<group>"; };
+		BB70BCC52AC735E5007D732B /* LibreTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibreTranslator.swift; sourceTree = "<group>"; };
+		BB70BCC72AC735EB007D732B /* MockTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTranslator.swift; sourceTree = "<group>"; };
+		BB70BCC92AC745FD007D732B /* PreviewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewContainer.swift; sourceTree = "<group>"; };
 		BBD60A4E2AC17472006F396A /* CardLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardLevel.swift; sourceTree = "<group>"; };
 		BBD60A502AC1877C006F396A /* VocabSetAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabSetAddView.swift; sourceTree = "<group>"; };
 		BBD60A522AC18DC9006F396A /* VocabLearnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabLearnView.swift; sourceTree = "<group>"; };
@@ -317,6 +326,7 @@
 			files = (
 				5468EB3918B8AEB600716507 /* CoreGraphics.framework in Frameworks */,
 				5468EB3B18B8AEB600716507 /* UIKit.framework in Frameworks */,
+				BB70BCC12AC7338D007D732B /* LibreTranslate in Frameworks */,
 				5468EB3718B8AEB600716507 /* Foundation.framework in Frameworks */,
 				54B19D63194A07A1003B0888 /* StoreKit.framework in Frameworks */,
 			);
@@ -545,6 +555,7 @@
 		5468EB3C18B8AEB600716507 /* VocabBook */ = {
 			isa = PBXGroup;
 			children = (
+				BB70BCC22AC73586007D732B /* Translator */,
 				BBD60A562AC2C4C5006F396A /* Resources */,
 				BB44FE4B2AC011BE00510833 /* Core */,
 				BB5289D22AC16FC3008968F8 /* Model */,
@@ -706,8 +717,19 @@
 				BB44FE552AC019A400510833 /* VocabSet.swift */,
 				BB5289CE2AC169DB008968F8 /* VocabCard.swift */,
 				BBD60A4E2AC17472006F396A /* CardLevel.swift */,
+				BB70BCC92AC745FD007D732B /* PreviewContainer.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		BB70BCC22AC73586007D732B /* Translator */ = {
+			isa = PBXGroup;
+			children = (
+				BB70BCC32AC7359C007D732B /* ITranslator.swift */,
+				BB70BCC52AC735E5007D732B /* LibreTranslator.swift */,
+				BB70BCC72AC735EB007D732B /* MockTranslator.swift */,
+			);
+			name = Translator;
 			sourceTree = "<group>";
 		};
 		BBD60A542AC2C451006F396A /* VocabSet */ = {
@@ -755,6 +777,9 @@
 			dependencies = (
 			);
 			name = "Vocab Book";
+			packageProductDependencies = (
+				BB70BCC02AC7338D007D732B /* LibreTranslate */,
+			);
 			productName = MyWords;
 			productReference = 5468EB3318B8AEB600716507 /* Vocab Book.app */;
 			productType = "com.apple.product-type.application";
@@ -818,6 +843,9 @@
 				de,
 			);
 			mainGroup = 5468EB2A18B8AEB600716507;
+			packageReferences = (
+				BB70BCBF2AC7338D007D732B /* XCRemoteSwiftPackageReference "libretranslate" */,
+			);
 			productRefGroup = 5468EB3418B8AEB600716507 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -927,6 +955,7 @@
 				5468EB4718B8AEB600716507 /* VBAppDelegate.m in Sources */,
 				5440FD3218E1CF12002B688F /* VBCreateSetDescriptionCell.m in Sources */,
 				BB44FE562AC019A400510833 /* VocabSet.swift in Sources */,
+				BB70BCC62AC735E5007D732B /* LibreTranslator.swift in Sources */,
 				54589681190A47100092937F /* VBImportExport.m in Sources */,
 				BBD60A4F2AC17472006F396A /* CardLevel.swift in Sources */,
 				545D370218E48F8200A8A94B /* VBSetBrowserBase.m in Sources */,
@@ -956,8 +985,11 @@
 				BB5289D12AC16A4A008968F8 /* CardEditView.swift in Sources */,
 				5496FE5018CC946000E58378 /* VBWordView.m in Sources */,
 				5465112218EE9F29009CB416 /* VBWordTrainerView.m in Sources */,
+				BB70BCC42AC7359C007D732B /* ITranslator.swift in Sources */,
+				BB70BCC82AC735EB007D732B /* MockTranslator.swift in Sources */,
 				544441B418BB581B00992026 /* VBSetBrowserTVC.m in Sources */,
 				54E875A118DB67DB00CED41A /* VBMenuEmptyCell.m in Sources */,
+				BB70BCCA2AC745FD007D732B /* PreviewContainer.swift in Sources */,
 				5425CEFC18B907A300FCA274 /* VBMenuCVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1217,6 +1249,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BB70BCBF2AC7338D007D732B /* XCRemoteSwiftPackageReference "libretranslate" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/wacumov/libretranslate.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BB70BCC02AC7338D007D732B /* LibreTranslate */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BB70BCBF2AC7338D007D732B /* XCRemoteSwiftPackageReference "libretranslate" */;
+			productName = LibreTranslate;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		5468EB7418B8BB6900716507 /* WordsModel.xcdatamodeld */ = {

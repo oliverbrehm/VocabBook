@@ -10,26 +10,77 @@ import SwiftUI
 import SwiftData
 
 struct CardEditView: View {
+    private enum Focus {
+        case front, back
+    }
+
     // MARK: - Environment
     @Environment(\.dismiss) var dismiss
 
     // MARK: - State
-    @State var selectedTab = "Front"
+    @State private var selectedTab = "Front"
+    @State private var translationSuggestions: [String] = []
+    @FocusState private var focussedView: Focus?
 
     // MARK: - Properties
+    let translator: any ITranslator
     @Bindable var vocabCard: VocabCard
     let deleteAction: () -> Void
 
-    // MARK: - Functions
-
     // MARK: - Private properties
+    @State private var lookupWord: String?
 
     // MARK: - Private functions
+    private func trimCard() {
+        vocabCard.front = vocabCard.front.trimmingCharacters(in: .whitespacesAndNewlines)
+        vocabCard.back = vocabCard.back.trimmingCharacters(in: .whitespacesAndNewlines)
+    }
 }
 
 // MARK: - Actions
 extension CardEditView {
+    private func backAppeared() {
+        if vocabCard.back.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+            focussedView = .back
+        }
 
+        Task {
+            translationSuggestions = await translator.queryTranslationSuggestions(for: vocabCard.front)
+        }
+    }
+
+    private func addTranslation(_ translation: String) {
+        guard !translation.isEmpty else { return }
+
+        if vocabCard.back.last != Character(String(stringLiteral: "\n")) {
+            vocabCard.back += "\n"
+        }
+
+        vocabCard.back += "\(translation)\n"
+
+        removeTranslationSuggestion(translation)
+    }
+
+    private func removeTranslationSuggestion(_ translation: String) {
+        translationSuggestions.removeAll { $0 == translation }
+    }
+
+    private func close() {
+        if vocabCard.front.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+            && vocabCard.back.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+        {
+            deleteAction()
+        } else {
+            trimCard()
+        }
+
+        dismiss()
+    }
+
+    private func deleteCard() {
+        deleteAction()
+        dismiss()
+    }
 }
 
 // MARK: - UI
@@ -37,13 +88,14 @@ extension CardEditView {
     var body: some View {
         VStack {
             TabView(selection: $selectedTab) {
-                textInputView(title: "Front", text: $vocabCard.front)
+                textInputView(title: "Front", text: $vocabCard.front, focus: .front)
                     .tag("Front")
 
-                textInputView(title: "Back", text: $vocabCard.back)
+                backView
                     .tag("Back")
+                    .onAppear(perform: backAppeared)
             }
-            .tabViewStyle(.page)
+            .tabViewStyle(.page(indexDisplayMode: .never))
             .padding([.top, .bottom])
 
             HStack {
@@ -53,32 +105,61 @@ extension CardEditView {
 
                 Spacer()
 
-                Button("", systemImage: "checkmark.circle.fill") {
-                    dismiss()
-                }
+                Button("", systemImage: "checkmark.circle.fill", action: close)
 
                 Spacer()
 
-                Button("Delete", systemImage: "trash.fill") {
-                    deleteAction()
-                    dismiss()
-                }
-                .foregroundStyle(.red)
+                Button("Delete", systemImage: "trash.fill", action: deleteCard)
+                    .foregroundStyle(.red)
             }
             .padding([.leading, .trailing, .bottom], 32)
         }
-    }
-
-    private func tabLabel(text: String, systemImage: String) -> some View {
-        VStack {
-            Image(systemName: systemImage)
-            Text(text)
+        .onAppear {
+            if vocabCard.front.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+                focussedView = .front
+            }
         }
     }
 
-    private func textInputView(title: String, text: Binding<String>) -> some View {
+    private var backView: some View {
         VStack {
-            TextField("Front", text: text, axis: .vertical)
+            textInputView(title: "Back", text: $vocabCard.back, focus: .back)
+
+            ForEach(translationSuggestions, id: \.self) { translation in
+                HStack(spacing: 16) {
+                    Text(translation)
+
+                    Button(action: {
+                        addTranslation(translation)
+                    }, label: {
+                        Image(systemName: "plus.circle")
+
+                    })
+                    .tint(.green)
+
+                    Spacer()
+
+                    Button(action: {
+                        removeTranslationSuggestion(translation)
+                    }, label: {
+                        Image(systemName: "x.circle")
+
+                    })
+                    .tint(.red)
+                }
+                .padding(8)
+                .background(.gray.opacity(0.1))
+                .clipShape(RoundedRectangle(cornerRadius: 4))
+                .padding()
+            }
+        }
+    }
+
+    private func textInputView(title: String, text: Binding<String>, focus: Focus) -> some View {
+        VStack {
+            TextField(title, text: text, axis: .vertical)
+                .focused($focussedView, equals: focus)
+
             Spacer()
         }
         .padding(20)
@@ -92,7 +173,12 @@ extension CardEditView {
 struct CardEditView_Previews: PreviewProvider {
     static var previews: some View {
         let previewContainer = PreviewContainer()
-        CardEditView(vocabCard: previewContainer.vocabCard, deleteAction: {})
-            .modelContainer(previewContainer.modelContainer)
+
+        CardEditView(
+            translator: MockTranslator(),
+            vocabCard: previewContainer.newCard(),
+            deleteAction: {}
+        )
+        .modelContainer(previewContainer.modelContainer)
     }
 }
