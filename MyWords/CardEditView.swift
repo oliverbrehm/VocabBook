@@ -22,6 +22,7 @@ struct CardEditView: View {
     @State private var translationSuggestions: [String] = []
     @FocusState private var focussedView: Focus?
 
+    @State var showConfirmDelete = false
     // MARK: - Properties
     let translator: any ITranslator
     @Bindable var vocabCard: VocabCard
@@ -90,9 +91,15 @@ extension CardEditView {
             TabView(selection: $selectedTab) {
                 textInputView(title: "Front", text: $vocabCard.front, focus: .front)
                     .tag("Front")
+                    .onTapGesture {
+                        focussedView = .front
+                    }
 
                 backView
                     .tag("Back")
+                    .onTapGesture {
+                        focussedView = .back
+                    }
                     .onAppear(perform: backAppeared)
             }
             .tabViewStyle(.page(indexDisplayMode: .never))
@@ -109,7 +116,7 @@ extension CardEditView {
 
                 Spacer()
 
-                Button("Delete", systemImage: "trash.fill", action: deleteCard)
+                Button("Delete", systemImage: "trash.fill", action: { showConfirmDelete = true })
                     .foregroundStyle(.red)
             }
             .padding([.leading, .trailing, .bottom], 32)
@@ -117,6 +124,14 @@ extension CardEditView {
         .onAppear {
             if vocabCard.front.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
                 focussedView = .front
+            }
+        }
+
+        .alert("Do you really want to remove this card?", isPresented: $showConfirmDelete) {
+            Button("No") {}
+
+            Button("YES") {
+                deleteCard()
             }
         }
     }
@@ -164,7 +179,7 @@ extension CardEditView {
         }
         .padding(20)
         .background(.orange.opacity(0.15))
-        .clipShape(RoundedRectangle(cornerSize: CGSize(width: 20, height: 10)))
+        .clipShape(RoundedRectangle(cornerRadius: 20))
         .padding([.leading, .trailing])
     }
 }

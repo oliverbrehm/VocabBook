@@ -17,7 +17,7 @@ struct PreviewContainer {
 
     init() {
         guard let container = try? ModelContainer(
-            for: VocabSet.self, VocabCard.self,
+            for: VocabSet.self, VocabCard.self, WordSet.self, Word.self,
             configurations: .init(isStoredInMemoryOnly: true)
         ) else {
             fatalError("Error creating preview model container.")
@@ -34,8 +34,8 @@ struct PreviewContainer {
 
         let cards = [
             vocabCard,
-            VocabCard(front: "Chair", back: "Stuhl"),
-            VocabCard(front: "to work", back: "arbeiten"),
+            VocabCard(front: "Chair", back: "Stuhl\nTest"),
+            VocabCard(front: "to work", back: "arbeiten\nTest\nTest"),
             VocabCard(front: "to cook", back: "kochen"),
             VocabCard(front: "vacation", back: "Urlaub\nFerien")
         ]

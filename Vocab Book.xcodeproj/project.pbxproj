@@ -125,6 +125,8 @@
 		BB70BCC62AC735E5007D732B /* LibreTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB70BCC52AC735E5007D732B /* LibreTranslator.swift */; };
 		BB70BCC82AC735EB007D732B /* MockTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB70BCC72AC735EB007D732B /* MockTranslator.swift */; };
 		BB70BCCA2AC745FD007D732B /* PreviewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB70BCC92AC745FD007D732B /* PreviewContainer.swift */; };
+		BB71C0592ACC0DF8008E783F /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB71C0572ACC0DF8008E783F /* Word.swift */; };
+		BB71C05A2ACC0DF8008E783F /* WordSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB71C0582ACC0DF8008E783F /* WordSet.swift */; };
 		BB8851812AC832A300492763 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB8851802AC832A300492763 /* WidgetKit.framework */; };
 		BB8851832AC832A300492763 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB8851822AC832A300492763 /* SwiftUI.framework */; };
 		BB8851862AC832A300492763 /* VocabBookWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8851852AC832A300492763 /* VocabBookWidgetBundle.swift */; };
@@ -134,6 +136,7 @@
 		BB88518E2AC832A400492763 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB88518D2AC832A400492763 /* Assets.xcassets */; };
 		BB8851922AC832A400492763 /* VocabBookWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = BB88517F2AC832A300492763 /* VocabBookWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		BB8851982AC83B8800492763 /* CardLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD60A4E2AC17472006F396A /* CardLevel.swift */; };
+		BBD293502ACB01B200A02C84 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD2934F2ACB01B200A02C84 /* String+Extensions.swift */; };
 		BBD60A4F2AC17472006F396A /* CardLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD60A4E2AC17472006F396A /* CardLevel.swift */; };
 		BBD60A512AC1877C006F396A /* VocabSetAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD60A502AC1877C006F396A /* VocabSetAddView.swift */; };
 		BBD60A532AC18DC9006F396A /* VocabLearnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD60A522AC18DC9006F396A /* VocabLearnView.swift */; };
@@ -344,6 +347,8 @@
 		BB70BCC52AC735E5007D732B /* LibreTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibreTranslator.swift; sourceTree = "<group>"; };
 		BB70BCC72AC735EB007D732B /* MockTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTranslator.swift; sourceTree = "<group>"; };
 		BB70BCC92AC745FD007D732B /* PreviewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewContainer.swift; sourceTree = "<group>"; };
+		BB71C0572ACC0DF8008E783F /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Word.swift; path = MyWords/Word.swift; sourceTree = "<group>"; };
+		BB71C0582ACC0DF8008E783F /* WordSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WordSet.swift; path = MyWords/WordSet.swift; sourceTree = "<group>"; };
 		BB88517F2AC832A300492763 /* VocabBookWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = VocabBookWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB8851802AC832A300492763 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		BB8851822AC832A300492763 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -353,6 +358,7 @@
 		BB88518B2AC832A300492763 /* AppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntent.swift; sourceTree = "<group>"; };
 		BB88518D2AC832A400492763 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BB88518F2AC832A400492763 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BBD2934F2ACB01B200A02C84 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		BBD60A4E2AC17472006F396A /* CardLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardLevel.swift; sourceTree = "<group>"; };
 		BBD60A502AC1877C006F396A /* VocabSetAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabSetAddView.swift; sourceTree = "<group>"; };
 		BBD60A522AC18DC9006F396A /* VocabLearnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabLearnView.swift; sourceTree = "<group>"; };
@@ -570,6 +576,8 @@
 		5468EB2A18B8AEB600716507 = {
 			isa = PBXGroup;
 			children = (
+				BB71C0572ACC0DF8008E783F /* Word.swift */,
+				BB71C0582ACC0DF8008E783F /* WordSet.swift */,
 				54B19D61194A0796003B0888 /* Vocab Book.entitlements */,
 				5468EB3C18B8AEB600716507 /* VocabBook */,
 				54A73E1918EB03AF00A5D136 /* html */,
@@ -607,6 +615,7 @@
 		5468EB3C18B8AEB600716507 /* VocabBook */ = {
 			isa = PBXGroup;
 			children = (
+				BBD2934E2ACB01A700A02C84 /* Shared */,
 				BB70BCC22AC73586007D732B /* Translator */,
 				BBD60A562AC2C4C5006F396A /* Resources */,
 				BB44FE4B2AC011BE00510833 /* Core */,
@@ -795,6 +804,14 @@
 				BB88518F2AC832A400492763 /* Info.plist */,
 			);
 			path = VocabBookWidget;
+			sourceTree = "<group>";
+		};
+		BBD2934E2ACB01A700A02C84 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				BBD2934F2ACB01B200A02C84 /* String+Extensions.swift */,
+			);
+			name = Shared;
 			sourceTree = "<group>";
 		};
 		BBD60A542AC2C451006F396A /* VocabSet */ = {
@@ -1040,16 +1057,19 @@
 				543A0EAE190D38E90036280A /* Word.m in Sources */,
 				544441B718BB5C9A00992026 /* VBMenuNavigationCell.m in Sources */,
 				5450D95818CF1E43001B4BCB /* VBHelper.m in Sources */,
+				BB71C05A2ACC0DF8008E783F /* WordSet.swift in Sources */,
 				541E9850192F419E000020E6 /* VBHelpPageVC.m in Sources */,
 				5425CF0518B919B900FCA274 /* VBMenuWordSetCell.m in Sources */,
 				BB44FE4E2AC011D300510833 /* VocabBookApp.swift in Sources */,
 				BB44FE5A2AC022F400510833 /* VocabSetView.swift in Sources */,
 				54715942192DE912002C9E24 /* WordSet+DocumentOperations.m in Sources */,
+				BBD293502ACB01B200A02C84 /* String+Extensions.swift in Sources */,
 				5468EB5318B8AEB700716507 /* VBWordInspectorVC.m in Sources */,
 				5468EB7618B8BB6900716507 /* WordsModel.xcdatamodeld in Sources */,
 				BBD60A512AC1877C006F396A /* VocabSetAddView.swift in Sources */,
 				5465111F18EE9829009CB416 /* VBWordQuizView.m in Sources */,
 				5468EB4718B8AEB600716507 /* VBAppDelegate.m in Sources */,
+				BB71C0592ACC0DF8008E783F /* Word.swift in Sources */,
 				5440FD3218E1CF12002B688F /* VBCreateSetDescriptionCell.m in Sources */,
 				BB44FE562AC019A400510833 /* VocabSet.swift in Sources */,
 				BB70BCC62AC735E5007D732B /* LibreTranslator.swift in Sources */,

@@ -22,8 +22,8 @@ struct VocabLearnView: View {
     @State private var nRight = 0
     @State private var nWrong = 0
     @State private var isCovered = true
-
-    // MARK: - Functions
+    @State private var animateRight = false
+    @State private var animateWrong = false
 
     // MARK: - Private properties
     private var nRemaining: Int {
@@ -36,28 +36,28 @@ struct VocabLearnView: View {
         remainingCards = cards
         nextCard()
     }
+}
 
+// MARK: - Actions
+extension VocabLearnView {
     private func nextCard() {
         currentCard = remainingCards.isEmpty ? nil : remainingCards.removeFirst()
         isCovered = true
     }
 
     private func guessedRight() {
+        animateRight.toggle()
         currentCard?.increaseLevel()
         nRight += 1
         nextCard()
     }
 
     private func guessedWrong() {
+        animateWrong.toggle()
         currentCard?.resetLevel()
         nWrong += 1
         nextCard()
     }
-}
-
-// MARK: - Actions
-extension VocabLearnView {
-
 }
 
 // MARK: - UI
@@ -83,21 +83,36 @@ extension VocabLearnView {
             }
         }
         .onAppear(perform: setup)
+        .ignoresSafeArea(edges: .bottom)
     }
 
     private var stateView: some View {
-        HStack(spacing: 12) {
-            Text("Right: \(nRight)")
-            Text("Wrong: \(nWrong)")
+        HStack(spacing: 32) {
+            HStack {
+                Text("\(nRight)")
+                Image(systemName: "hand.thumbsup.fill")
+                    .resizable()
+                    .frame(width: 24, height: 24)
+                    .foregroundStyle(.green)
+                    .symbolEffect(.bounce, value: animateRight)
+            }
 
-            Spacer()
+            HStack {
+                Text("\(nWrong)")
+                Image(systemName: "hand.thumbsdown.fill")
+                    .resizable()
+                    .frame(width: 24, height: 24)
+                    .foregroundStyle(.red)
+                    .symbolEffect(.bounce, value: animateWrong)
+            }
 
             Text("Cards left: \(nRemaining)")
 
-            Button("", systemImage: "x.circle") {
+            Spacer()
+
+            ImageButton(systemName: "x.circle.fill", size: 28) {
                 dismiss()
             }
-            .buttonStyle(.automatic)
         }
     }
 
@@ -111,11 +126,11 @@ extension VocabLearnView {
 
             Spacer()
                 .frame(maxWidth: .infinity)
-                .frame(height: 1)
-                .background(.black)
+                .frame(height: 1.5)
+                .background(.gray.opacity(0.7))
 
             if isCovered {
-                Button("Reveal") {
+                ImageButton(systemName: "lightbulb.2.fill") {
                     isCovered = false
                 }
                 .padding()
@@ -135,21 +150,27 @@ extension VocabLearnView {
 
     @ViewBuilder
     private var actionView: some View {
-        HStack(spacing: 0) {
-            actionButton(text: "Wrong", color: .red, action: guessedWrong)
-            actionButton(text: "Right", color: .green, action: guessedRight)
+        VStack(spacing: 16) {
+            Text("Knew the answer?")
+
+            HStack(spacing: 20) {
+                actionButton(text: "No", color: .red, roundedCorner: .topRight, action: guessedWrong)
+                actionButton(text: "Yes", color: .green, roundedCorner: .topLeft, action: guessedRight)
+            }
         }
     }
 
-    private func actionButton(text: String, color: Color, action: @escaping () -> Void) -> some View {
+    private func actionButton(text: String, color: Color, roundedCorner: UIRectCorner, action: @escaping () -> Void) -> some View {
         Button(action: action, label: {
             Text(text)
-                .foregroundStyle(.white)
                 .bold()
+                .foregroundStyle(.white)
                 .padding()
                 .frame(maxWidth: .infinity)
+                .padding(.bottom, 20)
                 .background(color)
         })
+        .cornerRadius(10, corners: roundedCorner)
     }
 
     private var resultView: some View {
@@ -158,10 +179,14 @@ extension VocabLearnView {
                 .bold()
 
             Text("You knew \(nRight) of \(nTotal) words.")
-            Button("Finish") {
+
+            ImageButton(systemName: "checkmark.circle.fill") {
                 dismiss()
             }
         }
+        .padding(24)
+        .background(.orange.opacity(0.2))
+        .clipShape(RoundedRectangle(cornerRadius: 10))
     }
 }
 
@@ -170,5 +195,40 @@ struct VocabLearnView_Previews: PreviewProvider {
     static var previews: some View {
         let previewContainer = PreviewContainer()
         VocabLearnView(cards: previewContainer.vocabSet.cards)
+    }
+}
+
+// TODO: move
+extension View {
+    func cornerRadius(_ radius: CGFloat, corners: UIRectCorner) -> some View {
+        clipShape( RoundedCorner(radius: radius, corners: corners) )
+    }
+}
+
+struct RoundedCorner: Shape {
+
+    var radius: CGFloat = .infinity
+    var corners: UIRectCorner = .allCorners
+
+    func path(in rect: CGRect) -> Path {
+        let path = UIBezierPath(roundedRect: rect, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+        return Path(path.cgPath)
+    }
+}
+
+struct ImageButton: View {
+    let systemName: String
+    var size: CGFloat = 32
+    let action: () -> Void
+
+    var body: some View {
+        Button(action: {
+            action()
+        }, label: {
+            Image(systemName: systemName)
+                .resizable()
+                .scaledToFit()
+                .frame(width: size, height: size)
+        })
     }
 }

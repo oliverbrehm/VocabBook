@@ -73,17 +73,30 @@ extension VocabSetView {
             }
 
             Section {
-                Button("Add card", action: addCard)
+                HStack {
+                    Image(systemName: "plus.circle")
+                        .foregroundStyle(.blue)
+                    Button("Add card", action: addCard)
+                        .bold()
+                }
             }
 
-            Section {
-                VStack(alignment: .leading) {
-                    Button("Learn cards") {
-                        showLearnView = true
-                    }
+            if !vocabSet.cards.isEmpty {
+                Section {
+                    HStack {
+                        Image(systemName: "lightbulb.fill")
+                            .foregroundStyle(.blue)
 
-                    Text("\(dueCards.count) cards due")
-                        .font(.footnote)
+                        VStack(alignment: .leading) {
+                            Button("Learn cards") {
+                                showLearnView = true
+                            }
+                            .bold()
+
+                            Text("\(dueCards.count) cards due")
+                                .font(.footnote)
+                        }
+                    }
                 }
             }
 
@@ -137,32 +150,27 @@ extension VocabSetView {
     }
 
     private func cardView(_ card: VocabCard) -> some View {
-        Button(action: {
-            editingCard = card
-        }, label: {
-            HStack {
-                VStack(alignment: .leading) {
-                    Text(card.front)
-                        .lineLimit(1)
-                        .bold()
-                    Text(card.back)
-                        .lineLimit(1)
-                }
+        HStack(spacing: 12) {
+            VStack(alignment: .leading) {
+                Text(card.front.firstLine)
+                    .bold()
 
-                Spacer()
-
-                if card.isDue {
-                    Text("DUE")
-                        .font(.system(size: 10))
-                        .bold()
-                        .foregroundStyle(.white)
-                        .padding(4)
-                        .background(.orange)
-                        .clipShape(RoundedRectangle(cornerRadius: 8))
-                }
+                Text(card.back.firstLine)
             }
-        })
-        .buttonStyle(.plain)
+
+            Spacer()
+
+            ImageButton(systemName: "rectangle.and.pencil.and.ellipsis") {
+                editingCard = card
+            }
+            .foregroundStyle(.blue)
+            .buttonStyle(.plain)
+
+            if card.isDue {
+                Image(systemName: "lightbulb.fill")
+                    .foregroundStyle(.orange)
+            }
+        }
     }
 }
 
