@@ -125,8 +125,6 @@
 		BB70BCC62AC735E5007D732B /* LibreTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB70BCC52AC735E5007D732B /* LibreTranslator.swift */; };
 		BB70BCC82AC735EB007D732B /* MockTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB70BCC72AC735EB007D732B /* MockTranslator.swift */; };
 		BB70BCCA2AC745FD007D732B /* PreviewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB70BCC92AC745FD007D732B /* PreviewContainer.swift */; };
-		BB71C0592ACC0DF8008E783F /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB71C0572ACC0DF8008E783F /* Word.swift */; };
-		BB71C05A2ACC0DF8008E783F /* WordSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB71C0582ACC0DF8008E783F /* WordSet.swift */; };
 		BB8851812AC832A300492763 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB8851802AC832A300492763 /* WidgetKit.framework */; };
 		BB8851832AC832A300492763 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB8851822AC832A300492763 /* SwiftUI.framework */; };
 		BB8851862AC832A300492763 /* VocabBookWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8851852AC832A300492763 /* VocabBookWidgetBundle.swift */; };
@@ -347,8 +345,6 @@
 		BB70BCC52AC735E5007D732B /* LibreTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibreTranslator.swift; sourceTree = "<group>"; };
 		BB70BCC72AC735EB007D732B /* MockTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTranslator.swift; sourceTree = "<group>"; };
 		BB70BCC92AC745FD007D732B /* PreviewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewContainer.swift; sourceTree = "<group>"; };
-		BB71C0572ACC0DF8008E783F /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Word.swift; path = MyWords/Word.swift; sourceTree = "<group>"; };
-		BB71C0582ACC0DF8008E783F /* WordSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WordSet.swift; path = MyWords/WordSet.swift; sourceTree = "<group>"; };
 		BB88517F2AC832A300492763 /* VocabBookWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = VocabBookWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB8851802AC832A300492763 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		BB8851822AC832A300492763 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -576,8 +572,6 @@
 		5468EB2A18B8AEB600716507 = {
 			isa = PBXGroup;
 			children = (
-				BB71C0572ACC0DF8008E783F /* Word.swift */,
-				BB71C0582ACC0DF8008E783F /* WordSet.swift */,
 				54B19D61194A0796003B0888 /* Vocab Book.entitlements */,
 				5468EB3C18B8AEB600716507 /* VocabBook */,
 				54A73E1918EB03AF00A5D136 /* html */,
@@ -1057,7 +1051,6 @@
 				543A0EAE190D38E90036280A /* Word.m in Sources */,
 				544441B718BB5C9A00992026 /* VBMenuNavigationCell.m in Sources */,
 				5450D95818CF1E43001B4BCB /* VBHelper.m in Sources */,
-				BB71C05A2ACC0DF8008E783F /* WordSet.swift in Sources */,
 				541E9850192F419E000020E6 /* VBHelpPageVC.m in Sources */,
 				5425CF0518B919B900FCA274 /* VBMenuWordSetCell.m in Sources */,
 				BB44FE4E2AC011D300510833 /* VocabBookApp.swift in Sources */,
@@ -1069,7 +1062,6 @@
 				BBD60A512AC1877C006F396A /* VocabSetAddView.swift in Sources */,
 				5465111F18EE9829009CB416 /* VBWordQuizView.m in Sources */,
 				5468EB4718B8AEB600716507 /* VBAppDelegate.m in Sources */,
-				BB71C0592ACC0DF8008E783F /* Word.swift in Sources */,
 				5440FD3218E1CF12002B688F /* VBCreateSetDescriptionCell.m in Sources */,
 				BB44FE562AC019A400510833 /* VocabSet.swift in Sources */,
 				BB70BCC62AC735E5007D732B /* LibreTranslator.swift in Sources */,
