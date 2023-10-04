@@ -20,10 +20,6 @@ struct VocabSetView: View {
     @State var showLearnView = false
     @State var showConfirmDelete = false
 
-    // MARK: - Properties
-
-    // MARK: - Functions
-
     // MARK: - Private properties
     private var dueCards: [VocabCard] {
         vocabSet.cards.filter { $0.isDue }
@@ -38,18 +34,16 @@ struct VocabSetView: View {
         vocabSet.cards
             .filter { $0.level == level }
     }
+}
 
+// MARK: - Actions
+extension VocabSetView {
     private func addCard() {
         let card = VocabCard(front: "", back: "")
         modelContext.insert(card)
         vocabSet.cards.append(card)
         editingCard = card
     }
-}
-
-// MARK: - Actions
-extension VocabSetView {
-
 }
 
 // MARK: - UI
@@ -118,6 +112,8 @@ extension VocabSetView {
                 .foregroundStyle(.red)
             }
         }
+        .navigationTitle(vocabSet.name)
+        .navigationBarTitleDisplayMode(.inline)
         .fullScreenCover(isPresented: $showLearnView, content: {
             VocabLearnView(cards: cardsToLearn)
         })
@@ -167,7 +163,7 @@ extension VocabSetView {
             .buttonStyle(.plain)
 
             if card.isDue {
-                Image(systemName: "lightbulb.fill")
+                Image(systemName: "lightbulb")
                     .foregroundStyle(.orange)
             }
         }
@@ -186,5 +182,6 @@ struct VocabSetView_Previews: PreviewProvider {
             VocabSetView(vocabSet: previewContainer.vocabSet)
         }
         .modelContainer(previewContainer.modelContainer)
+        .previewDisplayName("NavigationStack")
     }
 }

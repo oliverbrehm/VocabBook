@@ -120,6 +120,7 @@
 		BB44FE5A2AC022F400510833 /* VocabSetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB44FE592AC022F400510833 /* VocabSetView.swift */; };
 		BB5289CF2AC169DB008968F8 /* VocabCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5289CE2AC169DB008968F8 /* VocabCard.swift */; };
 		BB5289D12AC16A4A008968F8 /* CardEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5289D02AC16A4A008968F8 /* CardEditView.swift */; };
+		BB5D79402ACDA55B004FA0FB /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5D793F2ACDA55B004FA0FB /* SettingsView.swift */; };
 		BB70BCC12AC7338D007D732B /* LibreTranslate in Frameworks */ = {isa = PBXBuildFile; productRef = BB70BCC02AC7338D007D732B /* LibreTranslate */; };
 		BB70BCC42AC7359C007D732B /* ITranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB70BCC32AC7359C007D732B /* ITranslator.swift */; };
 		BB70BCC62AC735E5007D732B /* LibreTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB70BCC52AC735E5007D732B /* LibreTranslator.swift */; };
@@ -341,6 +342,7 @@
 		BB44FE592AC022F400510833 /* VocabSetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabSetView.swift; sourceTree = "<group>"; };
 		BB5289CE2AC169DB008968F8 /* VocabCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabCard.swift; sourceTree = "<group>"; };
 		BB5289D02AC16A4A008968F8 /* CardEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardEditView.swift; sourceTree = "<group>"; };
+		BB5D793F2ACDA55B004FA0FB /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		BB70BCC32AC7359C007D732B /* ITranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITranslator.swift; sourceTree = "<group>"; };
 		BB70BCC52AC735E5007D732B /* LibreTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibreTranslator.swift; sourceTree = "<group>"; };
 		BB70BCC72AC735EB007D732B /* MockTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTranslator.swift; sourceTree = "<group>"; };
@@ -617,6 +619,7 @@
 				BB44FE502AC0191A00510833 /* Main */,
 				BBD60A542AC2C451006F396A /* VocabSet */,
 				BBD60A552AC2C456006F396A /* VocabCard */,
+				BB5D793E2ACDA551004FA0FB /* Settings */,
 				BB44FE4F2AC0187D00510833 /* Legacy */,
 			);
 			name = VocabBook;
@@ -775,6 +778,14 @@
 				BB70BCC92AC745FD007D732B /* PreviewContainer.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		BB5D793E2ACDA551004FA0FB /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				BB5D793F2ACDA55B004FA0FB /* SettingsView.swift */,
+			);
+			name = Settings;
 			sourceTree = "<group>";
 		};
 		BB70BCC22AC73586007D732B /* Translator */ = {
@@ -1090,6 +1101,7 @@
 				5440FD3818E1E6B0002B688F /* VBMenuFooterView.m in Sources */,
 				544441B118BB534D00992026 /* VBMenuHeaderView.m in Sources */,
 				544C667318D47FA60020C615 /* VBSettingsTVC.m in Sources */,
+				BB5D79402ACDA55B004FA0FB /* SettingsView.swift in Sources */,
 				54E875A418DB773200CED41A /* VBCreateSetAddLanguageVC.m in Sources */,
 				BB5289D12AC16A4A008968F8 /* CardEditView.swift in Sources */,
 				5496FE5018CC946000E58378 /* VBWordView.m in Sources */,

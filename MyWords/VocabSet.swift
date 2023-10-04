@@ -18,6 +18,10 @@ class VocabSet: Identifiable {
     var isFavorite: Bool = false
     var cards: [VocabCard] = []
 
+    var hasDueCards: Bool {
+        cards.contains { $0.isDue }
+    }
+
     init(name: String, descriptionText: String) {
         self.name = name
         self.descriptionText = descriptionText

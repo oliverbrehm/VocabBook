@@ -65,7 +65,7 @@ extension VocabSetAddView {
             }
             .scrollContentBackground(.hidden)
         }
-        .background(.gray.opacity(0.1))
+        .background(Color(uiColor: .systemGroupedBackground))
     }
 }
 
