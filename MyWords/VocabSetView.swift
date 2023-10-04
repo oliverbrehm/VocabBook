@@ -78,7 +78,7 @@ extension VocabSetView {
             if !vocabSet.cards.isEmpty {
                 Section {
                     HStack {
-                        Image(systemName: "lightbulb.fill")
+                        Image(systemName: "lightbulb")
                             .foregroundStyle(.blue)
 
                         VStack(alignment: .leading) {
@@ -175,13 +175,15 @@ struct VocabSetView_Previews: PreviewProvider {
     static var previews: some View {
         let previewContainer = PreviewContainer()
 
-        VocabSetView(vocabSet: previewContainer.vocabSet)
-            .modelContainer(previewContainer.modelContainer)
+        if let set = previewContainer.vocabSet {
+            VocabSetView(vocabSet: set)
+                .modelContainer(previewContainer.modelContainer)
 
-        NavigationStack {
-            VocabSetView(vocabSet: previewContainer.vocabSet)
+            NavigationStack {
+                VocabSetView(vocabSet: set)
+            }
+            .modelContainer(previewContainer.modelContainer)
+            .previewDisplayName("NavigationStack")
         }
-        .modelContainer(previewContainer.modelContainer)
-        .previewDisplayName("NavigationStack")
     }
 }

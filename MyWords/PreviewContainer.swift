@@ -12,8 +12,15 @@ import SwiftData
 struct PreviewContainer {
     let modelContainer: ModelContainer
 
-    let vocabSet: VocabSet
-    let vocabCard: VocabCard
+    var vocabSets: [VocabSet] = []
+
+    var vocabSet: VocabSet? {
+        vocabSets.first
+    }
+
+    var vocabCard: VocabCard? {
+        vocabSet?.cards.last
+    }
 
     init() {
         guard let container = try? ModelContainer(
@@ -24,16 +31,17 @@ struct PreviewContainer {
         }
 
         modelContainer = container
-        vocabSet = VocabSet(
+
+        let vocabSet = VocabSet(
             name: "German",
             descriptionText: "This is a test set for view previews. It contains a few german words to simulate learning."
         )
         container.mainContext.insert(vocabSet)
 
-        vocabCard = VocabCard(front: "Potato", back: "Kartoffel")
+        vocabSets.append(vocabSet)
 
         let cards = [
-            vocabCard,
+            VocabCard(front: "Potato", back: "Kartoffel"),
             VocabCard(front: "Chair", back: "Stuhl\nTest"),
             VocabCard(front: "to work", back: "arbeiten\nTest\nTest"),
             VocabCard(front: "to cook", back: "kochen"),
@@ -41,8 +49,8 @@ struct PreviewContainer {
         ]
 
         for card in cards {
+            modelContainer.mainContext.insert(card)
             vocabSet.cards.append(card)
-            container.mainContext.insert(card)
         }
     }
 

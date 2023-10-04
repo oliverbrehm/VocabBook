@@ -53,7 +53,7 @@ extension CardEditView {
     private func addTranslation(_ translation: String) {
         guard !translation.isEmpty else { return }
 
-        if vocabCard.back.last != Character(String(stringLiteral: "\n")) {
+        if vocabCard.back.last != Character("\n") {
             vocabCard.back += "\n"
         }
 
@@ -68,8 +68,7 @@ extension CardEditView {
 
     private func close() {
         if vocabCard.front.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
-            && vocabCard.back.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
-        {
+            && vocabCard.back.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
             deleteAction()
         } else {
             trimCard()
@@ -148,7 +147,6 @@ extension CardEditView {
                         addTranslation(translation)
                     }, label: {
                         Image(systemName: "plus.circle")
-
                     })
                     .tint(.green)
 
@@ -158,7 +156,6 @@ extension CardEditView {
                         removeTranslationSuggestion(translation)
                     }, label: {
                         Image(systemName: "x.circle")
-
                     })
                     .tint(.red)
                 }

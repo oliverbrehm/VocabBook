@@ -17,7 +17,7 @@ struct VocabLearnView: View {
 
     // MARK: - Properties
     @State private var remainingCards: [VocabCard] = []
-    @State private var currentCard: VocabCard? = nil
+    @State private var currentCard: VocabCard?
     @State private var nTotal = 0
     @State private var nRight = 0
     @State private var nWrong = 0
@@ -194,41 +194,8 @@ extension VocabLearnView {
 struct VocabLearnView_Previews: PreviewProvider {
     static var previews: some View {
         let previewContainer = PreviewContainer()
-        VocabLearnView(cards: previewContainer.vocabSet.cards)
-    }
-}
-
-// TODO: move
-extension View {
-    func cornerRadius(_ radius: CGFloat, corners: UIRectCorner) -> some View {
-        clipShape( RoundedCorner(radius: radius, corners: corners) )
-    }
-}
-
-struct RoundedCorner: Shape {
-
-    var radius: CGFloat = .infinity
-    var corners: UIRectCorner = .allCorners
-
-    func path(in rect: CGRect) -> Path {
-        let path = UIBezierPath(roundedRect: rect, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
-        return Path(path.cgPath)
-    }
-}
-
-struct ImageButton: View {
-    let systemName: String
-    var size: CGFloat = 32
-    let action: () -> Void
-
-    var body: some View {
-        Button(action: {
-            action()
-        }, label: {
-            Image(systemName: systemName)
-                .resizable()
-                .scaledToFit()
-                .frame(width: size, height: size)
-        })
+        if let set = previewContainer.vocabSet {
+            VocabLearnView(cards: set.cards)
+        }
     }
 }

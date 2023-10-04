@@ -16,19 +16,6 @@ struct VocabSetAddView: View {
     // MARK: - State
     @State private var name = ""
     @State private var description = ""
-
-    // MARK: - Properties
-
-    // MARK: - Functions
-
-    // MARK: - Private properties
-
-    // MARK: - Private functions
-}
-
-// MARK: - Actions
-extension VocabSetAddView {
-
 }
 
 // MARK: - UI
@@ -49,7 +36,7 @@ extension VocabSetAddView {
                     TextField(text: $description, axis: .vertical, label: { Text("Description") })
                 }
 
-                Section() {
+                Section {
                     if !name.isEmpty {
                         Button("Add") {
                             modelContext.insert(VocabSet(name: name, descriptionText: description))

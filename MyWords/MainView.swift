@@ -108,7 +108,6 @@ extension MainView {
                 .padding(.horizontal)
                 .padding(.vertical, 8)
 
-
             Spacer()
                 .frame(height: 1)
                 .frame(maxWidth: .infinity)

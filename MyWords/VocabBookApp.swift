@@ -27,7 +27,5 @@ struct LegacyAppContainer: UIViewControllerRepresentable {
         return storyboard.instantiateViewController(withIdentifier: "MainVC") as? UINavigationController ?? UIViewController()
     }
 
-    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
-
-    }
+    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {}
 }

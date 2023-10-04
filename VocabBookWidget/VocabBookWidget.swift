@@ -63,7 +63,7 @@ struct VocabBookStateEntry: TimelineEntry {
     let state: VocabBookState
 }
 
-struct VocabBookWidgetEntryView : View {
+struct VocabBookWidgetEntryView: View {
     var entry: VocabBookStateEntry
 
     var body: some View {

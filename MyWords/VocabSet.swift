@@ -15,7 +15,9 @@ class VocabSet: Identifiable {
     var name: String
     var descriptionText: String
 
-    var isFavorite: Bool = false
+    var isFavorite = false
+
+    @Relationship(deleteRule: .cascade)
     var cards: [VocabCard] = []
 
     var hasDueCards: Bool {

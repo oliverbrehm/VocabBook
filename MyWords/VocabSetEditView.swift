@@ -15,17 +15,6 @@ struct VocabSetEditView: View {
 
     // MARK: - State
     @Bindable var vocabSet: VocabSet
-
-    // MARK: - Functions
-
-    // MARK: - Private properties
-
-    // MARK: - Private functions
-}
-
-// MARK: - Actions
-extension VocabSetEditView {
-
 }
 
 // MARK: - UI
@@ -50,7 +39,10 @@ extension VocabSetEditView {
 struct VocabSetEditView_Previews: PreviewProvider {
     static var previews: some View {
         let previewContainer = PreviewContainer()
-        VocabSetEditView(vocabSet: previewContainer.vocabSet)
-            .modelContainer(previewContainer.modelContainer)
+
+        if let set = previewContainer.vocabSet {
+            VocabSetEditView(vocabSet: set)
+                .modelContainer(previewContainer.modelContainer)
+        }
     }
 }

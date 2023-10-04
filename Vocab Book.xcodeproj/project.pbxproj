@@ -121,6 +121,9 @@
 		BB5289CF2AC169DB008968F8 /* VocabCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5289CE2AC169DB008968F8 /* VocabCard.swift */; };
 		BB5289D12AC16A4A008968F8 /* CardEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5289D02AC16A4A008968F8 /* CardEditView.swift */; };
 		BB5D79402ACDA55B004FA0FB /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5D793F2ACDA55B004FA0FB /* SettingsView.swift */; };
+		BB5D79432ACDAFA4004FA0FB /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = BB5D79422ACDAFA4004FA0FB /* .swiftlint.yml */; };
+		BB5D79462ACDB0D9004FA0FB /* ImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5D79452ACDB0D9004FA0FB /* ImageButton.swift */; };
+		BB5D79482ACDB101004FA0FB /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5D79472ACDB101004FA0FB /* RoundedCorner.swift */; };
 		BB70BCC12AC7338D007D732B /* LibreTranslate in Frameworks */ = {isa = PBXBuildFile; productRef = BB70BCC02AC7338D007D732B /* LibreTranslate */; };
 		BB70BCC42AC7359C007D732B /* ITranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB70BCC32AC7359C007D732B /* ITranslator.swift */; };
 		BB70BCC62AC735E5007D732B /* LibreTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB70BCC52AC735E5007D732B /* LibreTranslator.swift */; };
@@ -343,6 +346,9 @@
 		BB5289CE2AC169DB008968F8 /* VocabCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabCard.swift; sourceTree = "<group>"; };
 		BB5289D02AC16A4A008968F8 /* CardEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardEditView.swift; sourceTree = "<group>"; };
 		BB5D793F2ACDA55B004FA0FB /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		BB5D79422ACDAFA4004FA0FB /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		BB5D79452ACDB0D9004FA0FB /* ImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageButton.swift; sourceTree = "<group>"; };
+		BB5D79472ACDB101004FA0FB /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
 		BB70BCC32AC7359C007D732B /* ITranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITranslator.swift; sourceTree = "<group>"; };
 		BB70BCC52AC735E5007D732B /* LibreTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibreTranslator.swift; sourceTree = "<group>"; };
 		BB70BCC72AC735EB007D732B /* MockTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTranslator.swift; sourceTree = "<group>"; };
@@ -574,6 +580,7 @@
 		5468EB2A18B8AEB600716507 = {
 			isa = PBXGroup;
 			children = (
+				BB5D79422ACDAFA4004FA0FB /* .swiftlint.yml */,
 				54B19D61194A0796003B0888 /* Vocab Book.entitlements */,
 				5468EB3C18B8AEB600716507 /* VocabBook */,
 				54A73E1918EB03AF00A5D136 /* html */,
@@ -788,6 +795,15 @@
 			name = Settings;
 			sourceTree = "<group>";
 		};
+		BB5D79442ACDB0CE004FA0FB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BB5D79452ACDB0D9004FA0FB /* ImageButton.swift */,
+				BB5D79472ACDB101004FA0FB /* RoundedCorner.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		BB70BCC22AC73586007D732B /* Translator */ = {
 			isa = PBXGroup;
 			children = (
@@ -814,6 +830,7 @@
 		BBD2934E2ACB01A700A02C84 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				BB5D79442ACDB0CE004FA0FB /* Views */,
 				BBD2934F2ACB01B200A02C84 /* String+Extensions.swift */,
 			);
 			name = Shared;
@@ -859,6 +876,7 @@
 				5468EB3018B8AEB600716507 /* Frameworks */,
 				5468EB3118B8AEB600716507 /* Resources */,
 				BB8851962AC832A400492763 /* Embed Foundation Extensions */,
+				BB5D79412ACDAF62004FA0FB /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -974,6 +992,7 @@
 			files = (
 				5474EF5B198A3BC600555A48 /* rightButton.png in Resources */,
 				543A79021927786100AF73C1 /* flag_nederlands.png in Resources */,
+				BB5D79432ACDAFA4004FA0FB /* .swiftlint.yml in Resources */,
 				543A79161927786100AF73C1 /* flag_south corean.png in Resources */,
 				543A79191927786100AF73C1 /* flag_türkçe.png in Resources */,
 				543A791A1927786100AF73C1 /* flag_ukrayins'ka mova.png in Resources */,
@@ -1049,6 +1068,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		BB5D79412ACDAF62004FA0FB /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5468EB2F18B8AEB600716507 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -1066,12 +1106,14 @@
 				5425CF0518B919B900FCA274 /* VBMenuWordSetCell.m in Sources */,
 				BB44FE4E2AC011D300510833 /* VocabBookApp.swift in Sources */,
 				BB44FE5A2AC022F400510833 /* VocabSetView.swift in Sources */,
+				BB5D79482ACDB101004FA0FB /* RoundedCorner.swift in Sources */,
 				54715942192DE912002C9E24 /* WordSet+DocumentOperations.m in Sources */,
 				BBD293502ACB01B200A02C84 /* String+Extensions.swift in Sources */,
 				5468EB5318B8AEB700716507 /* VBWordInspectorVC.m in Sources */,
 				5468EB7618B8BB6900716507 /* WordsModel.xcdatamodeld in Sources */,
 				BBD60A512AC1877C006F396A /* VocabSetAddView.swift in Sources */,
 				5465111F18EE9829009CB416 /* VBWordQuizView.m in Sources */,
+				BB5D79462ACDB0D9004FA0FB /* ImageButton.swift in Sources */,
 				5468EB4718B8AEB600716507 /* VBAppDelegate.m in Sources */,
 				5440FD3218E1CF12002B688F /* VBCreateSetDescriptionCell.m in Sources */,
 				BB44FE562AC019A400510833 /* VocabSet.swift in Sources */,
