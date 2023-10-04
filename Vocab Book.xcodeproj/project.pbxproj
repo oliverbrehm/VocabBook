@@ -143,7 +143,6 @@
 		5425CEFE18B907EE00FCA274 /* VBWordBrowserTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBWordBrowserTVC.m; sourceTree = "<group>"; };
 		5425CF0318B919B900FCA274 /* VBMenuWordSetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBMenuWordSetCell.h; sourceTree = "<group>"; };
 		5425CF0418B919B900FCA274 /* VBMenuWordSetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBMenuWordSetCell.m; sourceTree = "<group>"; };
-		5433850D18BE2D2F0084C143 /* VocabBook.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = VocabBook.entitlements; sourceTree = "<group>"; };
 		5433851D18BE58EE0084C143 /* WordsStatistcsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordsStatistcsCell.h; sourceTree = "<group>"; };
 		5433851E18BE58EE0084C143 /* WordsStatistcsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordsStatistcsCell.m; sourceTree = "<group>"; };
 		543A0EAC190D38E90036280A /* Word.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Word.h; sourceTree = "<group>"; };
@@ -344,7 +343,6 @@
 			isa = PBXGroup;
 			children = (
 				BBD60A562AC2C4C5006F396A /* Resources */,
-				BB44FE4B2AC011BE00510833 /* Core */,
 			);
 			name = VocabBook;
 			path = MyWords;
@@ -364,19 +362,6 @@
 				54C8818119479406007597D2 /* index.html */,
 			);
 			name = "support page";
-			sourceTree = "<group>";
-		};
-		BB44FE4B2AC011BE00510833 /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				BB44FE4D2AC011D300510833 /* VocabBookApp.swift */,
-				5468EB3E18B8AEB600716507 /* Vocab Book-Info.plist */,
-				5433850D18BE2D2F0084C143 /* VocabBook.entitlements */,
-				BB44FE4C2AC011D300510833 /* Vocab Book-Bridging-Header.h */,
-				BB44FE492AC0113C00510833 /* LaunchScreen.storyboard */,
-				5468EB3F18B8AEB600716507 /* InfoPlist.strings */,
-			);
-			name = Core;
 			sourceTree = "<group>";
 		};
 		BB5D79522ACDC259004FA0FB /* VocabBook */ = {
@@ -612,6 +597,11 @@
 			isa = PBXGroup;
 			children = (
 				54B19D61194A0796003B0888 /* Vocab Book.entitlements */,
+				BB44FE4D2AC011D300510833 /* VocabBookApp.swift */,
+				5468EB3E18B8AEB600716507 /* Vocab Book-Info.plist */,
+				BB44FE4C2AC011D300510833 /* Vocab Book-Bridging-Header.h */,
+				5468EB3F18B8AEB600716507 /* InfoPlist.strings */,
+				BB44FE492AC0113C00510833 /* LaunchScreen.storyboard */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -1137,11 +1127,11 @@
 				DEVELOPMENT_TEAM = CR6FRMMTU7;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VocabBook/Legacy/Vocab Book-Prefix.pch";
-				INFOPLIST_FILE = "MyWords/Vocab Book-Info.plist";
+				INFOPLIST_FILE = "VocabBook/Core/Vocab Book-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				PRODUCT_NAME = "Vocab Book";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "MyWords/Vocab Book-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "VocabBook/Core/Vocab Book-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				WRAPPER_EXTENSION = app;
@@ -1161,11 +1151,11 @@
 				DEVELOPMENT_TEAM = CR6FRMMTU7;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VocabBook/Legacy/Vocab Book-Prefix.pch";
-				INFOPLIST_FILE = "MyWords/Vocab Book-Info.plist";
+				INFOPLIST_FILE = "VocabBook/Core/Vocab Book-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				PRODUCT_NAME = "Vocab Book";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "MyWords/Vocab Book-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "VocabBook/Core/Vocab Book-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				WRAPPER_EXTENSION = app;
 			};
