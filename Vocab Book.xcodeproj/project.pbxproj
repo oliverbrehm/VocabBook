@@ -215,7 +215,6 @@
 		54B19D62194A07A1003B0888 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		54B7918D18C294ED00F865E4 /* VBMenuVocabCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBMenuVocabCell.h; sourceTree = "<group>"; };
 		54B7918E18C294ED00F865E4 /* VBMenuVocabCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBMenuVocabCell.m; sourceTree = "<group>"; };
-		54C8818119479406007597D2 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = index.html; path = "html/support page/index.html"; sourceTree = "<group>"; };
 		54DDF9EC18BA8CB80024633F /* VBCreateSetTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBCreateSetTVC.h; sourceTree = "<group>"; };
 		54DDF9ED18BA8CB80024633F /* VBCreateSetTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBCreateSetTVC.m; sourceTree = "<group>"; };
 		54DDF9EF18BAA79C0024633F /* VBWordTrainerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBWordTrainerVC.h; sourceTree = "<group>"; };
@@ -247,6 +246,9 @@
 		BB5D795D2ACDC3AE004FA0FB /* WordsModel 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "WordsModel 3.xcdatamodel"; sourceTree = "<group>"; };
 		BB5D795E2ACDC3AE004FA0FB /* WordsModel 5.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "WordsModel 5.xcdatamodel"; sourceTree = "<group>"; };
 		BB5D795F2ACDC3AE004FA0FB /* WordsModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WordsModel.xcdatamodel; sourceTree = "<group>"; };
+		BB5D797A2ACDC929004FA0FB /* index.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		BB5D797B2ACDC929004FA0FB /* appicon_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appicon_big.png; sourceTree = "<group>"; };
+		BB5D797C2ACDC929004FA0FB /* appicon_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appicon_small.png; sourceTree = "<group>"; };
 		BB70BCC32AC7359C007D732B /* ITranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITranslator.swift; sourceTree = "<group>"; };
 		BB70BCC52AC735E5007D732B /* LibreTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibreTranslator.swift; sourceTree = "<group>"; };
 		BB70BCC72AC735EB007D732B /* MockTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTranslator.swift; sourceTree = "<group>"; };
@@ -306,9 +308,8 @@
 			children = (
 				BB5D79422ACDAFA4004FA0FB /* .swiftlint.yml */,
 				BB5D79522ACDC259004FA0FB /* VocabBook */,
-				5468EB3C18B8AEB600716507 /* VocabBook */,
-				54A73E1918EB03AF00A5D136 /* html */,
 				BB8851842AC832A300492763 /* VocabBookWidget */,
+				BB5D79782ACDC929004FA0FB /* web */,
 				5468EB3518B8AEB600716507 /* Frameworks */,
 				5468EB3418B8AEB600716507 /* Products */,
 			);
@@ -339,34 +340,10 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		5468EB3C18B8AEB600716507 /* VocabBook */ = {
-			isa = PBXGroup;
-			children = (
-				BBD60A562AC2C4C5006F396A /* Resources */,
-			);
-			name = VocabBook;
-			path = MyWords;
-			sourceTree = "<group>";
-		};
-		54A73E1918EB03AF00A5D136 /* html */ = {
-			isa = PBXGroup;
-			children = (
-				54C881831947940B007597D2 /* support page */,
-			);
-			name = html;
-			sourceTree = "<group>";
-		};
-		54C881831947940B007597D2 /* support page */ = {
-			isa = PBXGroup;
-			children = (
-				54C8818119479406007597D2 /* index.html */,
-			);
-			name = "support page";
-			sourceTree = "<group>";
-		};
 		BB5D79522ACDC259004FA0FB /* VocabBook */ = {
 			isa = PBXGroup;
 			children = (
+				BB5D79772ACDC8A6004FA0FB /* Resources */,
 				BB5D79762ACDC716004FA0FB /* Settings */,
 				BB5D79752ACDC709004FA0FB /* VocabCard */,
 				BB5D79742ACDC700004FA0FB /* VocabSet */,
@@ -696,6 +673,34 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		BB5D79772ACDC8A6004FA0FB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5420DC7518C39F3D006CE82F /* Localizable.strings */,
+				5468EB5418B8AEB700716507 /* Images.xcassets */,
+				540D278E19473E34003B3BAA /* appdescription.txt */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		BB5D79782ACDC929004FA0FB /* web */ = {
+			isa = PBXGroup;
+			children = (
+				BB5D79792ACDC929004FA0FB /* support page */,
+			);
+			path = web;
+			sourceTree = "<group>";
+		};
+		BB5D79792ACDC929004FA0FB /* support page */ = {
+			isa = PBXGroup;
+			children = (
+				BB5D797A2ACDC929004FA0FB /* index.html */,
+				BB5D797B2ACDC929004FA0FB /* appicon_big.png */,
+				BB5D797C2ACDC929004FA0FB /* appicon_small.png */,
+			);
+			path = "support page";
+			sourceTree = "<group>";
+		};
 		BB8851842AC832A300492763 /* VocabBookWidget */ = {
 			isa = PBXGroup;
 			children = (
@@ -707,16 +712,6 @@
 				BB88518F2AC832A400492763 /* Info.plist */,
 			);
 			path = VocabBookWidget;
-			sourceTree = "<group>";
-		};
-		BBD60A562AC2C4C5006F396A /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				5420DC7518C39F3D006CE82F /* Localizable.strings */,
-				5468EB5418B8AEB700716507 /* Images.xcassets */,
-				540D278E19473E34003B3BAA /* appdescription.txt */,
-			);
-			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1002,7 +997,6 @@
 				540D278F19473E39003B3BAA /* en */,
 			);
 			name = appdescription.txt;
-			path = ..;
 			sourceTree = "<group>";
 		};
 		5420DC7518C39F3D006CE82F /* Localizable.strings */ = {
