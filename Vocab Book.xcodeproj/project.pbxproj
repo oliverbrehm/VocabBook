@@ -212,15 +212,15 @@
 		5496FE4F18CC946000E58378 /* VBWordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBWordView.m; sourceTree = "<group>"; };
 		54AE86CD18E34E3F00A3860F /* VBDocumentManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBDocumentManager.h; sourceTree = "<group>"; };
 		54AE86CE18E34E3F00A3860F /* VBDocumentManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBDocumentManager.m; sourceTree = "<group>"; };
-		54B19D61194A0796003B0888 /* Vocab Book.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Vocab Book.entitlements"; sourceTree = "<group>"; };
+		54B19D61194A0796003B0888 /* Vocab Book.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Vocab Book.entitlements"; sourceTree = "<group>"; };
 		54B19D62194A07A1003B0888 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		54B7918D18C294ED00F865E4 /* VBMenuVocabCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBMenuVocabCell.h; sourceTree = "<group>"; };
 		54B7918E18C294ED00F865E4 /* VBMenuVocabCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBMenuVocabCell.m; sourceTree = "<group>"; };
 		54C8818119479406007597D2 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = index.html; path = "html/support page/index.html"; sourceTree = "<group>"; };
 		54DDF9EC18BA8CB80024633F /* VBCreateSetTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBCreateSetTVC.h; sourceTree = "<group>"; };
 		54DDF9ED18BA8CB80024633F /* VBCreateSetTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBCreateSetTVC.m; sourceTree = "<group>"; };
-		54DDF9EF18BAA79C0024633F /* VBWordTrainerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VBWordTrainerVC.h; path = ../VBWordTrainerVC.h; sourceTree = "<group>"; };
-		54DDF9F018BAA79C0024633F /* VBWordTrainerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VBWordTrainerVC.m; path = ../VBWordTrainerVC.m; sourceTree = "<group>"; };
+		54DDF9EF18BAA79C0024633F /* VBWordTrainerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBWordTrainerVC.h; sourceTree = "<group>"; };
+		54DDF9F018BAA79C0024633F /* VBWordTrainerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBWordTrainerVC.m; sourceTree = "<group>"; };
 		54E1309118BA6E5D00C69E8A /* VBSetMenuTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBSetMenuTVC.h; sourceTree = "<group>"; };
 		54E1309218BA6E5D00C69E8A /* VBSetMenuTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBSetMenuTVC.m; sourceTree = "<group>"; };
 		54E8759C18DB55C000CED41A /* VBWordQuizVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBWordQuizVC.h; sourceTree = "<group>"; };
@@ -302,109 +302,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		541E9851192F41A5000020E6 /* Help */ = {
-			isa = PBXGroup;
-			children = (
-				541E984B192F417F000020E6 /* VBHelpTVC.h */,
-				541E984C192F417F000020E6 /* VBHelpTVC.m */,
-				541E984E192F419E000020E6 /* VBHelpPageVC.h */,
-				541E984F192F419E000020E6 /* VBHelpPageVC.m */,
-			);
-			name = Help;
-			sourceTree = "<group>";
-		};
-		5433852618BE69150084C143 /* MenuCollectionView */ = {
-			isa = PBXGroup;
-			children = (
-				5425CEFA18B907A300FCA274 /* VBMenuCVC.h */,
-				5425CEFB18B907A300FCA274 /* VBMenuCVC.m */,
-				544441B518BB5C9A00992026 /* VBMenuNavigationCell.h */,
-				544441B618BB5C9A00992026 /* VBMenuNavigationCell.m */,
-				5425CF0318B919B900FCA274 /* VBMenuWordSetCell.h */,
-				5425CF0418B919B900FCA274 /* VBMenuWordSetCell.m */,
-				544441AF18BB534D00992026 /* VBMenuHeaderView.h */,
-				544441B018BB534D00992026 /* VBMenuHeaderView.m */,
-				5440FD3618E1E6B0002B688F /* VBMenuFooterView.h */,
-				5440FD3718E1E6B0002B688F /* VBMenuFooterView.m */,
-				54B7918D18C294ED00F865E4 /* VBMenuVocabCell.h */,
-				54B7918E18C294ED00F865E4 /* VBMenuVocabCell.m */,
-				54E8759F18DB67DB00CED41A /* VBMenuEmptyCell.h */,
-				54E875A018DB67DB00CED41A /* VBMenuEmptyCell.m */,
-			);
-			name = MenuCollectionView;
-			sourceTree = "<group>";
-		};
-		5440FD2C18E1CEC9002B688F /* CreateSet */ = {
-			isa = PBXGroup;
-			children = (
-				54DDF9EC18BA8CB80024633F /* VBCreateSetTVC.h */,
-				54DDF9ED18BA8CB80024633F /* VBCreateSetTVC.m */,
-				54E875A218DB773200CED41A /* VBCreateSetAddLanguageVC.h */,
-				54E875A318DB773200CED41A /* VBCreateSetAddLanguageVC.m */,
-				5440FD2D18E1CEF6002B688F /* VBCreateSetNameCell.h */,
-				5440FD2E18E1CEF6002B688F /* VBCreateSetNameCell.m */,
-				5440FD3018E1CF12002B688F /* VBCreateSetDescriptionCell.h */,
-				5440FD3118E1CF12002B688F /* VBCreateSetDescriptionCell.m */,
-				5440FD3318E1CF28002B688F /* VBCreateSetFavouritesCell.h */,
-				5440FD3418E1CF28002B688F /* VBCreateSetFavouritesCell.m */,
-			);
-			name = CreateSet;
-			sourceTree = "<group>";
-		};
-		545D36FA18E48E0600A8A94B /* WordInspector */ = {
-			isa = PBXGroup;
-			children = (
-				5468EB5118B8AEB700716507 /* VBWordInspectorVC.h */,
-				5468EB5218B8AEB700716507 /* VBWordInspectorVC.m */,
-				5496FE4E18CC946000E58378 /* VBWordView.h */,
-				5496FE4F18CC946000E58378 /* VBWordView.m */,
-			);
-			name = WordInspector;
-			sourceTree = "<group>";
-		};
-		545D36FB18E48E2700A8A94B /* SetBrowser */ = {
-			isa = PBXGroup;
-			children = (
-				545D370018E48F8200A8A94B /* VBSetBrowserBase.h */,
-				545D370118E48F8200A8A94B /* VBSetBrowserBase.m */,
-				544C667418D492310020C615 /* VBChangeSetTVC.h */,
-				544C667518D492310020C615 /* VBChangeSetTVC.m */,
-				544441B218BB581B00992026 /* VBSetBrowserTVC.h */,
-				544441B318BB581B00992026 /* VBSetBrowserTVC.m */,
-			);
-			name = SetBrowser;
-			sourceTree = "<group>";
-		};
-		545D36FC18E48E6900A8A94B /* WordBrowser */ = {
-			isa = PBXGroup;
-			children = (
-				5425CEFD18B907EE00FCA274 /* VBWordBrowserTVC.h */,
-				5425CEFE18B907EE00FCA274 /* VBWordBrowserTVC.m */,
-				5433851D18BE58EE0084C143 /* WordsStatistcsCell.h */,
-				5433851E18BE58EE0084C143 /* WordsStatistcsCell.m */,
-			);
-			name = WordBrowser;
-			sourceTree = "<group>";
-		};
-		545D36FD18E48EA700A8A94B /* WordLookup */ = {
-			isa = PBXGroup;
-			children = (
-				545624BF18BA08510017A257 /* VBWordLookupVC.h */,
-				545624C018BA08510017A257 /* VBWordLookupVC.m */,
-				5424172018DAF19300DB913A /* VBLookupSettings.h */,
-				5424172118DAF19300DB913A /* VBLookupSettings.m */,
-				5424172318DAF43F00DB913A /* VBLookupAddURLVC.h */,
-				5424172418DAF43F00DB913A /* VBLookupAddURLVC.m */,
-			);
-			name = WordLookup;
-			sourceTree = "<group>";
-		};
 		5468EB2A18B8AEB600716507 = {
 			isa = PBXGroup;
 			children = (
-				BB5D79522ACDC259004FA0FB /* VocabBook */,
 				BB5D79422ACDAFA4004FA0FB /* .swiftlint.yml */,
-				54B19D61194A0796003B0888 /* Vocab Book.entitlements */,
+				BB5D79522ACDC259004FA0FB /* VocabBook */,
 				5468EB3C18B8AEB600716507 /* VocabBook */,
 				54A73E1918EB03AF00A5D136 /* html */,
 				BB8851842AC832A300492763 /* VocabBookWidget */,
@@ -441,73 +343,11 @@
 		5468EB3C18B8AEB600716507 /* VocabBook */ = {
 			isa = PBXGroup;
 			children = (
-				BBD2934E2ACB01A700A02C84 /* Shared */,
-				BB70BCC22AC73586007D732B /* Translator */,
 				BBD60A562AC2C4C5006F396A /* Resources */,
 				BB44FE4B2AC011BE00510833 /* Core */,
-				BB5289D22AC16FC3008968F8 /* Model */,
-				BB44FE502AC0191A00510833 /* Main */,
-				BBD60A542AC2C451006F396A /* VocabSet */,
-				BBD60A552AC2C456006F396A /* VocabCard */,
-				BB5D793E2ACDA551004FA0FB /* Settings */,
-				BB44FE4F2AC0187D00510833 /* Legacy */,
 			);
 			name = VocabBook;
 			path = MyWords;
-			sourceTree = "<group>";
-		};
-		54846C5518E43714009FE189 /* LearnWords */ = {
-			isa = PBXGroup;
-			children = (
-				54DDF9EF18BAA79C0024633F /* VBWordTrainerVC.h */,
-				54DDF9F018BAA79C0024633F /* VBWordTrainerVC.m */,
-				5465112018EE9F29009CB416 /* VBWordTrainerView.h */,
-				5465112118EE9F29009CB416 /* VBWordTrainerView.m */,
-				54E8759C18DB55C000CED41A /* VBWordQuizVC.h */,
-				54E8759D18DB55C000CED41A /* VBWordQuizVC.m */,
-				5465111D18EE9829009CB416 /* VBWordQuizView.h */,
-				5465111E18EE9829009CB416 /* VBWordQuizView.m */,
-			);
-			name = LearnWords;
-			sourceTree = "<group>";
-		};
-		54846C5618E4416D009FE189 /* SetMenu */ = {
-			isa = PBXGroup;
-			children = (
-				54E1309118BA6E5D00C69E8A /* VBSetMenuTVC.h */,
-				54E1309218BA6E5D00C69E8A /* VBSetMenuTVC.m */,
-			);
-			name = SetMenu;
-			sourceTree = "<group>";
-		};
-		54846C5718E44179009FE189 /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-				544C667118D47FA60020C615 /* VBSettingsTVC.h */,
-				544C667218D47FA60020C615 /* VBSettingsTVC.m */,
-				54589682190A4C7B0092937F /* VBImportFileTVC.h */,
-				54589683190A4C7B0092937F /* VBImportFileTVC.m */,
-				546FA3A818E2E38B00F0CBAC /* VBPremiumTVC.h */,
-				546FA3A918E2E38B00F0CBAC /* VBPremiumTVC.m */,
-			);
-			name = Settings;
-			sourceTree = "<group>";
-		};
-		5496FE4B18CC802800E58378 /* View Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				54846C5718E44179009FE189 /* Settings */,
-				541E9851192F41A5000020E6 /* Help */,
-				5433852618BE69150084C143 /* MenuCollectionView */,
-				5440FD2C18E1CEC9002B688F /* CreateSet */,
-				545D36FB18E48E2700A8A94B /* SetBrowser */,
-				54846C5618E4416D009FE189 /* SetMenu */,
-				54846C5518E43714009FE189 /* LearnWords */,
-				545D36FA18E48E0600A8A94B /* WordInspector */,
-				545D36FD18E48EA700A8A94B /* WordLookup */,
-				545D36FC18E48E6900A8A94B /* WordBrowser */,
-			);
-			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 		54A73E1918EB03AF00A5D136 /* html */ = {
@@ -539,54 +379,17 @@
 			name = Core;
 			sourceTree = "<group>";
 		};
-		BB44FE4F2AC0187D00510833 /* Legacy */ = {
-			isa = PBXGroup;
-			children = (
-				5496FE4B18CC802800E58378 /* View Controllers */,
-			);
-			name = Legacy;
-			path = MyWords;
-			sourceTree = SOURCE_ROOT;
-		};
-		BB44FE502AC0191A00510833 /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				BB44FE512AC0192700510833 /* MainView.swift */,
-			);
-			name = Main;
-			sourceTree = "<group>";
-		};
-		BB5289D22AC16FC3008968F8 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				BB44FE552AC019A400510833 /* VocabSet.swift */,
-				BB5289CE2AC169DB008968F8 /* VocabCard.swift */,
-				BBD60A4E2AC17472006F396A /* CardLevel.swift */,
-				BB70BCC92AC745FD007D732B /* PreviewContainer.swift */,
-			);
-			name = Model;
-			sourceTree = "<group>";
-		};
-		BB5D793E2ACDA551004FA0FB /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-				BB5D793F2ACDA55B004FA0FB /* SettingsView.swift */,
-			);
-			name = Settings;
-			sourceTree = "<group>";
-		};
-		BB5D79442ACDB0CE004FA0FB /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				BB5D79452ACDB0D9004FA0FB /* ImageButton.swift */,
-				BB5D79472ACDB101004FA0FB /* RoundedCorner.swift */,
-			);
-			name = Views;
-			sourceTree = "<group>";
-		};
 		BB5D79522ACDC259004FA0FB /* VocabBook */ = {
 			isa = PBXGroup;
 			children = (
+				BB5D79762ACDC716004FA0FB /* Settings */,
+				BB5D79752ACDC709004FA0FB /* VocabCard */,
+				BB5D79742ACDC700004FA0FB /* VocabSet */,
+				BB5D79732ACDC6F6004FA0FB /* Main */,
+				BB5D79722ACDC6E5004FA0FB /* Model */,
+				BB5D796B2ACDC670004FA0FB /* Core */,
+				BB5D79702ACDC6C7004FA0FB /* Services */,
+				BB5D796C2ACDC692004FA0FB /* Shared */,
 				BB5D79532ACDC273004FA0FB /* Legacy */,
 			);
 			path = VocabBook;
@@ -657,18 +460,250 @@
 		BB5D79582ACDC319004FA0FB /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				BB5D796A2ACDC5FB004FA0FB /* WordBrowser */,
+				BB5D79692ACDC5F1004FA0FB /* WordLookup */,
+				BB5D79682ACDC5D5004FA0FB /* WordInspector */,
+				BB5D79672ACDC5CC004FA0FB /* LearnWords */,
+				BB5D79662ACDC5C0004FA0FB /* SetMenu */,
+				BB5D79652ACDC5B3004FA0FB /* SetBrowser */,
+				BB5D79642ACDC5A4004FA0FB /* CreateSet */,
+				BB5D79632ACDC594004FA0FB /* MenuCollectionView */,
+				BB5D79622ACDC584004FA0FB /* Help */,
+				BB5D79612ACDC577004FA0FB /* Settings */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		BB70BCC22AC73586007D732B /* Translator */ = {
+		BB5D79612ACDC577004FA0FB /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				544C667118D47FA60020C615 /* VBSettingsTVC.h */,
+				544C667218D47FA60020C615 /* VBSettingsTVC.m */,
+				54589682190A4C7B0092937F /* VBImportFileTVC.h */,
+				54589683190A4C7B0092937F /* VBImportFileTVC.m */,
+				546FA3A818E2E38B00F0CBAC /* VBPremiumTVC.h */,
+				546FA3A918E2E38B00F0CBAC /* VBPremiumTVC.m */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		BB5D79622ACDC584004FA0FB /* Help */ = {
+			isa = PBXGroup;
+			children = (
+				541E984B192F417F000020E6 /* VBHelpTVC.h */,
+				541E984C192F417F000020E6 /* VBHelpTVC.m */,
+				541E984E192F419E000020E6 /* VBHelpPageVC.h */,
+				541E984F192F419E000020E6 /* VBHelpPageVC.m */,
+			);
+			path = Help;
+			sourceTree = "<group>";
+		};
+		BB5D79632ACDC594004FA0FB /* MenuCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				5425CEFA18B907A300FCA274 /* VBMenuCVC.h */,
+				5425CEFB18B907A300FCA274 /* VBMenuCVC.m */,
+				544441B518BB5C9A00992026 /* VBMenuNavigationCell.h */,
+				544441B618BB5C9A00992026 /* VBMenuNavigationCell.m */,
+				5425CF0318B919B900FCA274 /* VBMenuWordSetCell.h */,
+				5425CF0418B919B900FCA274 /* VBMenuWordSetCell.m */,
+				544441AF18BB534D00992026 /* VBMenuHeaderView.h */,
+				544441B018BB534D00992026 /* VBMenuHeaderView.m */,
+				5440FD3618E1E6B0002B688F /* VBMenuFooterView.h */,
+				5440FD3718E1E6B0002B688F /* VBMenuFooterView.m */,
+				54B7918D18C294ED00F865E4 /* VBMenuVocabCell.h */,
+				54B7918E18C294ED00F865E4 /* VBMenuVocabCell.m */,
+				54E8759F18DB67DB00CED41A /* VBMenuEmptyCell.h */,
+				54E875A018DB67DB00CED41A /* VBMenuEmptyCell.m */,
+			);
+			path = MenuCollectionView;
+			sourceTree = "<group>";
+		};
+		BB5D79642ACDC5A4004FA0FB /* CreateSet */ = {
+			isa = PBXGroup;
+			children = (
+				54DDF9EC18BA8CB80024633F /* VBCreateSetTVC.h */,
+				54DDF9ED18BA8CB80024633F /* VBCreateSetTVC.m */,
+				54E875A218DB773200CED41A /* VBCreateSetAddLanguageVC.h */,
+				54E875A318DB773200CED41A /* VBCreateSetAddLanguageVC.m */,
+				5440FD2D18E1CEF6002B688F /* VBCreateSetNameCell.h */,
+				5440FD2E18E1CEF6002B688F /* VBCreateSetNameCell.m */,
+				5440FD3018E1CF12002B688F /* VBCreateSetDescriptionCell.h */,
+				5440FD3118E1CF12002B688F /* VBCreateSetDescriptionCell.m */,
+				5440FD3318E1CF28002B688F /* VBCreateSetFavouritesCell.h */,
+				5440FD3418E1CF28002B688F /* VBCreateSetFavouritesCell.m */,
+			);
+			path = CreateSet;
+			sourceTree = "<group>";
+		};
+		BB5D79652ACDC5B3004FA0FB /* SetBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				545D370018E48F8200A8A94B /* VBSetBrowserBase.h */,
+				545D370118E48F8200A8A94B /* VBSetBrowserBase.m */,
+				544C667418D492310020C615 /* VBChangeSetTVC.h */,
+				544C667518D492310020C615 /* VBChangeSetTVC.m */,
+				544441B218BB581B00992026 /* VBSetBrowserTVC.h */,
+				544441B318BB581B00992026 /* VBSetBrowserTVC.m */,
+			);
+			path = SetBrowser;
+			sourceTree = "<group>";
+		};
+		BB5D79662ACDC5C0004FA0FB /* SetMenu */ = {
+			isa = PBXGroup;
+			children = (
+				54E1309118BA6E5D00C69E8A /* VBSetMenuTVC.h */,
+				54E1309218BA6E5D00C69E8A /* VBSetMenuTVC.m */,
+			);
+			path = SetMenu;
+			sourceTree = "<group>";
+		};
+		BB5D79672ACDC5CC004FA0FB /* LearnWords */ = {
+			isa = PBXGroup;
+			children = (
+				54DDF9EF18BAA79C0024633F /* VBWordTrainerVC.h */,
+				54DDF9F018BAA79C0024633F /* VBWordTrainerVC.m */,
+				5465112018EE9F29009CB416 /* VBWordTrainerView.h */,
+				5465112118EE9F29009CB416 /* VBWordTrainerView.m */,
+				54E8759C18DB55C000CED41A /* VBWordQuizVC.h */,
+				54E8759D18DB55C000CED41A /* VBWordQuizVC.m */,
+				5465111D18EE9829009CB416 /* VBWordQuizView.h */,
+				5465111E18EE9829009CB416 /* VBWordQuizView.m */,
+			);
+			path = LearnWords;
+			sourceTree = "<group>";
+		};
+		BB5D79682ACDC5D5004FA0FB /* WordInspector */ = {
+			isa = PBXGroup;
+			children = (
+				5468EB5118B8AEB700716507 /* VBWordInspectorVC.h */,
+				5468EB5218B8AEB700716507 /* VBWordInspectorVC.m */,
+				5496FE4E18CC946000E58378 /* VBWordView.h */,
+				5496FE4F18CC946000E58378 /* VBWordView.m */,
+			);
+			path = WordInspector;
+			sourceTree = "<group>";
+		};
+		BB5D79692ACDC5F1004FA0FB /* WordLookup */ = {
+			isa = PBXGroup;
+			children = (
+				545624BF18BA08510017A257 /* VBWordLookupVC.h */,
+				545624C018BA08510017A257 /* VBWordLookupVC.m */,
+				5424172018DAF19300DB913A /* VBLookupSettings.h */,
+				5424172118DAF19300DB913A /* VBLookupSettings.m */,
+				5424172318DAF43F00DB913A /* VBLookupAddURLVC.h */,
+				5424172418DAF43F00DB913A /* VBLookupAddURLVC.m */,
+			);
+			path = WordLookup;
+			sourceTree = "<group>";
+		};
+		BB5D796A2ACDC5FB004FA0FB /* WordBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				5425CEFD18B907EE00FCA274 /* VBWordBrowserTVC.h */,
+				5425CEFE18B907EE00FCA274 /* VBWordBrowserTVC.m */,
+				5433851D18BE58EE0084C143 /* WordsStatistcsCell.h */,
+				5433851E18BE58EE0084C143 /* WordsStatistcsCell.m */,
+			);
+			path = WordBrowser;
+			sourceTree = "<group>";
+		};
+		BB5D796B2ACDC670004FA0FB /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				54B19D61194A0796003B0888 /* Vocab Book.entitlements */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		BB5D796C2ACDC692004FA0FB /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				BB5D796D2ACDC696004FA0FB /* Views */,
+				BB5D796E2ACDC6A0004FA0FB /* Extensions */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		BB5D796D2ACDC696004FA0FB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BB5D79452ACDB0D9004FA0FB /* ImageButton.swift */,
+				BB5D79472ACDB101004FA0FB /* RoundedCorner.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BB5D796E2ACDC6A0004FA0FB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BBD2934F2ACB01B200A02C84 /* String+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		BB5D796F2ACDC6BC004FA0FB /* Translator */ = {
 			isa = PBXGroup;
 			children = (
 				BB70BCC32AC7359C007D732B /* ITranslator.swift */,
 				BB70BCC52AC735E5007D732B /* LibreTranslator.swift */,
 				BB70BCC72AC735EB007D732B /* MockTranslator.swift */,
 			);
-			name = Translator;
+			path = Translator;
+			sourceTree = "<group>";
+		};
+		BB5D79702ACDC6C7004FA0FB /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				BB5D796F2ACDC6BC004FA0FB /* Translator */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		BB5D79722ACDC6E5004FA0FB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BB44FE552AC019A400510833 /* VocabSet.swift */,
+				BB5289CE2AC169DB008968F8 /* VocabCard.swift */,
+				BBD60A4E2AC17472006F396A /* CardLevel.swift */,
+				BB70BCC92AC745FD007D732B /* PreviewContainer.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BB5D79732ACDC6F6004FA0FB /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				BB44FE512AC0192700510833 /* MainView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		BB5D79742ACDC700004FA0FB /* VocabSet */ = {
+			isa = PBXGroup;
+			children = (
+				BB44FE592AC022F400510833 /* VocabSetView.swift */,
+				BBD60A502AC1877C006F396A /* VocabSetAddView.swift */,
+				BB44FE572AC022DF00510833 /* VocabSetEditView.swift */,
+				BBD60A522AC18DC9006F396A /* VocabLearnView.swift */,
+			);
+			path = VocabSet;
+			sourceTree = "<group>";
+		};
+		BB5D79752ACDC709004FA0FB /* VocabCard */ = {
+			isa = PBXGroup;
+			children = (
+				BB5289D02AC16A4A008968F8 /* CardEditView.swift */,
+			);
+			path = VocabCard;
+			sourceTree = "<group>";
+		};
+		BB5D79762ACDC716004FA0FB /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				BB5D793F2ACDA55B004FA0FB /* SettingsView.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		BB8851842AC832A300492763 /* VocabBookWidget */ = {
@@ -682,34 +717,6 @@
 				BB88518F2AC832A400492763 /* Info.plist */,
 			);
 			path = VocabBookWidget;
-			sourceTree = "<group>";
-		};
-		BBD2934E2ACB01A700A02C84 /* Shared */ = {
-			isa = PBXGroup;
-			children = (
-				BB5D79442ACDB0CE004FA0FB /* Views */,
-				BBD2934F2ACB01B200A02C84 /* String+Extensions.swift */,
-			);
-			name = Shared;
-			sourceTree = "<group>";
-		};
-		BBD60A542AC2C451006F396A /* VocabSet */ = {
-			isa = PBXGroup;
-			children = (
-				BB44FE592AC022F400510833 /* VocabSetView.swift */,
-				BBD60A502AC1877C006F396A /* VocabSetAddView.swift */,
-				BB44FE572AC022DF00510833 /* VocabSetEditView.swift */,
-				BBD60A522AC18DC9006F396A /* VocabLearnView.swift */,
-			);
-			name = VocabSet;
-			sourceTree = "<group>";
-		};
-		BBD60A552AC2C456006F396A /* VocabCard */ = {
-			isa = PBXGroup;
-			children = (
-				BB5289D02AC16A4A008968F8 /* CardEditView.swift */,
-			);
-			name = VocabCard;
 			sourceTree = "<group>";
 		};
 		BBD60A562AC2C4C5006F396A /* Resources */ = {
@@ -1124,7 +1131,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = "Vocab Book.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "VocabBook/Core/Vocab Book.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = CR6FRMMTU7;
@@ -1148,7 +1155,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = "Vocab Book.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "VocabBook/Core/Vocab Book.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = CR6FRMMTU7;
