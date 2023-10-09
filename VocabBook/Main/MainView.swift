@@ -61,6 +61,13 @@ extension MainView {
                         }
                     }
 
+                    if sets.isEmpty, cards.isEmpty {
+                        HStack {
+                            Text("Nothing here yet. Create a new set first.\nIf you recently updated the app and your data is missing, try recovering it in the settings menu.")
+                            Spacer()
+                        }
+                    }
+
                     Spacer()
                 }
                 .padding()

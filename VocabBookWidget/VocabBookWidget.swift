@@ -68,7 +68,7 @@ struct VocabBookWidgetEntryView: View {
 
     var body: some View {
         VStack {
-            Text("VocabBook")
+            Text("Vocab Book")
             Text("Due cards: \(entry.state.nDue)")
         }
     }
