@@ -24,10 +24,10 @@ class VocabCard: Identifiable, Equatable {
     }
 
     // MARK: - Private properties
-    private var lastLearnedDate = Date()
+    var lastLearnedDate = Date()
 
     // MARK: - Initializers
-    init(front: String, back: String) {
+    init(front: String, back: String, lastLearnedDate: Date = Date()) {
         self.front = front
         self.back = back
     }

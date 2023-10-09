@@ -116,6 +116,15 @@ extension VocabSetView {
         }
         .navigationTitle(vocabSet.name)
         .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Button(action: {
+                    vocabSet.isFavorite.toggle()
+                }, label: {
+                    Image(systemName: vocabSet.isFavorite ? "star.fill" : "star")
+                })
+            }
+        }
         .fullScreenCover(isPresented: $showLearnView, content: {
             VocabLearnView(cards: cardsToLearn)
         })

@@ -91,7 +91,7 @@ extension MainView {
 
     private func setView(for set: VocabSet) -> some View {
         HStack {
-            Image(systemName: "square.stack.3d.down.forward")
+            Image(systemName: set.isFavorite ? "star.fill" : "square.stack.3d.down.forward")
             Text(set.name)
 
             Spacer()

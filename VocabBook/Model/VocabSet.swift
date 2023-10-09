@@ -19,7 +19,6 @@ class VocabSet: Identifiable {
 
     var language: String
 
-
     @Relationship(deleteRule: .cascade)
     var cards: [VocabCard] = []
 
