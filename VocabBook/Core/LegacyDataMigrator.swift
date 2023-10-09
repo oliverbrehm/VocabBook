@@ -27,8 +27,11 @@ final class LegacyDataMigrator: ObservableObject {
     func migrateLegacyDocuments() {
         if !UserDefaults.standard.bool(forKey: "swiftDataMigrationLocalDone") {
             legacyDocumentManager.openLocalDocument()
-            migrateData()
-            UserDefaults.standard.setValue(true, forKey: "swiftDataMigrationLocalDone")
+
+            Task {
+                await migrateData()
+                UserDefaults.standard.setValue(true, forKey: "swiftDataMigrationLocalDone")
+            }
         }
 
         if !UserDefaults.standard.bool(forKey: "swiftDataMigrationiCloudDone") {
@@ -38,43 +41,46 @@ final class LegacyDataMigrator: ObservableObject {
 
     func tryMigrateiCloudData() {
         legacyDocumentManager.openiCloudDocument()
-        if migrateData() {
-            UserDefaults.standard.setValue(true, forKey: "swiftDataMigrationiCloudDone")
+
+        Task {
+            if await migrateData() {
+                UserDefaults.standard.setValue(true, forKey: "swiftDataMigrationiCloudDone")
+            }
         }
     }
 
     // MARK: - Private functions
-    /// returns true if records were added to swift data
     @discardableResult
-    private func migrateData() -> Bool {
-        let managedObjectContext = legacyDocumentManager.document.managedObjectContext
+    private func migrateData() async -> Bool {
+        let managedObjectContext = await legacyDocumentManager.document.managedObjectContext
         let setRequest = NSFetchRequest<WordSet>(entityName: "WordSet")
 
-        var hasData = false
+        return await withCheckedContinuation { continuation in
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
+                do {
+                    let sets = try managedObjectContext.fetch(setRequest)
 
-        do {
-            let sets = try managedObjectContext.fetch(setRequest)
+                    for set in sets {
+                        guard !set.name.isEmpty else { continue }
 
-            hasData = !sets.isEmpty
+                        let vocabSet = VocabSet(name: set.name, descriptionText: set.descriptionText)
+                        self.modelContext.insert(vocabSet)
 
-            for set in sets {
-                guard !set.name.isEmpty else { continue }
+                        for word in set.words {
+                            guard let word = word as? Word else { continue }
 
-                let vocabSet = VocabSet(name: set.name, descriptionText: set.descriptionText)
-                self.modelContext.insert(vocabSet)
+                            let vocabCard = VocabCard(front: word.name, back: word.translations)
+                            self.modelContext.insert(vocabCard)
+                            vocabSet.cards.append(vocabCard)
+                        }
+                    }
 
-                for word in set.words {
-                    guard let word = word as? Word else { continue }
-
-                    let vocabCard = VocabCard(front: word.name, back: word.translations)
-                    self.modelContext.insert(vocabCard)
-                    vocabSet.cards.append(vocabCard)
+                    continuation.resume(returning: !sets.isEmpty)
+                } catch {
+                    print("fetch error: \(error)")
+                    continuation.resume(returning: false)
                 }
             }
-        } catch {
-            print("fetch error: \(error)")
         }
-
-        return hasData
     }
 }
