@@ -10,6 +10,7 @@ import SwiftUI
 
 struct SettingsView: View {
     // MARK: - Environment
+    @Environment(\.dismiss) var dismiss
     @EnvironmentObject var legacyDataMigrator: LegacyDataMigrator
 
     // MARK: - State
@@ -21,6 +22,7 @@ extension SettingsView {
     private func tryiCloudMigration() {
         triedIcloudMigration = true
         legacyDataMigrator.tryMigrateiCloudData()
+        dismiss()
     }
 }
 

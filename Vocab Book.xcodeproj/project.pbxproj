@@ -14,14 +14,10 @@
 		5468EB3918B8AEB600716507 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5468EB3818B8AEB600716507 /* CoreGraphics.framework */; };
 		5468EB3B18B8AEB600716507 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5468EB3A18B8AEB600716507 /* UIKit.framework */; };
 		5468EB4118B8AEB600716507 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5468EB3F18B8AEB600716507 /* InfoPlist.strings */; };
-		5468EB4A18B8AEB600716507 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5468EB4818B8AEB600716507 /* Main_iPhone.storyboard */; };
-		5468EB4D18B8AEB700716507 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5468EB4B18B8AEB700716507 /* Main_iPad.storyboard */; };
 		5468EB5518B8AEB700716507 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5468EB5418B8AEB700716507 /* Images.xcassets */; };
 		5468EB5C18B8AEB700716507 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5468EB5B18B8AEB700716507 /* XCTest.framework */; };
 		5468EB5D18B8AEB700716507 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5468EB3618B8AEB600716507 /* Foundation.framework */; };
 		5468EB5E18B8AEB700716507 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5468EB3A18B8AEB600716507 /* UIKit.framework */; };
-		5471593F192DE904002C9E24 /* Word+DocumentOperations.m in Sources */ = {isa = PBXBuildFile; fileRef = 5471593E192DE904002C9E24 /* Word+DocumentOperations.m */; };
-		54715942192DE912002C9E24 /* WordSet+DocumentOperations.m in Sources */ = {isa = PBXBuildFile; fileRef = 54715941192DE912002C9E24 /* WordSet+DocumentOperations.m */; };
 		54AE86CF18E34E3F00A3860F /* VBDocumentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 54AE86CE18E34E3F00A3860F /* VBDocumentManager.m */; };
 		54B19D63194A07A1003B0888 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54B19D62194A07A1003B0888 /* StoreKit.framework */; };
 		BB3EDEE22AD4405200CC39F3 /* LegacyDataMigrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3EDEE12AD4405200CC39F3 /* LegacyDataMigrator.swift */; };
@@ -134,7 +130,6 @@
 		543A0EAD190D38E90036280A /* Word.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Word.m; sourceTree = "<group>"; };
 		543A0EB2190D3CDB0036280A /* WordSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordSet.h; sourceTree = "<group>"; };
 		543A0EB3190D3CDB0036280A /* WordSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordSet.m; sourceTree = "<group>"; };
-		546795D5193E1BDB003FB111 /* de */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main_iPad.strings; sourceTree = "<group>"; };
 		546795D9193E1C24003FB111 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5468EB3318B8AEB600716507 /* Vocab Book.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vocab Book.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5468EB3618B8AEB600716507 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -143,15 +138,9 @@
 		5468EB3E18B8AEB600716507 /* Vocab Book-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Vocab Book-Info.plist"; sourceTree = "<group>"; };
 		5468EB4018B8AEB600716507 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5468EB4418B8AEB600716507 /* Vocab Book-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Vocab Book-Prefix.pch"; sourceTree = "<group>"; };
-		5468EB4918B8AEB600716507 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		5468EB4C18B8AEB700716507 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		5468EB5418B8AEB700716507 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5468EB5A18B8AEB700716507 /* Vocab BookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Vocab BookTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5468EB5B18B8AEB700716507 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		5471593D192DE904002C9E24 /* Word+DocumentOperations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Word+DocumentOperations.h"; sourceTree = "<group>"; };
-		5471593E192DE904002C9E24 /* Word+DocumentOperations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Word+DocumentOperations.m"; sourceTree = "<group>"; };
-		54715940192DE912002C9E24 /* WordSet+DocumentOperations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WordSet+DocumentOperations.h"; sourceTree = "<group>"; };
-		54715941192DE912002C9E24 /* WordSet+DocumentOperations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WordSet+DocumentOperations.m"; sourceTree = "<group>"; };
 		54AE86CD18E34E3F00A3860F /* VBDocumentManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBDocumentManager.h; sourceTree = "<group>"; };
 		54AE86CE18E34E3F00A3860F /* VBDocumentManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBDocumentManager.m; sourceTree = "<group>"; };
 		54B19D61194A0796003B0888 /* Vocab Book.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Vocab Book.entitlements"; sourceTree = "<group>"; };
@@ -326,54 +315,24 @@
 		BB5D79532ACDC273004FA0FB /* Legacy */ = {
 			isa = PBXGroup;
 			children = (
-				BB5D79572ACDC316004FA0FB /* Data */,
-				BB5D79552ACDC2F2004FA0FB /* Resources */,
-				BB5D79542ACDC2B3004FA0FB /* Classes */,
+				BB5D79572ACDC316004FA0FB /* CoreData */,
+				54AE86CD18E34E3F00A3860F /* VBDocumentManager.h */,
+				54AE86CE18E34E3F00A3860F /* VBDocumentManager.m */,
 				5468EB4418B8AEB600716507 /* Vocab Book-Prefix.pch */,
 			);
 			path = Legacy;
 			sourceTree = "<group>";
 		};
-		BB5D79542ACDC2B3004FA0FB /* Classes */ = {
+		BB5D79572ACDC316004FA0FB /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				54AE86CD18E34E3F00A3860F /* VBDocumentManager.h */,
-				54AE86CE18E34E3F00A3860F /* VBDocumentManager.m */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
-		BB5D79552ACDC2F2004FA0FB /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				BB5D79562ACDC2F8004FA0FB /* Storyboard */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		BB5D79562ACDC2F8004FA0FB /* Storyboard */ = {
-			isa = PBXGroup;
-			children = (
-				5468EB4818B8AEB600716507 /* Main_iPhone.storyboard */,
-				5468EB4B18B8AEB700716507 /* Main_iPad.storyboard */,
-			);
-			path = Storyboard;
-			sourceTree = "<group>";
-		};
-		BB5D79572ACDC316004FA0FB /* Data */ = {
-			isa = PBXGroup;
-			children = (
+				BB5D79592ACDC3AE004FA0FB /* WordsModel.xcdatamodeld */,
 				543A0EB2190D3CDB0036280A /* WordSet.h */,
 				543A0EB3190D3CDB0036280A /* WordSet.m */,
 				543A0EAC190D38E90036280A /* Word.h */,
 				543A0EAD190D38E90036280A /* Word.m */,
-				5471593D192DE904002C9E24 /* Word+DocumentOperations.h */,
-				5471593E192DE904002C9E24 /* Word+DocumentOperations.m */,
-				54715940192DE912002C9E24 /* WordSet+DocumentOperations.h */,
-				54715941192DE912002C9E24 /* WordSet+DocumentOperations.m */,
-				BB5D79592ACDC3AE004FA0FB /* WordsModel.xcdatamodeld */,
 			);
-			path = Data;
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		BB5D796B2ACDC670004FA0FB /* Core */ = {
@@ -385,7 +344,6 @@
 				BB44FE4C2AC011D300510833 /* Vocab Book-Bridging-Header.h */,
 				5468EB3F18B8AEB600716507 /* InfoPlist.strings */,
 				BB44FE492AC0113C00510833 /* LaunchScreen.storyboard */,
-				BB3EDEE12AD4405200CC39F3 /* LegacyDataMigrator.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -429,6 +387,7 @@
 		BB5D79702ACDC6C7004FA0FB /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				BB3EDEE12AD4405200CC39F3 /* LegacyDataMigrator.swift */,
 				BB5D796F2ACDC6BC004FA0FB /* Translator */,
 			);
 			path = Services;
@@ -698,7 +657,6 @@
 				BB5D79A22ACDCABB004FA0FB /* flag_gaeilge.png in Resources */,
 				5420DC7318C39F3D006CE82F /* Localizable.strings in Resources */,
 				BB5D79A52ACDCABB004FA0FB /* flag_dansk.png in Resources */,
-				5468EB4D18B8AEB700716507 /* Main_iPad.storyboard in Resources */,
 				BB5D79A32ACDCABB004FA0FB /* flag_svenska.png in Resources */,
 				BB5D79B02ACDCABB004FA0FB /* flag_suomi.png in Resources */,
 				BB5D79A62ACDCABB004FA0FB /* flag_thai.png in Resources */,
@@ -719,7 +677,6 @@
 				BB5D79AE2ACDCABB004FA0FB /* unknown_language.png in Resources */,
 				BB5D79B12ACDCABB004FA0FB /* flag_hindi.png in Resources */,
 				BB5D79C12ACDCABB004FA0FB /* flag_nederlands.png in Resources */,
-				5468EB4A18B8AEB600716507 /* Main_iPhone.storyboard in Resources */,
 				BB5D79B62ACDCABB004FA0FB /* flag_japanese.png in Resources */,
 				BB5D79B32ACDCABB004FA0FB /* flag_français.png in Resources */,
 				BB5D79C22ACDCABB004FA0FB /* flag_italiano.png in Resources */,
@@ -785,7 +742,6 @@
 				BB5D79602ACDC3AE004FA0FB /* WordsModel.xcdatamodeld in Sources */,
 				BB44FE5A2AC022F400510833 /* VocabSetView.swift in Sources */,
 				BB5D79482ACDB101004FA0FB /* RoundedCorner.swift in Sources */,
-				54715942192DE912002C9E24 /* WordSet+DocumentOperations.m in Sources */,
 				BBD293502ACB01B200A02C84 /* String+Extensions.swift in Sources */,
 				BBD60A512AC1877C006F396A /* VocabSetAddView.swift in Sources */,
 				BB5D79462ACDB0D9004FA0FB /* ImageButton.swift in Sources */,
@@ -798,7 +754,6 @@
 				BB5289CF2AC169DB008968F8 /* VocabCard.swift in Sources */,
 				54AE86CF18E34E3F00A3860F /* VBDocumentManager.m in Sources */,
 				BB44FE522AC0192700510833 /* MainView.swift in Sources */,
-				5471593F192DE904002C9E24 /* Word+DocumentOperations.m in Sources */,
 				BB5D79402ACDA55B004FA0FB /* SettingsView.swift in Sources */,
 				BB5289D12AC16A4A008968F8 /* CardEditView.swift in Sources */,
 				BB70BCC42AC7359C007D732B /* ITranslator.swift in Sources */,
@@ -866,23 +821,6 @@
 				5468EB4018B8AEB600716507 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		5468EB4818B8AEB600716507 /* Main_iPhone.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5468EB4918B8AEB600716507 /* Base */,
-			);
-			name = Main_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		5468EB4B18B8AEB700716507 /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5468EB4C18B8AEB700716507 /* Base */,
-				546795D5193E1BDB003FB111 /* de */,
-			);
-			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

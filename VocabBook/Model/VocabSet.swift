@@ -17,6 +17,9 @@ class VocabSet: Identifiable {
 
     var isFavorite = false
 
+    var language: String
+
+
     @Relationship(deleteRule: .cascade)
     var cards: [VocabCard] = []
 
@@ -24,8 +27,9 @@ class VocabSet: Identifiable {
         cards.contains { $0.isDue }
     }
 
-    init(name: String, descriptionText: String) {
+    init(name: String, descriptionText: String, language: String) {
         self.name = name
         self.descriptionText = descriptionText
+        self.language = language
     }
 }

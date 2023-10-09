@@ -17,10 +17,4 @@
 -(void) openiCloudDocument;
 -(void) openLocalDocument;
 
--(void) migrateToiCloud;
--(void) migrateToLocalStorage;
-
--(NSURL*) localDocumentURL;
--(NSURL*) iCloudDocumentURL;
-
 @end

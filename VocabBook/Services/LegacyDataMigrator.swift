@@ -63,13 +63,14 @@ final class LegacyDataMigrator: ObservableObject {
                     for set in sets {
                         guard !set.name.isEmpty else { continue }
 
-                        let vocabSet = VocabSet(name: set.name, descriptionText: set.descriptionText)
+                        let vocabSet = VocabSet(name: set.name, descriptionText: set.descriptionText, language: set.language)
                         self.modelContext.insert(vocabSet)
 
                         for word in set.words {
                             guard let word = word as? Word else { continue }
 
                             let vocabCard = VocabCard(front: word.name, back: word.translations)
+                            vocabCard.level = CardLevel(rawValue: word.level.uint8Value) ?? .level0
                             self.modelContext.insert(vocabCard)
                             vocabSet.cards.append(vocabCard)
                         }

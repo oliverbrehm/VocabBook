@@ -59,6 +59,8 @@ extension VocabSetView {
                             .font(.title)
                         .bold()
 
+                        Text("Language: \(vocabSet.language)")
+
                         if !vocabSet.descriptionText.isEmpty {
                             Text(vocabSet.descriptionText)
                         }
