@@ -1,5 +1,5 @@
 excluded:
-    - EOTimer Watch App
+    - VocabBook/Core/VocabBookApp.swift
 
 disabled_rules:
     - cyclomatic_complexity

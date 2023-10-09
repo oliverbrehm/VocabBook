@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class UIManagedDocument;
+
 @interface VBDocumentManager : NSObject
 
 @property (strong, nonatomic) UIManagedDocument *document;
@@ -17,5 +19,8 @@
 
 -(void) migrateToiCloud;
 -(void) migrateToLocalStorage;
+
+-(NSURL*) localDocumentURL;
+-(NSURL*) iCloudDocumentURL;
 
 @end

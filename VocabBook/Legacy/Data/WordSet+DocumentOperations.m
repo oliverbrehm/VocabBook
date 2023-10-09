@@ -7,13 +7,11 @@
 //
 
 #import "WordSet+DocumentOperations.h"
-#import "VBAppDelegate.h"
-#import "VBLookupURLHelper.h"
 #import "Word+DocumentOperations.h"
-#import "VBHelper.h"
 
 @implementation WordSet (DocumentOperations)
 
+/*
 +(WordSet*) createWithName: (NSString *) name andLanguage: (NSString*) language andDescription: (NSString*) description andFavourite: (BOOL) favourite
 {
     VBAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
@@ -57,7 +55,7 @@
     }
     
     return result;
-}
+}*/
 
 -(NSUInteger) numberOfDueWords {
     NSMutableArray *dueWords = [[NSMutableArray alloc] init];
@@ -71,6 +69,7 @@
     return [dueWords count];
     
 }
+/*
 
 -(NSMutableArray*) getDueWords
 {
@@ -136,7 +135,7 @@
     }
     
     return date;
-}
+}*/
 
 
 @end

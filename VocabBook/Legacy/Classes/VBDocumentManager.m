@@ -9,8 +9,6 @@
 #import "VBDocumentManager.h"
 #import "Word.h"
 #import "WordSet.h"
-#import "VBHelper.h"
-#import "VBAppDelegate.h"
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
@@ -83,6 +81,16 @@
     NSLog(@"Document store url: %@", url);
 }
 
+-(NSURL*) localDocumentURL
+{
+    return [self documentURL:@".coredata_library_local"];
+}
+
+-(NSURL*) iCloudDocumentURL
+{
+    return [self documentURL:@".coredata_library_icloud"];
+}
+
 -(NSURL*) documentURL: (NSString*) documentName
 {
     NSURL *documentsUrl = [[[NSFileManager defaultManager] URLsForDirectory: NSDocumentDirectory /*NSLibraryDirectory*/ inDomains:NSUserDomainMask] firstObject];
@@ -102,7 +110,7 @@
 
             NSLog(@"Opening existing document %@ successfull, options: %@", self.document.fileURL, [self.document.persistentStoreOptions description]);
             if(document) {
-                [self insertObjectsFroomDocument: document];
+                [self insertObjectsFromDocument: document];
                 [document closeWithCompletionHandler:nil];
             }
             
@@ -146,7 +154,7 @@
     [self.document.managedObjectContext performBlock:^{
         [self.document.managedObjectContext mergeChangesFromContextDidSaveNotification:notification];
         
-        NSNotification *n = [NSNotification notificationWithName:@"DocumentManagerImportediCloudChangesNotification" object:self];
+        NSNotification *n = [NSNotification notificationWithName:@"LegacyCoreDataReceivedICloudUpdate" object:self];
         [[NSNotificationCenter defaultCenter] postNotification:n];
     }];
 }
@@ -161,18 +169,12 @@
     } else {
         NSLog(@"Setting persistenStoreOptions successfull");
     }
-    
 }
     
 -(NSDictionary*) persistentStoreOptionsiCloud
 {
-//#warning RESET TO vocab_book_iCloud_store ! this cannot change or users will lose their data!
     return [NSDictionary dictionaryWithObjectsAndKeys:@"vocab_book_iCloud_store",
             NSPersistentStoreUbiquitousContentNameKey,[NSNumber numberWithBool:YES], NSMigratePersistentStoresAutomaticallyOption, [NSNumber numberWithBool:YES], NSInferMappingModelAutomaticallyOption,nil];
-    
-    /*return [NSDictionary dictionaryWithObjectsAndKeys:@"vocab_book_iCloud_store_TEST",
-            NSPersistentStoreUbiquitousContentNameKey, [NSNumber numberWithBool:YES], NSMigratePersistentStoresAutomaticallyOption, [NSNumber numberWithBool:YES], NSInferMappingModelAutomaticallyOption,nil];*/
-
 }
 
 -(NSDictionary*) persistentStoreOptionLocal
@@ -180,7 +182,7 @@
     return [NSDictionary dictionaryWithObjectsAndKeys: [NSNumber numberWithBool:YES], NSMigratePersistentStoresAutomaticallyOption, [NSNumber numberWithBool:YES], NSInferMappingModelAutomaticallyOption,nil];
 }
 
--(void) insertObjectsFroomDocument: (UIManagedDocument*) document
+-(void) insertObjectsFromDocument: (UIManagedDocument*) document
 {
     // merge sets first
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"WordSet"];
@@ -190,7 +192,7 @@
         return;
     }
     for(WordSet *wordSet in results) {
-        WordSet *newWordSet = [VBHelper wordSetWithName:wordSet.name];
+        WordSet *newWordSet = [self wordSetWithName:wordSet.name];
         if (!newWordSet) { // set does not exist already -> create new set
             newWordSet = [NSEntityDescription insertNewObjectForEntityForName:@"WordSet" inManagedObjectContext:self.document.managedObjectContext];
             // set attributes
@@ -212,7 +214,7 @@
         return;
     }
     for(Word *word in results) {
-        Word *newWord = [VBHelper wordWithName:word.name inSet:word.wordSet];
+        Word *newWord = [self wordWithName:word.name inSet:word.wordSet];
         if(!newWord) { // word does not exist already -> create new word
             newWord = [NSEntityDescription insertNewObjectForEntityForName:@"Word" inManagedObjectContext:self.document.managedObjectContext];
             // set attributes
@@ -221,7 +223,7 @@
         }
         
         // set or update attributes
-        newWord.wordSet = [VBHelper wordSetWithName:word.wordSet.name];
+        newWord.wordSet = [self wordSetWithName:word.wordSet.name];
         newWord.lastQuizzedDate = word.lastQuizzedDate;
         newWord.level = word.level;
         newWord.numRight = word.numRight;
@@ -230,28 +232,37 @@
     }
 }
 
-
-/*
-#warning debug insert some words
--(void) insertSomeWordsForEachSet
+-(WordSet*) wordSetWithName: (NSString*) name
 {
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"WordSet"];
-    NSArray *sets = [self.document.managedObjectContext executeFetchRequest:request error:NULL];
-
-    for (WordSet *set in sets) {
-        
-        int n = 10 + (int)(((rand() * 1.0) * 30) / RAND_MAX);
-        NSLog(@"n = %d", n);
-
-        for(int i = 0; i < n; i++) {
-            Word *word = [NSEntityDescription insertNewObjectForEntityForName:@"Word" inManagedObjectContext:self.document.managedObjectContext];
-            word.wordSet = set;
-            word.name = @"tmpName";
-            word.translations = @"tmpTranslation";
-        }
- 
+    if(name) {
+        request.predicate = [NSPredicate predicateWithFormat:@"name = %@",name];
     }
+
+    NSArray *result = [self.document.managedObjectContext executeFetchRequest:request error:NULL];
+    if(!result || [result count] == 0) {
+        return nil;
+    }
+
+    return result[0];
 }
- */
+
+-(Word*) wordWithName: (NSString*) name inSet:(WordSet*) set
+{
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Word"];
+
+    if (set) {
+        request.predicate = [NSPredicate predicateWithFormat:@"name = %@ AND wordSet.name = %@",name, set.name];
+    } else {
+        request.predicate = [NSPredicate predicateWithFormat:@"name = %@",name];
+    }
+
+    NSArray *result = [self.document.managedObjectContext executeFetchRequest:request error:NULL];
+    if(!result || [result count] == 0) {
+        return nil;
+    }
+
+    return result[0];
+}
 
 @end

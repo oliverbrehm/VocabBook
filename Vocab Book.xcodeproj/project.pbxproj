@@ -7,59 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		541E984D192F417F000020E6 /* VBHelpTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 541E984C192F417F000020E6 /* VBHelpTVC.m */; };
-		541E9850192F419E000020E6 /* VBHelpPageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 541E984F192F419E000020E6 /* VBHelpPageVC.m */; };
 		5420DC7318C39F3D006CE82F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5420DC7518C39F3D006CE82F /* Localizable.strings */; };
-		5424172218DAF19300DB913A /* VBLookupSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 5424172118DAF19300DB913A /* VBLookupSettings.m */; };
-		5424172518DAF43F00DB913A /* VBLookupAddURLVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5424172418DAF43F00DB913A /* VBLookupAddURLVC.m */; };
-		5425CEFC18B907A300FCA274 /* VBMenuCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5425CEFB18B907A300FCA274 /* VBMenuCVC.m */; };
-		5425CEFF18B907EE00FCA274 /* VBWordBrowserTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5425CEFE18B907EE00FCA274 /* VBWordBrowserTVC.m */; };
-		5425CF0518B919B900FCA274 /* VBMenuWordSetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5425CF0418B919B900FCA274 /* VBMenuWordSetCell.m */; };
-		5433851F18BE58EE0084C143 /* WordsStatistcsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5433851E18BE58EE0084C143 /* WordsStatistcsCell.m */; };
 		543A0EAE190D38E90036280A /* Word.m in Sources */ = {isa = PBXBuildFile; fileRef = 543A0EAD190D38E90036280A /* Word.m */; };
 		543A0EB4190D3CDB0036280A /* WordSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 543A0EB3190D3CDB0036280A /* WordSet.m */; };
-		5440FD2F18E1CEF6002B688F /* VBCreateSetNameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5440FD2E18E1CEF6002B688F /* VBCreateSetNameCell.m */; };
-		5440FD3218E1CF12002B688F /* VBCreateSetDescriptionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5440FD3118E1CF12002B688F /* VBCreateSetDescriptionCell.m */; };
-		5440FD3518E1CF28002B688F /* VBCreateSetFavouritesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5440FD3418E1CF28002B688F /* VBCreateSetFavouritesCell.m */; };
-		5440FD3818E1E6B0002B688F /* VBMenuFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5440FD3718E1E6B0002B688F /* VBMenuFooterView.m */; };
-		544441B118BB534D00992026 /* VBMenuHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 544441B018BB534D00992026 /* VBMenuHeaderView.m */; };
-		544441B418BB581B00992026 /* VBSetBrowserTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 544441B318BB581B00992026 /* VBSetBrowserTVC.m */; };
-		544441B718BB5C9A00992026 /* VBMenuNavigationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 544441B618BB5C9A00992026 /* VBMenuNavigationCell.m */; };
-		5447464118F803D8005D3E18 /* VBLookupURLHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5447464018F803D8005D3E18 /* VBLookupURLHelper.m */; };
-		544C667318D47FA60020C615 /* VBSettingsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 544C667218D47FA60020C615 /* VBSettingsTVC.m */; };
-		544C667618D492310020C615 /* VBChangeSetTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 544C667518D492310020C615 /* VBChangeSetTVC.m */; };
-		5450D95818CF1E43001B4BCB /* VBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5450D95718CF1E43001B4BCB /* VBHelper.m */; };
-		545624C118BA08510017A257 /* VBWordLookupVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 545624C018BA08510017A257 /* VBWordLookupVC.m */; };
-		54589681190A47100092937F /* VBImportExport.m in Sources */ = {isa = PBXBuildFile; fileRef = 54589680190A47100092937F /* VBImportExport.m */; };
-		54589684190A4C7B0092937F /* VBImportFileTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 54589683190A4C7B0092937F /* VBImportFileTVC.m */; };
-		545D370218E48F8200A8A94B /* VBSetBrowserBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 545D370118E48F8200A8A94B /* VBSetBrowserBase.m */; };
-		5465111F18EE9829009CB416 /* VBWordQuizView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5465111E18EE9829009CB416 /* VBWordQuizView.m */; };
-		5465112218EE9F29009CB416 /* VBWordTrainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5465112118EE9F29009CB416 /* VBWordTrainerView.m */; };
 		5468EB3718B8AEB600716507 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5468EB3618B8AEB600716507 /* Foundation.framework */; };
 		5468EB3918B8AEB600716507 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5468EB3818B8AEB600716507 /* CoreGraphics.framework */; };
 		5468EB3B18B8AEB600716507 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5468EB3A18B8AEB600716507 /* UIKit.framework */; };
 		5468EB4118B8AEB600716507 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5468EB3F18B8AEB600716507 /* InfoPlist.strings */; };
-		5468EB4718B8AEB600716507 /* VBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5468EB4618B8AEB600716507 /* VBAppDelegate.m */; };
 		5468EB4A18B8AEB600716507 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5468EB4818B8AEB600716507 /* Main_iPhone.storyboard */; };
 		5468EB4D18B8AEB700716507 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5468EB4B18B8AEB700716507 /* Main_iPad.storyboard */; };
-		5468EB5318B8AEB700716507 /* VBWordInspectorVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5468EB5218B8AEB700716507 /* VBWordInspectorVC.m */; };
 		5468EB5518B8AEB700716507 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5468EB5418B8AEB700716507 /* Images.xcassets */; };
 		5468EB5C18B8AEB700716507 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5468EB5B18B8AEB700716507 /* XCTest.framework */; };
 		5468EB5D18B8AEB700716507 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5468EB3618B8AEB600716507 /* Foundation.framework */; };
 		5468EB5E18B8AEB700716507 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5468EB3A18B8AEB600716507 /* UIKit.framework */; };
-		546FA3AA18E2E38B00F0CBAC /* VBPremiumTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 546FA3A918E2E38B00F0CBAC /* VBPremiumTVC.m */; };
 		5471593F192DE904002C9E24 /* Word+DocumentOperations.m in Sources */ = {isa = PBXBuildFile; fileRef = 5471593E192DE904002C9E24 /* Word+DocumentOperations.m */; };
 		54715942192DE912002C9E24 /* WordSet+DocumentOperations.m in Sources */ = {isa = PBXBuildFile; fileRef = 54715941192DE912002C9E24 /* WordSet+DocumentOperations.m */; };
-		5496FE5018CC946000E58378 /* VBWordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5496FE4F18CC946000E58378 /* VBWordView.m */; };
 		54AE86CF18E34E3F00A3860F /* VBDocumentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 54AE86CE18E34E3F00A3860F /* VBDocumentManager.m */; };
 		54B19D63194A07A1003B0888 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54B19D62194A07A1003B0888 /* StoreKit.framework */; };
-		54B7918F18C294ED00F865E4 /* VBMenuVocabCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 54B7918E18C294ED00F865E4 /* VBMenuVocabCell.m */; };
-		54DDF9EE18BA8CB80024633F /* VBCreateSetTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 54DDF9ED18BA8CB80024633F /* VBCreateSetTVC.m */; };
-		54DDF9F118BAA79C0024633F /* VBWordTrainerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 54DDF9F018BAA79C0024633F /* VBWordTrainerVC.m */; };
-		54E1309318BA6E5D00C69E8A /* VBSetMenuTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E1309218BA6E5D00C69E8A /* VBSetMenuTVC.m */; };
-		54E8759E18DB55C000CED41A /* VBWordQuizVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E8759D18DB55C000CED41A /* VBWordQuizVC.m */; };
-		54E875A118DB67DB00CED41A /* VBMenuEmptyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E875A018DB67DB00CED41A /* VBMenuEmptyCell.m */; };
-		54E875A418DB773200CED41A /* VBCreateSetAddLanguageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E875A318DB773200CED41A /* VBCreateSetAddLanguageVC.m */; };
 		BB44FE4A2AC0113C00510833 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB44FE492AC0113C00510833 /* LaunchScreen.storyboard */; };
 		BB44FE4E2AC011D300510833 /* VocabBookApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB44FE4D2AC011D300510833 /* VocabBookApp.swift */; };
 		BB44FE522AC0192700510833 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB44FE512AC0192700510833 /* MainView.swift */; };
@@ -163,62 +127,12 @@
 /* Begin PBXFileReference section */
 		540D278D19473E34003B3BAA /* de */ = {isa = PBXFileReference; lastKnownFileType = text; name = de; path = de.lproj/appdescription.txt; sourceTree = "<group>"; };
 		540D278F19473E39003B3BAA /* en */ = {isa = PBXFileReference; lastKnownFileType = text; name = en; path = en.lproj/appdescription.txt; sourceTree = "<group>"; };
-		541E984B192F417F000020E6 /* VBHelpTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBHelpTVC.h; sourceTree = "<group>"; };
-		541E984C192F417F000020E6 /* VBHelpTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBHelpTVC.m; sourceTree = "<group>"; };
-		541E984E192F419E000020E6 /* VBHelpPageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBHelpPageVC.h; sourceTree = "<group>"; };
-		541E984F192F419E000020E6 /* VBHelpPageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBHelpPageVC.m; sourceTree = "<group>"; };
 		5420DC7418C39F3D006CE82F /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5422F76F1930CB48006B9C76 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
-		5424172018DAF19300DB913A /* VBLookupSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBLookupSettings.h; sourceTree = "<group>"; };
-		5424172118DAF19300DB913A /* VBLookupSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBLookupSettings.m; sourceTree = "<group>"; };
-		5424172318DAF43F00DB913A /* VBLookupAddURLVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBLookupAddURLVC.h; sourceTree = "<group>"; };
-		5424172418DAF43F00DB913A /* VBLookupAddURLVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBLookupAddURLVC.m; sourceTree = "<group>"; };
-		5425CEFA18B907A300FCA274 /* VBMenuCVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBMenuCVC.h; sourceTree = "<group>"; };
-		5425CEFB18B907A300FCA274 /* VBMenuCVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBMenuCVC.m; sourceTree = "<group>"; };
-		5425CEFD18B907EE00FCA274 /* VBWordBrowserTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBWordBrowserTVC.h; sourceTree = "<group>"; };
-		5425CEFE18B907EE00FCA274 /* VBWordBrowserTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBWordBrowserTVC.m; sourceTree = "<group>"; };
-		5425CF0318B919B900FCA274 /* VBMenuWordSetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBMenuWordSetCell.h; sourceTree = "<group>"; };
-		5425CF0418B919B900FCA274 /* VBMenuWordSetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBMenuWordSetCell.m; sourceTree = "<group>"; };
-		5433851D18BE58EE0084C143 /* WordsStatistcsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordsStatistcsCell.h; sourceTree = "<group>"; };
-		5433851E18BE58EE0084C143 /* WordsStatistcsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordsStatistcsCell.m; sourceTree = "<group>"; };
 		543A0EAC190D38E90036280A /* Word.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Word.h; sourceTree = "<group>"; };
 		543A0EAD190D38E90036280A /* Word.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Word.m; sourceTree = "<group>"; };
 		543A0EB2190D3CDB0036280A /* WordSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordSet.h; sourceTree = "<group>"; };
 		543A0EB3190D3CDB0036280A /* WordSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordSet.m; sourceTree = "<group>"; };
-		5440FD2D18E1CEF6002B688F /* VBCreateSetNameCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBCreateSetNameCell.h; sourceTree = "<group>"; };
-		5440FD2E18E1CEF6002B688F /* VBCreateSetNameCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBCreateSetNameCell.m; sourceTree = "<group>"; };
-		5440FD3018E1CF12002B688F /* VBCreateSetDescriptionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBCreateSetDescriptionCell.h; sourceTree = "<group>"; };
-		5440FD3118E1CF12002B688F /* VBCreateSetDescriptionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBCreateSetDescriptionCell.m; sourceTree = "<group>"; };
-		5440FD3318E1CF28002B688F /* VBCreateSetFavouritesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBCreateSetFavouritesCell.h; sourceTree = "<group>"; };
-		5440FD3418E1CF28002B688F /* VBCreateSetFavouritesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBCreateSetFavouritesCell.m; sourceTree = "<group>"; };
-		5440FD3618E1E6B0002B688F /* VBMenuFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBMenuFooterView.h; sourceTree = "<group>"; };
-		5440FD3718E1E6B0002B688F /* VBMenuFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBMenuFooterView.m; sourceTree = "<group>"; };
-		544441AF18BB534D00992026 /* VBMenuHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBMenuHeaderView.h; sourceTree = "<group>"; };
-		544441B018BB534D00992026 /* VBMenuHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBMenuHeaderView.m; sourceTree = "<group>"; };
-		544441B218BB581B00992026 /* VBSetBrowserTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBSetBrowserTVC.h; sourceTree = "<group>"; };
-		544441B318BB581B00992026 /* VBSetBrowserTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBSetBrowserTVC.m; sourceTree = "<group>"; };
-		544441B518BB5C9A00992026 /* VBMenuNavigationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBMenuNavigationCell.h; sourceTree = "<group>"; };
-		544441B618BB5C9A00992026 /* VBMenuNavigationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBMenuNavigationCell.m; sourceTree = "<group>"; };
-		5447463F18F803D8005D3E18 /* VBLookupURLHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBLookupURLHelper.h; sourceTree = "<group>"; };
-		5447464018F803D8005D3E18 /* VBLookupURLHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBLookupURLHelper.m; sourceTree = "<group>"; };
-		544C667118D47FA60020C615 /* VBSettingsTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBSettingsTVC.h; sourceTree = "<group>"; };
-		544C667218D47FA60020C615 /* VBSettingsTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBSettingsTVC.m; sourceTree = "<group>"; };
-		544C667418D492310020C615 /* VBChangeSetTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBChangeSetTVC.h; sourceTree = "<group>"; };
-		544C667518D492310020C615 /* VBChangeSetTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBChangeSetTVC.m; sourceTree = "<group>"; };
-		5450D95618CF1E43001B4BCB /* VBHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBHelper.h; sourceTree = "<group>"; };
-		5450D95718CF1E43001B4BCB /* VBHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBHelper.m; sourceTree = "<group>"; };
-		545624BF18BA08510017A257 /* VBWordLookupVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBWordLookupVC.h; sourceTree = "<group>"; };
-		545624C018BA08510017A257 /* VBWordLookupVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBWordLookupVC.m; sourceTree = "<group>"; };
-		5458967F190A47100092937F /* VBImportExport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBImportExport.h; sourceTree = "<group>"; };
-		54589680190A47100092937F /* VBImportExport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBImportExport.m; sourceTree = "<group>"; };
-		54589682190A4C7B0092937F /* VBImportFileTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBImportFileTVC.h; sourceTree = "<group>"; };
-		54589683190A4C7B0092937F /* VBImportFileTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBImportFileTVC.m; sourceTree = "<group>"; };
-		545D370018E48F8200A8A94B /* VBSetBrowserBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBSetBrowserBase.h; sourceTree = "<group>"; };
-		545D370118E48F8200A8A94B /* VBSetBrowserBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBSetBrowserBase.m; sourceTree = "<group>"; };
-		5465111D18EE9829009CB416 /* VBWordQuizView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBWordQuizView.h; sourceTree = "<group>"; };
-		5465111E18EE9829009CB416 /* VBWordQuizView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBWordQuizView.m; sourceTree = "<group>"; };
-		5465112018EE9F29009CB416 /* VBWordTrainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBWordTrainerView.h; sourceTree = "<group>"; };
-		5465112118EE9F29009CB416 /* VBWordTrainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBWordTrainerView.m; sourceTree = "<group>"; };
 		546795D5193E1BDB003FB111 /* de */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main_iPad.strings; sourceTree = "<group>"; };
 		546795D9193E1C24003FB111 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5468EB3318B8AEB600716507 /* Vocab Book.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vocab Book.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -228,41 +142,19 @@
 		5468EB3E18B8AEB600716507 /* Vocab Book-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Vocab Book-Info.plist"; sourceTree = "<group>"; };
 		5468EB4018B8AEB600716507 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5468EB4418B8AEB600716507 /* Vocab Book-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Vocab Book-Prefix.pch"; sourceTree = "<group>"; };
-		5468EB4518B8AEB600716507 /* VBAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VBAppDelegate.h; sourceTree = "<group>"; };
-		5468EB4618B8AEB600716507 /* VBAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VBAppDelegate.m; sourceTree = "<group>"; };
 		5468EB4918B8AEB600716507 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		5468EB4C18B8AEB700716507 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		5468EB5118B8AEB700716507 /* VBWordInspectorVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VBWordInspectorVC.h; sourceTree = "<group>"; };
-		5468EB5218B8AEB700716507 /* VBWordInspectorVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VBWordInspectorVC.m; sourceTree = "<group>"; };
 		5468EB5418B8AEB700716507 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5468EB5A18B8AEB700716507 /* Vocab BookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Vocab BookTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5468EB5B18B8AEB700716507 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		546FA3A818E2E38B00F0CBAC /* VBPremiumTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBPremiumTVC.h; sourceTree = "<group>"; };
-		546FA3A918E2E38B00F0CBAC /* VBPremiumTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBPremiumTVC.m; sourceTree = "<group>"; };
 		5471593D192DE904002C9E24 /* Word+DocumentOperations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Word+DocumentOperations.h"; sourceTree = "<group>"; };
 		5471593E192DE904002C9E24 /* Word+DocumentOperations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Word+DocumentOperations.m"; sourceTree = "<group>"; };
 		54715940192DE912002C9E24 /* WordSet+DocumentOperations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WordSet+DocumentOperations.h"; sourceTree = "<group>"; };
 		54715941192DE912002C9E24 /* WordSet+DocumentOperations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WordSet+DocumentOperations.m"; sourceTree = "<group>"; };
-		5496FE4E18CC946000E58378 /* VBWordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBWordView.h; sourceTree = "<group>"; };
-		5496FE4F18CC946000E58378 /* VBWordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBWordView.m; sourceTree = "<group>"; };
 		54AE86CD18E34E3F00A3860F /* VBDocumentManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBDocumentManager.h; sourceTree = "<group>"; };
 		54AE86CE18E34E3F00A3860F /* VBDocumentManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBDocumentManager.m; sourceTree = "<group>"; };
 		54B19D61194A0796003B0888 /* Vocab Book.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Vocab Book.entitlements"; sourceTree = "<group>"; };
 		54B19D62194A07A1003B0888 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		54B7918D18C294ED00F865E4 /* VBMenuVocabCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBMenuVocabCell.h; sourceTree = "<group>"; };
-		54B7918E18C294ED00F865E4 /* VBMenuVocabCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBMenuVocabCell.m; sourceTree = "<group>"; };
-		54DDF9EC18BA8CB80024633F /* VBCreateSetTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBCreateSetTVC.h; sourceTree = "<group>"; };
-		54DDF9ED18BA8CB80024633F /* VBCreateSetTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBCreateSetTVC.m; sourceTree = "<group>"; };
-		54DDF9EF18BAA79C0024633F /* VBWordTrainerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBWordTrainerVC.h; sourceTree = "<group>"; };
-		54DDF9F018BAA79C0024633F /* VBWordTrainerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBWordTrainerVC.m; sourceTree = "<group>"; };
-		54E1309118BA6E5D00C69E8A /* VBSetMenuTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBSetMenuTVC.h; sourceTree = "<group>"; };
-		54E1309218BA6E5D00C69E8A /* VBSetMenuTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBSetMenuTVC.m; sourceTree = "<group>"; };
-		54E8759C18DB55C000CED41A /* VBWordQuizVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBWordQuizVC.h; sourceTree = "<group>"; };
-		54E8759D18DB55C000CED41A /* VBWordQuizVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBWordQuizVC.m; sourceTree = "<group>"; };
-		54E8759F18DB67DB00CED41A /* VBMenuEmptyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBMenuEmptyCell.h; sourceTree = "<group>"; };
-		54E875A018DB67DB00CED41A /* VBMenuEmptyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBMenuEmptyCell.m; sourceTree = "<group>"; };
-		54E875A218DB773200CED41A /* VBCreateSetAddLanguageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBCreateSetAddLanguageVC.h; sourceTree = "<group>"; };
-		54E875A318DB773200CED41A /* VBCreateSetAddLanguageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBCreateSetAddLanguageVC.m; sourceTree = "<group>"; };
 		BB44FE492AC0113C00510833 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BB44FE4C2AC011D300510833 /* Vocab Book-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Vocab Book-Bridging-Header.h"; sourceTree = "<group>"; };
 		BB44FE4D2AC011D300510833 /* VocabBookApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabBookApp.swift; sourceTree = "<group>"; };
@@ -432,7 +324,6 @@
 		BB5D79532ACDC273004FA0FB /* Legacy */ = {
 			isa = PBXGroup;
 			children = (
-				BB5D79582ACDC319004FA0FB /* ViewControllers */,
 				BB5D79572ACDC316004FA0FB /* Data */,
 				BB5D79552ACDC2F2004FA0FB /* Resources */,
 				BB5D79542ACDC2B3004FA0FB /* Classes */,
@@ -444,16 +335,8 @@
 		BB5D79542ACDC2B3004FA0FB /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				5468EB4518B8AEB600716507 /* VBAppDelegate.h */,
-				5468EB4618B8AEB600716507 /* VBAppDelegate.m */,
-				5450D95618CF1E43001B4BCB /* VBHelper.h */,
-				5450D95718CF1E43001B4BCB /* VBHelper.m */,
 				54AE86CD18E34E3F00A3860F /* VBDocumentManager.h */,
 				54AE86CE18E34E3F00A3860F /* VBDocumentManager.m */,
-				5447463F18F803D8005D3E18 /* VBLookupURLHelper.h */,
-				5447464018F803D8005D3E18 /* VBLookupURLHelper.m */,
-				5458967F190A47100092937F /* VBImportExport.h */,
-				54589680190A47100092937F /* VBImportExport.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -489,157 +372,6 @@
 				BB5D79592ACDC3AE004FA0FB /* WordsModel.xcdatamodeld */,
 			);
 			path = Data;
-			sourceTree = "<group>";
-		};
-		BB5D79582ACDC319004FA0FB /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				BB5D796A2ACDC5FB004FA0FB /* WordBrowser */,
-				BB5D79692ACDC5F1004FA0FB /* WordLookup */,
-				BB5D79682ACDC5D5004FA0FB /* WordInspector */,
-				BB5D79672ACDC5CC004FA0FB /* LearnWords */,
-				BB5D79662ACDC5C0004FA0FB /* SetMenu */,
-				BB5D79652ACDC5B3004FA0FB /* SetBrowser */,
-				BB5D79642ACDC5A4004FA0FB /* CreateSet */,
-				BB5D79632ACDC594004FA0FB /* MenuCollectionView */,
-				BB5D79622ACDC584004FA0FB /* Help */,
-				BB5D79612ACDC577004FA0FB /* Settings */,
-			);
-			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		BB5D79612ACDC577004FA0FB /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-				544C667118D47FA60020C615 /* VBSettingsTVC.h */,
-				544C667218D47FA60020C615 /* VBSettingsTVC.m */,
-				54589682190A4C7B0092937F /* VBImportFileTVC.h */,
-				54589683190A4C7B0092937F /* VBImportFileTVC.m */,
-				546FA3A818E2E38B00F0CBAC /* VBPremiumTVC.h */,
-				546FA3A918E2E38B00F0CBAC /* VBPremiumTVC.m */,
-			);
-			path = Settings;
-			sourceTree = "<group>";
-		};
-		BB5D79622ACDC584004FA0FB /* Help */ = {
-			isa = PBXGroup;
-			children = (
-				541E984B192F417F000020E6 /* VBHelpTVC.h */,
-				541E984C192F417F000020E6 /* VBHelpTVC.m */,
-				541E984E192F419E000020E6 /* VBHelpPageVC.h */,
-				541E984F192F419E000020E6 /* VBHelpPageVC.m */,
-			);
-			path = Help;
-			sourceTree = "<group>";
-		};
-		BB5D79632ACDC594004FA0FB /* MenuCollectionView */ = {
-			isa = PBXGroup;
-			children = (
-				5425CEFA18B907A300FCA274 /* VBMenuCVC.h */,
-				5425CEFB18B907A300FCA274 /* VBMenuCVC.m */,
-				544441B518BB5C9A00992026 /* VBMenuNavigationCell.h */,
-				544441B618BB5C9A00992026 /* VBMenuNavigationCell.m */,
-				5425CF0318B919B900FCA274 /* VBMenuWordSetCell.h */,
-				5425CF0418B919B900FCA274 /* VBMenuWordSetCell.m */,
-				544441AF18BB534D00992026 /* VBMenuHeaderView.h */,
-				544441B018BB534D00992026 /* VBMenuHeaderView.m */,
-				5440FD3618E1E6B0002B688F /* VBMenuFooterView.h */,
-				5440FD3718E1E6B0002B688F /* VBMenuFooterView.m */,
-				54B7918D18C294ED00F865E4 /* VBMenuVocabCell.h */,
-				54B7918E18C294ED00F865E4 /* VBMenuVocabCell.m */,
-				54E8759F18DB67DB00CED41A /* VBMenuEmptyCell.h */,
-				54E875A018DB67DB00CED41A /* VBMenuEmptyCell.m */,
-			);
-			path = MenuCollectionView;
-			sourceTree = "<group>";
-		};
-		BB5D79642ACDC5A4004FA0FB /* CreateSet */ = {
-			isa = PBXGroup;
-			children = (
-				54DDF9EC18BA8CB80024633F /* VBCreateSetTVC.h */,
-				54DDF9ED18BA8CB80024633F /* VBCreateSetTVC.m */,
-				54E875A218DB773200CED41A /* VBCreateSetAddLanguageVC.h */,
-				54E875A318DB773200CED41A /* VBCreateSetAddLanguageVC.m */,
-				5440FD2D18E1CEF6002B688F /* VBCreateSetNameCell.h */,
-				5440FD2E18E1CEF6002B688F /* VBCreateSetNameCell.m */,
-				5440FD3018E1CF12002B688F /* VBCreateSetDescriptionCell.h */,
-				5440FD3118E1CF12002B688F /* VBCreateSetDescriptionCell.m */,
-				5440FD3318E1CF28002B688F /* VBCreateSetFavouritesCell.h */,
-				5440FD3418E1CF28002B688F /* VBCreateSetFavouritesCell.m */,
-			);
-			path = CreateSet;
-			sourceTree = "<group>";
-		};
-		BB5D79652ACDC5B3004FA0FB /* SetBrowser */ = {
-			isa = PBXGroup;
-			children = (
-				545D370018E48F8200A8A94B /* VBSetBrowserBase.h */,
-				545D370118E48F8200A8A94B /* VBSetBrowserBase.m */,
-				544C667418D492310020C615 /* VBChangeSetTVC.h */,
-				544C667518D492310020C615 /* VBChangeSetTVC.m */,
-				544441B218BB581B00992026 /* VBSetBrowserTVC.h */,
-				544441B318BB581B00992026 /* VBSetBrowserTVC.m */,
-			);
-			path = SetBrowser;
-			sourceTree = "<group>";
-		};
-		BB5D79662ACDC5C0004FA0FB /* SetMenu */ = {
-			isa = PBXGroup;
-			children = (
-				54E1309118BA6E5D00C69E8A /* VBSetMenuTVC.h */,
-				54E1309218BA6E5D00C69E8A /* VBSetMenuTVC.m */,
-			);
-			path = SetMenu;
-			sourceTree = "<group>";
-		};
-		BB5D79672ACDC5CC004FA0FB /* LearnWords */ = {
-			isa = PBXGroup;
-			children = (
-				54DDF9EF18BAA79C0024633F /* VBWordTrainerVC.h */,
-				54DDF9F018BAA79C0024633F /* VBWordTrainerVC.m */,
-				5465112018EE9F29009CB416 /* VBWordTrainerView.h */,
-				5465112118EE9F29009CB416 /* VBWordTrainerView.m */,
-				54E8759C18DB55C000CED41A /* VBWordQuizVC.h */,
-				54E8759D18DB55C000CED41A /* VBWordQuizVC.m */,
-				5465111D18EE9829009CB416 /* VBWordQuizView.h */,
-				5465111E18EE9829009CB416 /* VBWordQuizView.m */,
-			);
-			path = LearnWords;
-			sourceTree = "<group>";
-		};
-		BB5D79682ACDC5D5004FA0FB /* WordInspector */ = {
-			isa = PBXGroup;
-			children = (
-				5468EB5118B8AEB700716507 /* VBWordInspectorVC.h */,
-				5468EB5218B8AEB700716507 /* VBWordInspectorVC.m */,
-				5496FE4E18CC946000E58378 /* VBWordView.h */,
-				5496FE4F18CC946000E58378 /* VBWordView.m */,
-			);
-			path = WordInspector;
-			sourceTree = "<group>";
-		};
-		BB5D79692ACDC5F1004FA0FB /* WordLookup */ = {
-			isa = PBXGroup;
-			children = (
-				545624BF18BA08510017A257 /* VBWordLookupVC.h */,
-				545624C018BA08510017A257 /* VBWordLookupVC.m */,
-				5424172018DAF19300DB913A /* VBLookupSettings.h */,
-				5424172118DAF19300DB913A /* VBLookupSettings.m */,
-				5424172318DAF43F00DB913A /* VBLookupAddURLVC.h */,
-				5424172418DAF43F00DB913A /* VBLookupAddURLVC.m */,
-			);
-			path = WordLookup;
-			sourceTree = "<group>";
-		};
-		BB5D796A2ACDC5FB004FA0FB /* WordBrowser */ = {
-			isa = PBXGroup;
-			children = (
-				5425CEFD18B907EE00FCA274 /* VBWordBrowserTVC.h */,
-				5425CEFE18B907EE00FCA274 /* VBWordBrowserTVC.m */,
-				5433851D18BE58EE0084C143 /* WordsStatistcsCell.h */,
-				5433851E18BE58EE0084C143 /* WordsStatistcsCell.m */,
-			);
-			path = WordBrowser;
 			sourceTree = "<group>";
 		};
 		BB5D796B2ACDC670004FA0FB /* Core */ = {
@@ -1044,66 +776,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				54E1309318BA6E5D00C69E8A /* VBSetMenuTVC.m in Sources */,
-				5447464118F803D8005D3E18 /* VBLookupURLHelper.m in Sources */,
-				5424172518DAF43F00DB913A /* VBLookupAddURLVC.m in Sources */,
-				54E8759E18DB55C000CED41A /* VBWordQuizVC.m in Sources */,
 				543A0EB4190D3CDB0036280A /* WordSet.m in Sources */,
 				543A0EAE190D38E90036280A /* Word.m in Sources */,
-				544441B718BB5C9A00992026 /* VBMenuNavigationCell.m in Sources */,
-				5450D95818CF1E43001B4BCB /* VBHelper.m in Sources */,
-				541E9850192F419E000020E6 /* VBHelpPageVC.m in Sources */,
-				5425CF0518B919B900FCA274 /* VBMenuWordSetCell.m in Sources */,
 				BB44FE4E2AC011D300510833 /* VocabBookApp.swift in Sources */,
 				BB5D79602ACDC3AE004FA0FB /* WordsModel.xcdatamodeld in Sources */,
 				BB44FE5A2AC022F400510833 /* VocabSetView.swift in Sources */,
 				BB5D79482ACDB101004FA0FB /* RoundedCorner.swift in Sources */,
 				54715942192DE912002C9E24 /* WordSet+DocumentOperations.m in Sources */,
 				BBD293502ACB01B200A02C84 /* String+Extensions.swift in Sources */,
-				5468EB5318B8AEB700716507 /* VBWordInspectorVC.m in Sources */,
 				BBD60A512AC1877C006F396A /* VocabSetAddView.swift in Sources */,
-				5465111F18EE9829009CB416 /* VBWordQuizView.m in Sources */,
 				BB5D79462ACDB0D9004FA0FB /* ImageButton.swift in Sources */,
-				5468EB4718B8AEB600716507 /* VBAppDelegate.m in Sources */,
-				5440FD3218E1CF12002B688F /* VBCreateSetDescriptionCell.m in Sources */,
 				BB44FE562AC019A400510833 /* VocabSet.swift in Sources */,
 				BB70BCC62AC735E5007D732B /* LibreTranslator.swift in Sources */,
-				54589681190A47100092937F /* VBImportExport.m in Sources */,
 				BBD60A4F2AC17472006F396A /* CardLevel.swift in Sources */,
-				545D370218E48F8200A8A94B /* VBSetBrowserBase.m in Sources */,
 				BBD60A532AC18DC9006F396A /* VocabLearnView.swift in Sources */,
-				54DDF9EE18BA8CB80024633F /* VBCreateSetTVC.m in Sources */,
-				541E984D192F417F000020E6 /* VBHelpTVC.m in Sources */,
-				54DDF9F118BAA79C0024633F /* VBWordTrainerVC.m in Sources */,
-				544C667618D492310020C615 /* VBChangeSetTVC.m in Sources */,
-				54B7918F18C294ED00F865E4 /* VBMenuVocabCell.m in Sources */,
-				5440FD2F18E1CEF6002B688F /* VBCreateSetNameCell.m in Sources */,
-				5425CEFF18B907EE00FCA274 /* VBWordBrowserTVC.m in Sources */,
-				5433851F18BE58EE0084C143 /* WordsStatistcsCell.m in Sources */,
-				545624C118BA08510017A257 /* VBWordLookupVC.m in Sources */,
 				BB44FE582AC022DF00510833 /* VocabSetEditView.swift in Sources */,
 				BB5289CF2AC169DB008968F8 /* VocabCard.swift in Sources */,
 				54AE86CF18E34E3F00A3860F /* VBDocumentManager.m in Sources */,
 				BB44FE522AC0192700510833 /* MainView.swift in Sources */,
-				546FA3AA18E2E38B00F0CBAC /* VBPremiumTVC.m in Sources */,
 				5471593F192DE904002C9E24 /* Word+DocumentOperations.m in Sources */,
-				5424172218DAF19300DB913A /* VBLookupSettings.m in Sources */,
-				5440FD3518E1CF28002B688F /* VBCreateSetFavouritesCell.m in Sources */,
-				54589684190A4C7B0092937F /* VBImportFileTVC.m in Sources */,
-				5440FD3818E1E6B0002B688F /* VBMenuFooterView.m in Sources */,
-				544441B118BB534D00992026 /* VBMenuHeaderView.m in Sources */,
-				544C667318D47FA60020C615 /* VBSettingsTVC.m in Sources */,
 				BB5D79402ACDA55B004FA0FB /* SettingsView.swift in Sources */,
-				54E875A418DB773200CED41A /* VBCreateSetAddLanguageVC.m in Sources */,
 				BB5289D12AC16A4A008968F8 /* CardEditView.swift in Sources */,
-				5496FE5018CC946000E58378 /* VBWordView.m in Sources */,
-				5465112218EE9F29009CB416 /* VBWordTrainerView.m in Sources */,
 				BB70BCC42AC7359C007D732B /* ITranslator.swift in Sources */,
 				BB70BCC82AC735EB007D732B /* MockTranslator.swift in Sources */,
-				544441B418BB581B00992026 /* VBSetBrowserTVC.m in Sources */,
-				54E875A118DB67DB00CED41A /* VBMenuEmptyCell.m in Sources */,
 				BB70BCCA2AC745FD007D732B /* PreviewContainer.swift in Sources */,
-				5425CEFC18B907A300FCA274 /* VBMenuCVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
