@@ -34,7 +34,7 @@ struct VocabBookApp: App {
             MainView()
                 .environmentObject(legacyDataMigrator)
                 .modelContainer(modelContainer)
-                .onAppear() {
+                .onAppear {
                     DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
                         legacyDataMigrator.migrateLegacyDocuments()
                     }
