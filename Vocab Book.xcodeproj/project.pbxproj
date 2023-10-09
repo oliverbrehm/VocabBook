@@ -913,6 +913,7 @@
 				GCC_PREFIX_HEADER = "VocabBook/Legacy/Vocab Book-Prefix.pch";
 				INFOPLIST_FILE = "VocabBook/Core/Vocab Book-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 2.0.0;
 				PRODUCT_NAME = "Vocab Book";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "VocabBook/Core/Vocab Book-Bridging-Header.h";
@@ -937,6 +938,7 @@
 				GCC_PREFIX_HEADER = "VocabBook/Legacy/Vocab Book-Prefix.pch";
 				INFOPLIST_FILE = "VocabBook/Core/Vocab Book-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 2.0.0;
 				PRODUCT_NAME = "Vocab Book";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "VocabBook/Core/Vocab Book-Bridging-Header.h";
