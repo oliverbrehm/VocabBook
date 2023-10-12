@@ -16,15 +16,11 @@ struct VocabBookApp: App {
 
     @MainActor
     init() {
-        let modelContainer: ModelContainer
-
         do {
             modelContainer = try ModelContainer(for: VocabSet.self, VocabCard.self)
         } catch {
             fatalError(error.localizedDescription)
         }
-
-        self.modelContainer = modelContainer
 
         legacyDataMigrator = LegacyDataMigrator(modelContext: modelContainer.mainContext)
     }
