@@ -11,19 +11,20 @@ import SwiftData
 @Model
 class VocabSet: Identifiable {
     let id = UUID()
-
-    var name: String
-    var descriptionText: String
-
-    var isFavorite = false
-
-    var language: String
+    var name = ""
+    var descriptionText = ""
+    var language = ""
+    var isFavorite = true
 
     @Relationship(deleteRule: .cascade)
-    var cards: [VocabCard] = []
+    var cards: [VocabCard]? = []
 
     var hasDueCards: Bool {
-        cards.contains { $0.isDue }
+        (cards ?? []).contains { $0.isDue }
+    }
+
+    var dueCards: [VocabCard] {
+        (cards ?? []).filter { $0.isDue }
     }
 
     init(name: String, descriptionText: String, language: String) {

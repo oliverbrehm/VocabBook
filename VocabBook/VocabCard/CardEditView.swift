@@ -111,7 +111,7 @@ extension CardEditView {
 
                 Spacer()
 
-                Button("", systemImage: "checkmark.circle.fill", action: close)
+                Button("", systemImage: "arrowtriangle.down.circle.fill", action: close)
 
                 Spacer()
 

@@ -195,7 +195,7 @@ struct VocabLearnView_Previews: PreviewProvider {
     static var previews: some View {
         let previewContainer = PreviewContainer()
         if let set = previewContainer.vocabSet {
-            VocabLearnView(cards: set.cards)
+            VocabLearnView(cards: set.cards ?? [])
         }
     }
 }

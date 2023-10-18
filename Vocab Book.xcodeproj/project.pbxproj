@@ -70,6 +70,7 @@
 		BB5D79C32ACDCABB004FA0FB /* flag_vietnamese.png in Resources */ = {isa = PBXBuildFile; fileRef = BB5D799F2ACDCABB004FA0FB /* flag_vietnamese.png */; };
 		BB5D79C42ACDCABB004FA0FB /* flag_bălgarski esik.png in Resources */ = {isa = PBXBuildFile; fileRef = BB5D79A02ACDCABB004FA0FB /* flag_bălgarski esik.png */; };
 		BB5D79C52ACDCABB004FA0FB /* flag_polski.png in Resources */ = {isa = PBXBuildFile; fileRef = BB5D79A12ACDCABB004FA0FB /* flag_polski.png */; };
+		BB5E3D412ADE7C880059789F /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5E3D402ADE7C880059789F /* DatabaseService.swift */; };
 		BB70BCC12AC7338D007D732B /* LibreTranslate in Frameworks */ = {isa = PBXBuildFile; productRef = BB70BCC02AC7338D007D732B /* LibreTranslate */; };
 		BB70BCC42AC7359C007D732B /* ITranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB70BCC32AC7359C007D732B /* ITranslator.swift */; };
 		BB70BCC62AC735E5007D732B /* LibreTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB70BCC52AC735E5007D732B /* LibreTranslator.swift */; };
@@ -204,6 +205,7 @@
 		BB5D799F2ACDCABB004FA0FB /* flag_vietnamese.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flag_vietnamese.png; sourceTree = "<group>"; };
 		BB5D79A02ACDCABB004FA0FB /* flag_bălgarski esik.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flag_bălgarski esik.png"; sourceTree = "<group>"; };
 		BB5D79A12ACDCABB004FA0FB /* flag_polski.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flag_polski.png; sourceTree = "<group>"; };
+		BB5E3D402ADE7C880059789F /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
 		BB70BCC32AC7359C007D732B /* ITranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITranslator.swift; sourceTree = "<group>"; };
 		BB70BCC52AC735E5007D732B /* LibreTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibreTranslator.swift; sourceTree = "<group>"; };
 		BB70BCC72AC735EB007D732B /* MockTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTranslator.swift; sourceTree = "<group>"; };
@@ -387,6 +389,7 @@
 		BB5D79702ACDC6C7004FA0FB /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				BB5E3D402ADE7C880059789F /* DatabaseService.swift */,
 				BB3EDEE12AD4405200CC39F3 /* LegacyDataMigrator.swift */,
 				BB5D796F2ACDC6BC004FA0FB /* Translator */,
 			);
@@ -742,6 +745,7 @@
 				BB5D79602ACDC3AE004FA0FB /* WordsModel.xcdatamodeld in Sources */,
 				BB44FE5A2AC022F400510833 /* VocabSetView.swift in Sources */,
 				BB5D79482ACDB101004FA0FB /* RoundedCorner.swift in Sources */,
+				BB5E3D412ADE7C880059789F /* DatabaseService.swift in Sources */,
 				BBD293502ACB01B200A02C84 /* String+Extensions.swift in Sources */,
 				BBD60A512AC1877C006F396A /* VocabSetAddView.swift in Sources */,
 				BB5D79462ACDB0D9004FA0FB /* ImageButton.swift in Sources */,

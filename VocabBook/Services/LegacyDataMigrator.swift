@@ -17,10 +17,12 @@ final class LegacyDataMigrator: ObservableObject {
     // MARK: - Private properties
     private let legacyDocumentManager = VBDocumentManager()
     private let modelContext: ModelContext
+    private let deleteDuplicatesAction: () -> Void
 
     // MARK: - Initializers
-    init(modelContext: ModelContext) {
+    init(modelContext: ModelContext, deleteDuplicatesAction: @escaping () -> Void) {
         self.modelContext = modelContext
+        self.deleteDuplicatesAction = deleteDuplicatesAction
     }
 
     // MARK: - Functions
@@ -45,6 +47,7 @@ final class LegacyDataMigrator: ObservableObject {
         Task {
             if await migrateData() {
                 UserDefaults.standard.setValue(true, forKey: "swiftDataMigrationiCloudDone")
+                deleteDuplicatesAction()
             }
         }
     }
@@ -74,7 +77,7 @@ final class LegacyDataMigrator: ObservableObject {
                             vocabCard.level = CardLevel(rawValue: word.level.uint8Value) ?? .level0
 
                             self.modelContext.insert(vocabCard)
-                            vocabSet.cards.append(vocabCard)
+                            vocabSet.cards?.append(vocabCard)
                         }
                     }
 

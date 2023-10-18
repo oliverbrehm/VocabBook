@@ -14,9 +14,21 @@ struct MainView: View {
     @Environment(\.modelContext) private var modelContext
 
     // MARK: - State
-    @Query(sort: [SortDescriptor(\VocabSet.name)]) private var sets: [VocabSet]
-    @Query(sort: [SortDescriptor(\VocabCard.front)]) private var cards: [VocabCard]
+    @Query(sort: [SortDescriptor(\VocabSet.name)])
+    private var sets: [VocabSet]
+
+    @Query(sort: [SortDescriptor(\VocabCard.creationDate), SortDescriptor(\VocabCard.front)]) private var cards: [VocabCard]
+
     @State private var showAddSetView = false
+    @AppStorage("showAllSets") private var showAllSets = false
+    @AppStorage("useAppBadgeCount") var useAppBadgeCount = false
+
+    // MARK: - Private functions
+    private func updateAppBadge() {
+        guard useAppBadgeCount else { return }
+        let numberOfDueCards = sets.filter { $0.isFavorite }.reduce(0) { $0 + $1.dueCards.count }
+        UNUserNotificationCenter.current().setBadgeCount(numberOfDueCards)
+    }
 }
 
 // MARK: - UI
@@ -24,18 +36,23 @@ extension MainView {
     var body: some View {
         NavigationStack {
             ScrollView {
-                VStack(alignment: .leading, spacing: 28) {
+                VStack(alignment: .leading, spacing: 36) {
                     VStack(alignment: .leading) {
                         Text("Sets")
                             .bold()
 
-                        ForEach(sets, id: \.name) { set in
+                        ForEach(showAllSets ? sets : sets.filter { $0.isFavorite }, id: \.name) { set in
                             NavigationLink {
                                 VocabSetView(vocabSet: set)
                             } label: {
                                 setView(for: set)
                             }
                         }
+
+                        Button(showAllSets ? "Show favorites" : "Show all") {
+                            showAllSets.toggle()
+                        }
+                        .padding()
 
                         Button(action: {
                             showAddSetView = true
@@ -50,11 +67,11 @@ extension MainView {
 
                     if !cards.isEmpty {
                         VStack(alignment: .leading) {
-                            Text("Cards")
+                            Text("Newest cards")
                                 .bold()
 
                             LazyVGrid(columns: [GridItem(.adaptive(minimum: 150, maximum: 180), spacing: 12)], alignment: .leading) {
-                                ForEach(cards) { card in
+                                ForEach(cards.prefix(40)) { card in
                                     cardView(for: card)
                                 }
                             }
@@ -86,6 +103,8 @@ extension MainView {
             .fullScreenCover(isPresented: $showAddSetView, content: {
                 VocabSetAddView()
             })
+            .onAppear(perform: updateAppBadge)
+            .onChange(of: cards, updateAppBadge)
         }
     }
 
@@ -98,6 +117,9 @@ extension MainView {
 
             if set.hasDueCards {
                 Image(systemName: "lightbulb")
+                    .foregroundStyle(.orange)
+
+                Text("\(set.dueCards.count)")
                     .foregroundStyle(.orange)
             }
         }

@@ -21,18 +21,21 @@ struct VocabSetView: View {
     @State var showConfirmDelete = false
 
     // MARK: - Private properties
+    private var cards: [VocabCard] {
+        vocabSet.cards ?? []
+    }
+
     private var dueCards: [VocabCard] {
-        vocabSet.cards.filter { $0.isDue }
+        cards.filter { $0.isDue }
     }
 
     private var cardsToLearn: [VocabCard] {
-        dueCards.isEmpty ? vocabSet.cards : dueCards
+        dueCards.isEmpty ? cards : dueCards
     }
 
     // MARK: - Private functions
     private func cardsForLevel(_ level: CardLevel) -> [VocabCard] {
-        vocabSet.cards
-            .filter { $0.level == level }
+        cards.filter { $0.level == level }
     }
 }
 
@@ -41,7 +44,7 @@ extension VocabSetView {
     private func addCard() {
         let card = VocabCard(front: "", back: "")
         modelContext.insert(card)
-        vocabSet.cards.append(card)
+        vocabSet.cards?.append(card)
         editingCard = card
     }
 }
@@ -77,7 +80,7 @@ extension VocabSetView {
                 }
             }
 
-            if !vocabSet.cards.isEmpty {
+            if !cards.isEmpty {
                 Section {
                     HStack {
                         Image(systemName: "lightbulb")
@@ -140,7 +143,7 @@ extension VocabSetView {
                     translator: LibreTranslator(),
                     vocabCard: editingCard,
                     deleteAction: {
-                        vocabSet.cards.removeAll { $0.id == editingCard.id }
+                        vocabSet.cards?.removeAll { $0.id == editingCard.id }
                         modelContext.delete(editingCard)
                     }
                 )

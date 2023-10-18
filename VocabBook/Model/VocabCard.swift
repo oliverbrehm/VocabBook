@@ -13,18 +13,19 @@ class VocabCard: Identifiable, Equatable {
     // MARK: - Properties
     let id = UUID()
 
-    var front: String
-    var back: String
-
+    var front = ""
+    var back = ""
     var level = CardLevel.level0
+    var creationDate = Date()
+    var lastLearnedDate = Date()
+
+    @Relationship(inverse: \VocabSet.cards)
+    var vocabSet: VocabSet?
 
     // MARK: - Computed properties
     var isDue: Bool {
         Date() >= lastLearnedDate.advanced(by: level.timeIntervalUntilDue)
     }
-
-    // MARK: - Private properties
-    var lastLearnedDate = Date()
 
     // MARK: - Initializers
     init(front: String, back: String, lastLearnedDate: Date = Date()) {

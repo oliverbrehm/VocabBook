@@ -11,25 +11,22 @@ import SwiftData
 
 @main
 struct VocabBookApp: App {
-    let modelContainer: ModelContainer
     @ObservedObject var legacyDataMigrator: LegacyDataMigrator
+    let databaseService = DatabaseService()
 
     @MainActor
     init() {
-        do {
-            modelContainer = try ModelContainer(for: VocabSet.self, VocabCard.self)
-        } catch {
-            fatalError(error.localizedDescription)
-        }
+        legacyDataMigrator = LegacyDataMigrator(modelContext: databaseService.modelContainer.mainContext, deleteDuplicatesAction: databaseService.deleteDuplicates)
 
-        legacyDataMigrator = LegacyDataMigrator(modelContext: modelContainer.mainContext)
+        UNUserNotificationCenter.current().requestAuthorization(options: .badge) { _, _ in }
     }
 
     var body: some Scene {
         WindowGroup {
             MainView()
+                .environmentObject(databaseService)
                 .environmentObject(legacyDataMigrator)
-                .modelContainer(modelContainer)
+                .modelContainer(databaseService.modelContainer)
                 .onAppear {
                     DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
                         legacyDataMigrator.migrateLegacyDocuments()

@@ -11,10 +11,13 @@ import SwiftUI
 struct SettingsView: View {
     // MARK: - Environment
     @Environment(\.dismiss) var dismiss
+    @EnvironmentObject var databaseService: DatabaseService
     @EnvironmentObject var legacyDataMigrator: LegacyDataMigrator
 
     // MARK: - State
     @State var triedIcloudMigration = false
+    @AppStorage("useAppBadgeCount") var useAppBadgeCount = false
+    @AppStorage("storeDatabaseInCloud") var storeDatabaseInCloud = false
 }
 
 // MARK: - Actions
@@ -29,18 +32,28 @@ extension SettingsView {
 // MARK: - UI
 extension SettingsView {
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading, spacing: 32) {
-                if !legacyDataMigrator.icloudMigrated, !triedIcloudMigration {
-                    Button("Recover iCloud data", action: tryiCloudMigration)
-                    
-                    Text("If there is any iCloud data available, you can manually recover it here. iCloud will not be available immedeately after installation or an app update. If nothing happens, please try again in a few minutes.")
+        Form {
+            if !legacyDataMigrator.icloudMigrated, !triedIcloudMigration {
+                Section {
+                    Button("Recover iCloud data from older app version", action: tryiCloudMigration)
+
+                    Text("If there is any iCloud data missing from an older app version, you can manually recover it here. iCloud will not be available immedeately after installation or an app update. If nothing happens, please try again in a few minutes.")
                         .font(.footnote)
                 }
             }
-            .padding()
-            .navigationTitle("Settings")
+
+            Section {
+                Toggle("Use app badge:", isOn: $useAppBadgeCount)
+                    .onChange(of: useAppBadgeCount) {
+                        if !useAppBadgeCount {
+                            UNUserNotificationCenter.current().setBadgeCount(0)
+                        }
+                    }
+                Text("If enabled, the app badge will show the number of due cards.")
+                    .font(.footnote)
+            }
         }
+        .navigationTitle("Settings")
     }
 }
 
@@ -48,6 +61,7 @@ extension SettingsView {
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
         SettingsView()
-            .environmentObject(LegacyDataMigrator(modelContext: PreviewContainer().modelContainer.mainContext))
+            .environmentObject(LegacyDataMigrator(modelContext: PreviewContainer().modelContainer.mainContext, deleteDuplicatesAction: {}))
+            .environmentObject(DatabaseService())
     }
 }

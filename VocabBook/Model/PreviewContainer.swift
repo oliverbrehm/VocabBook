@@ -19,7 +19,7 @@ struct PreviewContainer {
     }
 
     var vocabCard: VocabCard? {
-        vocabSet?.cards.last
+        vocabSet?.cards?.last
     }
 
     init() {
@@ -51,7 +51,7 @@ struct PreviewContainer {
 
         for card in cards {
             modelContainer.mainContext.insert(card)
-            vocabSet.cards.append(card)
+            vocabSet.cards?.append(card)
         }
     }
 
