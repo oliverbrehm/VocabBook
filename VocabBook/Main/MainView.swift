@@ -66,7 +66,7 @@ extension MainView {
                     }
                 }
             }
-            .fullScreenCover(isPresented: $showAddSetView, content: {
+            .sheet(isPresented: $showAddSetView, content: {
                 VocabSetAddView()
             })
             .onAppear(perform: updateAppBadge)
