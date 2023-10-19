@@ -38,6 +38,7 @@ struct PreviewContainer {
             language: "en"
         )
         container.mainContext.insert(vocabSet)
+        container.mainContext.insert(VocabSet(name: "French", descriptionText: "French set", language: "fr"))
 
         vocabSets.append(vocabSet)
 
@@ -58,6 +59,7 @@ struct PreviewContainer {
     func newCard() -> VocabCard {
         let card = VocabCard(front: "", back: "")
         modelContainer.mainContext.insert(card)
+        card.vocabSet = vocabSet
         return card
     }
 }

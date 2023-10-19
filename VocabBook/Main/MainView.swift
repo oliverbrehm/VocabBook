@@ -20,6 +20,7 @@ struct MainView: View {
     @Query(sort: [SortDescriptor(\VocabCard.creationDate), SortDescriptor(\VocabCard.front)]) private var cards: [VocabCard]
 
     @State private var showAddSetView = false
+    @State private var editingCard: VocabCard?
     @AppStorage("showAllSets") private var showAllSets = false
     @AppStorage("useAppBadgeCount") var useAppBadgeCount = false
 
@@ -37,45 +38,10 @@ extension MainView {
         NavigationStack {
             ScrollView {
                 VStack(alignment: .leading, spacing: 36) {
-                    VStack(alignment: .leading) {
-                        Text("Sets")
-                            .bold()
-
-                        ForEach(showAllSets ? sets : sets.filter { $0.isFavorite }, id: \.name) { set in
-                            NavigationLink {
-                                VocabSetView(vocabSet: set)
-                            } label: {
-                                setView(for: set)
-                            }
-                        }
-
-                        Button(showAllSets ? "Show favorites" : "Show all") {
-                            showAllSets.toggle()
-                        }
-                        .padding()
-
-                        Button(action: {
-                            showAddSetView = true
-                        }, label: {
-                            Image(systemName: "plus.circle.fill")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 24)
-                        })
-                        .padding([.top, .horizontal], 8)
-                    }
+                    setList
 
                     if !cards.isEmpty {
-                        VStack(alignment: .leading) {
-                            Text("Newest cards")
-                                .bold()
-
-                            LazyVGrid(columns: [GridItem(.adaptive(minimum: 150, maximum: 180), spacing: 12)], alignment: .leading) {
-                                ForEach(cards.prefix(40)) { card in
-                                    cardView(for: card)
-                                }
-                            }
-                        }
+                        cardList
                     }
 
                     if sets.isEmpty, cards.isEmpty {
@@ -105,6 +71,70 @@ extension MainView {
             })
             .onAppear(perform: updateAppBadge)
             .onChange(of: cards, updateAppBadge)
+        }
+    }
+
+    private var setList: some View {
+        VStack(alignment: .leading) {
+            Text("Sets")
+                .bold()
+
+            ForEach(showAllSets ? sets : sets.filter { $0.isFavorite }, id: \.name) { set in
+                NavigationLink {
+                    VocabSetView(vocabSet: set)
+                } label: {
+                    setView(for: set)
+                }
+            }
+
+            Button(showAllSets ? "Show favorites" : "Show all") {
+                showAllSets.toggle()
+            }
+            .padding()
+
+            Button(action: {
+                showAddSetView = true
+            }, label: {
+                Image(systemName: "plus.circle.fill")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 24)
+            })
+            .padding([.top, .horizontal], 8)
+        }
+    }
+
+    private var cardList: some View {
+        VStack(alignment: .leading) {
+            Text("Newest cards")
+                .bold()
+
+            LazyVGrid(columns: [GridItem(.adaptive(minimum: 150, maximum: 180), spacing: 12)], alignment: .leading) {
+                ForEach(cards.prefix(40)) { card in
+                    Button {
+                        editingCard = card
+                    } label: {
+                        cardView(for: card)
+                    }
+                    .buttonStyle(.plain)
+                }
+            }
+            .fullScreenCover(isPresented: Binding(get: {
+                editingCard != nil
+            }, set: {
+                if !$0 { editingCard = nil }
+            }), content: {
+                if let editingCard {
+                    CardEditView(
+                        translator: EmptyTranslator(), // TODO: translation suggestion feature not to be released yet
+                        vocabCard: editingCard,
+                        deleteAction: {
+                            editingCard.vocabSet = nil
+                            modelContext.delete(editingCard)
+                        }
+                    )
+                }
+            })
         }
     }
 

@@ -10,19 +10,31 @@ import SwiftUI
 import SwiftData
 
 struct CardEditView: View {
-    private enum Focus {
-        case front, back
+    private enum Tab {
+        case front, back, settings
+
+        var title: String {
+            switch self {
+            case .front: return "Front"
+            case .back: return "Back"
+            case .settings: return "Settings"
+            }
+        }
     }
 
     // MARK: - Environment
     @Environment(\.dismiss) var dismiss
 
+    @Query(sort: [SortDescriptor(\VocabSet.name)])
+    private var sets: [VocabSet]
+
     // MARK: - State
-    @State private var selectedTab = "Front"
+    @State private var selectedTab = Tab.front
     @State private var translationSuggestions: [String] = []
-    @FocusState private var focussedView: Focus?
+    @FocusState private var focussedView: Tab?
 
     @State var showConfirmDelete = false
+    @State var showConfirmReset = false
     // MARK: - Properties
     let translator: any ITranslator
     @Bindable var vocabCard: VocabCard
@@ -89,24 +101,29 @@ extension CardEditView {
         VStack {
             TabView(selection: $selectedTab) {
                 textInputView(title: "Front", text: $vocabCard.front, focus: .front)
-                    .tag("Front")
+                    .tag(Tab.front)
                     .onTapGesture {
                         focussedView = .front
                     }
 
                 backView
-                    .tag("Back")
+                    .tag(Tab.back)
                     .onTapGesture {
                         focussedView = .back
                     }
                     .onAppear(perform: backAppeared)
+
+                settingsView
+                    .tag(Tab.settings)
             }
             .tabViewStyle(.page(indexDisplayMode: .never))
             .padding([.top, .bottom])
 
             HStack {
-                Button(selectedTab, systemImage: "arrow.clockwise.circle.fill") {
-                    selectedTab = (selectedTab == "Front" ? "Back" : "Front")
+                Button(selectedTab == .front ? "Back" : "Front", systemImage: "arrow.clockwise.circle.fill") {
+                    withAnimation {
+                        selectedTab = (selectedTab == Tab.front ? .back : .front)
+                    }
                 }
 
                 Spacer()
@@ -115,22 +132,19 @@ extension CardEditView {
 
                 Spacer()
 
-                Button("Delete", systemImage: "trash.fill", action: { showConfirmDelete = true })
-                    .foregroundStyle(.red)
+                Button("Settings", systemImage: "gear") {
+                    withAnimation {
+                        selectedTab = .settings
+                    }
+                }
+                .disabled(selectedTab == .settings)
             }
             .padding([.leading, .trailing, .bottom], 32)
         }
+        .background(Color(uiColor: .systemGroupedBackground))
         .onAppear {
             if vocabCard.front.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
                 focussedView = .front
-            }
-        }
-
-        .alert("Do you really want to remove this card?", isPresented: $showConfirmDelete) {
-            Button("No") {}
-
-            Button("YES") {
-                deleteCard()
             }
         }
     }
@@ -141,14 +155,14 @@ extension CardEditView {
 
             ForEach(translationSuggestions, id: \.self) { translation in
                 HStack(spacing: 16) {
-                    Text(translation)
-
                     Button(action: {
                         addTranslation(translation)
                     }, label: {
                         Image(systemName: "plus.circle")
                     })
                     .tint(.green)
+
+                    Text(translation)
 
                     Spacer()
 
@@ -161,13 +175,13 @@ extension CardEditView {
                 }
                 .padding(8)
                 .background(.gray.opacity(0.1))
-                .clipShape(RoundedRectangle(cornerRadius: 4))
-                .padding()
+                .clipShape(RoundedRectangle(cornerRadius: 8))
+                .padding(.horizontal)
             }
         }
     }
 
-    private func textInputView(title: String, text: Binding<String>, focus: Focus) -> some View {
+    private func textInputView(title: String, text: Binding<String>, focus: Tab) -> some View {
         VStack {
             TextField(title, text: text, axis: .vertical)
                 .focused($focussedView, equals: focus)
@@ -178,6 +192,48 @@ extension CardEditView {
         .background(.orange.opacity(0.15))
         .clipShape(RoundedRectangle(cornerRadius: 20))
         .padding([.leading, .trailing])
+    }
+
+    private var settingsView: some View {
+        Form {
+            if let setName = vocabCard.vocabSet?.name {
+                Section("Set") {
+                    Menu(setName) {
+                        ForEach(sets) { set in
+                            Button(set.name) {
+                                vocabCard.vocabSet = set
+                            }
+                        }
+                    }
+                }
+            }
+
+            Section("Reset") {
+                Button("Reset level", systemImage: "arrow.uturn.backward.circle") {
+                    showConfirmReset = true
+                }
+                .alert("Do you really want to reset this card to level 0?", isPresented: $showConfirmReset) {
+                    Button("No") {}
+
+                    Button("Yes") {
+                        vocabCard.level = .level0
+                    }
+                }
+
+                Button("Delete card", systemImage: "trash.fill") {
+                    showConfirmDelete = true
+                }
+                .foregroundStyle(.red)
+                .alert("Do you really want to remove this card?", isPresented: $showConfirmDelete) {
+                    Button("No") {}
+
+                    Button("YES") {
+                        deleteCard()
+                    }
+                }
+            }
+        }
+        .scrollContentBackground(.hidden)
     }
 }
 

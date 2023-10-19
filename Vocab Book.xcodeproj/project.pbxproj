@@ -89,6 +89,7 @@
 		BBD60A4F2AC17472006F396A /* CardLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD60A4E2AC17472006F396A /* CardLevel.swift */; };
 		BBD60A512AC1877C006F396A /* VocabSetAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD60A502AC1877C006F396A /* VocabSetAddView.swift */; };
 		BBD60A532AC18DC9006F396A /* VocabLearnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD60A522AC18DC9006F396A /* VocabLearnView.swift */; };
+		BBF6CDB92AE13257009FF51D /* EmptyTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF6CDB82AE13257009FF51D /* EmptyTranslator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -223,6 +224,7 @@
 		BBD60A4E2AC17472006F396A /* CardLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardLevel.swift; sourceTree = "<group>"; };
 		BBD60A502AC1877C006F396A /* VocabSetAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabSetAddView.swift; sourceTree = "<group>"; };
 		BBD60A522AC18DC9006F396A /* VocabLearnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabLearnView.swift; sourceTree = "<group>"; };
+		BBF6CDB82AE13257009FF51D /* EmptyTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTranslator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -382,6 +384,7 @@
 				BB70BCC32AC7359C007D732B /* ITranslator.swift */,
 				BB70BCC52AC735E5007D732B /* LibreTranslator.swift */,
 				BB70BCC72AC735EB007D732B /* MockTranslator.swift */,
+				BBF6CDB82AE13257009FF51D /* EmptyTranslator.swift */,
 			);
 			path = Translator;
 			sourceTree = "<group>";
@@ -743,6 +746,7 @@
 				543A0EAE190D38E90036280A /* Word.m in Sources */,
 				BB44FE4E2AC011D300510833 /* VocabBookApp.swift in Sources */,
 				BB5D79602ACDC3AE004FA0FB /* WordsModel.xcdatamodeld in Sources */,
+				BBF6CDB92AE13257009FF51D /* EmptyTranslator.swift in Sources */,
 				BB44FE5A2AC022F400510833 /* VocabSetView.swift in Sources */,
 				BB5D79482ACDB101004FA0FB /* RoundedCorner.swift in Sources */,
 				BB5E3D412ADE7C880059789F /* DatabaseService.swift in Sources */,

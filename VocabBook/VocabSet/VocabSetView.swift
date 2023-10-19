@@ -15,10 +15,11 @@ struct VocabSetView: View {
     @Environment(\.modelContext) private var modelContext
 
     // MARK: - State
-    @State var editingCard: VocabCard?
     @Bindable var vocabSet: VocabSet
-    @State var showLearnView = false
-    @State var showConfirmDelete = false
+
+    @State private var editingCard: VocabCard?
+    @State private var learnViewType: VocabLearnView.CoverType?
+    @State private var showConfirmDelete = false
 
     // MARK: - Private properties
     private var cards: [VocabCard] {
@@ -31,6 +32,16 @@ struct VocabSetView: View {
 
     private var cardsToLearn: [VocabCard] {
         dueCards.isEmpty ? cards : dueCards
+    }
+
+    private var showLearnView: Binding<Bool> {
+        Binding(get: {
+            learnViewType != nil
+        }, set: {
+            if !$0 {
+                learnViewType = nil
+            }
+        })
     }
 
     // MARK: - Private functions
@@ -82,19 +93,29 @@ extension VocabSetView {
 
             if !cards.isEmpty {
                 Section {
-                    HStack {
-                        Image(systemName: "lightbulb")
-                            .foregroundStyle(.blue)
+                    VStack(spacing: 24) {
+                        HStack {
+                            Image(systemName: "lightbulb")
+                                .foregroundStyle(.orange)
 
-                        VStack(alignment: .leading) {
-                            Button("Learn cards") {
-                                showLearnView = true
-                            }
-                            .bold()
+                            Text("Learn cards")
+                                .bold()
+
+                            Spacer()
 
                             Text("\(dueCards.count) cards due")
-                                .font(.footnote)
                         }
+
+                        HStack {
+                            Spacer()
+                            Button("Cover front") { learnViewType = .front }
+                                .buttonStyle(.borderedProminent)
+                            Spacer()
+                            Button("Cover back") { learnViewType = .back }
+                                .buttonStyle(.borderedProminent)
+                            Spacer()
+                        }
+                        .bold()
                     }
                 }
             }
@@ -128,8 +149,8 @@ extension VocabSetView {
                 })
             }
         }
-        .fullScreenCover(isPresented: $showLearnView, content: {
-            VocabLearnView(cards: cardsToLearn)
+        .fullScreenCover(isPresented: showLearnView, content: {
+            VocabLearnView(cards: cardsToLearn, coverType: learnViewType ?? .front)
         })
         .fullScreenCover(isPresented: Binding(get: {
             editingCard != nil
@@ -140,7 +161,7 @@ extension VocabSetView {
         }), content: {
             if let editingCard {
                 CardEditView(
-                    translator: LibreTranslator(),
+                    translator: EmptyTranslator(), // TODO: translation suggestion feature not to be released yet
                     vocabCard: editingCard,
                     deleteAction: {
                         vocabSet.cards?.removeAll { $0.id == editingCard.id }
@@ -161,6 +182,11 @@ extension VocabSetView {
 
     private func cardView(_ card: VocabCard) -> some View {
         HStack(spacing: 12) {
+            if card.isDue {
+                Image(systemName: "lightbulb")
+                    .foregroundStyle(.orange)
+            }
+
             VStack(alignment: .leading) {
                 Text(card.front.firstLine)
                     .bold()
@@ -175,11 +201,6 @@ extension VocabSetView {
             }
             .foregroundStyle(.blue)
             .buttonStyle(.plain)
-
-            if card.isDue {
-                Image(systemName: "lightbulb")
-                    .foregroundStyle(.orange)
-            }
         }
     }
 }

@@ -9,13 +9,15 @@
 import SwiftUI
 
 struct VocabLearnView: View {
+    // MARK: - Inner types
+    enum CoverType {
+        case front, back
+    }
+
     // MARK: - Environment
     @Environment(\.dismiss) var dismiss
 
     // MARK: - State
-    var cards: [VocabCard]
-
-    // MARK: - Properties
     @State private var remainingCards: [VocabCard] = []
     @State private var currentCard: VocabCard?
     @State private var nTotal = 0
@@ -25,9 +27,21 @@ struct VocabLearnView: View {
     @State private var animateRight = false
     @State private var animateWrong = false
 
+    // MARK: - Properties
+    let cards: [VocabCard]
+    let coverType: CoverType
+
     // MARK: - Private properties
     private var nRemaining: Int {
         remainingCards.count + (currentCard != nil ? 1 : 0)
+    }
+
+    private var coverFront: Bool {
+        coverType == .front && isCovered
+    }
+
+    private var coverBack: Bool {
+        coverType == .back && isCovered
     }
 
     // MARK: - Private functions
@@ -118,34 +132,35 @@ extension VocabLearnView {
 
     private func cardView(card: VocabCard) -> some View {
         VStack {
-            HStack {
-                Text(card.front)
-                    .padding()
-                Spacer()
-            }
+            coverableView(text: card.front, textCovered: coverFront)
 
             Spacer()
                 .frame(maxWidth: .infinity)
                 .frame(height: 1.5)
                 .background(.gray.opacity(0.7))
 
-            if isCovered {
-                ImageButton(systemName: "lightbulb.2.fill") {
-                    isCovered = false
-                }
-                .padding()
-            } else {
-                HStack {
-                    Text(card.back)
-                        .padding()
-                    Spacer()
-                }
-            }
+            coverableView(text: card.back, textCovered: coverBack)
         }
         .frame(maxWidth: .infinity)
         .background(.orange.opacity(0.2))
         .clipShape(RoundedRectangle(cornerRadius: 10))
         .padding()
+    }
+
+    @ViewBuilder
+    private func coverableView(text: String, textCovered: Bool) -> some View {
+        if textCovered {
+            ImageButton(systemName: "lightbulb.2.fill") {
+                isCovered = false
+            }
+            .padding()
+        } else {
+            HStack {
+                Text(text)
+                    .padding()
+                Spacer()
+            }
+        }
     }
 
     @ViewBuilder
@@ -195,7 +210,7 @@ struct VocabLearnView_Previews: PreviewProvider {
     static var previews: some View {
         let previewContainer = PreviewContainer()
         if let set = previewContainer.vocabSet {
-            VocabLearnView(cards: set.cards ?? [])
+            VocabLearnView(cards: set.cards ?? [], coverType: .front)
         }
     }
 }
