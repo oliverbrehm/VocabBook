@@ -35,25 +35,25 @@ extension SettingsView {
         Form {
             if !legacyDataMigrator.icloudDataMigrated, !triedIcloudMigration {
                 Section {
-                    Button("Recover iCloud data from older app version", action: tryiCloudMigration)
+                    Button(Strings.recoverICloud.localized, action: tryiCloudMigration)
 
-                    Text("If there is any iCloud data missing from an older app version, you can manually recover it here. iCloud will not be available immedeately after installation or an app update. If nothing happens, please try again in a few minutes.")
+                    Text(Strings.recoverICloudInfo.localized)
                         .font(.footnote)
                 }
             }
 
             Section {
-                Toggle("Use app badge:", isOn: $useAppBadgeCount)
+                Toggle("\(Strings.useAppBadge.localized):", isOn: $useAppBadgeCount)
                     .onChange(of: useAppBadgeCount) {
                         if !useAppBadgeCount {
                             UNUserNotificationCenter.current().setBadgeCount(0)
                         }
                     }
-                Text("If enabled, the app badge will show the number of due cards.")
+                Text(Strings.useAppBadgeInfo.localized)
                     .font(.footnote)
             }
         }
-        .navigationTitle("Settings")
+        .navigationTitle(Strings.settings.localized)
     }
 }
 

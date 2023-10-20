@@ -29,6 +29,8 @@
 		BB44FE5A2AC022F400510833 /* VocabSetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB44FE592AC022F400510833 /* VocabSetView.swift */; };
 		BB5289CF2AC169DB008968F8 /* VocabCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5289CE2AC169DB008968F8 /* VocabCard.swift */; };
 		BB5289D12AC16A4A008968F8 /* CardEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5289D02AC16A4A008968F8 /* CardEditView.swift */; };
+		BB543DA22AE2D458004C9747 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB543DA12AE2D458004C9747 /* Strings.swift */; };
+		BB543DA42AE2D794004C9747 /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB543DA32AE2D794004C9747 /* UserDefaultsKeys.swift */; };
 		BB5D79402ACDA55B004FA0FB /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5D793F2ACDA55B004FA0FB /* SettingsView.swift */; };
 		BB5D79432ACDAFA4004FA0FB /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = BB5D79422ACDAFA4004FA0FB /* .swiftlint.yml */; };
 		BB5D79462ACDB0D9004FA0FB /* ImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5D79452ACDB0D9004FA0FB /* ImageButton.swift */; };
@@ -158,6 +160,8 @@
 		BB44FE592AC022F400510833 /* VocabSetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabSetView.swift; sourceTree = "<group>"; };
 		BB5289CE2AC169DB008968F8 /* VocabCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabCard.swift; sourceTree = "<group>"; };
 		BB5289D02AC16A4A008968F8 /* CardEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardEditView.swift; sourceTree = "<group>"; };
+		BB543DA12AE2D458004C9747 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		BB543DA32AE2D794004C9747 /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
 		BB5D793F2ACDA55B004FA0FB /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		BB5D79422ACDAFA4004FA0FB /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		BB5D79452ACDB0D9004FA0FB /* ImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageButton.swift; sourceTree = "<group>"; };
@@ -360,6 +364,8 @@
 				BB7932872AE25AD900847A09 /* PropertyWrappers */,
 				BB5D796D2ACDC696004FA0FB /* Views */,
 				BB5D796E2ACDC6A0004FA0FB /* Extensions */,
+				BB543DA12AE2D458004C9747 /* Strings.swift */,
+				BB543DA32AE2D794004C9747 /* UserDefaultsKeys.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -758,11 +764,13 @@
 				BB44FE4E2AC011D300510833 /* VocabBookApp.swift in Sources */,
 				BB5D79602ACDC3AE004FA0FB /* WordsModel.xcdatamodeld in Sources */,
 				BBF6CDB92AE13257009FF51D /* EmptyTranslator.swift in Sources */,
+				BB543DA42AE2D794004C9747 /* UserDefaultsKeys.swift in Sources */,
 				BB44FE5A2AC022F400510833 /* VocabSetView.swift in Sources */,
 				BB5D79482ACDB101004FA0FB /* RoundedCorner.swift in Sources */,
 				BB5E3D412ADE7C880059789F /* DatabaseService.swift in Sources */,
 				BBD293502ACB01B200A02C84 /* String+Extensions.swift in Sources */,
 				BBD60A512AC1877C006F396A /* VocabSetAddView.swift in Sources */,
+				BB543DA22AE2D458004C9747 /* Strings.swift in Sources */,
 				BB5D79462ACDB0D9004FA0FB /* ImageButton.swift in Sources */,
 				BB44FE562AC019A400510833 /* VocabSet.swift in Sources */,
 				BB70BCC62AC735E5007D732B /* LibreTranslator.swift in Sources */,

@@ -91,5 +91,5 @@ function_parameter_count:
     error: 10
 
 identifier_name:
-  excluded: ["x", "y", "z", "n", "id"]
+  excluded: ["x", "y", "z", "n", "id", "no"]
 

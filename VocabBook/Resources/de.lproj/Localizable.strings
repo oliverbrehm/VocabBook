@@ -6,156 +6,43 @@
  Copyright (c) 2014 Oliver Brehm. All rights reserved.
  */
 
-// help pages
-"Getting startedPageTitle" = "Einführung";
-"Quiz algorithmPageTitle" = "Der Abfragealgorithmus";
-"Word lookupPageTitle" = "Wörter nachschlagen";
-
-"OKOptionText" = "OK";
-"CancelOptionText" = "Abbrechen";
-"ResetOptionText" = "Zurücksetzen";
-"DoneOptionText" = "Fertig";
-"EditOptionText" = "Bearbeiten";
-"YesOptionText" = "Ja";
-"NoOptionText" = "Nein";
-"CreateOptionText" = "Erstellen";
-
-"ScoreText" = "Ergebnis";
-"NameText" = "Name";
-"WordText" = "Wort";
-"wordsPlural" = "Wörter";
-"wordsSingular" = "Wort";
-"SetText" = "Set";
-"WrongText" = "falsch";
-"RightText" = "richtig";
-"NewestText" = "Neuste";
-"ErrorText" = "Fehler";
-"DueText" = "fällig";
-"FinishedText" = "Fertig";
-
-"AllWordsButtonTitle" = "Alle Wörter";
-"AllSetsButtonTitle" = "Alle Sets";
-"NavigationLabel" = "Navigation";
-"FavouritesLabel" = "Favouriten";
-"RecentWordsLabel" = "Neuste Wörter";
-"AllWordsVCTitle" = "Alle Wörter";
-"EmptyLanguageMessageTitel" = "Fehlende Angabe";
-"EmptyLanguageMessage" = "Bitte gib deine Sprache ein";
-"RemoveFromFavouritesText" = "- Favouriten";
-"AddToFavouritesText" = "+ Favouriten";
-"EmptyNameMessageTitle" = "Fehlende Angabe";
-"EmptyNameMessage" = "Bitte gib einen Namen für das Set ein";
-"LearnActionText" = "Lernen";
-"RemoveSetWarning" = "Set wirklich entfernen? Dieses Set wird zusammen mit ALLEN enthaltenden Wörtern dauerhaft gelöscht!";
-"ResetStatisticsWarning" = "Statistiken wirklich zurücksetzen? Der Fortschritt und die Anzahl der Versuche werden dadurch gelöscht!";
-"ResetDatabaseOption" = "Datenbank zurücksetzen";
-"ResetDatabaseWarning" = "Wirklch die gesamte Datenbank zurücksetzen? ALLE Daten, also alle Sets und alle Wörter, werden gelöscht!";
-"ShowAnswerButtonText" = "Antwort Zeigen";
-"EmptyWordOrTranslationMessageTitle" = "Fehlende Angabe";
-"EmptyWordOrTranslationMessage" = "Bitte gib ein Wort und eine Übersetzung ein";
-"WordAddedText" = "Wort hinzugefügt";
-"ErrorOpeningTextFileForImporting" = "Fehler beim Öffnen der zu importierenden Datei.";
-
-"SetAlreadyExistsMessage" = "Ein Set mit dem gleichen Namen existiert bereits. Möchtest du es trotzdem erstellen?";
-"SetAlreadyExistsMessageTitle" = "Set existiert bereits";
-
-"NewSetCreatedMessage_1" = "Neues Set";
-"NewSetCreatedMessage_2" = "wurde erstellt";
-
-"WordAlreadyExistsMessage" = "Ein Wort mit dem selben Namen existiert bereits. Möchtest du es trotzdem erstellen?";
-"WordAlreadyExistsMessageTitle" = "Wort existiert bereits";
-
-"NotAvailableTitle" = "Nicht verfügbar";
-"iCloudNotAvailableText" = "iCloud ist nur in Vocab Book PREMIUM verfügbar. Du kannst PREMIUM jetzt kaufen oder Vocab Book ohne PREMIUM so lange wie nötig ohne iCloud und mit einer begrenzten Anzahl Wörtern ausprobieren.";
-"iCloudNotAvailablePlainText" = "iCloud ist nur in Vocab Book PREMIUM verfügbar.";
-"GetPremiumText" = "Get PREMIUM";
-
-"UsingPremiumText" = "Premium aktiv";
-
-"ImportSuccessfullTitle" = "Importieren erfolgreich";
-"NumWordsSuccessfullyAdded" = "Wörter erfolgreich hinzugefügt.";
-"NumWordsAlreadyExisted" = "Wörter existierten bereits.";
-"NumWordsSuccessfullyExported" = "Wörter erfolgreich exportiert.";
-"ExportSuccessfullTitle" = "Exportieren erfolgreich";
-
-"UseiCloudInfoText" = "Benutze iCloud um deine Vocabeln auf deinen iOS Geräten synchron zu halten";
-"FileSharingInfoText" = "Importiere oder exportiere die Datenbank in eine Textdatei. Die exportierten Dateien sind dann in iTunes File Sharing verfügbar (iTunes -> iOS device -> Apps -> File Sharing).";
-
-"ResetDatabaseInfoText" = "Benutze diese Option nur, wenn du deine gesamten Datenbank löschen möchtest. Alle Sets und alle Wörter werden entfernt, so dass du ein komplett neues Vocabelheft anfangen kannst. Wenn du gerade iCloud benutzt, werden deine lokalen Daten nicht gelöscht. Ebenso bleiben deine iCloud Daten erhalten, falls du iCloud gerade nicht benutzt.";
-"MergeDatabaseToLocalText" = "Möchtest du deine iCloud Daten mit den vorhandenen lokalen Daten mischen? Falls ja, werden alle bereits vorhandenen lokalen Wörter mit den iCloud Wörtern aktualisiert und alle neuen iCloud Wörter kopiert. Falls nein werden Änderungen, die du in iCloud gemacht hast, nicht Übernommen (solltest du iCloud später wieder aktivieren, bleiben die Wörter trotzdem erhalten).";
-"MergeDatabaseToiCloudText" = "Möchtest du deine lokalen Daten mit den vorhandenen iCloud Daten mischen? Falls ja, werden alle bereits vorhandenen iCloud Wörter mit den lokalen Wörtern aktualisiert und alle neuen lokalen Wörter nach iCloud kopiert. Falls nein, werden Änderungen, die du lokal gemacht hast, nicht übernommen (solltest du iCloud später wieder ausschalten, bleiben Wörter trotzdem erhalten).";
-
-"BuyPremiumText" = "Premium kaufen";
-"RestorePremiumText" = "Wiederherstellen";
-
-"NoFavouriteSetsText" = "Keine Favouriten vorhanden. Wähle \"+\" in der linken oberen Ecke um ein Set zu erstellen. Um ein Set zu den Favouriten hinzuzufügen, wähle ein Set aus, gehe dann zu \"Info\" und aktiviere den Schalter \"In Favouriten\".";
-"NoRecentWordsText" = "Keine Wörter. Wähle ein Set aus und tippe auf \"Wörter hinzufügen\"";
-
-"InfoText" = "Info";
-"LanguageText" = "Sprache";
-
-"EnterLanguageTitle" = "Sprache eingeben";
-"EnterLanguageText" = "Bitte gib eine Sprache ein";
-
-"NumWordsDueText" = "Wörter fällig";
-"OneWordDueText" = "Wort fällig";
-
-"NoDueWordsText" = "Keine Wörter fällig, nächste Abfrage";
-"LastTestText" = "Letzter Test";
-"TestNotTakenText" = "noch nicht gemacht";
-
-"NoWordsDueMessageTitle" = "Keine fälligen Wörter";
-"NoWordsDueMessage" = "Zur Zeit gibt es keine fälligen wörter. Du kannst die Wörter des Sets trotzdem lernen, allerdings erreichen die Wörter in diesem Modus nicht die nächste Stufe.";
-"FinishedLearningMessage" = "Du hast alle nötigen Wörter gelernt. Möchtest du trotzdem weitermachen?";
-"KeepLearningOption" = "Weiter lernen";
-
-"wordMissingMessageTitle" = "Fehlende Antwort";
-"wordMissingMessage" = "Bitte gib ein Wort ein";
-"CheckText" = "Überprüfen";
-"RightAnswerText" = "Richtige Antwort!";
-"WrongAnswerText" = "Falsch (Antwort:";
-"NextText" = "Weiter";
-"ContinueOptionText" = "Weiter";
-"stopTextMessageTitle" = "Test beenden";
-"stopTextMessage" = "Test wirklich beenden? Verbleibende Wörter";
-"cancelTestMessageTitle" = "Test abbrechen";
-"cancelTestMessage" = "Test wirklich abbrechen? Du musst noch ein paar Wörter des Sets lernen, damit der Test gültig ist. (Verbleibende Wörter";
-"resultsText" = "Ergebnis";
-"testFinishedText" = "Test beendet";
-"RemoveOptionText" = "Entfernen";
-
-"EnterWordText" = "Wort eingeben";
-"LookupText" = "Nachschlagen";
-
-"resetWordMessageTitle" = "Wirklich den Fortschritt für dieses Wort zurücksetzen?";
-"removeWordMessageTitle" = "Möchtest du dieses Wort wirklich löschen?";
-
-"badURLMessage" = "URL konnte nicht geöffnet werden. <br> Versuche eine andere Website auszufählen, indem du auf \"Einstellungen\" klickst.";
-
-"LevelText" = "Stufe";
-
-"ImportInfoText" = "Keine zu importierende Dateien vorhanden, exportierte Dateien werden hier auftauchen. Dateien können auch importiert werden, wenn du sie mit iTunes File Sharing hinzufügst (iTunes -> iOS device -> Apps -> File Sharing).";
-
-"UpToDateText" = "Aktuell";
-
-"iCloudNotAvailableTitle" = "iCloud nicht verfügbar";
-"iCloudNotAvailableMessage" = "iCloud ist nicht verfügbar. Aktiviere iCloud in Einstellungen->iCloud.";
-
-"iCloudAvailabilityChangedTitle" = "iCloud nicht mehr verfügbar";
-"iCloudAvailabilityChangedMessage" = "iCloud ist nicht mehr verfügbar. Möchtest du deine Cloud Daten auf den lokalen Speicher übernehmen? (Wenn du nein wählst, werden Daten, die du in der Cloud erstellt hast, auf diesem Gerät nicht mehr verfügbar sein!)";
-
-"lernDirectionText" = "Lernrichtung wählen";
-"coverSetLanguageText" = "Fremdsprache verdecken";
-"coverMyLanguageText" = "Meine Sprache verdecken";
-
-"wordsNotImportedBecauseNoPremium" = "Einige Wörter wurden nicht importiert, da du ohne PREMIUM nur 15 Wörter hinzufügen kannst. Bitte kaufe PREMIUM, um unbegrenzt viele Wörter hinzuzufügen.";
-
-"UnlockPremiumInfoText" = "Kaufe Premium, um alle Features freizuschalten!";
-
-"Premium transaction failed" = "Transaktion fehlgeschlagen";
-
-"Rate Vocab Book" = "Vocab Book bewerten";
-"Would you like to rate Vocab Book on the app store? Ratings are very important for other customers who would like to purchase the app and as feedback for developers." = "Möchtest du Vocab Book im App Store bewerten? Bewertungen sind für andere Nutzer sehr hilfreich und dienen als Feedback für die Entwickler.";
-"Rate now" = "Jetzt bewerten";
-"Remind me later" = "Später erinnern";
-"Don't ask again" = "Nicht mehr erinnern";
+"vocabBook" = "Vocab Book";
+"noSetsInfo" = "Hier gibt es noch nichts zu sehen. Erstelle zuerst ein neues Set.\nSollten nach einem kürzlichen Update Daten fehlen, versuche sie im Einstellungsmenü wiederherzustellen.";
+"sets" = "Sets";
+"showFavorites" = "Favouriten zeigen";
+"showAll" = "Alle zeigen";
+"newesCards" = "Neueste Karten";
+"recoverICloud" = "Daten aus iCloud von einer ältern App Version wiederherstellen";
+"recoverICloudInfo" = "Falls Daten aus iCloud von einer ältern App Version fehlen, kannst du sie hier wiederherstellen. Es kann sein, dass iCloud direkt nach einer Neuinstallation oder einem Update noch nicht verfügbar ist. Falls nichts passiert versuche es noch einmal.";
+"useAppBadge" = "App Badge benutzen";
+"useAppBadgeInfo" = "Bei Aktivierung zeigt die App Badge die Anzahl fälliger Karten an.";
+"settings" = "Einstellungen";
+"removeAllCardsQuestion" = "Möchtest du wirklich dieses Set mit allen Karten löschen?";
+"yes" = "Ja";
+"no" = "Nein";
+"addVocabSet" = "Set hinzufügen";
+"name" = "Name";
+"description" = "Beschreibung";
+"add" = "Hinzufügen";
+"cancel" = "Abbrechen";
+"editSet" = "Set bearbeiten";
+"cardsLeft" = "Verbleibend";
+"knewTheAnswerQuestion" = "Antwort gewusst?";
+"learningComplete" = "Lernen abgeschlossen";
+"learnResultInfo" = "Du hast %@ von %@ Karten gewusst.";
+"front" = "Vorne";
+"back" = "Hinten";
+"delete" = "Löschen";
+"level" = "Level";
+"coverBack" = "Hinterseite verdecken";
+"coverFront" = "Vorderseite verdecken";
+"cardsDue" = "Karten fällig";
+"learnCards" = "Karten lernen";
+"addCard" = "Karte hinzufügen";
+"language" = "Sprache";
+"set" = "Set";
+"reset" = "Zurücksetzen";
+"resetLevel" = "Level zurücksetzen";
+"confirmResetSetQuestion" = "Möchtest du diese Karte wirklich auf Level 0 zurücksetzen?";
+"deleteCard" = "Karte löschen";
+"confirmRemoveCardQuestion" = "Möchtest du diese Karte wirklich löschen?";

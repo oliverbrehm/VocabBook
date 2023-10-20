@@ -120,7 +120,7 @@ extension VocabLearnView {
                     .symbolEffect(.bounce, value: animateWrong)
             }
 
-            Text("Cards left: \(nRemaining)")
+            Text("\(Strings.cardsLeft.localized): \(nRemaining)")
 
             Spacer()
 
@@ -166,11 +166,11 @@ extension VocabLearnView {
     @ViewBuilder
     private var actionView: some View {
         VStack(spacing: 16) {
-            Text("Knew the answer?")
+            Text(Strings.knewTheAnswerQuestion.localized)
 
             HStack(spacing: 20) {
-                actionButton(text: "No", color: .red, roundedCorner: .topRight, action: guessedWrong)
-                actionButton(text: "Yes", color: .green, roundedCorner: .topLeft, action: guessedRight)
+                actionButton(text: Strings.no.localized, color: .red, roundedCorner: .topRight, action: guessedWrong)
+                actionButton(text: Strings.yes.localized, color: .green, roundedCorner: .topLeft, action: guessedRight)
             }
         }
     }
@@ -190,10 +190,10 @@ extension VocabLearnView {
 
     private var resultView: some View {
         VStack(spacing: 20) {
-            Text("Learning complete")
+            Text(Strings.learningComplete.localized)
                 .bold()
 
-            Text("You knew \(nRight) of \(nTotal) words.")
+            Text(Strings.learnResultInfo.localized(with: String(nRight), String(nTotal)))
 
             ImageButton(systemName: "checkmark.circle.fill") {
                 dismiss()

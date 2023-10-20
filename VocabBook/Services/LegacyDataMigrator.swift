@@ -9,8 +9,8 @@
 import SwiftData
 
 final class LegacyDataMigrator: ObservableObject {
-    @UserDefaultsStorage("swiftDataMigrationiCloudDone") var icloudDataMigrated = false
-    @UserDefaultsStorage("swiftDataMigrationLocalDone") var localDataMigrated = false
+    @UserDefaultsStorage(UserDefaultsKeys.swiftDataMigrationiCloudDone) var icloudDataMigrated = false
+    @UserDefaultsStorage(UserDefaultsKeys.swiftDataMigrationLocalDone) var localDataMigrated = false
 
     // MARK: - Private properties
     private let legacyDocumentManager = VBDocumentManager()

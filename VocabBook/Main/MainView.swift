@@ -21,8 +21,8 @@ struct MainView: View {
 
     @State private var showAddSetView = false
     @State private var editingCard: VocabCard?
-    @AppStorage("showAllSets") private var showAllSets = false
-    @AppStorage("useAppBadgeCount") var useAppBadgeCount = false
+    @AppStorage(UserDefaultsKeys.showAllSets.rawValue) private var showAllSets = false
+    @AppStorage(UserDefaultsKeys.useAppBadgeCount.rawValue) var useAppBadgeCount = false
 
     // MARK: - Private functions
     private func updateAppBadge() {
@@ -46,7 +46,7 @@ extension MainView {
 
                     if sets.isEmpty, cards.isEmpty {
                         HStack {
-                            Text("Nothing here yet. Create a new set first.\nIf you recently updated the app and your data is missing, try recovering it in the settings menu.")
+                            Text(Strings.noSetsInfo.localized)
                             Spacer()
                         }
                     }
@@ -56,7 +56,7 @@ extension MainView {
                 .padding()
             }
             .background(Color(uiColor: .systemGroupedBackground))
-            .navigationTitle("Vocab Book")
+            .navigationTitle(Strings.vocabBook.localized)
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     NavigationLink {
@@ -76,7 +76,7 @@ extension MainView {
 
     private var setList: some View {
         VStack(alignment: .leading) {
-            Text("Sets")
+            Text(Strings.sets.localized)
                 .bold()
 
             ForEach(showAllSets ? sets : sets.filter { $0.isFavorite }, id: \.name) { set in
@@ -87,7 +87,7 @@ extension MainView {
                 }
             }
 
-            Button(showAllSets ? "Show favorites" : "Show all") {
+            Button(showAllSets ? Strings.showFavorites.localized : Strings.showAll.localized) {
                 showAllSets.toggle()
             }
             .padding()
@@ -106,7 +106,7 @@ extension MainView {
 
     private var cardList: some View {
         VStack(alignment: .leading) {
-            Text("Newest cards")
+            Text(Strings.newesCards.localized)
                 .bold()
 
             LazyVGrid(columns: [GridItem(.adaptive(minimum: 150, maximum: 180), spacing: 12)], alignment: .leading) {

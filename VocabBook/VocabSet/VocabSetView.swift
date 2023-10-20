@@ -73,7 +73,7 @@ extension VocabSetView {
                             .font(.title)
                         .bold()
 
-                        Text("Language: \(vocabSet.language)")
+                        Text("\(Strings.language.localized): \(vocabSet.language)")
 
                         if !vocabSet.descriptionText.isEmpty {
                             Text(vocabSet.descriptionText)
@@ -86,7 +86,7 @@ extension VocabSetView {
                 HStack {
                     Image(systemName: "plus.circle")
                         .foregroundStyle(.blue)
-                    Button("Add card", action: addCard)
+                    Button(Strings.addCard.localized, action: addCard)
                         .bold()
                 }
             }
@@ -98,20 +98,20 @@ extension VocabSetView {
                             Image(systemName: "lightbulb")
                                 .foregroundStyle(.orange)
 
-                            Text("Learn cards")
+                            Text(Strings.learnCards.localized)
                                 .bold()
 
                             Spacer()
 
-                            Text("\(dueCards.count) cards due")
+                            Text("\(dueCards.count) \(Strings.cardsDue.localized)")
                         }
 
                         HStack {
                             Spacer()
-                            Button("Cover front") { learnViewType = .front }
+                            Button(Strings.coverFront.localized) { learnViewType = .front }
                                 .buttonStyle(.borderedProminent)
                             Spacer()
-                            Button("Cover back") { learnViewType = .back }
+                            Button(Strings.coverBack.localized) { learnViewType = .back }
                                 .buttonStyle(.borderedProminent)
                             Spacer()
                         }
@@ -123,7 +123,7 @@ extension VocabSetView {
             ForEach(CardLevel.allCases, id: \.self) { level in
                 let cards = cardsForLevel(level)
                 if !cards.isEmpty {
-                    Section("Level \(level.rawValue)") {
+                    Section("\(Strings.level.localized) \(level.rawValue)") {
                         ForEach(cards, id: \.front) { card in
                             cardView(card)
                         }
@@ -131,8 +131,8 @@ extension VocabSetView {
                 }
             }
 
-            Section("Delete") {
-                Button("Delete") {
+            Section(Strings.delete.localized) {
+                Button(Strings.delete.localized) {
                     showConfirmDelete = true
                 }
                 .foregroundStyle(.red)
@@ -170,10 +170,10 @@ extension VocabSetView {
                 )
             }
         })
-        .alert("Do you really want to remove the set and all cards?", isPresented: $showConfirmDelete) {
-            Button("No") {}
+        .alert(Strings.removeAllCardsQuestion.localized, isPresented: $showConfirmDelete) {
+            Button(Strings.no.localized) {}
 
-            Button("YES") {
+            Button(Strings.yes.localized.uppercased()) {
                 modelContext.delete(vocabSet)
                 dismiss()
             }

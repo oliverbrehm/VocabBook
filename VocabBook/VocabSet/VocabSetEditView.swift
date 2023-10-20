@@ -22,15 +22,15 @@ extension VocabSetEditView {
     var body: some View {
         VStack {
             Form {
-                Section("Name") {
-                    TextField(text: $vocabSet.name, label: { Text("Name") })
+                Section(Strings.name.localized) {
+                    TextField(text: $vocabSet.name, label: { Text(Strings.name.localized) })
                 }
 
-                Section("Description") {
-                    TextField(text: $vocabSet.descriptionText, axis: .vertical, label: { Text("Description") })
+                Section(Strings.description.localized) {
+                    TextField(text: $vocabSet.descriptionText, axis: .vertical, label: { Text(Strings.description.localized) })
                 }
             }
-            .navigationTitle("Edit Set")
+            .navigationTitle(Strings.editSet.localized)
         }
     }
 }

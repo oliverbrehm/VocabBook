@@ -9,21 +9,24 @@
 import Foundation
 
 @propertyWrapper struct UserDefaultsStorage<T: Codable> {
-    private let key: String
+    private let key: UserDefaultsKeys
     private let defaultValue: T
 
     var wrappedValue: T {
         get {
-            UserDefaults.standard.value(forKey: key) as? T ?? defaultValue
+            if let value = UserDefaults.standard.value(forKey: key.rawValue) as? T {
+                return value
+            } else {
+                return defaultValue
+            }
         }
 
         set {
-            UserDefaults.standard.setValue(newValue, forKey: key)
-            UserDefaults.standard.synchronize()
+            UserDefaults.standard.setValue(newValue, forKey: key.rawValue)
         }
     }
 
-    init(wrappedValue: T, _ key: String) {
+    init(wrappedValue: T, _ key: UserDefaultsKeys) {
         self.defaultValue = wrappedValue
         self.key = key
 

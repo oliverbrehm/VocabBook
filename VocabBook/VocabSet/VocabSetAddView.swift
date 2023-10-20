@@ -22,29 +22,29 @@ struct VocabSetAddView: View {
 extension VocabSetAddView {
     var body: some View {
         VStack {
-            Text("Add Vocab Set")
+            Text(Strings.addVocabSet.localized)
                 .font(.title)
                 .bold()
                 .padding()
 
             Form {
-                Section("Name") {
-                    TextField(text: $name, label: { Text("Name") })
+                Section(Strings.name.localized) {
+                    TextField(text: $name, label: { Text(Strings.name.localized) })
                 }
 
-                Section("Description") {
-                    TextField(text: $description, axis: .vertical, label: { Text("Description") })
+                Section(Strings.description.localized) {
+                    TextField(text: $description, axis: .vertical, label: { Text(Strings.description.localized) })
                 }
 
                 Section {
                     if !name.isEmpty {
-                        Button("Add") {
+                        Button(Strings.add.localized) {
                             modelContext.insert(VocabSet(name: name, descriptionText: description, language: "en"))
                             dismiss()
                         }
                     }
 
-                    Button("Cancel") {
+                    Button(Strings.cancel.localized) {
                         dismiss()
                     }
                     .tint(.red)

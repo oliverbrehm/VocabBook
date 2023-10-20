@@ -12,14 +12,6 @@ import SwiftData
 struct CardEditView: View {
     private enum Tab {
         case front, back, settings
-
-        var title: String {
-            switch self {
-            case .front: return "Front"
-            case .back: return "Back"
-            case .settings: return "Settings"
-            }
-        }
     }
 
     // MARK: - Environment
@@ -100,7 +92,7 @@ extension CardEditView {
     var body: some View {
         VStack {
             TabView(selection: $selectedTab) {
-                textInputView(title: "Front", text: $vocabCard.front, focus: .front)
+                textInputView(title: Strings.front.localized, text: $vocabCard.front, focus: .front)
                     .tag(Tab.front)
                     .onTapGesture {
                         focussedView = .front
@@ -120,7 +112,7 @@ extension CardEditView {
             .padding([.top, .bottom])
 
             HStack {
-                Button(selectedTab == .front ? "Back" : "Front", systemImage: "arrow.clockwise.circle.fill") {
+                Button(selectedTab == .front ? Strings.back.localized : Strings.front.localized, systemImage: "arrow.clockwise.circle.fill") {
                     withAnimation {
                         selectedTab = (selectedTab == Tab.front ? .back : .front)
                     }
@@ -132,7 +124,7 @@ extension CardEditView {
 
                 Spacer()
 
-                Button("Settings", systemImage: "gear") {
+                Button(Strings.settings.localized, systemImage: "gear") {
                     withAnimation {
                         selectedTab = .settings
                     }
@@ -151,7 +143,7 @@ extension CardEditView {
 
     private var backView: some View {
         VStack {
-            textInputView(title: "Back", text: $vocabCard.back, focus: .back)
+            textInputView(title: Strings.back.localized, text: $vocabCard.back, focus: .back)
 
             ForEach(translationSuggestions, id: \.self) { translation in
                 HStack(spacing: 16) {
@@ -197,7 +189,7 @@ extension CardEditView {
     private var settingsView: some View {
         Form {
             if let setName = vocabCard.vocabSet?.name {
-                Section("Set") {
+                Section(Strings.set.localized) {
                     Menu(setName) {
                         ForEach(sets) { set in
                             Button(set.name) {
@@ -208,26 +200,26 @@ extension CardEditView {
                 }
             }
 
-            Section("Reset") {
-                Button("Reset level", systemImage: "arrow.uturn.backward.circle") {
+            Section(Strings.reset.localized) {
+                Button(Strings.resetLevel.localized, systemImage: "arrow.uturn.backward.circle") {
                     showConfirmReset = true
                 }
-                .alert("Do you really want to reset this card to level 0?", isPresented: $showConfirmReset) {
-                    Button("No") {}
+                .alert(Strings.confirmResetSetQuestion.localized, isPresented: $showConfirmReset) {
+                    Button(Strings.no.localized) {}
 
-                    Button("Yes") {
+                    Button(Strings.yes.localized) {
                         vocabCard.level = .level0
                     }
                 }
 
-                Button("Delete card", systemImage: "trash.fill") {
+                Button(Strings.deleteCard.localized, systemImage: "trash.fill") {
                     showConfirmDelete = true
                 }
                 .foregroundStyle(.red)
-                .alert("Do you really want to remove this card?", isPresented: $showConfirmDelete) {
-                    Button("No") {}
+                .alert(Strings.confirmRemoveCardQuestion.localized, isPresented: $showConfirmDelete) {
+                    Button(Strings.no.localized) {}
 
-                    Button("YES") {
+                    Button(Strings.yes.localized.uppercased()) {
                         deleteCard()
                     }
                 }
