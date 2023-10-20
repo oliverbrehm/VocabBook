@@ -9,10 +9,8 @@
 import SwiftData
 
 final class LegacyDataMigrator: ObservableObject {
-    // MARK: - Properties
-    var icloudMigrated: Bool {
-        UserDefaults.standard.bool(forKey: "swiftDataMigrationiCloudDone")
-    }
+    @UserDefaultsStorage("swiftDataMigrationiCloudDone") var icloudDataMigrated = false
+    @UserDefaultsStorage("swiftDataMigrationLocalDone") var localDataMigrated = false
 
     // MARK: - Private properties
     private let legacyDocumentManager = VBDocumentManager()
@@ -27,16 +25,16 @@ final class LegacyDataMigrator: ObservableObject {
 
     // MARK: - Functions
     func migrateLegacyDocuments() {
-        if !UserDefaults.standard.bool(forKey: "swiftDataMigrationLocalDone") {
+        if !localDataMigrated {
             legacyDocumentManager.openLocalDocument()
 
             Task {
                 await migrateData()
-                UserDefaults.standard.setValue(true, forKey: "swiftDataMigrationLocalDone")
+                localDataMigrated = true
             }
         }
 
-        if !UserDefaults.standard.bool(forKey: "swiftDataMigrationiCloudDone") {
+        if !icloudDataMigrated {
             tryMigrateiCloudData()
         }
     }
@@ -46,7 +44,7 @@ final class LegacyDataMigrator: ObservableObject {
 
         Task {
             if await migrateData() {
-                UserDefaults.standard.setValue(true, forKey: "swiftDataMigrationiCloudDone")
+                icloudDataMigrated = true
                 deleteDuplicatesAction()
             }
         }

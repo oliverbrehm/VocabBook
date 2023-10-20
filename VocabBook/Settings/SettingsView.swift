@@ -33,7 +33,7 @@ extension SettingsView {
 extension SettingsView {
     var body: some View {
         Form {
-            if !legacyDataMigrator.icloudMigrated, !triedIcloudMigration {
+            if !legacyDataMigrator.icloudDataMigrated, !triedIcloudMigration {
                 Section {
                     Button("Recover iCloud data from older app version", action: tryiCloudMigration)
 

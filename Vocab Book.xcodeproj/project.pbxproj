@@ -76,6 +76,7 @@
 		BB70BCC62AC735E5007D732B /* LibreTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB70BCC52AC735E5007D732B /* LibreTranslator.swift */; };
 		BB70BCC82AC735EB007D732B /* MockTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB70BCC72AC735EB007D732B /* MockTranslator.swift */; };
 		BB70BCCA2AC745FD007D732B /* PreviewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB70BCC92AC745FD007D732B /* PreviewContainer.swift */; };
+		BB7932892AE25AEA00847A09 /* UserDefaultsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7932882AE25AEA00847A09 /* UserDefaultsStorage.swift */; };
 		BB8851812AC832A300492763 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB8851802AC832A300492763 /* WidgetKit.framework */; };
 		BB8851832AC832A300492763 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB8851822AC832A300492763 /* SwiftUI.framework */; };
 		BB8851862AC832A300492763 /* VocabBookWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8851852AC832A300492763 /* VocabBookWidgetBundle.swift */; };
@@ -211,6 +212,7 @@
 		BB70BCC52AC735E5007D732B /* LibreTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibreTranslator.swift; sourceTree = "<group>"; };
 		BB70BCC72AC735EB007D732B /* MockTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTranslator.swift; sourceTree = "<group>"; };
 		BB70BCC92AC745FD007D732B /* PreviewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewContainer.swift; sourceTree = "<group>"; };
+		BB7932882AE25AEA00847A09 /* UserDefaultsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsStorage.swift; sourceTree = "<group>"; };
 		BB88517F2AC832A300492763 /* VocabBookWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = VocabBookWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB8851802AC832A300492763 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		BB8851822AC832A300492763 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -355,6 +357,7 @@
 		BB5D796C2ACDC692004FA0FB /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				BB7932872AE25AD900847A09 /* PropertyWrappers */,
 				BB5D796D2ACDC696004FA0FB /* Views */,
 				BB5D796E2ACDC6A0004FA0FB /* Extensions */,
 			);
@@ -515,6 +518,14 @@
 				BB5D79A12ACDCABB004FA0FB /* flag_polski.png */,
 			);
 			path = flags;
+			sourceTree = "<group>";
+		};
+		BB7932872AE25AD900847A09 /* PropertyWrappers */ = {
+			isa = PBXGroup;
+			children = (
+				BB7932882AE25AEA00847A09 /* UserDefaultsStorage.swift */,
+			);
+			path = PropertyWrappers;
 			sourceTree = "<group>";
 		};
 		BB8851842AC832A300492763 /* VocabBookWidget */ = {
@@ -764,6 +775,7 @@
 				BB44FE522AC0192700510833 /* MainView.swift in Sources */,
 				BB5D79402ACDA55B004FA0FB /* SettingsView.swift in Sources */,
 				BB5289D12AC16A4A008968F8 /* CardEditView.swift in Sources */,
+				BB7932892AE25AEA00847A09 /* UserDefaultsStorage.swift in Sources */,
 				BB70BCC42AC7359C007D732B /* ITranslator.swift in Sources */,
 				BB70BCC82AC735EB007D732B /* MockTranslator.swift in Sources */,
 				BB70BCCA2AC745FD007D732B /* PreviewContainer.swift in Sources */,
