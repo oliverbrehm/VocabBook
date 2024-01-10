@@ -23,13 +23,12 @@ import Foundation
 
         set {
             UserDefaults.standard.setValue(newValue, forKey: key.rawValue)
+            UserDefaults.standard.synchronize()
         }
     }
 
     init(wrappedValue: T, _ key: UserDefaultsKeys) {
         self.defaultValue = wrappedValue
         self.key = key
-
-        self.wrappedValue = wrappedValue
     }
 }

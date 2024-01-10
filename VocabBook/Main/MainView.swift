@@ -70,7 +70,7 @@ extension MainView {
                 VocabSetAddView()
             })
             .onAppear(perform: updateAppBadge)
-            .onChange(of: cards, updateAppBadge)
+            //.onChange(of: cards, updateAppBadge)
         }
     }
 
@@ -79,7 +79,7 @@ extension MainView {
             Text(Strings.sets.localized)
                 .bold()
 
-            ForEach(showAllSets ? sets : sets.filter { $0.isFavorite }, id: \.name) { set in
+            ForEach(showAllSets ? sets : sets.filter { $0.isFavorite }) { set in
                 NavigationLink {
                     VocabSetView(vocabSet: set)
                 } label: {

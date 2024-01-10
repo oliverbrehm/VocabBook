@@ -27,11 +27,6 @@ struct VocabBookApp: App {
                 .environmentObject(databaseService)
                 .environmentObject(legacyDataMigrator)
                 .modelContainer(databaseService.modelContainer)
-                .onAppear {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
-                        legacyDataMigrator.migrateLegacyDocuments()
-                    }
-                }
         }
     }
 }

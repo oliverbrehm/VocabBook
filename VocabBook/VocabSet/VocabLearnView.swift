@@ -193,7 +193,7 @@ extension VocabLearnView {
             Text(Strings.learningComplete.localized)
                 .bold()
 
-            Text(Strings.learnResultInfo.localized(with: String(nRight), String(nTotal)))
+            Text(Strings.learnResultInfo.localized(arguments: String(nRight), String(nTotal)))
 
             ImageButton(systemName: "checkmark.circle.fill") {
                 dismiss()

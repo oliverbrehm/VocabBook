@@ -15,17 +15,24 @@ struct SettingsView: View {
     @EnvironmentObject var legacyDataMigrator: LegacyDataMigrator
 
     // MARK: - State
-    @State var triedIcloudMigration = false
+    @State var dataMigrationInProgress = false
     @AppStorage("useAppBadgeCount") var useAppBadgeCount = false
     @AppStorage("storeDatabaseInCloud") var storeDatabaseInCloud = false
 }
 
 // MARK: - Actions
 extension SettingsView {
-    private func tryiCloudMigration() {
-        triedIcloudMigration = true
-        legacyDataMigrator.tryMigrateiCloudData()
-        dismiss()
+    private func migrateLegacyDocuments() {
+        dataMigrationInProgress = true
+
+        Task {
+            await legacyDataMigrator.migrateLegacyDocuments()
+
+            DispatchQueue.main.async {
+                dataMigrationInProgress = false
+                dismiss()
+            }
+        }
     }
 }
 
@@ -33,15 +40,6 @@ extension SettingsView {
 extension SettingsView {
     var body: some View {
         Form {
-            if !legacyDataMigrator.icloudDataMigrated, !triedIcloudMigration {
-                Section {
-                    Button(Strings.recoverICloud.localized, action: tryiCloudMigration)
-
-                    Text(Strings.recoverICloudInfo.localized)
-                        .font(.footnote)
-                }
-            }
-
             Section {
                 Toggle("\(Strings.useAppBadge.localized):", isOn: $useAppBadgeCount)
                     .onChange(of: useAppBadgeCount) {
@@ -50,6 +48,21 @@ extension SettingsView {
                         }
                     }
                 Text(Strings.useAppBadgeInfo.localized)
+                    .font(.footnote)
+            }
+            
+            Section {
+                if dataMigrationInProgress {
+                    HStack {
+                        Spacer()
+                        ProgressView()
+                        Spacer()
+                    }
+                } else {
+                    Button(Strings.recoverICloud.localized, action: migrateLegacyDocuments)
+                }
+
+                Text(Strings.recoverICloudInfo.localized)
                     .font(.footnote)
             }
         }

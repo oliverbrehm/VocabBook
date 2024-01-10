@@ -24,7 +24,8 @@ struct PreviewContainer {
 
     init() {
         guard let container = try? ModelContainer(
-            for: VocabSet.self, VocabCard.self,
+            for: VocabSet.self,
+            VocabCard.self,
             configurations: .init(isStoredInMemoryOnly: true)
         ) else {
             fatalError("Error creating preview model container.")

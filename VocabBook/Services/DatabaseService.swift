@@ -17,24 +17,23 @@ final class DatabaseService: ObservableObject {
         } catch {
             fatalError(error.localizedDescription)
         }
-
-        Task {
-            await deleteDuplicates()
-        }
     }
 
     // MARK: - Functions
     @MainActor
-    func deleteDuplicates() {
+    func deleteDuplicates() async {
         guard var vocabSets = try? modelContainer.mainContext.fetch(FetchDescriptor<VocabSet>()) else {
             print("Error querying vocab sets in deleteDuplicates.")
             return
         }
 
         while let duplicate = findDuplicate(in: vocabSets) {
-            modelContainer.mainContext.delete(duplicate)
             vocabSets.removeAll { $0.id == duplicate.id }
+            modelContainer.mainContext.delete(duplicate)
+            try? modelContainer.mainContext.save()
         }
+
+        print("finished removing duplicates")
     }
 
     // MARK: - Private functions

@@ -79,15 +79,6 @@
 		BB70BCC82AC735EB007D732B /* MockTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB70BCC72AC735EB007D732B /* MockTranslator.swift */; };
 		BB70BCCA2AC745FD007D732B /* PreviewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB70BCC92AC745FD007D732B /* PreviewContainer.swift */; };
 		BB7932892AE25AEA00847A09 /* UserDefaultsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7932882AE25AEA00847A09 /* UserDefaultsStorage.swift */; };
-		BB8851812AC832A300492763 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB8851802AC832A300492763 /* WidgetKit.framework */; };
-		BB8851832AC832A300492763 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB8851822AC832A300492763 /* SwiftUI.framework */; };
-		BB8851862AC832A300492763 /* VocabBookWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8851852AC832A300492763 /* VocabBookWidgetBundle.swift */; };
-		BB8851882AC832A300492763 /* VocabBookWidgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8851872AC832A300492763 /* VocabBookWidgetLiveActivity.swift */; };
-		BB88518A2AC832A300492763 /* VocabBookWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8851892AC832A300492763 /* VocabBookWidget.swift */; };
-		BB88518C2AC832A300492763 /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB88518B2AC832A300492763 /* AppIntent.swift */; };
-		BB88518E2AC832A400492763 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB88518D2AC832A400492763 /* Assets.xcassets */; };
-		BB8851922AC832A400492763 /* VocabBookWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = BB88517F2AC832A300492763 /* VocabBookWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		BB8851982AC83B8800492763 /* CardLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD60A4E2AC17472006F396A /* CardLevel.swift */; };
 		BBD293502ACB01B200A02C84 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD2934F2ACB01B200A02C84 /* String+Extensions.swift */; };
 		BBD60A4F2AC17472006F396A /* CardLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD60A4E2AC17472006F396A /* CardLevel.swift */; };
 		BBD60A512AC1877C006F396A /* VocabSetAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD60A502AC1877C006F396A /* VocabSetAddView.swift */; };
@@ -103,13 +94,6 @@
 			remoteGlobalIDString = 5468EB3218B8AEB600716507;
 			remoteInfo = MyWords;
 		};
-		BB8851902AC832A400492763 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5468EB2B18B8AEB600716507 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = BB88517E2AC832A300492763;
-			remoteInfo = VocabBookWidgetExtension;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -119,7 +103,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				BB8851922AC832A400492763 /* VocabBookWidgetExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -217,15 +200,8 @@
 		BB70BCC72AC735EB007D732B /* MockTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTranslator.swift; sourceTree = "<group>"; };
 		BB70BCC92AC745FD007D732B /* PreviewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewContainer.swift; sourceTree = "<group>"; };
 		BB7932882AE25AEA00847A09 /* UserDefaultsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsStorage.swift; sourceTree = "<group>"; };
-		BB88517F2AC832A300492763 /* VocabBookWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = VocabBookWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB8851802AC832A300492763 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		BB8851822AC832A300492763 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
-		BB8851852AC832A300492763 /* VocabBookWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabBookWidgetBundle.swift; sourceTree = "<group>"; };
-		BB8851872AC832A300492763 /* VocabBookWidgetLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabBookWidgetLiveActivity.swift; sourceTree = "<group>"; };
-		BB8851892AC832A300492763 /* VocabBookWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabBookWidget.swift; sourceTree = "<group>"; };
-		BB88518B2AC832A300492763 /* AppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntent.swift; sourceTree = "<group>"; };
-		BB88518D2AC832A400492763 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		BB88518F2AC832A400492763 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BBD2934F2ACB01B200A02C84 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		BBD60A4E2AC17472006F396A /* CardLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardLevel.swift; sourceTree = "<group>"; };
 		BBD60A502AC1877C006F396A /* VocabSetAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabSetAddView.swift; sourceTree = "<group>"; };
@@ -256,15 +232,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BB88517C2AC832A300492763 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BB8851832AC832A300492763 /* SwiftUI.framework in Frameworks */,
-				BB8851812AC832A300492763 /* WidgetKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -273,7 +240,6 @@
 			children = (
 				BB5D79422ACDAFA4004FA0FB /* .swiftlint.yml */,
 				BB5D79522ACDC259004FA0FB /* VocabBook */,
-				BB8851842AC832A300492763 /* VocabBookWidget */,
 				BB5D79782ACDC929004FA0FB /* web */,
 				5468EB3518B8AEB600716507 /* Frameworks */,
 				5468EB3418B8AEB600716507 /* Products */,
@@ -285,7 +251,6 @@
 			children = (
 				5468EB3318B8AEB600716507 /* Vocab Book.app */,
 				5468EB5A18B8AEB700716507 /* Vocab BookTests.xctest */,
-				BB88517F2AC832A300492763 /* VocabBookWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -534,19 +499,6 @@
 			path = PropertyWrappers;
 			sourceTree = "<group>";
 		};
-		BB8851842AC832A300492763 /* VocabBookWidget */ = {
-			isa = PBXGroup;
-			children = (
-				BB8851852AC832A300492763 /* VocabBookWidgetBundle.swift */,
-				BB8851872AC832A300492763 /* VocabBookWidgetLiveActivity.swift */,
-				BB8851892AC832A300492763 /* VocabBookWidget.swift */,
-				BB88518B2AC832A300492763 /* AppIntent.swift */,
-				BB88518D2AC832A400492763 /* Assets.xcassets */,
-				BB88518F2AC832A400492763 /* Info.plist */,
-			);
-			path = VocabBookWidget;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -563,7 +515,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				BB8851912AC832A400492763 /* PBXTargetDependency */,
 			);
 			name = "Vocab Book";
 			packageProductDependencies = (
@@ -590,23 +541,6 @@
 			productName = MyWordsTests;
 			productReference = 5468EB5A18B8AEB700716507 /* Vocab BookTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		BB88517E2AC832A300492763 /* VocabBookWidgetExtension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = BB8851932AC832A400492763 /* Build configuration list for PBXNativeTarget "VocabBookWidgetExtension" */;
-			buildPhases = (
-				BB88517B2AC832A300492763 /* Sources */,
-				BB88517C2AC832A300492763 /* Frameworks */,
-				BB88517D2AC832A300492763 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = VocabBookWidgetExtension;
-			productName = VocabBookWidgetExtension;
-			productReference = BB88517F2AC832A300492763 /* VocabBookWidgetExtension.appex */;
-			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -637,9 +571,6 @@
 					5468EB5918B8AEB700716507 = {
 						TestTargetID = 5468EB3218B8AEB600716507;
 					};
-					BB88517E2AC832A300492763 = {
-						CreatedOnToolsVersion = 15.0;
-					};
 				};
 			};
 			buildConfigurationList = 5468EB2E18B8AEB600716507 /* Build configuration list for PBXProject "Vocab Book" */;
@@ -662,7 +593,6 @@
 			targets = (
 				5468EB3218B8AEB600716507 /* Vocab Book */,
 				5468EB5918B8AEB700716507 /* Vocab BookTests */,
-				BB88517E2AC832A300492763 /* VocabBookWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -723,19 +653,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BB88517D2AC832A300492763 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BB88518E2AC832A400492763 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
 		BB5D79412ACDAF62004FA0FB /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -797,18 +720,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BB88517B2AC832A300492763 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BB8851982AC83B8800492763 /* CardLevel.swift in Sources */,
-				BB8851862AC832A300492763 /* VocabBookWidgetBundle.swift in Sources */,
-				BB88518C2AC832A300492763 /* AppIntent.swift in Sources */,
-				BB8851882AC832A300492763 /* VocabBookWidgetLiveActivity.swift in Sources */,
-				BB88518A2AC832A300492763 /* VocabBookWidget.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -816,11 +727,6 @@
 			isa = PBXTargetDependency;
 			target = 5468EB3218B8AEB600716507 /* Vocab Book */;
 			targetProxy = 5468EB5F18B8AEB700716507 /* PBXContainerItemProxy */;
-		};
-		BB8851912AC832A400492763 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = BB88517E2AC832A300492763 /* VocabBookWidgetExtension */;
-			targetProxy = BB8851902AC832A400492763 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -931,7 +837,6 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "VocabBook/Core/Vocab Book.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -944,9 +849,13 @@
 				MARKETING_VERSION = 2.0.0;
 				PRODUCT_NAME = "Vocab Book";
 				PROVISIONING_PROFILE = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "VocabBook/Core/Vocab Book-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -956,7 +865,6 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "VocabBook/Core/Vocab Book.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -969,8 +877,12 @@
 				MARKETING_VERSION = 2.0.0;
 				PRODUCT_NAME = "Vocab Book";
 				PROVISIONING_PROFILE = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "VocabBook/Core/Vocab Book-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -1017,127 +929,6 @@
 			};
 			name = Release;
 		};
-		BB8851942AC832A400492763 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = CR6FRMMTU7;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = VocabBookWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = VocabBookWidget;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2023 Oliver Brehm. All rights reserved.";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 1.0;
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.vocab-book.vocabbook.VocabBookWidget";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		BB8851952AC832A400492763 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = CR6FRMMTU7;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = VocabBookWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = VocabBookWidget;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2023 Oliver Brehm. All rights reserved.";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 1.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.vocab-book.vocabbook.VocabBookWidget";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1164,15 +955,6 @@
 			buildConfigurations = (
 				5468EB6F18B8AEB700716507 /* Debug */,
 				5468EB7018B8AEB700716507 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		BB8851932AC832A400492763 /* Build configuration list for PBXNativeTarget "VocabBookWidgetExtension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				BB8851942AC832A400492763 /* Debug */,
-				BB8851952AC832A400492763 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

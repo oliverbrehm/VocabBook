@@ -9,51 +9,35 @@
 import SwiftData
 
 final class LegacyDataMigrator: ObservableObject {
-    @UserDefaultsStorage(UserDefaultsKeys.swiftDataMigrationiCloudDone) var icloudDataMigrated = false
-    @UserDefaultsStorage(UserDefaultsKeys.swiftDataMigrationLocalDone) var localDataMigrated = false
-
     // MARK: - Private properties
     private let legacyDocumentManager = VBDocumentManager()
     private let modelContext: ModelContext
-    private let deleteDuplicatesAction: () -> Void
+    private let deleteDuplicatesAction: @MainActor () async -> Void
 
     // MARK: - Initializers
-    init(modelContext: ModelContext, deleteDuplicatesAction: @escaping () -> Void) {
+    init(modelContext: ModelContext, deleteDuplicatesAction: @MainActor @escaping () async -> Void) {
         self.modelContext = modelContext
         self.deleteDuplicatesAction = deleteDuplicatesAction
     }
 
     // MARK: - Functions
-    func migrateLegacyDocuments() {
-        if !localDataMigrated {
-            legacyDocumentManager.openLocalDocument()
+    @MainActor
+    func migrateLegacyDocuments() async {
+        legacyDocumentManager.openLocalDocument()
 
-            Task {
-                await migrateData()
-                localDataMigrated = true
-            }
-        }
+        await migrateData()
+        await deleteDuplicatesAction()
 
-        if !icloudDataMigrated {
-            tryMigrateiCloudData()
-        }
-    }
-
-    func tryMigrateiCloudData() {
         legacyDocumentManager.openiCloudDocument()
 
-        Task {
-            if await migrateData() {
-                icloudDataMigrated = true
-                deleteDuplicatesAction()
-            }
-        }
+        await migrateData()
+        await deleteDuplicatesAction()
     }
 
     // MARK: - Private functions
-    @discardableResult
-    private func migrateData() async -> Bool {
-        let managedObjectContext = await legacyDocumentManager.document.managedObjectContext
+    @MainActor
+    private func migrateData() async {
+        let managedObjectContext = legacyDocumentManager.document.managedObjectContext
         let setRequest = NSFetchRequest<WordSet>(entityName: "WordSet")
 
         return await withCheckedContinuation { continuation in
@@ -79,10 +63,10 @@ final class LegacyDataMigrator: ObservableObject {
                         }
                     }
 
-                    continuation.resume(returning: !sets.isEmpty)
+                    continuation.resume(returning: ())
                 } catch {
                     print("fetch error: \(error)")
-                    continuation.resume(returning: false)
+                    continuation.resume(returning: ())
                 }
             }
         }
