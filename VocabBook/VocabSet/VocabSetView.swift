@@ -51,12 +51,25 @@ struct VocabSetView: View {
 }
 
 // MARK: - Actions
-extension VocabSetView {
-    private func addCard() {
+private extension VocabSetView {
+    func addCard() {
         let card = VocabCard(front: "", back: "")
         modelContext.insert(card)
         vocabSet.cards?.append(card)
         editingCard = card
+        try? modelContext.save()
+    }
+
+    func deleteCard(_ card: VocabCard) {
+        vocabSet.cards?.removeAll { $0.id == card.id }
+        modelContext.delete(card)
+        try? modelContext.save()
+    }
+
+    func deleteSet() {
+        modelContext.delete(vocabSet)
+        dismiss()
+        try? modelContext.save()
     }
 }
 
@@ -163,20 +176,13 @@ extension VocabSetView {
                 CardEditView(
                     translator: EmptyTranslator(), // TODO: translation suggestion feature not to be released yet
                     vocabCard: editingCard,
-                    deleteAction: {
-                        vocabSet.cards?.removeAll { $0.id == editingCard.id }
-                        modelContext.delete(editingCard)
-                    }
+                    deleteAction: { deleteCard(editingCard) }
                 )
             }
         })
         .alert(Strings.removeAllCardsQuestion.localized, isPresented: $showConfirmDelete) {
             Button(Strings.no.localized) {}
-
-            Button(Strings.yes.localized.uppercased()) {
-                modelContext.delete(vocabSet)
-                dismiss()
-            }
+            Button(Strings.yes.localized.uppercased(), action: deleteSet)
         }
     }
 

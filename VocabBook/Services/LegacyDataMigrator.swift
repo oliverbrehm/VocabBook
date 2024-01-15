@@ -43,20 +43,28 @@ final class LegacyDataMigrator: ObservableObject {
         return await withCheckedContinuation { continuation in
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
                 do {
+                    let existingSets = try self.modelContext.fetch(FetchDescriptor<VocabSet>()).map { $0.name }
+
                     let sets = try managedObjectContext.fetch(setRequest)
 
                     for set in sets {
-                        guard !set.name.isEmpty else { continue }
+                        guard let name = set.name, !name.isEmpty, !existingSets.contains(name) else { continue }
+                        let descriptionText = set.descriptionText ?? ""
+                        let language = set.language ?? ""
+                        let isFavorite = set.isFavourite?.boolValue ?? false
 
-                        let vocabSet = VocabSet(name: set.name, descriptionText: set.descriptionText, language: set.language)
-                        vocabSet.isFavorite = set.isFavourite.boolValue
+                        let vocabSet = VocabSet(name: name, descriptionText: descriptionText, language: language)
+                        vocabSet.isFavorite = isFavorite
                         self.modelContext.insert(vocabSet)
 
-                        for word in set.words {
-                            guard let word = word as? Word else { continue }
+                        for word in set.words ?? [] {
+                            guard let word = word as? Word, let wordName = word.name else { continue }
+                            let wordTranslations = word.translations ?? ""
+                            let wordLastQuizzedDate = word.lastQuizzedDate ?? Date()
+                            let wordLevel = word.level?.uint8Value ?? 0
 
-                            let vocabCard = VocabCard(front: word.name, back: word.translations, lastLearnedDate: word.lastQuizzedDate)
-                            vocabCard.level = CardLevel(rawValue: word.level.uint8Value) ?? .level0
+                            let vocabCard = VocabCard(front: wordName, back: wordTranslations, lastLearnedDate: wordLastQuizzedDate)
+                            vocabCard.level = CardLevel(rawValue: wordLevel) ?? .level0
 
                             self.modelContext.insert(vocabCard)
                             vocabSet.cards?.append(vocabCard)
