@@ -19,6 +19,7 @@ struct VocabBookApp: App {
         legacyDataMigrator = LegacyDataMigrator(modelContext: databaseService.modelContainer.mainContext, deleteDuplicatesAction: databaseService.deleteDuplicates)
 
         UNUserNotificationCenter.current().requestAuthorization(options: .badge) { _, _ in }
+        UNUserNotificationCenter.current().setBadgeCount(0)
     }
 
     var body: some Scene {

@@ -34,12 +34,6 @@ struct CardEditView: View {
 
     // MARK: - Private properties
     @State private var lookupWord: String?
-
-    // MARK: - Private functions
-    private func trimCard() {
-        vocabCard.front = vocabCard.front.trimmingCharacters(in: .whitespacesAndNewlines)
-        vocabCard.back = vocabCard.back.trimmingCharacters(in: .whitespacesAndNewlines)
-    }
 }
 
 // MARK: - Actions
@@ -73,12 +67,11 @@ extension CardEditView {
     private func close() {
         if vocabCard.front.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
             && vocabCard.back.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-            deleteAction()
+            deleteCard()
         } else {
-            trimCard()
+            vocabCard.trim()
+            dismiss()
         }
-
-        dismiss()
     }
 
     private func deleteCard() {
@@ -120,7 +113,9 @@ extension CardEditView {
 
                 Spacer()
 
-                Button("", systemImage: "arrowtriangle.down.circle.fill", action: close)
+                Button(action: close, label: {
+                    Image(systemName: "arrowtriangle.down.circle.fill")
+                })
 
                 Spacer()
 

@@ -45,4 +45,9 @@ class VocabCard: Identifiable, Equatable {
         lastLearnedDate = Date()
         level = .level0
     }
+
+    func trim() {
+        front = front.trimmingCharacters(in: .whitespacesAndNewlines)
+        back = back.trimmingCharacters(in: .whitespacesAndNewlines)
+    }
 }

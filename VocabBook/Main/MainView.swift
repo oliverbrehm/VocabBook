@@ -17,7 +17,7 @@ struct MainView: View {
     @Query(sort: [SortDescriptor(\VocabSet.name)])
     private var sets: [VocabSet]
 
-    @Query(sort: [SortDescriptor(\VocabCard.creationDate), SortDescriptor(\VocabCard.front)]) private var cards: [VocabCard]
+    @State private var cards = [VocabCard]()
 
     @State private var showAddSetView = false
     @State private var editingCard: VocabCard?
@@ -25,10 +25,16 @@ struct MainView: View {
     @AppStorage(UserDefaultsKeys.useAppBadgeCount.rawValue) var useAppBadgeCount = false
 
     // MARK: - Private functions
-    private func updateAppBadge() {
-        guard useAppBadgeCount else { return }
-        let numberOfDueCards = sets.filter { $0.isFavorite }.reduce(0) { $0 + $1.dueCards.count }
-        UNUserNotificationCenter.current().setBadgeCount(numberOfDueCards)
+    private func setup () {
+        var cardsFetchDescriptor = FetchDescriptor<VocabCard>()
+        cardsFetchDescriptor.sortBy = [SortDescriptor(\VocabCard.creationDate), SortDescriptor(\VocabCard.front)]
+        cardsFetchDescriptor.fetchLimit = 24
+        cards = (try? modelContext.fetch(cardsFetchDescriptor)) ?? []
+
+        if useAppBadgeCount {
+            let numberOfDueCards = sets.filter { $0.isFavorite }.reduce(0) { $0 + $1.dueCards.count }
+            UNUserNotificationCenter.current().setBadgeCount(numberOfDueCards)
+        }
     }
 }
 
@@ -69,8 +75,7 @@ extension MainView {
             .sheet(isPresented: $showAddSetView, content: {
                 VocabSetAddView()
             })
-            .onAppear(perform: updateAppBadge)
-            //.onChange(of: cards, updateAppBadge)
+            .onAppear(perform: setup)
         }
     }
 
