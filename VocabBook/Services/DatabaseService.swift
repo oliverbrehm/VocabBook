@@ -33,7 +33,11 @@ final class DatabaseService: ObservableObject {
             try? modelContainer.mainContext.save()
         }
 
-        print("finished removing duplicates")
+        if let cardsWithoutSets = try? modelContainer.mainContext.fetch(FetchDescriptor<VocabCard>()).filter({ $0.vocabSet == nil }) {
+            for card in cardsWithoutSets {
+                modelContainer.mainContext.delete(card)
+            }
+        }
     }
 
     // MARK: - Private functions

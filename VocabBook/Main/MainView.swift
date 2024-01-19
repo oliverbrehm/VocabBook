@@ -18,18 +18,34 @@ struct MainView: View {
     private var sets: [VocabSet]
 
     @State private var cards = [VocabCard]()
+    @State private var dueCards = [VocabCard]()
 
     @State private var showAddSetView = false
+    @State private var learnViewType: VocabLearnView.CoverType?
     @State private var editingCard: VocabCard?
     @AppStorage(UserDefaultsKeys.showAllSets.rawValue) private var showAllSets = false
     @AppStorage(UserDefaultsKeys.useAppBadgeCount.rawValue) var useAppBadgeCount = false
 
+    // MARK: - Private properties
+    private var showLearnView: Binding<Bool> {
+        Binding(get: {
+            learnViewType != nil
+        }, set: {
+            if !$0 {
+                learnViewType = nil
+            }
+        })
+    }
+
     // MARK: - Private functions
     private func setup () {
         var cardsFetchDescriptor = FetchDescriptor<VocabCard>()
-        cardsFetchDescriptor.sortBy = [SortDescriptor(\VocabCard.creationDate), SortDescriptor(\VocabCard.front)]
+        cardsFetchDescriptor.sortBy = [SortDescriptor(\VocabCard.creationDate, order: .reverse), SortDescriptor(\VocabCard.front)]
         cardsFetchDescriptor.fetchLimit = 24
         cards = (try? modelContext.fetch(cardsFetchDescriptor)) ?? []
+
+        let cardsToLearnDescriptor = FetchDescriptor<VocabCard>()
+        dueCards = ((try? modelContext.fetch(cardsToLearnDescriptor)) ?? []).filter { $0.isDue }
 
         if useAppBadgeCount {
             let numberOfDueCards = sets.filter { $0.isFavorite }.reduce(0) { $0 + $1.dueCards.count }
@@ -75,6 +91,11 @@ extension MainView {
             .sheet(isPresented: $showAddSetView, content: {
                 VocabSetAddView()
             })
+            .fullScreenCover(isPresented: showLearnView, content: {
+                VocabLearnView(cards: dueCards, coverType: learnViewType ?? .front, finishAction: {
+                    setup()
+                })
+            })
             .onAppear(perform: setup)
         }
     }
@@ -110,9 +131,23 @@ extension MainView {
     }
 
     private var cardList: some View {
-        VStack(alignment: .leading) {
-            Text(Strings.newesCards.localized)
+        VStack(alignment: .leading, spacing: 18) {
+            Text(Strings.cards.localized)
                 .bold()
+
+            if !dueCards.isEmpty {
+                LearnCardsView(
+                    numberOfDueCards: dueCards.count,
+                    coverFrontAction: { learnViewType = .front },
+                    coverBackAction: { learnViewType = .back }
+                )
+                .padding(12)
+                .background(Color(uiColor: .tertiarySystemBackground))
+                .clipShape(RoundedRectangle(cornerRadius: 6))
+
+                Spacer()
+                    .frame(height: 12)
+            }
 
             LazyVGrid(columns: [GridItem(.adaptive(minimum: 150, maximum: 180), spacing: 12)], alignment: .leading) {
                 ForEach(cards.prefix(40)) { card in
@@ -136,6 +171,7 @@ extension MainView {
                         deleteAction: {
                             editingCard.vocabSet = nil
                             modelContext.delete(editingCard)
+                            setup()
                         }
                     )
                 }

@@ -11,7 +11,7 @@
 "sets" = "Sets";
 "showFavorites" = "Favouriten zeigen";
 "showAll" = "Alle zeigen";
-"newesCards" = "Neueste Karten";
+"cards" = "Karten";
 "recoverICloud" = "Daten aus iCloud von einer ältern App Version wiederherstellen";
 "recoverICloudInfo" = "Falls Daten aus iCloud von einer ältern App Version fehlen, kannst du sie hier wiederherstellen. Es kann sein, dass iCloud direkt nach einer Neuinstallation oder einem Update noch nicht verfügbar ist. Falls nichts passiert versuche es noch einmal.";
 "useAppBadge" = "App Badge benutzen";

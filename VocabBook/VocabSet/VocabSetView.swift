@@ -106,30 +106,11 @@ extension VocabSetView {
 
             if !cards.isEmpty {
                 Section {
-                    VStack(spacing: 24) {
-                        HStack {
-                            Image(systemName: "lightbulb")
-                                .foregroundStyle(.orange)
-
-                            Text(Strings.learnCards.localized)
-                                .bold()
-
-                            Spacer()
-
-                            Text("\(dueCards.count) \(Strings.cardsDue.localized)")
-                        }
-
-                        HStack {
-                            Spacer()
-                            Button(Strings.coverFront.localized) { learnViewType = .front }
-                                .buttonStyle(.borderedProminent)
-                            Spacer()
-                            Button(Strings.coverBack.localized) { learnViewType = .back }
-                                .buttonStyle(.borderedProminent)
-                            Spacer()
-                        }
-                        .bold()
-                    }
+                    LearnCardsView(
+                        numberOfDueCards: dueCards.count,
+                        coverFrontAction: { learnViewType = .front },
+                        coverBackAction: { learnViewType = .back }
+                    )
                 }
             }
 

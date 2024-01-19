@@ -30,6 +30,7 @@ struct VocabLearnView: View {
     // MARK: - Properties
     let cards: [VocabCard]
     let coverType: CoverType
+    var finishAction: (() -> Void)?
 
     // MARK: - Private properties
     private var nRemaining: Int {
@@ -49,6 +50,11 @@ struct VocabLearnView: View {
         nTotal = cards.count
         remainingCards = cards
         nextCard()
+    }
+
+    private func finish() {
+        finishAction?()
+        dismiss()
     }
 }
 
@@ -77,23 +83,24 @@ extension VocabLearnView {
 // MARK: - UI
 extension VocabLearnView {
     var body: some View {
-        VStack {
-            stateView
-                .padding()
+        ZStack {
+            VStack {
+                stateView
+                    .padding()
 
-            Spacer()
+                Spacer()
+
+                if currentCard == nil {
+                    resultView
+                    Spacer()
+                } else if !isCovered {
+                    Spacer()
+                    actionView
+                }
+            }
 
             if let currentCard {
                 cardView(card: currentCard)
-
-                Spacer()
-
-                if !isCovered {
-                    actionView
-                }
-            } else {
-                resultView
-                Spacer()
             }
         }
         .onAppear(perform: setup)
@@ -125,7 +132,7 @@ extension VocabLearnView {
             Spacer()
 
             ImageButton(systemName: "x.circle.fill", size: 28) {
-                dismiss()
+                finish()
             }
         }
     }
@@ -196,7 +203,7 @@ extension VocabLearnView {
             Text(Strings.learnResultInfo.localized(arguments: String(nRight), String(nTotal)))
 
             ImageButton(systemName: "checkmark.circle.fill") {
-                dismiss()
+                finish()
             }
         }
         .padding(24)

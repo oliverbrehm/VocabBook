@@ -11,7 +11,7 @@
 "sets" = "Sets";
 "showFavorites" = "Show favorites";
 "showAll" = "Show all";
-"newesCards" = "Newest cards";
+"cards" = "Cards";
 "recoverICloud" = "Recover iCloud data from older app version";
 "recoverICloudInfo" = "If there is any iCloud data missing from an older app version, you can manually recover it here. iCloud will not be available immedeately after installation or an app update. If nothing happens, please try again in a few minutes.";
 "useAppBadge" = "Use app badge";

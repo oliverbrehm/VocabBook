@@ -14,7 +14,7 @@ enum Strings: String {
     case sets
     case showFavorites
     case showAll
-    case newesCards
+    case cards
     case recoverICloud
     case recoverICloudInfo
     case useAppBadge

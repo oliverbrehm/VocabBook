@@ -79,6 +79,7 @@
 		BB70BCC82AC735EB007D732B /* MockTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB70BCC72AC735EB007D732B /* MockTranslator.swift */; };
 		BB70BCCA2AC745FD007D732B /* PreviewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB70BCC92AC745FD007D732B /* PreviewContainer.swift */; };
 		BB7932892AE25AEA00847A09 /* UserDefaultsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7932882AE25AEA00847A09 /* UserDefaultsStorage.swift */; };
+		BB9DBA932B5A8FE2003EDAF2 /* LearnCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9DBA922B5A8FE2003EDAF2 /* LearnCardsView.swift */; };
 		BBD293502ACB01B200A02C84 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD2934F2ACB01B200A02C84 /* String+Extensions.swift */; };
 		BBD60A4F2AC17472006F396A /* CardLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD60A4E2AC17472006F396A /* CardLevel.swift */; };
 		BBD60A512AC1877C006F396A /* VocabSetAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD60A502AC1877C006F396A /* VocabSetAddView.swift */; };
@@ -202,6 +203,7 @@
 		BB7932882AE25AEA00847A09 /* UserDefaultsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsStorage.swift; sourceTree = "<group>"; };
 		BB8851802AC832A300492763 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		BB8851822AC832A300492763 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		BB9DBA922B5A8FE2003EDAF2 /* LearnCardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnCardsView.swift; sourceTree = "<group>"; };
 		BBD2934F2ACB01B200A02C84 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		BBD60A4E2AC17472006F396A /* CardLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardLevel.swift; sourceTree = "<group>"; };
 		BBD60A502AC1877C006F396A /* VocabSetAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabSetAddView.swift; sourceTree = "<group>"; };
@@ -340,6 +342,7 @@
 			children = (
 				BB5D79452ACDB0D9004FA0FB /* ImageButton.swift */,
 				BB5D79472ACDB101004FA0FB /* RoundedCorner.swift */,
+				BB9DBA922B5A8FE2003EDAF2 /* LearnCardsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -705,6 +708,7 @@
 				54AE86CF18E34E3F00A3860F /* VBDocumentManager.m in Sources */,
 				BB44FE522AC0192700510833 /* MainView.swift in Sources */,
 				BB5D79402ACDA55B004FA0FB /* SettingsView.swift in Sources */,
+				BB9DBA932B5A8FE2003EDAF2 /* LearnCardsView.swift in Sources */,
 				BB5289D12AC16A4A008968F8 /* CardEditView.swift in Sources */,
 				BB7932892AE25AEA00847A09 /* UserDefaultsStorage.swift in Sources */,
 				BB70BCC42AC7359C007D732B /* ITranslator.swift in Sources */,
