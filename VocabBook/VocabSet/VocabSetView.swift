@@ -86,9 +86,17 @@ extension VocabSetView {
                             .font(.title)
                         .bold()
 
-                        Text("\(Strings.language.localized): \(vocabSet.language)")
+                        if !vocabSet.setLanguage.stringWithFlag.isEmpty {
+                            Text(vocabSet.setLanguage.stringWithFlag)
+                        }
 
                         if !vocabSet.descriptionText.isEmpty {
+                            Spacer()
+                                .frame(height: 1)
+                                .frame(maxWidth: .infinity)
+                                .background(.black)
+                                .padding(.vertical, 4)
+                            
                             Text(vocabSet.descriptionText)
                         }
                     }

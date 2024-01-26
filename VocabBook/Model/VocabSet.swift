@@ -14,6 +14,7 @@ class VocabSet: Identifiable {
     var name = ""
     var descriptionText = ""
     var language = ""
+    var region = ""
     var isFavorite = true
 
     @Relationship(deleteRule: .cascade)
@@ -25,6 +26,17 @@ class VocabSet: Identifiable {
 
     var dueCards: [VocabCard] {
         (cards ?? []).filter { $0.isDue }
+    }
+
+    var setLanguage: SetLanguage {
+        get {
+            SetLanguage(languageIdentifier: language, regionIdentifier: region)
+        }
+
+        set {
+            language = newValue.languageIdentifier
+            region = newValue.regionIdentifier
+        }
     }
 
     init(name: String, descriptionText: String, language: String) {
