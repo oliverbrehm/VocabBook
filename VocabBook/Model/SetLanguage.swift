@@ -43,22 +43,19 @@ struct SetLanguage {
             .filter { !$0.languageString.isEmpty }
             .sorted { $0.languageString < $1.languageString }
     }
-
-    static func regionsForLanguage(_ language: Locale.LanguageCode) -> [Locale.Region] {
-        let locales = Locale.availableIdentifiers
-            .map { Locale(identifier: $0) }
-
-        let languageLocales = locales.filter { $0.language.languageCode == language }.removeDuplicates().sorted { $0.identifier < $1.identifier }
-        let otherLocales = locales.filter { $0.language.languageCode != language }.removeDuplicates().sorted { $0.identifier < $1.identifier }
-
-        return (languageLocales + otherLocales)
-            .compactMap { $0.region }
-    }
 }
 
 extension Locale.LanguageCode {
     var languageString: String {
         Locale.current.localizedString(forLanguageCode: identifier) ?? ""
+    }
+
+    var regions: [Locale.Region] {
+        let locales = Locale.availableIdentifiers.map { Locale(identifier: $0) }
+        let languageRegions = locales.filter { $0.language.languageCode?.identifier == identifier }.compactMap { $0.region?.identifier }.removeDuplicates().sorted()
+        let otherRegions = locales.compactMap { $0.region?.identifier }.filter { !languageRegions.contains($0) }.removeDuplicates().sorted()
+
+        return (languageRegions + otherRegions).compactMap { Locale.Region($0) }.filter { $0.identifier.rangeOfCharacter(from: .decimalDigits) == nil }
     }
 }
 

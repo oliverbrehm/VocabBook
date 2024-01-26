@@ -39,9 +39,10 @@ class VocabSet: Identifiable {
         }
     }
 
-    init(name: String, descriptionText: String, language: String) {
+    init(name: String, descriptionText: String, language: String, region: String) {
         self.name = name
         self.descriptionText = descriptionText
         self.language = language
+        self.region = region
     }
 }

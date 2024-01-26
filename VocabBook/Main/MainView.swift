@@ -182,6 +182,7 @@ extension MainView {
     private func setView(for set: VocabSet) -> some View {
         HStack {
             Image(systemName: set.isFavorite ? "star.fill" : "square.stack.3d.down.forward")
+
             Text(set.name)
 
             Spacer()
@@ -192,6 +193,10 @@ extension MainView {
 
                 Text("\(set.dueCards.count)")
                     .foregroundStyle(.orange)
+            }
+
+            if let flag = set.setLanguage.emojiFlag {
+                Text(flag)
             }
         }
         .padding(12)

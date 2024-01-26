@@ -53,7 +53,7 @@ final class LegacyDataMigrator: ObservableObject {
                         let language = set.language ?? ""
                         let isFavorite = set.isFavourite?.boolValue ?? false
 
-                        let vocabSet = VocabSet(name: name, descriptionText: descriptionText, language: language)
+                        let vocabSet = VocabSet(name: name, descriptionText: descriptionText, language: language, region: "")
                         vocabSet.isFavorite = isFavorite
                         self.modelContext.insert(vocabSet)
 

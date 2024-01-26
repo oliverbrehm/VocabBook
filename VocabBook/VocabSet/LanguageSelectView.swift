@@ -51,16 +51,14 @@ extension LanguageSelectView {
 extension LanguageSelectView: View {
     var body: some View {
         VStack {
-            HStack {
-                Text(selectedRegion.emojiFlag ?? "")
-                Text(selectedLanugage.languageString)
-            }
-
             TextField("Search", text: $searchLanguage)
-                .padding(16)
+                .padding(8)
+                .background(.white)
+                .clipShape(RoundedRectangle(cornerRadius: 12))
+                .padding(12)
 
             ScrollView {
-                VStack {
+                LazyVStack {
                     ForEach(filteredLanguages, id: \.identifier) { language in
                         HStack {
                             if language == selectedLanugage {
@@ -68,30 +66,31 @@ extension LanguageSelectView: View {
                             }
 
                             Text(language.languageString)
+                                .font(.system(size: 22))
 
                             Spacer()
                         }
-                        .padding(8)
-                        .background(.gray)
+                        .frame(maxWidth: .infinity)
+                        .padding(4)
                         .onTapGesture {
                             selectedLanugage = language
                             updateSet()
                         }
-                        .padding(8)
                     }
                 }
+                .padding(12)
             }
+            .background(.white)
+            .clipShape(RoundedRectangle(cornerRadius: 12))
+            .padding(12)
 
             ScrollView {
-                VStack {
-                    ForEach(SetLanguage.regionsForLanguage(selectedLanugage), id: \.identifier) { region in
+                LazyVGrid(columns: [GridItem(.adaptive(minimum: 64, maximum: 64))]) {
+                    ForEach(selectedLanugage.regions, id: \.identifier) { region in
                         HStack {
-                            if region == selectedRegion {
-                                Image(systemName: "checkmark")
-                            }
-
                             Text(region.emojiFlag ?? "")
-                                .font(.system(size: 32))
+                                .font(.system(size: 42))
+                                .background(region == selectedRegion ? .blue : .clear)
                         }
                         .onTapGesture {
                             selectedRegion = region
@@ -100,7 +99,13 @@ extension LanguageSelectView: View {
                     }
                 }
             }
+            .background(.white)
+            .clipShape(RoundedRectangle(cornerRadius: 12))
+            .padding(12)
         }
+        .background(Color(uiColor: .systemGroupedBackground))
+        .navigationTitle(vocabSet.setLanguage.stringWithFlag)
+        .navigationBarTitleDisplayMode(.inline)
         .onAppear {
             selectedRegion = vocabSet.setLanguage.region
             selectedLanugage = vocabSet.setLanguage.language
@@ -114,6 +119,7 @@ extension LanguageSelectView: View {
 
     guard let set = previewContainer.vocabSet else { return EmptyView() }
 
-    return LanguageSelectView(vocabSet: set)
-        .modelContainer(previewContainer.modelContainer)
+    return NavigationStack {
+        LanguageSelectView(vocabSet: set)
+    }.modelContainer(previewContainer.modelContainer)
 }

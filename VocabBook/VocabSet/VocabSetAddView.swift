@@ -39,7 +39,7 @@ extension VocabSetAddView {
                 Section {
                     if !name.isEmpty {
                         Button(Strings.add.localized) {
-                            modelContext.insert(VocabSet(name: name, descriptionText: description, language: "en"))
+                            modelContext.insert(VocabSet(name: name, descriptionText: description, language: "en", region: ""))
                             dismiss()
                         }
                     }

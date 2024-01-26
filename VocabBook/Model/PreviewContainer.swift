@@ -36,10 +36,11 @@ struct PreviewContainer {
         let vocabSet = VocabSet(
             name: "German",
             descriptionText: "This is a test set for view previews. It contains a few german words to simulate learning.",
-            language: "en"
+            language: "en",
+            region: "us"
         )
         container.mainContext.insert(vocabSet)
-        container.mainContext.insert(VocabSet(name: "French", descriptionText: "French set", language: "fr"))
+        container.mainContext.insert(VocabSet(name: "French", descriptionText: "French set", language: "fr", region: "fr"))
 
         vocabSets.append(vocabSet)
 

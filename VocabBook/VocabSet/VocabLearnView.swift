@@ -139,14 +139,14 @@ extension VocabLearnView {
 
     private func cardView(card: VocabCard) -> some View {
         VStack {
-            coverableView(text: card.front, textCovered: coverFront)
+            coverableView(text: card.front, textCovered: coverFront, language: card.vocabSet?.setLanguage)
 
             Spacer()
                 .frame(maxWidth: .infinity)
                 .frame(height: 1.5)
                 .background(.gray.opacity(0.7))
 
-            coverableView(text: card.back, textCovered: coverBack)
+            coverableView(text: card.back, textCovered: coverBack, language: card.vocabSet?.setLanguage)
         }
         .frame(maxWidth: .infinity)
         .background(.orange.opacity(0.2))
@@ -155,14 +155,25 @@ extension VocabLearnView {
     }
 
     @ViewBuilder
-    private func coverableView(text: String, textCovered: Bool) -> some View {
+    private func coverableView(text: String, textCovered: Bool, language: SetLanguage?) -> some View {
         if textCovered {
-            ImageButton(systemName: "lightbulb.2.fill") {
-                isCovered = false
+            HStack(spacing: 18) {
+                if let flag = language?.emojiFlag {
+                    Text(flag)
+                        .font(.system(size: 32))
+                } else if let language = language?.languageString, !language.isEmpty {
+                    Text("(\(language))")
+                }
+
+                ImageButton(systemName: "lightbulb.2.fill") {
+                    isCovered = false
+                }
+
+                Spacer()
             }
             .padding()
         } else {
-            HStack {
+s            HStack {
                 Text(text)
                     .padding()
                 Spacer()
