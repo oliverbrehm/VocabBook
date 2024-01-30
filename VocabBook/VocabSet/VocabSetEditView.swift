@@ -30,7 +30,7 @@ extension VocabSetEditView {
                     TextField(text: $vocabSet.descriptionText, axis: .vertical, label: { Text(Strings.description.localized) })
                 }
 
-                Section("Language") { // TODO
+                Section(Strings.language.localized) {
                     NavigationLink {
                         LanguageSelectView(vocabSet: vocabSet)
                     } label: {

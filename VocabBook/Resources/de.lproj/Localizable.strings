@@ -7,15 +7,13 @@
  */
 
 "vocabBook" = "Vocab Book";
-"noSetsInfo" = "Hier gibt es noch nichts zu sehen. Erstelle zuerst ein neues Set.\nSollten nach einem kürzlichen Update Daten fehlen, versuche sie im Einstellungsmenü wiederherzustellen.";
+"noSetsInfo" = "Hier gibt es noch nichts zu sehen. Erstelle zuerst ein neues Set.\nDaten aus iCloud werden automatisch geladen, dieser Vorgang kann ein paar Minuten dauern.\nSollten nach einem kürzlichen Update Daten fehlen, versuche sie im Einstellungsmenü wiederherzustellen.";
 "sets" = "Sets";
 "showFavorites" = "Favouriten zeigen";
 "showAll" = "Alle zeigen";
 "cards" = "Karten";
 "recoverICloud" = "Daten aus iCloud von einer ältern App Version wiederherstellen";
 "recoverICloudInfo" = "Falls Daten aus iCloud von einer ältern App Version fehlen, kannst du sie hier wiederherstellen. Es kann sein, dass iCloud direkt nach einer Neuinstallation oder einem Update noch nicht verfügbar ist. Falls nichts passiert versuche es noch einmal.";
-"useAppBadge" = "App Badge benutzen";
-"useAppBadgeInfo" = "Bei Aktivierung zeigt die App Badge die Anzahl fälliger Karten an.";
 "settings" = "Einstellungen";
 "removeAllCardsQuestion" = "Möchtest du wirklich dieses Set mit allen Karten löschen?";
 "yes" = "Ja";
@@ -34,7 +32,7 @@
 "back" = "Hinten";
 "delete" = "Löschen";
 "level" = "Level";
-"coverBack" = "Hinterseite verdecken";
+"coverBack" = "Rückseite verdecken";
 "coverFront" = "Vorderseite verdecken";
 "cardsDue" = "Karten fällig";
 "learnCards" = "Karten lernen";
@@ -46,3 +44,4 @@
 "confirmResetSetQuestion" = "Möchtest du diese Karte wirklich auf Level 0 zurücksetzen?";
 "deleteCard" = "Karte löschen";
 "confirmRemoveCardQuestion" = "Möchtest du diese Karte wirklich löschen?";
+"search" = "Suchen";

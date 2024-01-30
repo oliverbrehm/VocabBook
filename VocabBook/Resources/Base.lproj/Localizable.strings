@@ -7,20 +7,18 @@
  */
 
 "vocabBook" = "Vocab Book";
-"noSetsInfo" = "Nothing here yet. Create a new set first.\nIf you recently updated the app and your data is missing, try recovering it in the settings menu.";
+"noSetsInfo" = "Nothing here yet. Create a new set first.\nExisting iCloud data will be imported automatically, this process can take a few minutes.\nIf you recently updated the app and your data is missing, try recovering it in the settings menu.";
 "sets" = "Sets";
 "showFavorites" = "Show favorites";
 "showAll" = "Show all";
 "cards" = "Cards";
 "recoverICloud" = "Recover iCloud data from older app version";
 "recoverICloudInfo" = "If there is any iCloud data missing from an older app version, you can manually recover it here. iCloud will not be available immedeately after installation or an app update. If nothing happens, please try again in a few minutes.";
-"useAppBadge" = "Use app badge";
-"useAppBadgeInfo" = "If enabled, the app badge will show the number of due cards.";
 "settings" = "Settings";
 "removeAllCardsQuestion" = "Do you really want to remove the set and all cards?";
 "yes" = "Yes";
 "no" = "No";
-"addVocabSet" = "Add Vocab Set";
+"addVocabSet" = "Add set";
 "name" = "Name";
 "description" = "Description";
 "add" = "Add";
@@ -46,3 +44,4 @@
 "confirmResetSetQuestion" = "Do you really want to reset this card to level 0?";
 "deleteCard" = "Delete card";
 "confirmRemoveCardQuestion" = "Do you really want to remove this card?";
+"search" = "Search";

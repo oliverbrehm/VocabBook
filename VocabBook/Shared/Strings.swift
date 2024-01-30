@@ -17,8 +17,6 @@ enum Strings: String {
     case cards
     case recoverICloud
     case recoverICloudInfo
-    case useAppBadge
-    case useAppBadgeInfo
     case settings
     case removeAllCardsQuestion
     case yes
@@ -49,6 +47,7 @@ enum Strings: String {
     case confirmResetSetQuestion
     case deleteCard
     case confirmRemoveCardQuestion
+    case search
 }
 
 extension Strings {

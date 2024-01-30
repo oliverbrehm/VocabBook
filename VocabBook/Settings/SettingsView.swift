@@ -16,8 +16,6 @@ struct SettingsView: View {
 
     // MARK: - State
     @State var dataMigrationInProgress = false
-    @AppStorage("useAppBadgeCount") var useAppBadgeCount = false
-    @AppStorage("storeDatabaseInCloud") var storeDatabaseInCloud = false
 }
 
 // MARK: - Actions
@@ -40,17 +38,6 @@ extension SettingsView {
 extension SettingsView {
     var body: some View {
         Form {
-            Section {
-                Toggle("\(Strings.useAppBadge.localized):", isOn: $useAppBadgeCount)
-                    .onChange(of: useAppBadgeCount) {
-                        if !useAppBadgeCount {
-                            UNUserNotificationCenter.current().setBadgeCount(0)
-                        }
-                    }
-                Text(Strings.useAppBadgeInfo.localized)
-                    .font(.footnote)
-            }
-            
             Section {
                 if dataMigrationInProgress {
                     HStack {

@@ -173,7 +173,7 @@ extension VocabLearnView {
             }
             .padding()
         } else {
-s            HStack {
+            HStack {
                 Text(text)
                     .padding()
                 Spacer()

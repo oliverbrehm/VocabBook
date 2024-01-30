@@ -24,7 +24,6 @@ struct MainView: View {
     @State private var learnViewType: VocabLearnView.CoverType?
     @State private var editingCard: VocabCard?
     @AppStorage(UserDefaultsKeys.showAllSets.rawValue) private var showAllSets = false
-    @AppStorage(UserDefaultsKeys.useAppBadgeCount.rawValue) var useAppBadgeCount = false
 
     // MARK: - Private properties
     private var showLearnView: Binding<Bool> {
@@ -47,10 +46,8 @@ struct MainView: View {
         let cardsToLearnDescriptor = FetchDescriptor<VocabCard>()
         dueCards = ((try? modelContext.fetch(cardsToLearnDescriptor)) ?? []).filter { $0.isDue }
 
-        if useAppBadgeCount {
-            let numberOfDueCards = sets.filter { $0.isFavorite }.reduce(0) { $0 + $1.dueCards.count }
-            UNUserNotificationCenter.current().setBadgeCount(numberOfDueCards)
-        }
+        let numberOfDueCards = sets.filter { $0.isFavorite }.reduce(0) { $0 + $1.dueCards.count }
+        UNUserNotificationCenter.current().setBadgeCount(numberOfDueCards)
     }
 }
 
@@ -96,6 +93,7 @@ extension MainView {
                     setup()
                 })
             })
+            .onChange(of: sets, setup)
             .onAppear(perform: setup)
         }
     }
@@ -113,18 +111,24 @@ extension MainView {
                 }
             }
 
-            Button(showAllSets ? Strings.showFavorites.localized : Strings.showAll.localized) {
-                showAllSets.toggle()
+            if !sets.isEmpty {
+                Button(showAllSets ? Strings.showFavorites.localized : Strings.showAll.localized) {
+                    showAllSets.toggle()
+                }
+                .padding()
             }
-            .padding()
 
             Button(action: {
                 showAddSetView = true
             }, label: {
-                Image(systemName: "plus.circle.fill")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 24)
+                HStack {
+                    Image(systemName: "plus.circle.fill")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 24)
+
+                    Text(Strings.addVocabSet.localized)
+                }
             })
             .padding([.top, .horizontal], 8)
         }
