@@ -42,7 +42,7 @@ extension LanguageSelectView: View {
         VStack {
             TextField(Strings.search.localized, text: $searchLanguage)
                 .padding(8)
-                .background(Color(uiColor: .tertiarySystemBackground))
+                .background(Colors.elementBackground)
                 .roundedCorners(12)
                 .padding(12)
 
@@ -50,7 +50,7 @@ extension LanguageSelectView: View {
 
             flagList
         }
-        .background(Color(uiColor: .systemGroupedBackground))
+        .background(Colors.containerBackground)
         .navigationTitle(vocabSet.setLanguage.stringWithFlag)
         .navigationBarTitleDisplayMode(.inline)
         .onAppear {
@@ -83,7 +83,7 @@ extension LanguageSelectView: View {
             }
             .padding(12)
         }
-        .background(Color(uiColor: .tertiarySystemBackground))
+        .background(Colors.elementBackground)
         .roundedCorners(12)
         .padding(12)
     }
@@ -106,7 +106,7 @@ extension LanguageSelectView: View {
             }
             .padding(6)
         }
-        .background(Color(uiColor: .tertiarySystemBackground))
+        .background(Colors.elementBackground)
         .roundedCorners(12)
         .padding(12)
     }

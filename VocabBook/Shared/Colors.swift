@@ -9,5 +9,6 @@
 import SwiftUI
 
 enum Colors {
-    
+    static let containerBackground = Color(uiColor: .systemGroupedBackground)
+    static let elementBackground = Color(uiColor: .tertiarySystemBackground)
 }

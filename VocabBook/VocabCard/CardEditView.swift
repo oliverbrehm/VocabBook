@@ -128,7 +128,7 @@ extension CardEditView: View {
             }
             .padding([.leading, .trailing, .bottom], 32)
         }
-        .background(Color(uiColor: .systemGroupedBackground))
+        .background(Colors.containerBackground)
         .onAppear {
             if vocabCard.front.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
                 focussedView = .front

@@ -84,7 +84,7 @@ extension MainView: View {
                 }
                 .padding()
             }
-            .background(Color(uiColor: .systemGroupedBackground))
+            .background(Colors.containerBackground)
             .navigationTitle(Strings.vocabBook.localized)
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
@@ -161,7 +161,7 @@ extension MainView: View {
                     coverBackAction: { learnViewType = .back }
                 )
                 .padding(12)
-                .background(Color(uiColor: .tertiarySystemBackground))
+                .background(Colors.elementBackground)
                 .roundedCorners(6)
 
                 Spacer()
@@ -219,7 +219,7 @@ extension MainView: View {
             }
         }
         .padding(12)
-        .background(Color(uiColor: .tertiarySystemBackground))
+        .background(Colors.elementBackground)
         .background(.gray.opacity(0.2))
         .roundedCorners(6)
     }
