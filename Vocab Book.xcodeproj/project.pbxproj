@@ -15,7 +15,6 @@
 		5468EB3B18B8AEB600716507 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5468EB3A18B8AEB600716507 /* UIKit.framework */; };
 		5468EB5518B8AEB700716507 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5468EB5418B8AEB700716507 /* Images.xcassets */; };
 		54AE86CF18E34E3F00A3860F /* VBDocumentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 54AE86CE18E34E3F00A3860F /* VBDocumentManager.m */; };
-		54B19D63194A07A1003B0888 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54B19D62194A07A1003B0888 /* StoreKit.framework */; };
 		BB1896792B6A4F200004E207 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1896782B6A4F200004E207 /* Images.swift */; };
 		BB18967B2B6A4F2E0004E207 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB18967A2B6A4F2E0004E207 /* Colors.swift */; };
 		BB18967D2B6A4F470004E207 /* Sizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB18967C2B6A4F470004E207 /* Sizes.swift */; };
@@ -87,7 +86,6 @@
 		54AE86CD18E34E3F00A3860F /* VBDocumentManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBDocumentManager.h; sourceTree = "<group>"; };
 		54AE86CE18E34E3F00A3860F /* VBDocumentManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBDocumentManager.m; sourceTree = "<group>"; };
 		54B19D61194A0796003B0888 /* Vocab Book.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Vocab Book.entitlements"; sourceTree = "<group>"; };
-		54B19D62194A07A1003B0888 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		BB1896782B6A4F200004E207 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		BB18967A2B6A4F2E0004E207 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		BB18967C2B6A4F470004E207 /* Sizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sizes.swift; sourceTree = "<group>"; };
@@ -145,7 +143,6 @@
 				5468EB3B18B8AEB600716507 /* UIKit.framework in Frameworks */,
 				BB70BCC12AC7338D007D732B /* LibreTranslate in Frameworks */,
 				5468EB3718B8AEB600716507 /* Foundation.framework in Frameworks */,
-				54B19D63194A07A1003B0888 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,7 +172,6 @@
 		5468EB3518B8AEB600716507 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				54B19D62194A07A1003B0888 /* StoreKit.framework */,
 				5422F76F1930CB48006B9C76 /* CoreText.framework */,
 				5468EB3618B8AEB600716507 /* Foundation.framework */,
 				5468EB3818B8AEB600716507 /* CoreGraphics.framework */,
@@ -674,7 +670,7 @@
 				CODE_SIGN_ENTITLEMENTS = "VocabBook/Core/Vocab Book.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = CR6FRMMTU7;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -687,9 +683,8 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 2.0.0;
-				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = "com.vocab-book.vocabbook";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vocab-book.vocabbook";
 				PRODUCT_NAME = "Vocab Book";
-				PROVISIONING_PROFILE = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -710,7 +705,7 @@
 				CODE_SIGN_ENTITLEMENTS = "VocabBook/Core/Vocab Book.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = CR6FRMMTU7;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -723,9 +718,8 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 2.0.0;
-				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = "com.vocab-book.vocabbook";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vocab-book.vocabbook";
 				PRODUCT_NAME = "Vocab Book";
-				PROVISIONING_PROFILE = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
