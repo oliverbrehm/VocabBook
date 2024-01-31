@@ -59,13 +59,10 @@ extension VocabSetEditView {
 }
 
 // MARK: - Preview
-struct VocabSetEditView_Previews: PreviewProvider {
-    static var previews: some View {
-        let previewContainer = PreviewContainer()
+#Preview {
+    let previewContainer = PreviewContainer()
+    guard let set = previewContainer.vocabSet else { return EmptyView() }
 
-        if let set = previewContainer.vocabSet {
-            VocabSetEditView(vocabSet: set)
-                .modelContainer(previewContainer.modelContainer)
-        }
-    }
+    return VocabSetEditView(vocabSet: set)
+        .modelContainer(previewContainer.modelContainer)
 }

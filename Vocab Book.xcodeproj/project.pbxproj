@@ -36,42 +36,6 @@
 		BB5D79462ACDB0D9004FA0FB /* ImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5D79452ACDB0D9004FA0FB /* ImageButton.swift */; };
 		BB5D79482ACDB101004FA0FB /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5D79472ACDB101004FA0FB /* RoundedCorner.swift */; };
 		BB5D79602ACDC3AE004FA0FB /* WordsModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BB5D79592ACDC3AE004FA0FB /* WordsModel.xcdatamodeld */; };
-		BB5D79A22ACDCABB004FA0FB /* flag_gaeilge.png in Resources */ = {isa = PBXBuildFile; fileRef = BB5D797E2ACDCABB004FA0FB /* flag_gaeilge.png */; };
-		BB5D79A32ACDCABB004FA0FB /* flag_svenska.png in Resources */ = {isa = PBXBuildFile; fileRef = BB5D797F2ACDCABB004FA0FB /* flag_svenska.png */; };
-		BB5D79A42ACDCABB004FA0FB /* flag_norsk.png in Resources */ = {isa = PBXBuildFile; fileRef = BB5D79802ACDCABB004FA0FB /* flag_norsk.png */; };
-		BB5D79A52ACDCABB004FA0FB /* flag_dansk.png in Resources */ = {isa = PBXBuildFile; fileRef = BB5D79812ACDCABB004FA0FB /* flag_dansk.png */; };
-		BB5D79A62ACDCABB004FA0FB /* flag_thai.png in Resources */ = {isa = PBXBuildFile; fileRef = BB5D79822ACDCABB004FA0FB /* flag_thai.png */; };
-		BB5D79A72ACDCABB004FA0FB /* flag_português.png in Resources */ = {isa = PBXBuildFile; fileRef = BB5D79832ACDCABB004FA0FB /* flag_português.png */; };
-		BB5D79A82ACDCABB004FA0FB /* flag_kazakh.png in Resources */ = {isa = PBXBuildFile; fileRef = BB5D79842ACDCABB004FA0FB /* flag_kazakh.png */; };
-		BB5D79A92ACDCABB004FA0FB /* flag_srpski jezik.png in Resources */ = {isa = PBXBuildFile; fileRef = BB5D79852ACDCABB004FA0FB /* flag_srpski jezik.png */; };
-		BB5D79AA2ACDCABB004FA0FB /* flag_south corean.png in Resources */ = {isa = PBXBuildFile; fileRef = BB5D79862ACDCABB004FA0FB /* flag_south corean.png */; };
-		BB5D79AB2ACDCABB004FA0FB /* flag_bengali.png in Resources */ = {isa = PBXBuildFile; fileRef = BB5D79872ACDCABB004FA0FB /* flag_bengali.png */; };
-		BB5D79AC2ACDCABB004FA0FB /* flag_magyar.png in Resources */ = {isa = PBXBuildFile; fileRef = BB5D79882ACDCABB004FA0FB /* flag_magyar.png */; };
-		BB5D79AD2ACDCABB004FA0FB /* flag_deutsch.png in Resources */ = {isa = PBXBuildFile; fileRef = BB5D79892ACDCABB004FA0FB /* flag_deutsch.png */; };
-		BB5D79AE2ACDCABB004FA0FB /* unknown_language.png in Resources */ = {isa = PBXBuildFile; fileRef = BB5D798A2ACDCABB004FA0FB /* unknown_language.png */; };
-		BB5D79AF2ACDCABB004FA0FB /* flag_english.png in Resources */ = {isa = PBXBuildFile; fileRef = BB5D798B2ACDCABB004FA0FB /* flag_english.png */; };
-		BB5D79B02ACDCABB004FA0FB /* flag_suomi.png in Resources */ = {isa = PBXBuildFile; fileRef = BB5D798C2ACDCABB004FA0FB /* flag_suomi.png */; };
-		BB5D79B12ACDCABB004FA0FB /* flag_hindi.png in Resources */ = {isa = PBXBuildFile; fileRef = BB5D798D2ACDCABB004FA0FB /* flag_hindi.png */; };
-		BB5D79B22ACDCABB004FA0FB /* flag_arabic.png in Resources */ = {isa = PBXBuildFile; fileRef = BB5D798E2ACDCABB004FA0FB /* flag_arabic.png */; };
-		BB5D79B32ACDCABB004FA0FB /* flag_français.png in Resources */ = {isa = PBXBuildFile; fileRef = BB5D798F2ACDCABB004FA0FB /* flag_français.png */; };
-		BB5D79B42ACDCABB004FA0FB /* flag_limba română.png in Resources */ = {isa = PBXBuildFile; fileRef = BB5D79902ACDCABB004FA0FB /* flag_limba română.png */; };
-		BB5D79B52ACDCABB004FA0FB /* flag_slovenščina.png in Resources */ = {isa = PBXBuildFile; fileRef = BB5D79912ACDCABB004FA0FB /* flag_slovenščina.png */; };
-		BB5D79B62ACDCABB004FA0FB /* flag_japanese.png in Resources */ = {isa = PBXBuildFile; fileRef = BB5D79922ACDCABB004FA0FB /* flag_japanese.png */; };
-		BB5D79B72ACDCABB004FA0FB /* flag_čeština.png in Resources */ = {isa = PBXBuildFile; fileRef = BB5D79932ACDCABB004FA0FB /* flag_čeština.png */; };
-		BB5D79B82ACDCABB004FA0FB /* flag_chinese.png in Resources */ = {isa = PBXBuildFile; fileRef = BB5D79942ACDCABB004FA0FB /* flag_chinese.png */; };
-		BB5D79B92ACDCABB004FA0FB /* flag_punjabi.png in Resources */ = {isa = PBXBuildFile; fileRef = BB5D79952ACDCABB004FA0FB /* flag_punjabi.png */; };
-		BB5D79BA2ACDCABB004FA0FB /* flag_shqip.png in Resources */ = {isa = PBXBuildFile; fileRef = BB5D79962ACDCABB004FA0FB /* flag_shqip.png */; };
-		BB5D79BB2ACDCABB004FA0FB /* flag_russian.png in Resources */ = {isa = PBXBuildFile; fileRef = BB5D79972ACDCABB004FA0FB /* flag_russian.png */; };
-		BB5D79BC2ACDCABB004FA0FB /* flag_türkçe.png in Resources */ = {isa = PBXBuildFile; fileRef = BB5D79982ACDCABB004FA0FB /* flag_türkçe.png */; };
-		BB5D79BD2ACDCABB004FA0FB /* flag_español.png in Resources */ = {isa = PBXBuildFile; fileRef = BB5D79992ACDCABB004FA0FB /* flag_español.png */; };
-		BB5D79BE2ACDCABB004FA0FB /* flag_hrvatski.png in Resources */ = {isa = PBXBuildFile; fileRef = BB5D799A2ACDCABB004FA0FB /* flag_hrvatski.png */; };
-		BB5D79BF2ACDCABB004FA0FB /* flag_greek.png in Resources */ = {isa = PBXBuildFile; fileRef = BB5D799B2ACDCABB004FA0FB /* flag_greek.png */; };
-		BB5D79C02ACDCABB004FA0FB /* flag_ukrayins'ka mova.png in Resources */ = {isa = PBXBuildFile; fileRef = BB5D799C2ACDCABB004FA0FB /* flag_ukrayins'ka mova.png */; };
-		BB5D79C12ACDCABB004FA0FB /* flag_nederlands.png in Resources */ = {isa = PBXBuildFile; fileRef = BB5D799D2ACDCABB004FA0FB /* flag_nederlands.png */; };
-		BB5D79C22ACDCABB004FA0FB /* flag_italiano.png in Resources */ = {isa = PBXBuildFile; fileRef = BB5D799E2ACDCABB004FA0FB /* flag_italiano.png */; };
-		BB5D79C32ACDCABB004FA0FB /* flag_vietnamese.png in Resources */ = {isa = PBXBuildFile; fileRef = BB5D799F2ACDCABB004FA0FB /* flag_vietnamese.png */; };
-		BB5D79C42ACDCABB004FA0FB /* flag_bălgarski esik.png in Resources */ = {isa = PBXBuildFile; fileRef = BB5D79A02ACDCABB004FA0FB /* flag_bălgarski esik.png */; };
-		BB5D79C52ACDCABB004FA0FB /* flag_polski.png in Resources */ = {isa = PBXBuildFile; fileRef = BB5D79A12ACDCABB004FA0FB /* flag_polski.png */; };
 		BB5E3D412ADE7C880059789F /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5E3D402ADE7C880059789F /* DatabaseService.swift */; };
 		BB70BCC12AC7338D007D732B /* LibreTranslate in Frameworks */ = {isa = PBXBuildFile; productRef = BB70BCC02AC7338D007D732B /* LibreTranslate */; };
 		BB70BCC42AC7359C007D732B /* ITranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB70BCC32AC7359C007D732B /* ITranslator.swift */; };
@@ -150,42 +114,6 @@
 		BB5D797A2ACDC929004FA0FB /* index.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		BB5D797B2ACDC929004FA0FB /* appicon_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appicon_big.png; sourceTree = "<group>"; };
 		BB5D797C2ACDC929004FA0FB /* appicon_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appicon_small.png; sourceTree = "<group>"; };
-		BB5D797E2ACDCABB004FA0FB /* flag_gaeilge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flag_gaeilge.png; sourceTree = "<group>"; };
-		BB5D797F2ACDCABB004FA0FB /* flag_svenska.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flag_svenska.png; sourceTree = "<group>"; };
-		BB5D79802ACDCABB004FA0FB /* flag_norsk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flag_norsk.png; sourceTree = "<group>"; };
-		BB5D79812ACDCABB004FA0FB /* flag_dansk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flag_dansk.png; sourceTree = "<group>"; };
-		BB5D79822ACDCABB004FA0FB /* flag_thai.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flag_thai.png; sourceTree = "<group>"; };
-		BB5D79832ACDCABB004FA0FB /* flag_português.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flag_português.png"; sourceTree = "<group>"; };
-		BB5D79842ACDCABB004FA0FB /* flag_kazakh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flag_kazakh.png; sourceTree = "<group>"; };
-		BB5D79852ACDCABB004FA0FB /* flag_srpski jezik.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flag_srpski jezik.png"; sourceTree = "<group>"; };
-		BB5D79862ACDCABB004FA0FB /* flag_south corean.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flag_south corean.png"; sourceTree = "<group>"; };
-		BB5D79872ACDCABB004FA0FB /* flag_bengali.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flag_bengali.png; sourceTree = "<group>"; };
-		BB5D79882ACDCABB004FA0FB /* flag_magyar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flag_magyar.png; sourceTree = "<group>"; };
-		BB5D79892ACDCABB004FA0FB /* flag_deutsch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flag_deutsch.png; sourceTree = "<group>"; };
-		BB5D798A2ACDCABB004FA0FB /* unknown_language.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unknown_language.png; sourceTree = "<group>"; };
-		BB5D798B2ACDCABB004FA0FB /* flag_english.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flag_english.png; sourceTree = "<group>"; };
-		BB5D798C2ACDCABB004FA0FB /* flag_suomi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flag_suomi.png; sourceTree = "<group>"; };
-		BB5D798D2ACDCABB004FA0FB /* flag_hindi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flag_hindi.png; sourceTree = "<group>"; };
-		BB5D798E2ACDCABB004FA0FB /* flag_arabic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flag_arabic.png; sourceTree = "<group>"; };
-		BB5D798F2ACDCABB004FA0FB /* flag_français.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flag_français.png"; sourceTree = "<group>"; };
-		BB5D79902ACDCABB004FA0FB /* flag_limba română.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flag_limba română.png"; sourceTree = "<group>"; };
-		BB5D79912ACDCABB004FA0FB /* flag_slovenščina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flag_slovenščina.png"; sourceTree = "<group>"; };
-		BB5D79922ACDCABB004FA0FB /* flag_japanese.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flag_japanese.png; sourceTree = "<group>"; };
-		BB5D79932ACDCABB004FA0FB /* flag_čeština.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flag_čeština.png"; sourceTree = "<group>"; };
-		BB5D79942ACDCABB004FA0FB /* flag_chinese.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flag_chinese.png; sourceTree = "<group>"; };
-		BB5D79952ACDCABB004FA0FB /* flag_punjabi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flag_punjabi.png; sourceTree = "<group>"; };
-		BB5D79962ACDCABB004FA0FB /* flag_shqip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flag_shqip.png; sourceTree = "<group>"; };
-		BB5D79972ACDCABB004FA0FB /* flag_russian.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flag_russian.png; sourceTree = "<group>"; };
-		BB5D79982ACDCABB004FA0FB /* flag_türkçe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flag_türkçe.png"; sourceTree = "<group>"; };
-		BB5D79992ACDCABB004FA0FB /* flag_español.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flag_español.png"; sourceTree = "<group>"; };
-		BB5D799A2ACDCABB004FA0FB /* flag_hrvatski.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flag_hrvatski.png; sourceTree = "<group>"; };
-		BB5D799B2ACDCABB004FA0FB /* flag_greek.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flag_greek.png; sourceTree = "<group>"; };
-		BB5D799C2ACDCABB004FA0FB /* flag_ukrayins'ka mova.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flag_ukrayins'ka mova.png"; sourceTree = "<group>"; };
-		BB5D799D2ACDCABB004FA0FB /* flag_nederlands.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flag_nederlands.png; sourceTree = "<group>"; };
-		BB5D799E2ACDCABB004FA0FB /* flag_italiano.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flag_italiano.png; sourceTree = "<group>"; };
-		BB5D799F2ACDCABB004FA0FB /* flag_vietnamese.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flag_vietnamese.png; sourceTree = "<group>"; };
-		BB5D79A02ACDCABB004FA0FB /* flag_bălgarski esik.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flag_bălgarski esik.png"; sourceTree = "<group>"; };
-		BB5D79A12ACDCABB004FA0FB /* flag_polski.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flag_polski.png; sourceTree = "<group>"; };
 		BB5E3D402ADE7C880059789F /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
 		BB70BCC32AC7359C007D732B /* ITranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITranslator.swift; sourceTree = "<group>"; };
 		BB70BCC52AC735E5007D732B /* LibreTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibreTranslator.swift; sourceTree = "<group>"; };
@@ -406,7 +334,6 @@
 		BB5D79772ACDC8A6004FA0FB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				BB5D797D2ACDCABB004FA0FB /* flags */,
 				5420DC7518C39F3D006CE82F /* Localizable.strings */,
 				5468EB5418B8AEB700716507 /* Images.xcassets */,
 				540D278E19473E34003B3BAA /* appdescription.txt */,
@@ -430,49 +357,6 @@
 				BB5D797C2ACDC929004FA0FB /* appicon_small.png */,
 			);
 			path = "support page";
-			sourceTree = "<group>";
-		};
-		BB5D797D2ACDCABB004FA0FB /* flags */ = {
-			isa = PBXGroup;
-			children = (
-				BB5D797E2ACDCABB004FA0FB /* flag_gaeilge.png */,
-				BB5D797F2ACDCABB004FA0FB /* flag_svenska.png */,
-				BB5D79802ACDCABB004FA0FB /* flag_norsk.png */,
-				BB5D79812ACDCABB004FA0FB /* flag_dansk.png */,
-				BB5D79822ACDCABB004FA0FB /* flag_thai.png */,
-				BB5D79832ACDCABB004FA0FB /* flag_português.png */,
-				BB5D79842ACDCABB004FA0FB /* flag_kazakh.png */,
-				BB5D79852ACDCABB004FA0FB /* flag_srpski jezik.png */,
-				BB5D79862ACDCABB004FA0FB /* flag_south corean.png */,
-				BB5D79872ACDCABB004FA0FB /* flag_bengali.png */,
-				BB5D79882ACDCABB004FA0FB /* flag_magyar.png */,
-				BB5D79892ACDCABB004FA0FB /* flag_deutsch.png */,
-				BB5D798A2ACDCABB004FA0FB /* unknown_language.png */,
-				BB5D798B2ACDCABB004FA0FB /* flag_english.png */,
-				BB5D798C2ACDCABB004FA0FB /* flag_suomi.png */,
-				BB5D798D2ACDCABB004FA0FB /* flag_hindi.png */,
-				BB5D798E2ACDCABB004FA0FB /* flag_arabic.png */,
-				BB5D798F2ACDCABB004FA0FB /* flag_français.png */,
-				BB5D79902ACDCABB004FA0FB /* flag_limba română.png */,
-				BB5D79912ACDCABB004FA0FB /* flag_slovenščina.png */,
-				BB5D79922ACDCABB004FA0FB /* flag_japanese.png */,
-				BB5D79932ACDCABB004FA0FB /* flag_čeština.png */,
-				BB5D79942ACDCABB004FA0FB /* flag_chinese.png */,
-				BB5D79952ACDCABB004FA0FB /* flag_punjabi.png */,
-				BB5D79962ACDCABB004FA0FB /* flag_shqip.png */,
-				BB5D79972ACDCABB004FA0FB /* flag_russian.png */,
-				BB5D79982ACDCABB004FA0FB /* flag_türkçe.png */,
-				BB5D79992ACDCABB004FA0FB /* flag_español.png */,
-				BB5D799A2ACDCABB004FA0FB /* flag_hrvatski.png */,
-				BB5D799B2ACDCABB004FA0FB /* flag_greek.png */,
-				BB5D799C2ACDCABB004FA0FB /* flag_ukrayins'ka mova.png */,
-				BB5D799D2ACDCABB004FA0FB /* flag_nederlands.png */,
-				BB5D799E2ACDCABB004FA0FB /* flag_italiano.png */,
-				BB5D799F2ACDCABB004FA0FB /* flag_vietnamese.png */,
-				BB5D79A02ACDCABB004FA0FB /* flag_bălgarski esik.png */,
-				BB5D79A12ACDCABB004FA0FB /* flag_polski.png */,
-			);
-			path = flags;
 			sourceTree = "<group>";
 		};
 		BB7932872AE25AD900847A09 /* PropertyWrappers */ = {
@@ -564,47 +448,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB5D79C42ACDCABB004FA0FB /* flag_bălgarski esik.png in Resources */,
-				BB5D79C52ACDCABB004FA0FB /* flag_polski.png in Resources */,
-				BB5D79B92ACDCABB004FA0FB /* flag_punjabi.png in Resources */,
 				BB5D79432ACDAFA4004FA0FB /* .swiftlint.yml in Resources */,
 				BB44FE4A2AC0113C00510833 /* LaunchScreen.storyboard in Resources */,
-				BB5D79A22ACDCABB004FA0FB /* flag_gaeilge.png in Resources */,
 				5420DC7318C39F3D006CE82F /* Localizable.strings in Resources */,
-				BB5D79A52ACDCABB004FA0FB /* flag_dansk.png in Resources */,
-				BB5D79A32ACDCABB004FA0FB /* flag_svenska.png in Resources */,
-				BB5D79B02ACDCABB004FA0FB /* flag_suomi.png in Resources */,
-				BB5D79A62ACDCABB004FA0FB /* flag_thai.png in Resources */,
-				BB5D79B72ACDCABB004FA0FB /* flag_čeština.png in Resources */,
-				BB5D79A92ACDCABB004FA0FB /* flag_srpski jezik.png in Resources */,
-				BB5D79AF2ACDCABB004FA0FB /* flag_english.png in Resources */,
-				BB5D79AB2ACDCABB004FA0FB /* flag_bengali.png in Resources */,
-				BB5D79BC2ACDCABB004FA0FB /* flag_türkçe.png in Resources */,
-				BB5D79A72ACDCABB004FA0FB /* flag_português.png in Resources */,
-				BB5D79BB2ACDCABB004FA0FB /* flag_russian.png in Resources */,
-				BB5D79BF2ACDCABB004FA0FB /* flag_greek.png in Resources */,
-				BB5D79BE2ACDCABB004FA0FB /* flag_hrvatski.png in Resources */,
 				5468EB5518B8AEB700716507 /* Images.xcassets in Resources */,
-				BB5D79AC2ACDCABB004FA0FB /* flag_magyar.png in Resources */,
-				BB5D79C02ACDCABB004FA0FB /* flag_ukrayins'ka mova.png in Resources */,
-				BB5D79AD2ACDCABB004FA0FB /* flag_deutsch.png in Resources */,
-				BB5D79B42ACDCABB004FA0FB /* flag_limba română.png in Resources */,
-				BB5D79AE2ACDCABB004FA0FB /* unknown_language.png in Resources */,
-				BB5D79B12ACDCABB004FA0FB /* flag_hindi.png in Resources */,
-				BB5D79C12ACDCABB004FA0FB /* flag_nederlands.png in Resources */,
-				BB5D79B62ACDCABB004FA0FB /* flag_japanese.png in Resources */,
-				BB5D79B32ACDCABB004FA0FB /* flag_français.png in Resources */,
-				BB5D79C22ACDCABB004FA0FB /* flag_italiano.png in Resources */,
-				BB5D79AA2ACDCABB004FA0FB /* flag_south corean.png in Resources */,
 				5468EB4118B8AEB600716507 /* InfoPlist.strings in Resources */,
-				BB5D79BD2ACDCABB004FA0FB /* flag_español.png in Resources */,
-				BB5D79B22ACDCABB004FA0FB /* flag_arabic.png in Resources */,
-				BB5D79A42ACDCABB004FA0FB /* flag_norsk.png in Resources */,
-				BB5D79B82ACDCABB004FA0FB /* flag_chinese.png in Resources */,
-				BB5D79B52ACDCABB004FA0FB /* flag_slovenščina.png in Resources */,
-				BB5D79A82ACDCABB004FA0FB /* flag_kazakh.png in Resources */,
-				BB5D79BA2ACDCABB004FA0FB /* flag_shqip.png in Resources */,
-				BB5D79C32ACDCABB004FA0FB /* flag_vietnamese.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -115,10 +115,10 @@ extension LanguageSelectView: View {
 // MARK: - Preview
 #Preview {
     let previewContainer = PreviewContainer()
-
     guard let set = previewContainer.vocabSet else { return EmptyView() }
 
     return NavigationStack {
         LanguageSelectView(vocabSet: set)
-    }.modelContainer(previewContainer.modelContainer)
+    }
+    .modelContainer(previewContainer.modelContainer)
 }

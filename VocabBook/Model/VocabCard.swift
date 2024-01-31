@@ -10,7 +10,7 @@ import SwiftData
 
 @Model
 class VocabCard: Identifiable, Equatable {
-    // MARK: - Properties
+    // MARK: - Persisted
     let id = UUID()
 
     var front = ""

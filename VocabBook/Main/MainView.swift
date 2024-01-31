@@ -9,7 +9,7 @@
 import SwiftData
 import SwiftUI
 
-struct MainView: View {
+struct MainView {
     // MARK: - Environment
     @Environment(\.modelContext) private var modelContext
 
@@ -62,7 +62,7 @@ struct MainView: View {
 }
 
 // MARK: - UI
-extension MainView {
+extension MainView: View {
     var body: some View {
         NavigationStack {
             ScrollView {
@@ -248,9 +248,7 @@ extension MainView {
 }
 
 // MARK: - Preview
-struct MainView_Previews: PreviewProvider {
-    static var previews: some View {
-        MainView()
-            .modelContainer(PreviewContainer().modelContainer)
-    }
+#Preview {
+    MainView()
+        .modelContainer(PreviewContainer().modelContainer)
 }

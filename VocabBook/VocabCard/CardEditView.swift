@@ -225,15 +225,13 @@ extension CardEditView {
 }
 
 // MARK: - Preview
-struct CardEditView_Previews: PreviewProvider {
-    static var previews: some View {
-        let previewContainer = PreviewContainer()
+#Preview {
+    let previewContainer = PreviewContainer()
 
-        CardEditView(
-            translator: MockTranslator(),
-            vocabCard: previewContainer.newCard(),
-            deleteAction: {}
-        )
-        .modelContainer(previewContainer.modelContainer)
-    }
+    return CardEditView(
+        translator: MockTranslator(),
+        vocabCard: previewContainer.newCard(),
+        deleteAction: {}
+    )
+    .modelContainer(previewContainer.modelContainer)
 }

@@ -10,6 +10,7 @@ import SwiftData
 
 @MainActor
 struct PreviewContainer {
+    // MARK: - Properties
     let modelContainer: ModelContainer
 
     var vocabSets: [VocabSet] = []
@@ -22,6 +23,7 @@ struct PreviewContainer {
         vocabSet?.cards?.last
     }
 
+    // MARK: - Initializers
     init() {
         guard let container = try? ModelContainer(
             for: VocabSet.self,
@@ -58,6 +60,7 @@ struct PreviewContainer {
         }
     }
 
+    // MARK: - Functions
     func newCard() -> VocabCard {
         let card = VocabCard(front: "", back: "")
         modelContainer.mainContext.insert(card)

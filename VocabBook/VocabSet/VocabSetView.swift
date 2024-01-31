@@ -206,19 +206,20 @@ extension VocabSetView {
 }
 
 // MARK: - Preview
-struct VocabSetView_Previews: PreviewProvider {
-    static var previews: some View {
-        let previewContainer = PreviewContainer()
+#Preview {
+    let previewContainer = PreviewContainer()
+    guard let set = previewContainer.vocabSet else { return EmptyView() }
 
-        if let set = previewContainer.vocabSet {
-            VocabSetView(vocabSet: set)
-                .modelContainer(previewContainer.modelContainer)
+    return VocabSetView(vocabSet: set)
+        .modelContainer(previewContainer.modelContainer)
+}
 
-            NavigationStack {
-                VocabSetView(vocabSet: set)
-            }
-            .modelContainer(previewContainer.modelContainer)
-            .previewDisplayName("NavigationStack")
-        }
+#Preview("NavigationStack") {
+    let previewContainer = PreviewContainer()
+    guard let set = previewContainer.vocabSet else { return EmptyView() }
+
+    return NavigationStack {
+        VocabSetView(vocabSet: set)
     }
+    .modelContainer(previewContainer.modelContainer)
 }

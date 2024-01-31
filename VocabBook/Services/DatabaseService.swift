@@ -9,8 +9,10 @@
 import SwiftData
 
 final class DatabaseService: ObservableObject {
+    // MARK: - Properties
     @Published var modelContainer: ModelContainer
 
+    // MARK: - Initializers
     init() {
         do {
             modelContainer = try ModelContainer(for: VocabSet.self, VocabCard.self)

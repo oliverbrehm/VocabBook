@@ -58,10 +58,8 @@ extension SettingsView {
 }
 
 // MARK: - Preview
-struct SettingsView_Previews: PreviewProvider {
-    static var previews: some View {
-        SettingsView()
-            .environmentObject(LegacyDataMigrator(modelContext: PreviewContainer().modelContainer.mainContext, deleteDuplicatesAction: {}))
-            .environmentObject(DatabaseService())
-    }
+#Preview {
+    SettingsView()
+        .environmentObject(LegacyDataMigrator(modelContext: PreviewContainer().modelContainer.mainContext, deleteDuplicatesAction: {}))
+        .environmentObject(DatabaseService())
 }

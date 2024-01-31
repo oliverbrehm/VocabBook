@@ -224,11 +224,10 @@ extension VocabLearnView {
 }
 
 // MARK: - Preview
-struct VocabLearnView_Previews: PreviewProvider {
-    static var previews: some View {
-        let previewContainer = PreviewContainer()
-        if let set = previewContainer.vocabSet {
-            VocabLearnView(cards: set.cards ?? [], coverType: .front)
-        }
-    }
+#Preview {
+    let previewContainer = PreviewContainer()
+    guard let set = previewContainer.vocabSet else { return EmptyView() }
+
+    return VocabLearnView(cards: set.cards ?? [], coverType: .front)
+        .modelContainer(previewContainer.modelContainer)
 }

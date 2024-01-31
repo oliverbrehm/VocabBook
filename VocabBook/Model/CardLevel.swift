@@ -17,6 +17,7 @@ enum CardLevel: UInt8, Codable, CaseIterable {
     case level5 = 5
     case level6 = 6
 
+    // MARK: - Computed properties
     var nextLevel: CardLevel {
         CardLevel(rawValue: rawValue + 1) ?? .level6
     }

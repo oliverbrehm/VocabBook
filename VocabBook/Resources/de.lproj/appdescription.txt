@@ -2,15 +2,12 @@ Lernst du eine neue Sprache, brauchst du langfristig vor allem eines: immer mehr
 Wie schafft man es, diese effektiv zu lernen? Karteikarten? Lange, ungeordnete Vokabellisten?
 
 Vocab Book gibt dir eine Möglichkeit, zu lernende Wörter immer bei dir zu haben.
-Damit ist das Lernen jederzeit möglich, und macht mit dem Abfragemodus der App und Tests, um den Fortschritt zu prüfen sogar Spaß!
-Du kannst Vocab Book auf allen iOS Geräten benutzen, iCloud hält deine Vocabeln automatisch synchron.
-
-Neue Wörter einzugeben ist unkompliziert und schnell. 2 Klicks und du bist bei der Eingabe des neuen Wortes und kannst das Wort sogar in einem online Wörterbuch deiner Wahl nachschlagen, ohne die App verlassen zu müssen.
+Damit ist das Lernen jederzeit möglich und macht mit dem Abfragemodus der App sogar Spaß!
+Du kannst Vocab Book auf allen iOS Geräten benutzen, iCloud hält deine Vokabeln automatisch synchron. Neue Wörter einzugeben ist unkompliziert und schnell.
 
 *** Vocab Book Features ***
 
 - Beliebig viele Wörter, in verschiedenen Sets sortiert, schnell und leicht erstellen
 - Lernfortschritt nach Karteikartensystem kontrolliert
-- Einfaches Lernen durch automatische Abfrage und Tests
-- Wörter online innerhalb der App nachschlagen
+- Einfaches Lernen durch automatische Abfrage
 - Automatische iCloud Synchronisation

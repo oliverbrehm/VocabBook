@@ -10,6 +10,7 @@ import SwiftData
 
 @Model
 class VocabSet: Identifiable {
+    // MARK: - Persisted
     let id = UUID()
     var name = ""
     var descriptionText = ""
@@ -20,6 +21,7 @@ class VocabSet: Identifiable {
     @Relationship(deleteRule: .cascade)
     var cards: [VocabCard]? = []
 
+    // MARK: - Computed properties
     var hasDueCards: Bool {
         (cards ?? []).contains { $0.isDue }
     }
@@ -39,6 +41,7 @@ class VocabSet: Identifiable {
         }
     }
 
+    // MARK: - Initializers
     init(name: String, descriptionText: String, language: String, region: String) {
         self.name = name
         self.descriptionText = descriptionText
