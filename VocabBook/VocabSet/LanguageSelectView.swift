@@ -65,7 +65,7 @@ extension LanguageSelectView: View {
                 ForEach(filteredLanguages, id: \.identifier) { language in
                     HStack {
                         if language == selectedLanugage {
-                            Image(systemName: "checkmark")
+                            Images.checkmark
                         }
 
                         Text(language.languageString)

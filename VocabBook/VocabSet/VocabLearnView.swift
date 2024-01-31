@@ -111,7 +111,7 @@ extension VocabLearnView: View {
         HStack(spacing: 32) {
             HStack {
                 Text("\(nRight)")
-                Image(systemName: "hand.thumbsup.fill")
+                Images.thumbsUp
                     .resizable()
                     .frame(width: 24, height: 24)
                     .foregroundStyle(.green)
@@ -120,7 +120,7 @@ extension VocabLearnView: View {
 
             HStack {
                 Text("\(nWrong)")
-                Image(systemName: "hand.thumbsdown.fill")
+                Images.thumbsDown
                     .resizable()
                     .frame(width: 24, height: 24)
                     .foregroundStyle(.red)
@@ -131,7 +131,7 @@ extension VocabLearnView: View {
 
             Spacer()
 
-            ImageButton(systemName: "x.circle.fill", size: 28) {
+            ImageButton(image: Images.closeFilled, size: 28) {
                 finish()
             }
         }
@@ -165,7 +165,7 @@ extension VocabLearnView: View {
                     Text("(\(language))")
                 }
 
-                ImageButton(systemName: "lightbulb.2.fill") {
+                ImageButton(image: Images.lightbulb2) {
                     isCovered = false
                 }
 
@@ -213,7 +213,7 @@ extension VocabLearnView: View {
 
             Text(Strings.learnResultInfo.localized(arguments: String(nRight), String(nTotal)))
 
-            ImageButton(systemName: "checkmark.circle.fill") {
+            ImageButton(image: Images.checkmarkFilled) {
                 finish()
             }
         }

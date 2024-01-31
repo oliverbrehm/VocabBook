@@ -106,7 +106,7 @@ extension VocabSetView: View {
 
             Section {
                 HStack {
-                    Image(systemName: "plus.circle")
+                    Images.plus
                         .foregroundStyle(.blue)
                     Button(Strings.addCard.localized, action: addCard)
                         .bold()
@@ -148,7 +148,7 @@ extension VocabSetView: View {
                 Button(action: {
                     vocabSet.isFavorite.toggle()
                 }, label: {
-                    Image(systemName: vocabSet.isFavorite ? "star.fill" : "star")
+                    vocabSet.isFavorite ? Images.starFilled : Images.star
                 })
             }
         }
@@ -179,7 +179,7 @@ extension VocabSetView: View {
     private func cardView(_ card: VocabCard) -> some View {
         HStack(spacing: 12) {
             if card.isDue {
-                Image(systemName: "lightbulb")
+                Images.lightbulb
                     .foregroundStyle(.orange)
             }
 
@@ -196,7 +196,7 @@ extension VocabSetView: View {
 
             Spacer()
 
-            ImageButton(systemName: "rectangle.and.pencil.and.ellipsis") {
+            ImageButton(image: Images.edit) {
                 editingCard = card
             }
             .foregroundStyle(.blue)

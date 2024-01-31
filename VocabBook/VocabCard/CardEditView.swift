@@ -114,7 +114,7 @@ extension CardEditView: View {
                 Spacer()
 
                 Button(action: close, label: {
-                    Image(systemName: "arrowtriangle.down.circle.fill")
+                    Images.triangleDown
                 })
 
                 Spacer()
@@ -145,7 +145,7 @@ extension CardEditView: View {
                     Button(action: {
                         addTranslation(translation)
                     }, label: {
-                        Image(systemName: "plus.circle")
+                        Images.plus
                     })
                     .tint(.green)
 
@@ -156,7 +156,7 @@ extension CardEditView: View {
                     Button(action: {
                         removeTranslationSuggestion(translation)
                     }, label: {
-                        Image(systemName: "x.circle")
+                        Images.close
                     })
                     .tint(.red)
                 }

@@ -20,7 +20,7 @@ extension LearnCardsView: View {
     var body: some View {
         VStack(spacing: 24) {
             HStack {
-                Image(systemName: "lightbulb")
+                Images.lightbulb
                     .foregroundStyle(.orange)
 
                 Text(Strings.learnCards.localized)

@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct ImageButton: View {
-    let systemName: String
+    let image: Image
     var size: CGFloat = 32
     
     let action: () -> Void
@@ -18,7 +18,7 @@ struct ImageButton: View {
         Button(action: {
             action()
         }, label: {
-            Image(systemName: systemName)
+            image
                 .resizable()
                 .scaledToFit()
                 .frame(width: size, height: size)

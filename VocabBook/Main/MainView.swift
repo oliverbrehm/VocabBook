@@ -91,7 +91,7 @@ extension MainView: View {
                     NavigationLink {
                         SettingsView()
                     } label: {
-                        Image(systemName: "gearshape.fill")
+                        Images.settings
                     }
                 }
             }
@@ -137,7 +137,7 @@ extension MainView: View {
                 setToAdd = VocabSet()
             }, label: {
                 HStack {
-                    Image(systemName: "plus.circle.fill")
+                    Images.plusFilled
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 24)
@@ -200,14 +200,14 @@ extension MainView: View {
 
     private func setView(for set: VocabSet) -> some View {
         HStack {
-            Image(systemName: set.isFavorite ? "star.fill" : "square.stack.3d.down.forward")
+            set.isFavorite ? Images.starFilled : Images.stack
 
             Text(set.name)
 
             Spacer()
 
             if set.hasDueCards {
-                Image(systemName: "lightbulb")
+                Images.lightbulb
                     .foregroundStyle(.orange)
 
                 Text("\(set.dueCards.count)")
