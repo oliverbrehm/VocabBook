@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct VocabLearnView: View {
+struct VocabLearnView {
     // MARK: - Inner types
     enum CoverType {
         case front, back
@@ -81,7 +81,7 @@ extension VocabLearnView {
 }
 
 // MARK: - UI
-extension VocabLearnView {
+extension VocabLearnView: View {
     var body: some View {
         ZStack {
             VStack {
@@ -150,7 +150,7 @@ extension VocabLearnView {
         }
         .frame(maxWidth: .infinity)
         .background(.orange.opacity(0.2))
-        .clipShape(RoundedRectangle(cornerRadius: 10))
+        .roundedCorners(12)
         .padding()
     }
 
@@ -203,7 +203,7 @@ extension VocabLearnView {
                 .padding(.bottom, 20)
                 .background(color)
         })
-        .cornerRadius(10, corners: roundedCorner)
+        .roundedCorners(12, corners: roundedCorner)
     }
 
     private var resultView: some View {
@@ -219,7 +219,7 @@ extension VocabLearnView {
         }
         .padding(24)
         .background(.orange.opacity(0.2))
-        .clipShape(RoundedRectangle(cornerRadius: 10))
+        .roundedCorners(12)
     }
 }
 

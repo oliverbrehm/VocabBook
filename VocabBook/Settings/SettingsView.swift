@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct SettingsView: View {
+struct SettingsView {
     // MARK: - Environment
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject var databaseService: DatabaseService
@@ -35,7 +35,7 @@ extension SettingsView {
 }
 
 // MARK: - UI
-extension SettingsView {
+extension SettingsView: View {
     var body: some View {
         Form {
             Section {

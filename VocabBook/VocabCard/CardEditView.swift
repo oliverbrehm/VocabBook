@@ -9,7 +9,7 @@
 import SwiftUI
 import SwiftData
 
-struct CardEditView: View {
+struct CardEditView {
     private enum Tab {
         case front, back, settings
     }
@@ -81,7 +81,7 @@ extension CardEditView {
 }
 
 // MARK: - UI
-extension CardEditView {
+extension CardEditView: View {
     var body: some View {
         VStack {
             TabView(selection: $selectedTab) {
@@ -162,7 +162,7 @@ extension CardEditView {
                 }
                 .padding(8)
                 .background(.gray.opacity(0.1))
-                .clipShape(RoundedRectangle(cornerRadius: 8))
+                .roundedCorners(8)
                 .padding(.horizontal)
             }
         }
@@ -177,7 +177,7 @@ extension CardEditView {
         }
         .padding(20)
         .background(.orange.opacity(0.15))
-        .clipShape(RoundedRectangle(cornerRadius: 20))
+        .roundedCorners(20)
         .padding([.leading, .trailing])
     }
 

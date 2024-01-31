@@ -9,7 +9,7 @@
 import SwiftUI
 import SwiftData
 
-struct VocabSetView: View {
+struct VocabSetView {
     // MARK: - Environment
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var modelContext
@@ -74,7 +74,7 @@ private extension VocabSetView {
 }
 
 // MARK: - UI
-extension VocabSetView {
+extension VocabSetView: View {
     var body: some View {
         List {
             NavigationLink {

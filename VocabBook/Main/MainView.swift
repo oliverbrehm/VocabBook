@@ -162,7 +162,7 @@ extension MainView: View {
                 )
                 .padding(12)
                 .background(Color(uiColor: .tertiarySystemBackground))
-                .clipShape(RoundedRectangle(cornerRadius: 6))
+                .roundedCorners(6)
 
                 Spacer()
                     .frame(height: 12)
@@ -221,7 +221,7 @@ extension MainView: View {
         .padding(12)
         .background(Color(uiColor: .tertiarySystemBackground))
         .background(.gray.opacity(0.2))
-        .clipShape(RoundedRectangle(cornerRadius: 6))
+        .roundedCorners(6)
     }
 
     private func cardView(for card: VocabCard) -> some View {
@@ -243,7 +243,7 @@ extension MainView: View {
                 .padding(.vertical, 8)
         }
         .background(.orange.opacity(0.2))
-        .clipShape(RoundedRectangle(cornerRadius: 6))
+        .roundedCorners(6)
     }
 }
 

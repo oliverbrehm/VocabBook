@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct VocabSetEditView: View {
+struct VocabSetEditView {
     // MARK: - Environment
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
@@ -18,7 +18,7 @@ struct VocabSetEditView: View {
 }
 
 // MARK: - UI
-extension VocabSetEditView {
+extension VocabSetEditView: View {
     var body: some View {
         VStack {
             Form {

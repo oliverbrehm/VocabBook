@@ -43,7 +43,7 @@ extension LanguageSelectView: View {
             TextField(Strings.search.localized, text: $searchLanguage)
                 .padding(8)
                 .background(Color(uiColor: .tertiarySystemBackground))
-                .clipShape(RoundedRectangle(cornerRadius: 12))
+                .roundedCorners(12)
                 .padding(12)
 
             languageList
@@ -84,7 +84,7 @@ extension LanguageSelectView: View {
             .padding(12)
         }
         .background(Color(uiColor: .tertiarySystemBackground))
-        .clipShape(RoundedRectangle(cornerRadius: 12))
+        .roundedCorners(12)
         .padding(12)
     }
 
@@ -96,7 +96,7 @@ extension LanguageSelectView: View {
                         Text(region.emojiFlag ?? "")
                             .font(.system(size: 42))
                             .background(region == selectedRegion ? .blue : .clear)
-                            .clipShape(RoundedRectangle(cornerRadius: 6))
+                            .roundedCorners(6)
                     }
                     .onTapGesture {
                         selectedRegion = region
@@ -107,7 +107,7 @@ extension LanguageSelectView: View {
             .padding(6)
         }
         .background(Color(uiColor: .tertiarySystemBackground))
-        .clipShape(RoundedRectangle(cornerRadius: 12))
+        .roundedCorners(12)
         .padding(12)
     }
 }
