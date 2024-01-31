@@ -13,7 +13,6 @@
 		5468EB3718B8AEB600716507 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5468EB3618B8AEB600716507 /* Foundation.framework */; };
 		5468EB3918B8AEB600716507 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5468EB3818B8AEB600716507 /* CoreGraphics.framework */; };
 		5468EB3B18B8AEB600716507 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5468EB3A18B8AEB600716507 /* UIKit.framework */; };
-		5468EB4118B8AEB600716507 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5468EB3F18B8AEB600716507 /* InfoPlist.strings */; };
 		5468EB5518B8AEB700716507 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5468EB5418B8AEB700716507 /* Images.xcassets */; };
 		54AE86CF18E34E3F00A3860F /* VBDocumentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 54AE86CE18E34E3F00A3860F /* VBDocumentManager.m */; };
 		54B19D63194A07A1003B0888 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54B19D62194A07A1003B0888 /* StoreKit.framework */; };
@@ -81,8 +80,6 @@
 		5468EB3618B8AEB600716507 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5468EB3818B8AEB600716507 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		5468EB3A18B8AEB600716507 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		5468EB3E18B8AEB600716507 /* Vocab Book-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Vocab Book-Info.plist"; sourceTree = "<group>"; };
-		5468EB4018B8AEB600716507 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5468EB4418B8AEB600716507 /* Vocab Book-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Vocab Book-Prefix.pch"; sourceTree = "<group>"; };
 		5468EB5418B8AEB700716507 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5468EB5B18B8AEB700716507 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -232,9 +229,7 @@
 			children = (
 				54B19D61194A0796003B0888 /* Vocab Book.entitlements */,
 				BB44FE4D2AC011D300510833 /* VocabBookApp.swift */,
-				5468EB3E18B8AEB600716507 /* Vocab Book-Info.plist */,
 				BB44FE4C2AC011D300510833 /* Vocab Book-Bridging-Header.h */,
-				5468EB3F18B8AEB600716507 /* InfoPlist.strings */,
 				BB44FE492AC0113C00510833 /* LaunchScreen.storyboard */,
 			);
 			path = Core;
@@ -464,7 +459,6 @@
 				BB44FE4A2AC0113C00510833 /* LaunchScreen.storyboard in Resources */,
 				5420DC7318C39F3D006CE82F /* Localizable.strings in Resources */,
 				5468EB5518B8AEB700716507 /* Images.xcassets in Resources */,
-				5468EB4118B8AEB600716507 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -554,14 +548,6 @@
 				546795D9193E1C24003FB111 /* de */,
 			);
 			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-		5468EB3F18B8AEB600716507 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5468EB4018B8AEB600716507 /* en */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -684,11 +670,15 @@
 				CODE_SIGN_ENTITLEMENTS = "VocabBook/Core/Vocab Book.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CR6FRMMTU7;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VocabBook/Legacy/Vocab Book-Prefix.pch";
-				INFOPLIST_FILE = "VocabBook/Core/Vocab Book-Info.plist";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 2.0.0;
 				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = "com.vocab-book.vocabbook";
@@ -714,11 +704,15 @@
 				CODE_SIGN_ENTITLEMENTS = "VocabBook/Core/Vocab Book.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CR6FRMMTU7;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VocabBook/Legacy/Vocab Book-Prefix.pch";
-				INFOPLIST_FILE = "VocabBook/Core/Vocab Book-Info.plist";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 2.0.0;
 				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = "com.vocab-book.vocabbook";
