@@ -59,6 +59,19 @@ struct MainView {
         let numberOfDueCards = sets.reduce(0) { $0 + $1.dueCards.count }
         UNUserNotificationCenter.current().setBadgeCount(numberOfDueCards)
     }
+
+    private func deleteCard(_ card: VocabCard) {
+        editingCard = nil
+        
+        if let vocabSet = card.vocabSet {
+            vocabSet.cards?.removeAll { $0.id == card.id }
+        }
+
+        modelContext.delete(card)
+        try? modelContext.save()
+
+        setup()
+    }
 }
 
 // MARK: - UI
@@ -195,11 +208,7 @@ extension MainView: View {
                     CardEditView(
                         vocabCard: editingCard,
                         translator: EmptyTranslator(),
-                        deleteAction: {
-                            editingCard.vocabSet = nil
-                            modelContext.delete(editingCard)
-                            setup()
-                        }
+                        deleteAction: { deleteCard(editingCard) }
                     )
                 }
             })
