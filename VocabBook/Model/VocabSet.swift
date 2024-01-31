@@ -45,4 +45,11 @@ class VocabSet: Identifiable {
         self.language = language
         self.region = region
     }
+
+    init() {
+        self.name = ""
+        self.descriptionText = ""
+        self.language = "en"
+        self.region = "GB"
+    }
 }

@@ -82,7 +82,6 @@
 		BB9DBA932B5A8FE2003EDAF2 /* LearnCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9DBA922B5A8FE2003EDAF2 /* LearnCardsView.swift */; };
 		BBD293502ACB01B200A02C84 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD2934F2ACB01B200A02C84 /* String+Extensions.swift */; };
 		BBD60A4F2AC17472006F396A /* CardLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD60A4E2AC17472006F396A /* CardLevel.swift */; };
-		BBD60A512AC1877C006F396A /* VocabSetAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD60A502AC1877C006F396A /* VocabSetAddView.swift */; };
 		BBD60A532AC18DC9006F396A /* VocabLearnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD60A522AC18DC9006F396A /* VocabLearnView.swift */; };
 		BBF6CDB92AE13257009FF51D /* EmptyTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF6CDB82AE13257009FF51D /* EmptyTranslator.swift */; };
 /* End PBXBuildFile section */
@@ -198,7 +197,6 @@
 		BB9DBA922B5A8FE2003EDAF2 /* LearnCardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnCardsView.swift; sourceTree = "<group>"; };
 		BBD2934F2ACB01B200A02C84 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		BBD60A4E2AC17472006F396A /* CardLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardLevel.swift; sourceTree = "<group>"; };
-		BBD60A502AC1877C006F396A /* VocabSetAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabSetAddView.swift; sourceTree = "<group>"; };
 		BBD60A522AC18DC9006F396A /* VocabLearnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabLearnView.swift; sourceTree = "<group>"; };
 		BBF6CDB82AE13257009FF51D /* EmptyTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTranslator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -382,7 +380,6 @@
 			isa = PBXGroup;
 			children = (
 				BB44FE592AC022F400510833 /* VocabSetView.swift */,
-				BBD60A502AC1877C006F396A /* VocabSetAddView.swift */,
 				BB44FE572AC022DF00510833 /* VocabSetEditView.swift */,
 				BBD60A522AC18DC9006F396A /* VocabLearnView.swift */,
 				BB27A0D82B639EA800384D18 /* LanguageSelectView.swift */,
@@ -652,7 +649,6 @@
 				BB5E3D412ADE7C880059789F /* DatabaseService.swift in Sources */,
 				BBD293502ACB01B200A02C84 /* String+Extensions.swift in Sources */,
 				BB27A0DD2B63CABE00384D18 /* Array+Extensions.swift in Sources */,
-				BBD60A512AC1877C006F396A /* VocabSetAddView.swift in Sources */,
 				BB543DA22AE2D458004C9747 /* Strings.swift in Sources */,
 				BB5D79462ACDB0D9004FA0FB /* ImageButton.swift in Sources */,
 				BB44FE562AC019A400510833 /* VocabSet.swift in Sources */,

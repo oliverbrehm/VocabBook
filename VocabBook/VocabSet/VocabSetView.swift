@@ -79,6 +79,7 @@ extension VocabSetView {
         List {
             NavigationLink {
                 VocabSetEditView(vocabSet: vocabSet)
+                    .navigationTitle(Strings.editSet.localized)
             } label: {
                 Section {
                     VStack(alignment: .leading) {
@@ -183,10 +184,14 @@ extension VocabSetView {
             }
 
             VStack(alignment: .leading) {
-                Text(card.front.firstLine)
-                    .bold()
+                if !card.front.isEmpty {
+                    Text(card.front.firstLine)
+                        .bold()
+                }
 
-                Text(card.back.firstLine)
+                if !card.back.isEmpty {
+                    Text(card.back.firstLine)
+                }
             }
 
             Spacer()

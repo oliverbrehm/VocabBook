@@ -37,8 +37,23 @@ extension VocabSetEditView {
                         Text(vocabSet.setLanguage.stringWithFlag)
                     }
                 }
+
+                if vocabSet.modelContext == nil {
+                    Section {
+                        if !vocabSet.name.isEmpty {
+                            Button(Strings.add.localized) {
+                                modelContext.insert(vocabSet)
+                                dismiss()
+                            }
+                        }
+
+                        Button(Strings.cancel.localized) {
+                            dismiss()
+                        }
+                        .tint(.red)
+                    }
+                }
             }
-            .navigationTitle(Strings.editSet.localized)
         }
     }
 }

@@ -20,7 +20,7 @@ struct MainView: View {
     @State private var cards = [VocabCard]()
     @State private var dueCards = [VocabCard]()
 
-    @State private var showAddSetView = false
+    @State private var setToAdd: VocabSet?
     @State private var learnViewType: VocabLearnView.CoverType?
     @State private var editingCard: VocabCard?
     @AppStorage(UserDefaultsKeys.showAllSets.rawValue) private var showAllSets = false
@@ -32,6 +32,16 @@ struct MainView: View {
         }, set: {
             if !$0 {
                 learnViewType = nil
+            }
+        })
+    }
+
+    private var showAddSetView: Binding<Bool> {
+        Binding(get: {
+            setToAdd != nil
+        }, set: {
+            if !$0 {
+                setToAdd = nil
             }
         })
     }
@@ -85,8 +95,13 @@ extension MainView {
                     }
                 }
             }
-            .sheet(isPresented: $showAddSetView, content: {
-                VocabSetAddView()
+            .sheet(isPresented: showAddSetView, content: {
+                if let setToAdd {
+                    NavigationStack {
+                        VocabSetEditView(vocabSet: setToAdd)
+                            .navigationTitle(Strings.addVocabSet.localized)
+                    }
+                }
             })
             .fullScreenCover(isPresented: showLearnView, content: {
                 VocabLearnView(cards: dueCards, coverType: learnViewType ?? .front, finishAction: {
@@ -119,7 +134,7 @@ extension MainView {
             }
 
             Button(action: {
-                showAddSetView = true
+                setToAdd = VocabSet()
             }, label: {
                 HStack {
                     Image(systemName: "plus.circle.fill")
