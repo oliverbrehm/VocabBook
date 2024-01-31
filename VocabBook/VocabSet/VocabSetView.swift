@@ -97,7 +97,7 @@ extension VocabSetView: View {
                                 .frame(maxWidth: .infinity)
                                 .background(.black)
                                 .padding(.vertical, Sizes.marginSmall)
-                            
+
                             Text(vocabSet.descriptionText)
                         }
                     }
@@ -165,7 +165,7 @@ extension VocabSetView: View {
             if let editingCard {
                 CardEditView(
                     vocabCard: editingCard,
-                    translator: EmptyTranslator(), // TODO: translation suggestion feature not to be released yet
+                    translator: EmptyTranslator(),
                     deleteAction: { deleteCard(editingCard) }
                 )
             }

@@ -8,6 +8,7 @@
 
 import Foundation
 
+// TODO: translation suggestion feature not to be released yet
 protocol ITranslator: ObservableObject {
     func queryTranslationSuggestions(for text: String) async -> [String]
 }

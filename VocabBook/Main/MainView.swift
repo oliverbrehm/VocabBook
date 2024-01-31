@@ -50,7 +50,7 @@ struct MainView {
     private func setup () {
         var cardsFetchDescriptor = FetchDescriptor<VocabCard>()
         cardsFetchDescriptor.sortBy = [SortDescriptor(\VocabCard.creationDate, order: .reverse), SortDescriptor(\VocabCard.front)]
-        cardsFetchDescriptor.fetchLimit = 24
+        cardsFetchDescriptor.fetchLimit = Constants.newestCardsToPreview
         cards = (try? modelContext.fetch(cardsFetchDescriptor)) ?? []
 
         let cardsToLearnDescriptor = FetchDescriptor<VocabCard>()
@@ -170,7 +170,7 @@ extension MainView: View {
             }
 
             LazyVGrid(columns: [GridItem(.adaptive(minimum: Sizes.cardMin, maximum: Sizes.cardMax), spacing: Sizes.marginDefault)], alignment: .leading) {
-                ForEach(cards.prefix(Constants.newestCardsToPreview)) { card in
+                ForEach(cards) { card in
                     Button {
                         editingCard = card
                     } label: {
@@ -187,7 +187,7 @@ extension MainView: View {
                 if let editingCard {
                     CardEditView(
                         vocabCard: editingCard,
-                        translator: EmptyTranslator(), // TODO: translation suggestion feature not to be released yet
+                        translator: EmptyTranslator(),
                         deleteAction: {
                             editingCard.vocabSet = nil
                             modelContext.delete(editingCard)
