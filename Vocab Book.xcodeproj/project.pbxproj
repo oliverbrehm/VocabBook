@@ -45,6 +45,7 @@
 		BB70BCC62AC735E5007D732B /* LibreTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB70BCC52AC735E5007D732B /* LibreTranslator.swift */; };
 		BB70BCC82AC735EB007D732B /* MockTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB70BCC72AC735EB007D732B /* MockTranslator.swift */; };
 		BB70BCCA2AC745FD007D732B /* PreviewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB70BCC92AC745FD007D732B /* PreviewContainer.swift */; };
+		BB75B1592B6ADBB80016B8C4 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = BB75B1582B6ADBB80016B8C4 /* README.md */; };
 		BB7932892AE25AEA00847A09 /* UserDefaultsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7932882AE25AEA00847A09 /* UserDefaultsStorage.swift */; };
 		BB9DBA932B5A8FE2003EDAF2 /* LearnCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9DBA922B5A8FE2003EDAF2 /* LearnCardsView.swift */; };
 		BBD293502ACB01B200A02C84 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD2934F2ACB01B200A02C84 /* String+Extensions.swift */; };
@@ -124,6 +125,7 @@
 		BB70BCC52AC735E5007D732B /* LibreTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibreTranslator.swift; sourceTree = "<group>"; };
 		BB70BCC72AC735EB007D732B /* MockTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTranslator.swift; sourceTree = "<group>"; };
 		BB70BCC92AC745FD007D732B /* PreviewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewContainer.swift; sourceTree = "<group>"; };
+		BB75B1582B6ADBB80016B8C4 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		BB7932882AE25AEA00847A09 /* UserDefaultsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsStorage.swift; sourceTree = "<group>"; };
 		BB8851802AC832A300492763 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		BB8851822AC832A300492763 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -153,6 +155,7 @@
 		5468EB2A18B8AEB600716507 = {
 			isa = PBXGroup;
 			children = (
+				BB75B1582B6ADBB80016B8C4 /* README.md */,
 				BB5D79422ACDAFA4004FA0FB /* .swiftlint.yml */,
 				BB5D79522ACDC259004FA0FB /* VocabBook */,
 				BB5D79782ACDC929004FA0FB /* web */,
@@ -457,6 +460,7 @@
 			files = (
 				BB5D79432ACDAFA4004FA0FB /* .swiftlint.yml in Resources */,
 				BB44FE4A2AC0113C00510833 /* LaunchScreen.storyboard in Resources */,
+				BB75B1592B6ADBB80016B8C4 /* README.md in Resources */,
 				5420DC7318C39F3D006CE82F /* Localizable.strings in Resources */,
 				5468EB5518B8AEB700716507 /* Images.xcassets in Resources */,
 			);
