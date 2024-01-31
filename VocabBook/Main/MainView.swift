@@ -56,7 +56,7 @@ struct MainView {
         let cardsToLearnDescriptor = FetchDescriptor<VocabCard>()
         dueCards = ((try? modelContext.fetch(cardsToLearnDescriptor)) ?? []).filter { $0.isDue }
 
-        let numberOfDueCards = sets.filter { $0.isFavorite }.reduce(0) { $0 + $1.dueCards.count }
+        let numberOfDueCards = sets.reduce(0) { $0 + $1.dueCards.count }
         UNUserNotificationCenter.current().setBadgeCount(numberOfDueCards)
     }
 }
@@ -100,6 +100,7 @@ extension MainView: View {
                     NavigationStack {
                         VocabSetEditView(vocabSet: setToAdd)
                             .navigationTitle(Strings.addVocabSet.localized)
+                            .navigationBarTitleDisplayMode(.inline)
                     }
                 }
             })
@@ -182,7 +183,7 @@ extension MainView: View {
                         .buttonStyle(.plain)
                     }
                 }
-                
+
                 Spacer()
             }
             .fullScreenCover(isPresented: Binding(get: {

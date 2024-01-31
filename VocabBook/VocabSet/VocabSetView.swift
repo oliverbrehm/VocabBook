@@ -67,9 +67,15 @@ private extension VocabSetView {
     }
 
     func deleteSet() {
+        for card in vocabSet.cards ?? [] {
+            modelContext.delete(card)
+        }
+
         modelContext.delete(vocabSet)
-        dismiss()
+
         try? modelContext.save()
+        
+        dismiss()
     }
 }
 
