@@ -105,11 +105,16 @@ extension CardEditView: View {
             .padding([.top, .bottom])
 
             HStack {
-                Button(selectedTab == .front ? Strings.back.localized : Strings.front.localized, systemImage: "arrow.clockwise.circle.fill") {
+                Button(action: {
                     withAnimation {
                         selectedTab = (selectedTab == Tab.front ? .back : .front)
                     }
-                }
+                }, label: {
+                    HStack {
+                        Images.rotateRight
+                        Text(selectedTab == .front ? Strings.back.localized : Strings.front.localized)
+                    }
+                })
 
                 Spacer()
 
@@ -119,11 +124,16 @@ extension CardEditView: View {
 
                 Spacer()
 
-                Button(Strings.settings.localized, systemImage: "gear") {
+                Button(action: {
                     withAnimation {
                         selectedTab = .settings
                     }
-                }
+                }, label: {
+                    HStack {
+                        Images.settings
+                        Text(Strings.settings.localized)
+                    }
+                })
                 .disabled(selectedTab == .settings)
             }
             .padding([.leading, .trailing, .bottom], 32)
@@ -196,9 +206,14 @@ extension CardEditView: View {
             }
 
             Section(Strings.reset.localized) {
-                Button(Strings.resetLevel.localized, systemImage: "arrow.uturn.backward.circle") {
+                Button(action: {
                     showConfirmReset = true
-                }
+                }, label: {
+                    HStack {
+                        Images.rotateLeft
+                        Text(Strings.resetLevel.localized)
+                    }
+                })
                 .alert(Strings.confirmResetSetQuestion.localized, isPresented: $showConfirmReset) {
                     Button(Strings.no.localized) {}
 
@@ -207,9 +222,14 @@ extension CardEditView: View {
                     }
                 }
 
-                Button(Strings.deleteCard.localized, systemImage: "trash.fill") {
+                Button(action: {
                     showConfirmDelete = true
-                }
+                }, label: {
+                    HStack {
+                        Images.delete
+                        Text(Strings.deleteCard.localized)
+                    }
+                })
                 .foregroundStyle(.red)
                 .alert(Strings.confirmRemoveCardQuestion.localized, isPresented: $showConfirmDelete) {
                     Button(Strings.no.localized) {}

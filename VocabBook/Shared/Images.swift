@@ -25,4 +25,7 @@ enum Images {
     static let thumbsUp = Image(systemName: "hand.thumbsup.fill")
     static let thumbsDown = Image(systemName: "hand.thumbsdown.fill")
     static let lightbulb2 = Image(systemName: "lightbulb.2.fill")
+    static let rotateRight = Image(systemName: "arrow.clockwise.circle.fill")
+    static let rotateLeft = Image(systemName: "arrow.uturn.backward.circle")
+    static let delete = Image(systemName: "trash.fill")
 }
