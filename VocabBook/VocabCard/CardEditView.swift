@@ -23,17 +23,15 @@ struct CardEditView {
     // MARK: - State
     @State private var selectedTab = Tab.front
     @State private var translationSuggestions: [String] = []
+    @State private var showConfirmDelete = false
+    @State private var showConfirmReset = false
+    @State private var lookupWord: String?
     @FocusState private var focussedView: Tab?
 
-    @State var showConfirmDelete = false
-    @State var showConfirmReset = false
     // MARK: - Properties
-    let translator: any ITranslator
     @Bindable var vocabCard: VocabCard
+    let translator: any ITranslator
     let deleteAction: () -> Void
-
-    // MARK: - Private properties
-    @State private var lookupWord: String?
 }
 
 // MARK: - Actions
@@ -249,8 +247,8 @@ extension CardEditView: View {
     let previewContainer = PreviewContainer()
 
     return CardEditView(
+        vocabCard: previewContainer.newCard(), 
         translator: MockTranslator(),
-        vocabCard: previewContainer.newCard(),
         deleteAction: {}
     )
     .modelContainer(previewContainer.modelContainer)

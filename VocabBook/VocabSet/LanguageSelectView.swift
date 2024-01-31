@@ -17,14 +17,7 @@ struct LanguageSelectView {
     // MARK: - Properties
     let vocabSet: VocabSet
 
-    // MARK: - Private functions
-    private func updateSet() {
-        vocabSet.setLanguage = SetLanguage(
-            languageIdentifier: selectedLanugage.identifier,
-            regionIdentifier: selectedRegion.identifier
-        )
-    }
-
+    // MARK: - Private properties
     private var filteredLanguages: [Locale.LanguageCode] {
         if searchLanguage.isEmpty {
             return SetLanguage.allLanguages()
@@ -33,6 +26,14 @@ struct LanguageSelectView {
             return SetLanguage.allLanguages()
                 .filter { $0.languageString.lowercased().contains(searchString) }
         }
+    }
+
+    // MARK: - Private functions
+    private func updateSet() {
+        vocabSet.setLanguage = SetLanguage(
+            languageIdentifier: selectedLanugage.identifier,
+            regionIdentifier: selectedRegion.identifier
+        )
     }
 }
 

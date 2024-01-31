@@ -15,7 +15,7 @@ struct SettingsView {
     @EnvironmentObject var legacyDataMigrator: LegacyDataMigrator
 
     // MARK: - State
-    @State var dataMigrationInProgress = false
+    @State private var dataMigrationInProgress = false
 }
 
 // MARK: - Actions

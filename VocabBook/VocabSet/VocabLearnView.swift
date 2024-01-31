@@ -9,7 +9,6 @@
 import SwiftUI
 
 struct VocabLearnView {
-    // MARK: - Inner types
     enum CoverType {
         case front, back
     }

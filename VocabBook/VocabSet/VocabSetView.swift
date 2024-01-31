@@ -164,8 +164,8 @@ extension VocabSetView: View {
         }), content: {
             if let editingCard {
                 CardEditView(
-                    translator: EmptyTranslator(), // TODO: translation suggestion feature not to be released yet
                     vocabCard: editingCard,
+                    translator: EmptyTranslator(), // TODO: translation suggestion feature not to be released yet
                     deleteAction: { deleteCard(editingCard) }
                 )
             }
