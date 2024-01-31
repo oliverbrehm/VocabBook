@@ -169,15 +169,21 @@ extension MainView: View {
                 .roundedCorners(Sizes.marginSmall)
             }
 
-            LazyVGrid(columns: [GridItem(.adaptive(minimum: Sizes.cardMin, maximum: Sizes.cardMax), spacing: Sizes.marginDefault)], alignment: .leading) {
-                ForEach(cards) { card in
-                    Button {
-                        editingCard = card
-                    } label: {
-                        cardView(for: card)
+            HStack(spacing: 0) {
+                Spacer()
+
+                LazyVGrid(columns: [GridItem(.adaptive(minimum: Sizes.cardMin, maximum: Sizes.cardMax), spacing: Sizes.marginDefault)], alignment: .leading) {
+                    ForEach(cards) { card in
+                        Button {
+                            editingCard = card
+                        } label: {
+                            cardView(for: card)
+                        }
+                        .buttonStyle(.plain)
                     }
-                    .buttonStyle(.plain)
                 }
+                
+                Spacer()
             }
             .fullScreenCover(isPresented: Binding(get: {
                 editingCard != nil
