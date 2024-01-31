@@ -18,7 +18,7 @@ struct LearnCardsView {
 // MARK: - UI
 extension LearnCardsView: View {
     var body: some View {
-        VStack(spacing: 24) {
+        VStack(spacing: Sizes.marginBig) {
             HStack {
                 Images.lightbulb
                     .foregroundStyle(.orange)

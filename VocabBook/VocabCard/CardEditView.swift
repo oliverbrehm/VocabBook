@@ -134,7 +134,7 @@ extension CardEditView: View {
                 })
                 .disabled(selectedTab == .settings)
             }
-            .padding([.leading, .trailing, .bottom], 32)
+            .padding([.leading, .trailing, .bottom], Sizes.marginBigger)
         }
         .background(Colors.containerBackground)
         .onAppear {
@@ -149,7 +149,7 @@ extension CardEditView: View {
             textInputView(title: Strings.back.localized, text: $vocabCard.back, focus: .back)
 
             ForEach(translationSuggestions, id: \.self) { translation in
-                HStack(spacing: 16) {
+                HStack(spacing: Sizes.marginDefault) {
                     Button(action: {
                         addTranslation(translation)
                     }, label: {
@@ -168,9 +168,9 @@ extension CardEditView: View {
                     })
                     .tint(.red)
                 }
-                .padding(8)
-                .background(.gray.opacity(0.1))
-                .roundedCorners(8)
+                .padding(Sizes.marginDefault)
+                .background(Colors.elementBackground)
+                .roundedCorners(Sizes.marginDefault)
                 .padding(.horizontal)
             }
         }
@@ -183,9 +183,9 @@ extension CardEditView: View {
 
             Spacer()
         }
-        .padding(20)
-        .background(.orange.opacity(0.15))
-        .roundedCorners(20)
+        .padding(Sizes.marginDefault)
+        .background(Colors.cardBackground)
+        .roundedCorners(Sizes.marginDefault)
         .padding([.leading, .trailing])
     }
 

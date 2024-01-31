@@ -9,6 +9,9 @@
 import SwiftUI
 
 enum Colors {
+    
+
     static let containerBackground = Color(uiColor: .systemGroupedBackground)
     static let elementBackground = Color(uiColor: .tertiarySystemBackground)
+    static let cardBackground = Color.orange.opacity(0.2)
 }

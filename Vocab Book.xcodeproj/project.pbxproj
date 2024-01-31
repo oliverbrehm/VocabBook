@@ -20,6 +20,7 @@
 		BB1896792B6A4F200004E207 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1896782B6A4F200004E207 /* Images.swift */; };
 		BB18967B2B6A4F2E0004E207 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB18967A2B6A4F2E0004E207 /* Colors.swift */; };
 		BB18967D2B6A4F470004E207 /* Sizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB18967C2B6A4F470004E207 /* Sizes.swift */; };
+		BB18967F2B6A5D8E0004E207 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB18967E2B6A5D8E0004E207 /* Constants.swift */; };
 		BB27A0D92B639EA800384D18 /* LanguageSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB27A0D82B639EA800384D18 /* LanguageSelectView.swift */; };
 		BB27A0DB2B639F9700384D18 /* SetLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB27A0DA2B639F9700384D18 /* SetLanguage.swift */; };
 		BB27A0DD2B63CABE00384D18 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB27A0DC2B63CABE00384D18 /* Array+Extensions.swift */; };
@@ -92,6 +93,7 @@
 		BB1896782B6A4F200004E207 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		BB18967A2B6A4F2E0004E207 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		BB18967C2B6A4F470004E207 /* Sizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sizes.swift; sourceTree = "<group>"; };
+		BB18967E2B6A5D8E0004E207 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BB27A0D82B639EA800384D18 /* LanguageSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSelectView.swift; sourceTree = "<group>"; };
 		BB27A0DA2B639F9700384D18 /* SetLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetLanguage.swift; sourceTree = "<group>"; };
 		BB27A0DC2B63CABE00384D18 /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 				BB7932872AE25AD900847A09 /* PropertyWrappers */,
 				BB5D796D2ACDC696004FA0FB /* Views */,
 				BB5D796E2ACDC6A0004FA0FB /* Extensions */,
+				BB18967E2B6A5D8E0004E207 /* Constants.swift */,
 				BB543DA12AE2D458004C9747 /* Strings.swift */,
 				BB543DA32AE2D794004C9747 /* UserDefaultsKeys.swift */,
 				BB1896782B6A4F200004E207 /* Images.swift */,
@@ -519,6 +522,7 @@
 				BB5289CF2AC169DB008968F8 /* VocabCard.swift in Sources */,
 				54AE86CF18E34E3F00A3860F /* VBDocumentManager.m in Sources */,
 				BB44FE522AC0192700510833 /* MainView.swift in Sources */,
+				BB18967F2B6A5D8E0004E207 /* Constants.swift in Sources */,
 				BB5D79402ACDA55B004FA0FB /* SettingsView.swift in Sources */,
 				BB9DBA932B5A8FE2003EDAF2 /* LearnCardsView.swift in Sources */,
 				BB5289D12AC16A4A008968F8 /* CardEditView.swift in Sources */,

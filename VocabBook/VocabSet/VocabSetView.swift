@@ -93,10 +93,10 @@ extension VocabSetView: View {
 
                         if !vocabSet.descriptionText.isEmpty {
                             Spacer()
-                                .frame(height: 1)
+                                .frame(height: Sizes.separator)
                                 .frame(maxWidth: .infinity)
                                 .background(.black)
-                                .padding(.vertical, 4)
+                                .padding(.vertical, Sizes.marginSmall)
                             
                             Text(vocabSet.descriptionText)
                         }
@@ -177,7 +177,7 @@ extension VocabSetView: View {
     }
 
     private func cardView(_ card: VocabCard) -> some View {
-        HStack(spacing: 12) {
+        HStack(spacing: Sizes.marginDefault) {
             if card.isDue {
                 Images.lightbulb
                     .foregroundStyle(.orange)

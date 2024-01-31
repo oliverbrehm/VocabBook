@@ -107,12 +107,12 @@ extension VocabLearnView: View {
     }
 
     private var stateView: some View {
-        HStack(spacing: 32) {
+        HStack(spacing: Sizes.marginBigger) {
             HStack {
                 Text("\(nRight)")
                 Images.thumbsUp
                     .resizable()
-                    .frame(width: 24, height: 24)
+                    .frame(width: Sizes.icon, height: Sizes.icon)
                     .foregroundStyle(.green)
                     .symbolEffect(.bounce, value: animateRight)
             }
@@ -121,7 +121,7 @@ extension VocabLearnView: View {
                 Text("\(nWrong)")
                 Images.thumbsDown
                     .resizable()
-                    .frame(width: 24, height: 24)
+                    .frame(width: Sizes.icon, height: Sizes.icon)
                     .foregroundStyle(.red)
                     .symbolEffect(.bounce, value: animateWrong)
             }
@@ -130,7 +130,7 @@ extension VocabLearnView: View {
 
             Spacer()
 
-            ImageButton(image: Images.closeFilled, size: 28) {
+            ImageButton(image: Images.closeFilled, size: Sizes.icon) {
                 finish()
             }
         }
@@ -142,24 +142,24 @@ extension VocabLearnView: View {
 
             Spacer()
                 .frame(maxWidth: .infinity)
-                .frame(height: 1.5)
-                .background(.gray.opacity(0.7))
+                .frame(height: Sizes.separator)
+                .background(.gray)
 
             coverableView(text: card.back, textCovered: coverBack, language: card.vocabSet?.setLanguage)
         }
         .frame(maxWidth: .infinity)
-        .background(.orange.opacity(0.2))
-        .roundedCorners(12)
+        .background(Colors.cardBackground)
+        .roundedCorners(Sizes.marginDefault)
         .padding()
     }
 
     @ViewBuilder
     private func coverableView(text: String, textCovered: Bool, language: SetLanguage?) -> some View {
         if textCovered {
-            HStack(spacing: 18) {
+            HStack(spacing: Sizes.marginBig) {
                 if let flag = language?.emojiFlag {
                     Text(flag)
-                        .font(.system(size: 32))
+                        .font(.system(size: Sizes.iconBig))
                 } else if let language = language?.languageString, !language.isEmpty {
                     Text("(\(language))")
                 }
@@ -182,10 +182,10 @@ extension VocabLearnView: View {
 
     @ViewBuilder
     private var actionView: some View {
-        VStack(spacing: 16) {
+        VStack(spacing: Sizes.marginDefault) {
             Text(Strings.knewTheAnswerQuestion.localized)
 
-            HStack(spacing: 20) {
+            HStack(spacing: Sizes.marginBig) {
                 actionButton(text: Strings.no.localized, color: .red, roundedCorner: .topRight, action: guessedWrong)
                 actionButton(text: Strings.yes.localized, color: .green, roundedCorner: .topLeft, action: guessedRight)
             }
@@ -199,14 +199,14 @@ extension VocabLearnView: View {
                 .foregroundStyle(.white)
                 .padding()
                 .frame(maxWidth: .infinity)
-                .padding(.bottom, 20)
+                .padding(.bottom, Sizes.marginBig)
                 .background(color)
         })
-        .roundedCorners(12, corners: roundedCorner)
+        .roundedCorners(Sizes.marginDefault, corners: roundedCorner)
     }
 
     private var resultView: some View {
-        VStack(spacing: 20) {
+        VStack(spacing: Sizes.marginBig) {
             Text(Strings.learningComplete.localized)
                 .bold()
 
@@ -216,9 +216,9 @@ extension VocabLearnView: View {
                 finish()
             }
         }
-        .padding(24)
-        .background(.orange.opacity(0.2))
-        .roundedCorners(12)
+        .padding(Sizes.marginBig)
+        .background(Colors.cardBackground)
+        .roundedCorners(Sizes.marginDefault)
     }
 }
 

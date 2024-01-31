@@ -40,17 +40,17 @@ struct LanguageSelectView {
 // MARK: - UI
 extension LanguageSelectView: View {
     var body: some View {
-        VStack {
+        VStack(spacing: Sizes.marginDefault) {
             TextField(Strings.search.localized, text: $searchLanguage)
-                .padding(8)
+                .padding(Sizes.marginDefault)
                 .background(Colors.elementBackground)
-                .roundedCorners(12)
-                .padding(12)
+                .roundedCorners(Sizes.marginDefault)
 
             languageList
 
             flagList
         }
+        .padding(.horizontal, Sizes.marginDefault)
         .background(Colors.containerBackground)
         .navigationTitle(vocabSet.setLanguage.stringWithFlag)
         .navigationBarTitleDisplayMode(.inline)
@@ -75,29 +75,28 @@ extension LanguageSelectView: View {
                         Spacer()
                     }
                     .frame(maxWidth: .infinity)
-                    .padding(4)
+                    .padding(Sizes.marginSmall)
                     .onTapGesture {
                         selectedLanugage = language
                         updateSet()
                     }
                 }
             }
-            .padding(12)
+            .padding(Sizes.marginDefault)
         }
         .background(Colors.elementBackground)
-        .roundedCorners(12)
-        .padding(12)
+        .roundedCorners(Sizes.marginDefault)
     }
 
     private var flagList: some View {
         ScrollView {
-            LazyVGrid(columns: [GridItem(.adaptive(minimum: 64, maximum: 64))]) {
+            LazyVGrid(columns: [GridItem(.adaptive(minimum: Sizes.flagContainer, maximum: Sizes.flagContainer))]) {
                 ForEach(selectedLanugage.regions, id: \.identifier) { region in
                     HStack {
                         Text(region.emojiFlag ?? "")
-                            .font(.system(size: 42))
+                            .font(.system(size: Sizes.iconBig))
                             .background(region == selectedRegion ? .blue : .clear)
-                            .roundedCorners(6)
+                            .roundedCorners(Sizes.marginSmall)
                     }
                     .onTapGesture {
                         selectedRegion = region
@@ -105,11 +104,10 @@ extension LanguageSelectView: View {
                     }
                 }
             }
-            .padding(6)
+            .padding(Sizes.marginSmall)
         }
         .background(Colors.elementBackground)
-        .roundedCorners(12)
-        .padding(12)
+        .roundedCorners(Sizes.marginDefault)
     }
 }
 

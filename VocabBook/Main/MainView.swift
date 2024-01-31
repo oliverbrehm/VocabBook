@@ -66,7 +66,7 @@ extension MainView: View {
     var body: some View {
         NavigationStack {
             ScrollView {
-                VStack(alignment: .leading, spacing: 36) {
+                VStack(alignment: .leading, spacing: Sizes.marginBigger) {
                     setList
 
                     if !cards.isEmpty {
@@ -115,8 +115,19 @@ extension MainView: View {
 
     private var setList: some View {
         VStack(alignment: .leading) {
-            Text(Strings.sets.localized)
-                .bold()
+            HStack {
+                Text(Strings.sets.localized)
+                    .bold()
+
+                if !sets.isEmpty {
+                    Spacer()
+                    
+                    Button(showAllSets ? Strings.showFavorites.localized : Strings.showAll.localized) {
+                        showAllSets.toggle()
+                    }
+                    .padding()
+                }
+            }
 
             ForEach(showAllSets ? sets : sets.filter { $0.isFavorite }) { set in
                 NavigationLink {
@@ -126,13 +137,6 @@ extension MainView: View {
                 }
             }
 
-            if !sets.isEmpty {
-                Button(showAllSets ? Strings.showFavorites.localized : Strings.showAll.localized) {
-                    showAllSets.toggle()
-                }
-                .padding()
-            }
-
             Button(action: {
                 setToAdd = VocabSet()
             }, label: {
@@ -140,17 +144,17 @@ extension MainView: View {
                     Images.plusFilled
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 24)
+                        .frame(width: Sizes.icon)
 
                     Text(Strings.addVocabSet.localized)
                 }
             })
-            .padding([.top, .horizontal], 8)
+            .padding([.top, .horizontal], Sizes.marginSmall)
         }
     }
 
     private var cardList: some View {
-        VStack(alignment: .leading, spacing: 18) {
+        VStack(alignment: .leading, spacing: Sizes.marginBig) {
             Text(Strings.cards.localized)
                 .bold()
 
@@ -160,16 +164,13 @@ extension MainView: View {
                     coverFrontAction: { learnViewType = .front },
                     coverBackAction: { learnViewType = .back }
                 )
-                .padding(12)
+                .padding(Sizes.marginDefault)
                 .background(Colors.elementBackground)
-                .roundedCorners(6)
-
-                Spacer()
-                    .frame(height: 12)
+                .roundedCorners(Sizes.marginSmall)
             }
 
-            LazyVGrid(columns: [GridItem(.adaptive(minimum: 150, maximum: 180), spacing: 12)], alignment: .leading) {
-                ForEach(cards.prefix(40)) { card in
+            LazyVGrid(columns: [GridItem(.adaptive(minimum: Sizes.cardMin, maximum: Sizes.cardMax), spacing: Sizes.marginDefault)], alignment: .leading) {
+                ForEach(cards.prefix(Constants.newestCardsToPreview)) { card in
                     Button {
                         editingCard = card
                     } label: {
@@ -218,10 +219,9 @@ extension MainView: View {
                 Text(flag)
             }
         }
-        .padding(12)
+        .padding(Sizes.marginDefault)
         .background(Colors.elementBackground)
-        .background(.gray.opacity(0.2))
-        .roundedCorners(6)
+        .roundedCorners(Sizes.marginSmall)
     }
 
     private func cardView(for card: VocabCard) -> some View {
@@ -230,20 +230,20 @@ extension MainView: View {
                 .lineLimit(1)
                 .bold()
                 .padding(.horizontal)
-                .padding(.vertical, 8)
+                .padding(.vertical, Sizes.marginSmall)
 
             Spacer()
-                .frame(height: 1)
+                .frame(height: Sizes.separator)
                 .frame(maxWidth: .infinity)
                 .background(.gray)
 
             Text(card.back.firstLines(3, padding: true))
                 .lineLimit(3)
                 .padding(.horizontal)
-                .padding(.vertical, 8)
+                .padding(.vertical, Sizes.marginSmall)
         }
-        .background(.orange.opacity(0.2))
-        .roundedCorners(6)
+        .background(Colors.cardBackground)
+        .roundedCorners(Sizes.marginSmall)
     }
 }
 
