@@ -15,6 +15,8 @@
 		5468EB3B18B8AEB600716507 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5468EB3A18B8AEB600716507 /* UIKit.framework */; };
 		5468EB5518B8AEB700716507 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5468EB5418B8AEB700716507 /* Images.xcassets */; };
 		54AE86CF18E34E3F00A3860F /* VBDocumentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 54AE86CE18E34E3F00A3860F /* VBDocumentManager.m */; };
+		BB0AFFB22B74E77C00892DD6 /* CardLevelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0AFFB12B74E77C00892DD6 /* CardLevelTests.swift */; };
+		BB0AFFBA2B74E9C300892DD6 /* SetLanguageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0AFFB92B74E9C300892DD6 /* SetLanguageTests.swift */; };
 		BB1896792B6A4F200004E207 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1896782B6A4F200004E207 /* Images.swift */; };
 		BB18967B2B6A4F2E0004E207 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB18967A2B6A4F2E0004E207 /* Colors.swift */; };
 		BB18967D2B6A4F470004E207 /* Sizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB18967C2B6A4F470004E207 /* Sizes.swift */; };
@@ -53,6 +55,16 @@
 		BBF6CDB92AE13257009FF51D /* EmptyTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF6CDB82AE13257009FF51D /* EmptyTranslator.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		BB0AFFB32B74E77C00892DD6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5468EB2B18B8AEB600716507 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5468EB3218B8AEB600716507;
+			remoteInfo = "Vocab Book";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		BB8851962AC832A400492763 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -86,6 +98,9 @@
 		54AE86CD18E34E3F00A3860F /* VBDocumentManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBDocumentManager.h; sourceTree = "<group>"; };
 		54AE86CE18E34E3F00A3860F /* VBDocumentManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBDocumentManager.m; sourceTree = "<group>"; };
 		54B19D61194A0796003B0888 /* Vocab Book.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Vocab Book.entitlements"; sourceTree = "<group>"; };
+		BB0AFFAF2B74E77B00892DD6 /* Vocab BookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Vocab BookTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB0AFFB12B74E77C00892DD6 /* CardLevelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardLevelTests.swift; sourceTree = "<group>"; };
+		BB0AFFB92B74E9C300892DD6 /* SetLanguageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetLanguageTests.swift; sourceTree = "<group>"; };
 		BB1896782B6A4F200004E207 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		BB18967A2B6A4F2E0004E207 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		BB18967C2B6A4F470004E207 /* Sizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sizes.swift; sourceTree = "<group>"; };
@@ -146,6 +161,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BB0AFFAC2B74E77B00892DD6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -156,6 +178,7 @@
 				BB5D79422ACDAFA4004FA0FB /* .swiftlint.yml */,
 				BB5D79522ACDC259004FA0FB /* VocabBook */,
 				BB5D79782ACDC929004FA0FB /* web */,
+				BB0AFFB02B74E77C00892DD6 /* Vocab BookTests */,
 				5468EB3518B8AEB600716507 /* Frameworks */,
 				5468EB3418B8AEB600716507 /* Products */,
 			);
@@ -165,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				5468EB3318B8AEB600716507 /* Vocab Book.app */,
+				BB0AFFAF2B74E77B00892DD6 /* Vocab BookTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -181,6 +205,23 @@
 				BB8851822AC832A300492763 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BB0AFFB02B74E77C00892DD6 /* Vocab BookTests */ = {
+			isa = PBXGroup;
+			children = (
+				BB0AFFB82B74E8B800892DD6 /* Model */,
+			);
+			path = "Vocab BookTests";
+			sourceTree = "<group>";
+		};
+		BB0AFFB82B74E8B800892DD6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BB0AFFB12B74E77C00892DD6 /* CardLevelTests.swift */,
+				BB0AFFB92B74E9C300892DD6 /* SetLanguageTests.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		BB5D79522ACDC259004FA0FB /* VocabBook */ = {
@@ -398,6 +439,24 @@
 			productReference = 5468EB3318B8AEB600716507 /* Vocab Book.app */;
 			productType = "com.apple.product-type.application";
 		};
+		BB0AFFAE2B74E77B00892DD6 /* Vocab BookTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BB0AFFB52B74E77C00892DD6 /* Build configuration list for PBXNativeTarget "Vocab BookTests" */;
+			buildPhases = (
+				BB0AFFAB2B74E77B00892DD6 /* Sources */,
+				BB0AFFAC2B74E77B00892DD6 /* Frameworks */,
+				BB0AFFAD2B74E77B00892DD6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BB0AFFB42B74E77C00892DD6 /* PBXTargetDependency */,
+			);
+			name = "Vocab BookTests";
+			productName = "Vocab BookTests";
+			productReference = BB0AFFAF2B74E77B00892DD6 /* Vocab BookTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -425,6 +484,10 @@
 							};
 						};
 					};
+					BB0AFFAE2B74E77B00892DD6 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = 5468EB3218B8AEB600716507;
+					};
 				};
 			};
 			buildConfigurationList = 5468EB2E18B8AEB600716507 /* Build configuration list for PBXProject "Vocab Book" */;
@@ -445,6 +508,7 @@
 			projectRoot = "";
 			targets = (
 				5468EB3218B8AEB600716507 /* Vocab Book */,
+				BB0AFFAE2B74E77B00892DD6 /* Vocab BookTests */,
 			);
 		};
 /* End PBXProject section */
@@ -459,6 +523,13 @@
 				BB75B1592B6ADBB80016B8C4 /* README.md in Resources */,
 				5420DC7318C39F3D006CE82F /* Localizable.strings in Resources */,
 				5468EB5518B8AEB700716507 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB0AFFAD2B74E77B00892DD6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -529,7 +600,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BB0AFFAB2B74E77B00892DD6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB0AFFBA2B74E9C300892DD6 /* SetLanguageTests.swift in Sources */,
+				BB0AFFB22B74E77C00892DD6 /* CardLevelTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BB0AFFB42B74E77C00892DD6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5468EB3218B8AEB600716507 /* Vocab Book */;
+			targetProxy = BB0AFFB32B74E77C00892DD6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		540D278E19473E34003B3BAA /* appdescription.txt */ = {
@@ -675,6 +763,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VocabBook/Legacy/Vocab Book-Prefix.pch";
+				GCC_WARN_INHIBIT_ALL_WARNINGS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Vocab Book";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
@@ -710,6 +799,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VocabBook/Legacy/Vocab Book-Prefix.pch";
+				GCC_WARN_INHIBIT_ALL_WARNINGS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Vocab Book";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
@@ -730,6 +820,69 @@
 			};
 			name = Release;
 		};
+		BB0AFFB62B74E77C00892DD6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = CR6FRMMTU7;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GENERATE_INFOPLIST_FILE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "brehm.oliver.Vocab-BookTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Vocab Book.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Vocab Book";
+			};
+			name = Debug;
+		};
+		BB0AFFB72B74E77C00892DD6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = CR6FRMMTU7;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GENERATE_INFOPLIST_FILE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "brehm.oliver.Vocab-BookTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Vocab Book.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Vocab Book";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -747,6 +900,15 @@
 			buildConfigurations = (
 				5468EB6C18B8AEB700716507 /* Debug */,
 				5468EB6D18B8AEB700716507 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BB0AFFB52B74E77C00892DD6 /* Build configuration list for PBXNativeTarget "Vocab BookTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB0AFFB62B74E77C00892DD6 /* Debug */,
+				BB0AFFB72B74E77C00892DD6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

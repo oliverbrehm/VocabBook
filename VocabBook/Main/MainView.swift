@@ -62,7 +62,7 @@ struct MainView {
 
     private func deleteCard(_ card: VocabCard) {
         editingCard = nil
-        
+
         if let vocabSet = card.vocabSet {
             vocabSet.cards?.removeAll { $0.id == card.id }
         }
