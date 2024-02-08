@@ -17,6 +17,7 @@
 		54AE86CF18E34E3F00A3860F /* VBDocumentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 54AE86CE18E34E3F00A3860F /* VBDocumentManager.m */; };
 		BB0AFFB22B74E77C00892DD6 /* CardLevelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0AFFB12B74E77C00892DD6 /* CardLevelTests.swift */; };
 		BB0AFFBA2B74E9C300892DD6 /* SetLanguageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0AFFB92B74E9C300892DD6 /* SetLanguageTests.swift */; };
+		BB0AFFBD2B75065200892DD6 /* DatabaseServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0AFFBC2B75065200892DD6 /* DatabaseServiceTests.swift */; };
 		BB1896792B6A4F200004E207 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1896782B6A4F200004E207 /* Images.swift */; };
 		BB18967B2B6A4F2E0004E207 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB18967A2B6A4F2E0004E207 /* Colors.swift */; };
 		BB18967D2B6A4F470004E207 /* Sizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB18967C2B6A4F470004E207 /* Sizes.swift */; };
@@ -101,6 +102,7 @@
 		BB0AFFAF2B74E77B00892DD6 /* Vocab BookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Vocab BookTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB0AFFB12B74E77C00892DD6 /* CardLevelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardLevelTests.swift; sourceTree = "<group>"; };
 		BB0AFFB92B74E9C300892DD6 /* SetLanguageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetLanguageTests.swift; sourceTree = "<group>"; };
+		BB0AFFBC2B75065200892DD6 /* DatabaseServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseServiceTests.swift; sourceTree = "<group>"; };
 		BB1896782B6A4F200004E207 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		BB18967A2B6A4F2E0004E207 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		BB18967C2B6A4F470004E207 /* Sizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sizes.swift; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 		BB0AFFB02B74E77C00892DD6 /* Vocab BookTests */ = {
 			isa = PBXGroup;
 			children = (
+				BB0AFFBB2B75064500892DD6 /* Services */,
 				BB0AFFB82B74E8B800892DD6 /* Model */,
 			);
 			path = "Vocab BookTests";
@@ -222,6 +225,14 @@
 				BB0AFFB92B74E9C300892DD6 /* SetLanguageTests.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		BB0AFFBB2B75064500892DD6 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				BB0AFFBC2B75065200892DD6 /* DatabaseServiceTests.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		BB5D79522ACDC259004FA0FB /* VocabBook */ = {
@@ -606,6 +617,7 @@
 			files = (
 				BB0AFFBA2B74E9C300892DD6 /* SetLanguageTests.swift in Sources */,
 				BB0AFFB22B74E77C00892DD6 /* CardLevelTests.swift in Sources */,
+				BB0AFFBD2B75065200892DD6 /* DatabaseServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

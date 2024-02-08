@@ -56,7 +56,7 @@ final class DatabaseService: ObservableObject {
     }
 
     @MainActor
-    private func createPreviewData() {
+    func createPreviewData() {
         guard let vocabSets = try? modelContainer.mainContext.fetch(FetchDescriptor<VocabSet>()), vocabSets.isEmpty else {
             return
         }
