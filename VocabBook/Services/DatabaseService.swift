@@ -13,9 +13,13 @@ final class DatabaseService: ObservableObject {
     @Published var modelContainer: ModelContainer
 
     // MARK: - Initializers
-    init() {
+    init(isStoredInMemoryOnly: Bool = false) {
         do {
-            modelContainer = try ModelContainer(for: VocabSet.self, VocabCard.self)
+            modelContainer = try ModelContainer(
+                for: VocabSet.self, 
+                VocabCard.self,
+                configurations: .init(isStoredInMemoryOnly: isStoredInMemoryOnly)
+            )
         } catch {
             fatalError(error.localizedDescription)
         }

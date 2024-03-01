@@ -8,24 +8,30 @@
 
 import SwiftUI
 
-struct LanguageSelectView {
-    // MARK: - State
-    @State private var selectedLanugage = Locale.LanguageCode.english
-    @State private var selectedRegion = Locale.Region.unitedStates
-    @State private var searchLanguage = ""
-
+class LanguageSelectViewModel: ObservableObject {
     // MARK: - Properties
     let vocabSet: VocabSet
 
-    // MARK: - Private properties
-    private var filteredLanguages: [Locale.LanguageCode] {
+    @Published var selectedLanugage = Locale.LanguageCode.english { didSet { updateSet() }}
+    @Published var selectedRegion = Locale.Region.unitedStates { didSet { updateSet() }}
+    @Published var searchLanguage = ""
+
+    var filteredLanguages: [Locale.LanguageCode] {
         if searchLanguage.isEmpty {
-            return SetLanguage.allLanguages()
+            return SetLanguage.allLanguages
         } else {
             let searchString = searchLanguage.lowercased()
-            return SetLanguage.allLanguages()
+            return SetLanguage.allLanguages
                 .filter { $0.languageString.lowercased().contains(searchString) }
         }
+    }
+
+    // MARK: - Initializers
+    init(vocabSet: VocabSet) {
+        self.vocabSet = vocabSet
+
+        selectedRegion = vocabSet.setLanguage.region
+        selectedLanugage = vocabSet.setLanguage.language
     }
 
     // MARK: - Private functions
@@ -37,11 +43,14 @@ struct LanguageSelectView {
     }
 }
 
-// MARK: - UI
-extension LanguageSelectView: View {
+struct LanguageSelectView: View {
+    // MARK: - Environment
+    @ObservedObject var viewModel: LanguageSelectViewModel
+
+    // MARK: - UI
     var body: some View {
         VStack(spacing: Sizes.marginDefault) {
-            TextField(Strings.search.localized, text: $searchLanguage)
+            TextField(Strings.search.localized, text: $viewModel.searchLanguage)
                 .padding(Sizes.marginDefault)
                 .background(Colors.elementBackground)
                 .roundedCorners(Sizes.marginDefault)
@@ -52,33 +61,28 @@ extension LanguageSelectView: View {
         }
         .padding(.horizontal, Sizes.marginDefault)
         .background(Colors.containerBackground)
-        .navigationTitle(vocabSet.setLanguage.stringWithFlag)
+        .navigationTitle(viewModel.vocabSet.setLanguage.stringWithFlag)
         .navigationBarTitleDisplayMode(.inline)
-        .onAppear {
-            selectedRegion = vocabSet.setLanguage.region
-            selectedLanugage = vocabSet.setLanguage.language
-        }
     }
 
     private var languageList: some View {
         ScrollView {
             LazyVStack {
-                ForEach(filteredLanguages, id: \.identifier) { language in
+                ForEach(viewModel.filteredLanguages, id: \.identifier) { language in
                     HStack {
-                        if language == selectedLanugage {
+                        if language == viewModel.selectedLanugage {
                             Images.checkmark
                         }
 
                         Text(language.languageString)
-                            .fontWeight(language == selectedLanugage ? .bold : .regular)
+                            .fontWeight(language == viewModel.selectedLanugage ? .bold : .regular)
 
                         Spacer()
                     }
                     .frame(maxWidth: .infinity)
                     .padding(Sizes.marginSmall)
                     .onTapGesture {
-                        selectedLanugage = language
-                        updateSet()
+                        viewModel.selectedLanugage = language
                     }
                 }
             }
@@ -91,16 +95,15 @@ extension LanguageSelectView: View {
     private var flagList: some View {
         ScrollView {
             LazyVGrid(columns: [GridItem(.adaptive(minimum: Sizes.flagContainer, maximum: Sizes.flagContainer))]) {
-                ForEach(selectedLanugage.regions, id: \.identifier) { region in
+                ForEach(viewModel.selectedLanugage.regions, id: \.identifier) { region in
                     HStack {
                         Text(region.emojiFlag ?? "")
                             .font(.system(size: Sizes.iconBig))
-                            .background(region == selectedRegion ? .blue : .clear)
+                            .background(region == viewModel.selectedRegion ? .blue : .clear)
                             .roundedCorners(Sizes.marginSmall)
                     }
                     .onTapGesture {
-                        selectedRegion = region
-                        updateSet()
+                        viewModel.selectedRegion = region
                     }
                 }
             }
@@ -117,7 +120,7 @@ extension LanguageSelectView: View {
     guard let set = previewContainer.vocabSet else { return EmptyView() }
 
     return NavigationStack {
-        LanguageSelectView(vocabSet: set)
+        LanguageSelectView(viewModel: LanguageSelectViewModel(vocabSet: set))
     }
     .modelContainer(previewContainer.modelContainer)
 }

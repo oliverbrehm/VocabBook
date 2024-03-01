@@ -12,7 +12,7 @@ import SwiftData
 
 @MainActor
 final class DatabaseServiceTests: XCTestCase {
-    let databaseService = DatabaseService()
+    let databaseService = DatabaseService(isStoredInMemoryOnly: true)
 
     var modelContext: ModelContext {
         databaseService.modelContainer.mainContext

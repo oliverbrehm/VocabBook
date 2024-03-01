@@ -38,11 +38,11 @@ struct SetLanguage {
     }
 
     // MARK: - Static properties
-    static func allLanguages() -> [Locale.LanguageCode] {
+    static var allLanguages: [Locale.LanguageCode] = {
         Locale.LanguageCode.isoLanguageCodes
             .filter { !$0.languageString.isEmpty }
             .sorted { $0.languageString < $1.languageString }
-    }
+    }()
 }
 
 extension Locale.LanguageCode {

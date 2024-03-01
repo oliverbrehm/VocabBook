@@ -43,11 +43,11 @@ final class SetLanguageTests: XCTestCase {
     }
 
     func testLanguageList() throws {
-        XCTAssert(!SetLanguage.allLanguages().isEmpty)
+        XCTAssert(!SetLanguage.allLanguages.isEmpty)
 
-        XCTAssert(SetLanguage.allLanguages().contains { $0.identifier.lowercased() == "de" })
-        XCTAssert(SetLanguage.allLanguages().contains { $0.identifier.lowercased() == "en" })
-        XCTAssert(SetLanguage.allLanguages().contains { $0.identifier.lowercased() == "it" })
+        XCTAssert(SetLanguage.allLanguages.contains { $0.identifier.lowercased() == "de" })
+        XCTAssert(SetLanguage.allLanguages.contains { $0.identifier.lowercased() == "en" })
+        XCTAssert(SetLanguage.allLanguages.contains { $0.identifier.lowercased() == "it" })
     }
 
     func testFlagList() throws {

@@ -32,7 +32,7 @@ extension VocabSetEditView: View {
 
                 Section(Strings.language.localized) {
                     NavigationLink {
-                        LanguageSelectView(vocabSet: vocabSet)
+                        LanguageSelectView(viewModel: LanguageSelectViewModel(vocabSet: vocabSet))
                     } label: {
                         Text(vocabSet.setLanguage.stringWithFlag)
                     }
