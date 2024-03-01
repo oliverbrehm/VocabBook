@@ -18,7 +18,7 @@ struct VocabSetView {
     @Bindable var vocabSet: VocabSet
 
     @State private var editingCard: VocabCard?
-    @State private var learnViewType: VocabLearnView.CoverType?
+    @State private var learnViewType: VocabLearnViewModel.CoverType?
     @State private var showConfirmDelete = false
 
     // MARK: - Private properties
@@ -159,7 +159,7 @@ extension VocabSetView: View {
             }
         }
         .fullScreenCover(isPresented: showLearnView, content: {
-            VocabLearnView(cards: cardsToLearn, coverType: learnViewType ?? .front)
+            VocabLearnView(viewModel: VocabLearnViewModel(cards: cardsToLearn, coverType: learnViewType ?? .front))
         })
         .fullScreenCover(isPresented: Binding(get: {
             editingCard != nil

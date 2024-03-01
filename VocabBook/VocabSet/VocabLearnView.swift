@@ -9,76 +9,21 @@
 import SwiftUI
 
 struct VocabLearnView {
-    enum CoverType {
-        case front, back
-    }
-
     // MARK: - Environment
     @Environment(\.dismiss) var dismiss
 
-    // MARK: - State
-    @State private var remainingCards: [VocabCard] = []
-    @State private var currentCard: VocabCard?
-    @State private var nTotal = 0
-    @State private var nRight = 0
-    @State private var nWrong = 0
-    @State private var isCovered = true
-    @State private var animateRight = false
-    @State private var animateWrong = false
-
     // MARK: - Properties
-    let cards: [VocabCard]
-    let coverType: CoverType
+    @ObservedObject var viewModel: VocabLearnViewModel
     var finishAction: (() -> Void)?
 
-    // MARK: - Private properties
-    private var nRemaining: Int {
-        remainingCards.count + (currentCard != nil ? 1 : 0)
-    }
-
-    private var coverFront: Bool {
-        coverType == .front && isCovered
-    }
-
-    private var coverBack: Bool {
-        coverType == .back && isCovered
-    }
-
     // MARK: - Private functions
-    private func setup() {
-        nTotal = cards.count
-        remainingCards = cards
-        nextCard()
-    }
-
     private func finish() {
         finishAction?()
         dismiss()
     }
 }
 
-// MARK: - Actions
-extension VocabLearnView {
-    private func nextCard() {
-        currentCard = remainingCards.isEmpty ? nil : remainingCards.removeFirst()
-        isCovered = true
-    }
-
-    private func guessedRight() {
-        animateRight.toggle()
-        currentCard?.increaseLevel()
-        nRight += 1
-        nextCard()
-    }
-
-    private func guessedWrong() {
-        animateWrong.toggle()
-        currentCard?.resetLevel()
-        nWrong += 1
-        nextCard()
-    }
-}
-
+// TODO: bug nRight and nWrong not updated, nothing happens when finished
 // MARK: - UI
 extension VocabLearnView: View {
     var body: some View {
@@ -89,44 +34,43 @@ extension VocabLearnView: View {
 
                 Spacer()
 
-                if currentCard == nil {
+                if viewModel.currentCard == nil {
                     resultView
                     Spacer()
-                } else if !isCovered {
+                } else if !viewModel.isCovered {
                     Spacer()
                     actionView
                 }
             }
 
-            if let currentCard {
+            if let currentCard = viewModel.currentCard {
                 cardView(card: currentCard)
             }
         }
-        .onAppear(perform: setup)
         .ignoresSafeArea(edges: .bottom)
     }
 
     private var stateView: some View {
         HStack(spacing: Sizes.marginBigger) {
             HStack {
-                Text("\(nRight)")
+                Text("\(viewModel.nRight)")
                 Images.thumbsUp
                     .resizable()
                     .frame(width: Sizes.icon, height: Sizes.icon)
                     .foregroundStyle(.green)
-                    .symbolEffect(.bounce, value: animateRight)
+                    .symbolEffect(.bounce, value: viewModel.animateRight)
             }
 
             HStack {
-                Text("\(nWrong)")
+                Text("\(viewModel.nWrong)")
                 Images.thumbsDown
                     .resizable()
                     .frame(width: Sizes.icon, height: Sizes.icon)
                     .foregroundStyle(.red)
-                    .symbolEffect(.bounce, value: animateWrong)
+                    .symbolEffect(.bounce, value: viewModel.animateWrong)
             }
 
-            Text("\(Strings.cardsLeft.localized): \(nRemaining)")
+            Text("\(Strings.cardsLeft.localized): \(viewModel.nRemaining)")
 
             Spacer()
 
@@ -138,14 +82,14 @@ extension VocabLearnView: View {
 
     private func cardView(card: VocabCard) -> some View {
         VStack {
-            coverableView(text: card.front, textCovered: coverFront, language: card.vocabSet?.setLanguage)
+            coverableView(text: card.front, textCovered: viewModel.coverFront, language: card.vocabSet?.setLanguage)
 
             Spacer()
                 .frame(maxWidth: .infinity)
                 .frame(height: Sizes.separator)
                 .background(.gray)
 
-            coverableView(text: card.back, textCovered: coverBack, language: card.vocabSet?.setLanguage)
+            coverableView(text: card.back, textCovered: viewModel.coverBack, language: card.vocabSet?.setLanguage)
         }
         .frame(maxWidth: .infinity)
         .background(Colors.cardBackground)
@@ -165,7 +109,7 @@ extension VocabLearnView: View {
                 }
 
                 ImageButton(image: Images.lightbulb2) {
-                    isCovered = false
+                    viewModel.uncover()
                 }
 
                 Spacer()
@@ -186,8 +130,8 @@ extension VocabLearnView: View {
             Text(Strings.knewTheAnswerQuestion.localized)
 
             HStack(spacing: Sizes.marginBig) {
-                actionButton(text: Strings.no.localized, color: .red, roundedCorner: .topRight, action: guessedWrong)
-                actionButton(text: Strings.yes.localized, color: .green, roundedCorner: .topLeft, action: guessedRight)
+                actionButton(text: Strings.no.localized, color: .red, roundedCorner: .topRight, action: viewModel.guessedWrong)
+                actionButton(text: Strings.yes.localized, color: .green, roundedCorner: .topLeft, action: viewModel.guessedRight)
             }
         }
     }
@@ -210,7 +154,7 @@ extension VocabLearnView: View {
             Text(Strings.learningComplete.localized)
                 .bold()
 
-            Text(Strings.learnResultInfo.localized(arguments: String(nRight), String(nTotal)))
+            Text(Strings.learnResultInfo.localized(arguments: String(viewModel.nRight), String(viewModel.nTotal)))
 
             ImageButton(image: Images.checkmarkFilled) {
                 finish()
@@ -227,6 +171,6 @@ extension VocabLearnView: View {
     let previewContainer = PreviewContainer()
     guard let set = previewContainer.vocabSet else { return EmptyView() }
 
-    return VocabLearnView(cards: set.cards ?? [], coverType: .front)
+    return VocabLearnView(viewModel: VocabLearnViewModel(cards: set.cards ?? [], coverType: .front), finishAction: nil)
         .modelContainer(previewContainer.modelContainer)
 }

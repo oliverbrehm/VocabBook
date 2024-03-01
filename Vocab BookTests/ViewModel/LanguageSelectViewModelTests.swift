@@ -30,8 +30,5 @@ final class LanguageSelectViewModelTests: XCTestCase {
 
         sut.searchLanguage = ""
         XCTAssertEqual(sut.filteredLanguages, SetLanguage.allLanguages)
-
-        let v = VocabLearnView(cards: [], coverType: .back)
-        v.nextCard()
     }
 }

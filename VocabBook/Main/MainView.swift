@@ -21,7 +21,7 @@ struct MainView {
     @State private var dueCards = [VocabCard]()
 
     @State private var setToAdd: VocabSet?
-    @State private var learnViewType: VocabLearnView.CoverType?
+    @State private var learnViewType: VocabLearnViewModel.CoverType?
     @State private var editingCard: VocabCard?
     @AppStorage(UserDefaultsKeys.showAllSets.rawValue) private var showAllSets = false
 
@@ -118,7 +118,7 @@ extension MainView: View {
                 }
             })
             .fullScreenCover(isPresented: showLearnView, content: {
-                VocabLearnView(cards: dueCards, coverType: learnViewType ?? .front, finishAction: {
+                VocabLearnView(viewModel: VocabLearnViewModel(cards: dueCards, coverType: learnViewType ?? .front), finishAction: {
                     setup()
                 })
             })

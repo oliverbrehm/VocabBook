@@ -27,6 +27,8 @@
 		BB27A0DD2B63CABE00384D18 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB27A0DC2B63CABE00384D18 /* Array+Extensions.swift */; };
 		BB3EDEE22AD4405200CC39F3 /* LegacyDataMigrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3EDEE12AD4405200CC39F3 /* LegacyDataMigrator.swift */; };
 		BB413C2F2B91E35E00675217 /* LanguageSelectViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB413C2E2B91E35E00675217 /* LanguageSelectViewModelTests.swift */; };
+		BB413C312B91E9DB00675217 /* VocabLearnViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB413C302B91E9DB00675217 /* VocabLearnViewModelTests.swift */; };
+		BB413C342B91F5DB00675217 /* VocabLearnViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB413C322B91F59400675217 /* VocabLearnViewModel.swift */; };
 		BB44FE4A2AC0113C00510833 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB44FE492AC0113C00510833 /* LaunchScreen.storyboard */; };
 		BB44FE4E2AC011D300510833 /* VocabBookApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB44FE4D2AC011D300510833 /* VocabBookApp.swift */; };
 		BB44FE522AC0192700510833 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB44FE512AC0192700510833 /* MainView.swift */; };
@@ -113,6 +115,8 @@
 		BB27A0DC2B63CABE00384D18 /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		BB3EDEE12AD4405200CC39F3 /* LegacyDataMigrator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegacyDataMigrator.swift; sourceTree = "<group>"; };
 		BB413C2E2B91E35E00675217 /* LanguageSelectViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSelectViewModelTests.swift; sourceTree = "<group>"; };
+		BB413C302B91E9DB00675217 /* VocabLearnViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabLearnViewModelTests.swift; sourceTree = "<group>"; };
+		BB413C322B91F59400675217 /* VocabLearnViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabLearnViewModel.swift; sourceTree = "<group>"; };
 		BB44FE492AC0113C00510833 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BB44FE4C2AC011D300510833 /* Vocab Book-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Vocab Book-Bridging-Header.h"; sourceTree = "<group>"; };
 		BB44FE4D2AC011D300510833 /* VocabBookApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabBookApp.swift; sourceTree = "<group>"; };
@@ -242,6 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				BB413C2E2B91E35E00675217 /* LanguageSelectViewModelTests.swift */,
+				BB413C302B91E9DB00675217 /* VocabLearnViewModelTests.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -379,6 +384,7 @@
 				BB44FE592AC022F400510833 /* VocabSetView.swift */,
 				BB44FE572AC022DF00510833 /* VocabSetEditView.swift */,
 				BBD60A522AC18DC9006F396A /* VocabLearnView.swift */,
+				BB413C322B91F59400675217 /* VocabLearnViewModel.swift */,
 				BB27A0D82B639EA800384D18 /* LanguageSelectView.swift */,
 			);
 			path = VocabSet;
@@ -597,6 +603,7 @@
 				BB5E3D412ADE7C880059789F /* DatabaseService.swift in Sources */,
 				BBD293502ACB01B200A02C84 /* String+Extensions.swift in Sources */,
 				BB27A0DD2B63CABE00384D18 /* Array+Extensions.swift in Sources */,
+				BB413C342B91F5DB00675217 /* VocabLearnViewModel.swift in Sources */,
 				BB543DA22AE2D458004C9747 /* Strings.swift in Sources */,
 				BB5D79462ACDB0D9004FA0FB /* ImageButton.swift in Sources */,
 				BB44FE562AC019A400510833 /* VocabSet.swift in Sources */,
@@ -627,6 +634,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB413C2F2B91E35E00675217 /* LanguageSelectViewModelTests.swift in Sources */,
+				BB413C312B91E9DB00675217 /* VocabLearnViewModelTests.swift in Sources */,
 				BB0AFFBA2B74E9C300892DD6 /* SetLanguageTests.swift in Sources */,
 				BB0AFFB22B74E77C00892DD6 /* CardLevelTests.swift in Sources */,
 				BB0AFFBD2B75065200892DD6 /* DatabaseServiceTests.swift in Sources */,
