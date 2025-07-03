@@ -11,7 +11,7 @@ import SwiftData
 @Model
 class VocabSet: Identifiable {
     // MARK: - Persisted
-    let id = UUID()
+    var id = UUID()
     var name = ""
     var descriptionText = ""
     var language = ""

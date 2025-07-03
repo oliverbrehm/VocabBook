@@ -11,8 +11,7 @@ import SwiftData
 @Model
 class VocabCard: Identifiable, Equatable {
     // MARK: - Persisted
-    let id = UUID()
-
+    var id = UUID()
     var front = ""
     var back = ""
     var level = CardLevel.level0
