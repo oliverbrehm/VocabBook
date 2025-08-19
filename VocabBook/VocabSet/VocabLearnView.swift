@@ -23,7 +23,6 @@ struct VocabLearnView {
     }
 }
 
-// TODO: bug nRight and nWrong not updated, nothing happens when finished
 // MARK: - UI
 extension VocabLearnView: View {
     var body: some View {

@@ -7,6 +7,7 @@
 //
 
 import SwiftData
+import Foundation
 
 @Model
 class VocabSet: Identifiable {

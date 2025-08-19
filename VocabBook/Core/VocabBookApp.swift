@@ -11,13 +11,9 @@ import SwiftData
 
 @main
 struct VocabBookApp: App {
-    @ObservedObject var legacyDataMigrator: LegacyDataMigrator
     let databaseService = DatabaseService()
 
-    @MainActor
     init() {
-        legacyDataMigrator = LegacyDataMigrator(modelContext: databaseService.modelContainer.mainContext, deleteDuplicatesAction: databaseService.deleteDuplicates)
-
         UNUserNotificationCenter.current().requestAuthorization(options: .badge) { _, _ in }
         UNUserNotificationCenter.current().setBadgeCount(0)
     }
@@ -26,7 +22,6 @@ struct VocabBookApp: App {
         WindowGroup {
             MainView()
                 .environmentObject(databaseService)
-                .environmentObject(legacyDataMigrator)
                 .modelContainer(databaseService.modelContainer)
         }
     }

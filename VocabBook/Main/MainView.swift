@@ -99,15 +99,6 @@ extension MainView: View {
             }
             .background(Colors.containerBackground)
             .navigationTitle(Strings.vocabBook.localized)
-            .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
-                    NavigationLink {
-                        SettingsView()
-                    } label: {
-                        Images.settings
-                    }
-                }
-            }
             .sheet(isPresented: showAddSetView, content: {
                 if let setToAdd {
                     NavigationStack {

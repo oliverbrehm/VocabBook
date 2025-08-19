@@ -7,6 +7,7 @@
 //
 
 import SwiftData
+import Foundation
 
 final class DatabaseService: ObservableObject {
     // MARK: - Properties
