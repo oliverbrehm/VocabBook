@@ -117,7 +117,7 @@ extension CardEditView: View {
                 Spacer()
 
                 Button(action: close, label: {
-                    Images.triangleDown
+                    Images.closeFilled
                 })
 
                 Spacer()

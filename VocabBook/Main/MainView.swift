@@ -21,7 +21,7 @@ struct MainView {
     @State private var dueCards = [VocabCard]()
 
     @State private var setToAdd: VocabSet?
-    @State private var learnViewType: VocabLearnViewModel.CoverType?
+    @State private var learnViewType: CoverType?
     @State private var editingCard: VocabCard?
     @AppStorage(UserDefaultsKeys.showAllSets.rawValue) private var showAllSets = false
 
@@ -54,7 +54,9 @@ struct MainView {
         cards = (try? modelContext.fetch(cardsFetchDescriptor)) ?? []
 
         let cardsToLearnDescriptor = FetchDescriptor<VocabCard>()
-        dueCards = ((try? modelContext.fetch(cardsToLearnDescriptor)) ?? []).filter { $0.isDue }
+		dueCards = ((try? modelContext.fetch(cardsToLearnDescriptor)) ?? []).filter {
+			$0.isDue && (showAllSets ? true : $0.vocabSet?.isFavorite == true)
+		}
 
         let numberOfDueCards = sets.reduce(0) { $0 + $1.dueCards.count }
         UNUserNotificationCenter.current().setBadgeCount(numberOfDueCards)
@@ -80,6 +82,17 @@ extension MainView: View {
         NavigationStack {
             ScrollView {
                 VStack(alignment: .leading, spacing: Sizes.marginBigger) {
+					if !dueCards.isEmpty {
+						LearnCardsView(
+							numberOfDueCards: dueCards.count,
+							coverFrontAction: { learnViewType = .front },
+							coverBackAction: { learnViewType = .back }
+						)
+						.padding(Sizes.marginDefault)
+						.background(Colors.elementBackground)
+						.roundedCorners(Sizes.marginSmall)
+					}
+
                     setList
 
                     if !cards.isEmpty {
@@ -129,6 +142,7 @@ extension MainView: View {
                     
                     Button(showAllSets ? Strings.showFavorites.localized : Strings.showAll.localized) {
                         showAllSets.toggle()
+						setup()
                     }
                     .padding()
                 }
@@ -162,17 +176,6 @@ extension MainView: View {
         VStack(alignment: .leading, spacing: Sizes.marginBig) {
             Text(Strings.cards.localized)
                 .bold()
-
-            if !dueCards.isEmpty {
-                LearnCardsView(
-                    numberOfDueCards: dueCards.count,
-                    coverFrontAction: { learnViewType = .front },
-                    coverBackAction: { learnViewType = .back }
-                )
-                .padding(Sizes.marginDefault)
-                .background(Colors.elementBackground)
-                .roundedCorners(Sizes.marginSmall)
-            }
 
             HStack(spacing: 0) {
                 Spacer()

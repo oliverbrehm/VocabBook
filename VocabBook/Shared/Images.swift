@@ -21,7 +21,6 @@ enum Images {
     static let checkmarkFilled = Image(systemName: "checkmark.circle.fill")
     static let close = Image(systemName: "x.circle")
     static let closeFilled = Image(systemName: "x.circle.fill")
-    static let triangleDown = Image(systemName: "arrowtriangle.down.circle.fill")
     static let thumbsUp = Image(systemName: "hand.thumbsup.fill")
     static let thumbsDown = Image(systemName: "hand.thumbsdown.fill")
     static let lightbulb2 = Image(systemName: "lightbulb.2.fill")

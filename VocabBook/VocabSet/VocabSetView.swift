@@ -18,7 +18,7 @@ struct VocabSetView {
     @Bindable var vocabSet: VocabSet
 
     @State private var editingCard: VocabCard?
-    @State private var learnViewType: VocabLearnViewModel.CoverType?
+    @State private var learnViewType: CoverType?
     @State private var showConfirmDelete = false
 
     // MARK: - Private properties

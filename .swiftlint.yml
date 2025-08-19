@@ -8,7 +8,6 @@ analyzer_rules:
 opt_in_rules:
     - array_init
     - closing_brace
-    - closure_end_indentation
     - closure_spacing
     - collection_alignment
     - colon # promote to error

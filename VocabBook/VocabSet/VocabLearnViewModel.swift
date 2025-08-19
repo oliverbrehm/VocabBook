@@ -9,10 +9,6 @@
 import Foundation
 
 final class VocabLearnViewModel: ObservableObject {
-    enum CoverType {
-        case front, back
-    }
-
     // MARK: - Properties
     @Published var remainingCards: [VocabCard] = []
     @Published var currentCard: VocabCard?

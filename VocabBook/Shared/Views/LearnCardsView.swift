@@ -9,6 +9,8 @@
 import SwiftUI
 
 struct LearnCardsView {
+	@AppStorage(UserDefaultsKeys.coverType.rawValue) private var coverType = CoverType.front
+
     // MARK: - Properties
     let numberOfDueCards: Int
     let coverFrontAction: () -> Void
@@ -32,13 +34,21 @@ extension LearnCardsView: View {
             }
 
             HStack {
+                Button(Strings.coverFront.localized) {
+					coverType = .front
+					coverFrontAction()
+				}
+				.frame(maxWidth: .infinity)
+				.buttonStyle(.borderedProminent)
+
                 Spacer()
-                Button(Strings.coverFront.localized) { coverFrontAction() }
-                    .buttonStyle(.borderedProminent)
-                Spacer()
-                Button(Strings.coverBack.localized) { coverBackAction() }
-                    .buttonStyle(.borderedProminent)
-                Spacer()
+
+				Button(Strings.coverBack.localized) {
+					coverType = .back
+					coverBackAction()
+				}
+				.frame(maxWidth: .infinity)
+				.buttonStyle(.borderedProminent)
             }
             .bold()
         }
@@ -47,5 +57,11 @@ extension LearnCardsView: View {
 
 // MARK: - Preview
 #Preview {
-    LearnCardsView(numberOfDueCards: 5, coverFrontAction: {}, coverBackAction: {})
+	ZStack {
+		LearnCardsView(numberOfDueCards: 5, coverFrontAction: {}, coverBackAction: {})
+			.padding()
+			.background(.white)
+			.padding()
+	}
+	.background(.gray)
 }
